@@ -3,18 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */; };
-		264AB22E2704CB5F00E394E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22D2704CB5F00E394E6 /* ContentView.swift */; };
 		264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB22F2704CB6100E394E6 /* Assets.xcassets */; };
 		264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2322704CB6100E394E6 /* Preview Assets.xcassets */; };
 		264AB2352704CB6100E394E6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2342704CB6100E394E6 /* Persistence.swift */; };
 		264AB2382704CB6100E394E6 /* toastgo_go.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2362704CB6100E394E6 /* toastgo_go.xcdatamodeld */; };
 		264AB2432704CB6200E394E6 /* toastgo_goTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2422704CB6200E394E6 /* toastgo_goTests.swift */; };
 		264AB24E2704CB6200E394E6 /* toastgo_goUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB24D2704CB6200E394E6 /* toastgo_goUITests.swift */; };
+		264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 264AB25C2704F54500E394E6 /* MainDB.xcdatamodeld */; };
+		264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2602704F62000E394E6 /* OpenerScreen.swift */; };
+		264AB2692705018400E394E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 264AB2682705018400E394E6 /* Kingfisher */; };
+		264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26B270501BF00E394E6 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		264AB2282704CB5F00E394E6 /* toastgo-go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toastgo-go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastgo_goApp.swift; sourceTree = "<group>"; };
-		264AB22D2704CB5F00E394E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		264AB22F2704CB6100E394E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		264AB2322704CB6100E394E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		264AB2342704CB6100E394E6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +51,9 @@
 		264AB2492704CB6200E394E6 /* toastgo-goUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "toastgo-goUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264AB24D2704CB6200E394E6 /* toastgo_goUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastgo_goUITests.swift; sourceTree = "<group>"; };
 		264AB24F2704CB6200E394E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264AB25D2704F54500E394E6 /* MainDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainDB.xcdatamodel; sourceTree = "<group>"; };
+		264AB2602704F62000E394E6 /* OpenerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenerScreen.swift; sourceTree = "<group>"; };
+		264AB26B270501BF00E394E6 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264AB2692705018400E394E6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +105,10 @@
 		264AB22A2704CB5F00E394E6 /* toastgo-go */ = {
 			isa = PBXGroup;
 			children = (
+				264AB25F2704F5F900E394E6 /* mainfiles */,
+				264AB25B2704F52C00E394E6 /* coredata */,
 				264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */,
-				264AB22D2704CB5F00E394E6 /* ContentView.swift */,
 				264AB22F2704CB6100E394E6 /* Assets.xcassets */,
-				264AB2342704CB6100E394E6 /* Persistence.swift */,
 				264AB2392704CB6100E394E6 /* Info.plist */,
 				264AB2362704CB6100E394E6 /* toastgo_go.xcdatamodeld */,
 				264AB2312704CB6100E394E6 /* Preview Content */,
@@ -136,6 +142,48 @@
 			path = "toastgo-goUITests";
 			sourceTree = "<group>";
 		};
+		264AB25B2704F52C00E394E6 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				264AB25C2704F54500E394E6 /* MainDB.xcdatamodeld */,
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
+		264AB25F2704F5F900E394E6 /* mainfiles */ = {
+			isa = PBXGroup;
+			children = (
+				264AB26A2705019C00E394E6 /* splash */,
+				264AB2632704FA6900E394E6 /* home */,
+				264AB2622704FA6400E394E6 /* auth */,
+				264AB2342704CB6100E394E6 /* Persistence.swift */,
+				264AB2602704F62000E394E6 /* OpenerScreen.swift */,
+			);
+			path = mainfiles;
+			sourceTree = "<group>";
+		};
+		264AB2622704FA6400E394E6 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		264AB2632704FA6900E394E6 /* home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		264AB26A2705019C00E394E6 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				264AB26B270501BF00E394E6 /* SplashScreen.swift */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +200,9 @@
 			dependencies = (
 			);
 			name = "toastgo-go";
+			packageProductDependencies = (
+				264AB2682705018400E394E6 /* Kingfisher */,
+			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 264AB21F2704CB5F00E394E6;
+			packageReferences = (
+				264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,9 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
+				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				264AB2382704CB6100E394E6 /* toastgo_go.xcdatamodeld in Sources */,
-				264AB22E2704CB5F00E394E6 /* ContentView.swift in Sources */,
+				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +645,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		264AB2682705018400E394E6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
 		264AB2362704CB6100E394E6 /* toastgo_go.xcdatamodeld */ = {
 			isa = XCVersionGroup;
@@ -597,6 +672,16 @@
 			);
 			currentVersion = 264AB2372704CB6100E394E6 /* toastgo_go.xcdatamodel */;
 			path = toastgo_go.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		264AB25C2704F54500E394E6 /* MainDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				264AB25D2704F54500E394E6 /* MainDB.xcdatamodel */,
+			);
+			currentVersion = 264AB25D2704F54500E394E6 /* MainDB.xcdatamodel */;
+			path = MainDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
