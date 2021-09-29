@@ -18,6 +18,8 @@
 		264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2602704F62000E394E6 /* OpenerScreen.swift */; };
 		264AB2692705018400E394E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 264AB2682705018400E394E6 /* Kingfisher */; };
 		264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26B270501BF00E394E6 /* SplashScreen.swift */; };
+		264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26D270507AC00E394E6 /* LandingScreen.swift */; };
+		264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26F270507B700E394E6 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		264AB25D2704F54500E394E6 /* MainDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainDB.xcdatamodel; sourceTree = "<group>"; };
 		264AB2602704F62000E394E6 /* OpenerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenerScreen.swift; sourceTree = "<group>"; };
 		264AB26B270501BF00E394E6 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		264AB26D270507AC00E394E6 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
+		264AB26F270507B700E394E6 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 		264AB2622704FA6400E394E6 /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				264AB26F270507B700E394E6 /* WelcomeScreen.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				264AB26D270507AC00E394E6 /* LandingScreen.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -319,7 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
+				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				264AB2382704CB6100E394E6 /* toastgo_go.xcdatamodeld in Sources */,
