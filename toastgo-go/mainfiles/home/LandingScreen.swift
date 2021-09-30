@@ -13,7 +13,13 @@ struct LandingScreen: View {
 	
     var body: some View {
 		VStack() {
-			Text("now, you are inside the ayeverse!").bold().font(.headline)
+			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h1)
+			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h3)
+			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.body2)
+			Spacer()
+			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2)
+			Text("now, you are inside the ayeverse!").font(.system(size: 13))
+			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2I)
 			Spacer()
 			NavigationLink(destination: WelcomeScreen(),  isActive: $buttonActive) {
 				Button(action: {

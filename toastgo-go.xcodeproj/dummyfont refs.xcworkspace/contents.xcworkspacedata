@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Book.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-BoldItalic.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-BookItalic.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-LightItalic.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Light.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Medium.otf">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "dummyfonts">
+      <FileRef
+         location = "group:GothamRounded-Bold.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-BoldItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-BoldItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-Book.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Book.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-BookItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-BookItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Light.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-Light.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-LightItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-LightItalic.otf">
+      </FileRef>
+      <FileRef
+         location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Medium.otf">
+      </FileRef>
+      <FileRef
+         location = "group:GothamRounded-Medium.otf">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "absolute:GothamRounded-MediumItalic.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-Bold.otf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/EM-Gotham.Rounded/EM-Gotham.Rounded/OpenType/GothamRounded-MediumItalic.otf">
+   </FileRef>
+   <FileRef
+      location = "container:">
+   </FileRef>
+</Workspace>
