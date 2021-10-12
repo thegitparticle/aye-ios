@@ -1,0 +1,992 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04CA2CE25BA4B9895FE5A98D27AA80D9 /* Pods-toastgo-go-toastgo-goUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED6C2FA3B5E5961D3A2194491A9618F7 /* Pods-toastgo-go-toastgo-goUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29B7622E10EF435C0E2D53A22892D688 /* Pods-toastgo-go-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FFA682754ACF8A76B8391C05482B76 /* Pods-toastgo-go-dummy.m */; };
+		2DF67635FABA70D4B716AA78C84BE8DE /* Pods-toastgo-go-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C528EE95AFA76879F32D5848B026AF /* Pods-toastgo-go-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FA422DE597026335982E743EEE75FEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		348DB8EBC797D71D9A38F9DCCA7E2B93 /* CountryPickerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48B1706A32146864747D3D14B041A3D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4DED4D4077547D99C2F68A24C38C001E /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */; };
+		4F59BAE07DBE79EB21B69B6EC26A4DFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		582A975AB72798386858A2DA74B133F9 /* Pods-toastgo-goTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1D649C8BF8E59752A07C33FC364B /* Pods-toastgo-goTests-dummy.m */; };
+		730EACADDA0101B0B76F4EC99D061266 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */; };
+		92654A9F1C63B43BBDDE17C2ACFD519F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		95AFB10AD62E6BA384CC0E689DC4EBF4 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */; };
+		AC4E5605C832826A5A50AF32109F4925 /* Pods-toastgo-go-toastgo-goUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C22EC3A622FC960CCD510CD2BFC03F /* Pods-toastgo-go-toastgo-goUITests-dummy.m */; };
+		B35D0079D8AD7710088BEDA8CF8E7EC8 /* CountryPickerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */; };
+		C1CCA6B23A09BD18BA1467BE4DC1A672 /* Pods-toastgo-goTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E553BA3AAAC099FE6AC69F1AA3289D40 /* Pods-toastgo-goTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2C275FF4B9EB80BC8C5291475FB1BE9 /* CountryViewTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */; };
+		DC0B9ADE2E3CDC46619E951D2BAE7AB9 /* CountryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */; };
+		E7E190B41F3FB80EBCD1D0461B3BFB55 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A3D1EF22026049AD8BD4B61E7C967B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66814C3CD82F965BA3B2704535DEA19;
+			remoteInfo = CountryPickerSwift;
+		};
+		4A9CD2AED757AFDDBCC67C6889797AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66814C3CD82F965BA3B2704535DEA19;
+			remoteInfo = CountryPickerSwift;
+		};
+		6A1524ACE8C4330CAC6D2BEB3BA29045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 503DBF22C78875ADE1EF9040B73B939E;
+			remoteInfo = "Pods-toastgo-go";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryView.swift; path = CountryPicker/Classes/CountryView.swift; sourceTree = "<group>"; };
+		04FFA682754ACF8A76B8391C05482B76 /* Pods-toastgo-go-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-toastgo-go-dummy.m"; sourceTree = "<group>"; };
+		19C22EC3A622FC960CCD510CD2BFC03F /* Pods-toastgo-go-toastgo-goUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-toastgo-go-toastgo-goUITests-dummy.m"; sourceTree = "<group>"; };
+		24F3C5BAF20A3F7A8ECB985BEEAFAB44 /* Pods-toastgo-go-toastgo-goUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-go-toastgo-goUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		263E4F62A39665EACAC69634C46E3CB6 /* CountryPickerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-prefix.pch"; sourceTree = "<group>"; };
+		26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		30C528EE95AFA76879F32D5848B026AF /* Pods-toastgo-go-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-toastgo-go-umbrella.h"; sourceTree = "<group>"; };
+		36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.release.xcconfig; sourceTree = "<group>"; };
+		3DB7669E851D6380FAA5224FF5A4A885 /* CountryPickerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CountryPickerSwift-Info.plist"; sourceTree = "<group>"; };
+		40FFC1D13BCEDE91C42F4E9038985123 /* Pods-toastgo-go-toastgo-goUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-toastgo-go-toastgo-goUITests-frameworks.sh"; sourceTree = "<group>"; };
+		420055231CB29B1AFFB09A2F68631A49 /* Pods-toastgo-go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-go.debug.xcconfig"; sourceTree = "<group>"; };
+		446BDA73608380CF0075651430AE6A5F /* CountryPickerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CountryPickerSwift.modulemap; sourceTree = "<group>"; };
+		4ECC8BEA06553EF8A5ADB81DC8F25A13 /* Pods-toastgo-go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-go.release.xcconfig"; sourceTree = "<group>"; };
+		513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPicker.swift; path = CountryPicker/Classes/CountryPicker.swift; sourceTree = "<group>"; };
+		527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-umbrella.h"; sourceTree = "<group>"; };
+		560AB06D68F470172307F5EF827DF4F2 /* CountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CountryPicker.framework; path = CountryPickerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Flags.xcassets; path = CountryPicker/Classes/Flags.xcassets; sourceTree = "<group>"; };
+		58A45CF0ECD16A7F0CDEAE7B1E954D84 /* Pods_toastgo_go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_toastgo_go.framework; path = "Pods-toastgo-go.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9F01DD83BE968453A0C9DE42E7D8A3 /* Pods-toastgo-goTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-goTests.release.xcconfig"; sourceTree = "<group>"; };
+		6359419272526BAE2CD3442835E591F3 /* Pods_toastgo_goTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_toastgo_goTests.framework; path = "Pods-toastgo-goTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE64FCFBC6403601BB5CB5CF032DCD3 /* Pods-toastgo-go-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-go-Info.plist"; sourceTree = "<group>"; };
+		6BE70783CF9036C435B46BEC232D1448 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-go-toastgo-goUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75B68C23FDEC366FEF903760D0A81158 /* Pods-toastgo-goTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-goTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		76BA71349FC9B128DC8B5DB48A5D05C5 /* Pods-toastgo-goTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-goTests-Info.plist"; sourceTree = "<group>"; };
+		80645F6F1AA67A07976CDC9B68334D2C /* Pods-toastgo-goTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-goTests.debug.xcconfig"; sourceTree = "<group>"; };
+		82FE55185080EA8AB3984C397BE51EF7 /* Pods-toastgo-go-toastgo-goUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-toastgo-go-toastgo-goUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryViewTheme.swift; path = CountryPicker/Classes/CountryViewTheme.swift; sourceTree = "<group>"; };
+		858CF5BFB821650477F8FA463D718D34 /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-toastgo-go-toastgo-goUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8B2F43DCA08FC20FBFDBF24474ECE206 /* Pods-toastgo-go-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-toastgo-go-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8E9190F0BAAF0FCCBCB6D71ABAB87FC9 /* Pods-toastgo-go-toastgo-goUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-toastgo-go-toastgo-goUITests.modulemap"; sourceTree = "<group>"; };
+		9C02434356CD1E234B1253C6E4FADCEC /* Pods_toastgo_go_toastgo_goUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_toastgo_go_toastgo_goUITests.framework; path = "Pods-toastgo-go-toastgo-goUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CountryView.xib; path = CountryPicker/Classes/CountryView.xib; sourceTree = "<group>"; };
+		ACBD26A4C3BDC65814FC39D82FE01155 /* Pods-toastgo-go-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-toastgo-go-frameworks.sh"; sourceTree = "<group>"; };
+		ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CountryPickerSwift-dummy.m"; sourceTree = "<group>"; };
+		AEF4C18B6DDBFD5C89EE8910A2D211FD /* Pods-toastgo-go-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-go-acknowledgements.plist"; sourceTree = "<group>"; };
+		C9A36C35238186AE95A9C0A8D4FE721B /* Pods-toastgo-goTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-toastgo-goTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CountryPicker.bundle; path = CountryPicker/Assets/CountryPicker.bundle; sourceTree = "<group>"; };
+		DB3321FDBF7A51F330CD10E94D4DF638 /* Pods-toastgo-goTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-toastgo-goTests.modulemap"; sourceTree = "<group>"; };
+		DDF443A992AFD93EF2DF56912CE1EA92 /* Pods-toastgo-go.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-toastgo-go.modulemap"; sourceTree = "<group>"; };
+		E553BA3AAAC099FE6AC69F1AA3289D40 /* Pods-toastgo-goTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-toastgo-goTests-umbrella.h"; sourceTree = "<group>"; };
+		ED6C2FA3B5E5961D3A2194491A9618F7 /* Pods-toastgo-go-toastgo-goUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-toastgo-go-toastgo-goUITests-umbrella.h"; sourceTree = "<group>"; };
+		F45155326C78E46FBD4334E1ED01F47E /* Pods-toastgo-go-toastgo-goUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-toastgo-go-toastgo-goUITests-Info.plist"; sourceTree = "<group>"; };
+		F6DF1D649C8BF8E59752A07C33FC364B /* Pods-toastgo-goTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-toastgo-goTests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACD8A0E29D6BD2FA8E02ECFA88A9FEA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B1706A32146864747D3D14B041A3D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3891F3889A9D51D2CCE88C5542C2422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92654A9F1C63B43BBDDE17C2ACFD519F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8A6E79542B1A90D2BA4B46C1710F81D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F59BAE07DBE79EB21B69B6EC26A4DFB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBA316802E5C94A45EBFF76E3CB5FF22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA422DE597026335982E743EEE75FEE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CD5B0A9E93EB593D0E94038CDDFC542 /* Pods-toastgo-goTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB3321FDBF7A51F330CD10E94D4DF638 /* Pods-toastgo-goTests.modulemap */,
+				C9A36C35238186AE95A9C0A8D4FE721B /* Pods-toastgo-goTests-acknowledgements.markdown */,
+				75B68C23FDEC366FEF903760D0A81158 /* Pods-toastgo-goTests-acknowledgements.plist */,
+				F6DF1D649C8BF8E59752A07C33FC364B /* Pods-toastgo-goTests-dummy.m */,
+				76BA71349FC9B128DC8B5DB48A5D05C5 /* Pods-toastgo-goTests-Info.plist */,
+				E553BA3AAAC099FE6AC69F1AA3289D40 /* Pods-toastgo-goTests-umbrella.h */,
+				80645F6F1AA67A07976CDC9B68334D2C /* Pods-toastgo-goTests.debug.xcconfig */,
+				5F9F01DD83BE968453A0C9DE42E7D8A3 /* Pods-toastgo-goTests.release.xcconfig */,
+			);
+			name = "Pods-toastgo-goTests";
+			path = "Target Support Files/Pods-toastgo-goTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		84C34E7D36A91E705D1EC8F303C34338 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */,
+				AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */,
+				5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A5BD3F0963C1025A788EB11263EF1BA9 /* CountryPickerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */,
+				02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */,
+				834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */,
+				84C34E7D36A91E705D1EC8F303C34338 /* Resources */,
+				E5EB405AA15A7A15C5FD228BD8BB86E9 /* Support Files */,
+			);
+			name = CountryPickerSwift;
+			path = CountryPickerSwift;
+			sourceTree = "<group>";
+		};
+		ADDF360EDE49CF5789EE8D2E88E52A67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				560AB06D68F470172307F5EF827DF4F2 /* CountryPicker.framework */,
+				58A45CF0ECD16A7F0CDEAE7B1E954D84 /* Pods_toastgo_go.framework */,
+				9C02434356CD1E234B1253C6E4FADCEC /* Pods_toastgo_go_toastgo_goUITests.framework */,
+				6359419272526BAE2CD3442835E591F3 /* Pods_toastgo_goTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E3A89E3937644A966D3A8C3F5C8FE262 /* Pods */,
+				ADDF360EDE49CF5789EE8D2E88E52A67 /* Products */,
+				DA14A0BABAB417D91C180250543BBB50 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3D5B5D4E6B6EB3FD42F2F8D8BA7346F /* Pods-toastgo-go-toastgo-goUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E9190F0BAAF0FCCBCB6D71ABAB87FC9 /* Pods-toastgo-go-toastgo-goUITests.modulemap */,
+				82FE55185080EA8AB3984C397BE51EF7 /* Pods-toastgo-go-toastgo-goUITests-acknowledgements.markdown */,
+				24F3C5BAF20A3F7A8ECB985BEEAFAB44 /* Pods-toastgo-go-toastgo-goUITests-acknowledgements.plist */,
+				19C22EC3A622FC960CCD510CD2BFC03F /* Pods-toastgo-go-toastgo-goUITests-dummy.m */,
+				40FFC1D13BCEDE91C42F4E9038985123 /* Pods-toastgo-go-toastgo-goUITests-frameworks.sh */,
+				F45155326C78E46FBD4334E1ED01F47E /* Pods-toastgo-go-toastgo-goUITests-Info.plist */,
+				ED6C2FA3B5E5961D3A2194491A9618F7 /* Pods-toastgo-go-toastgo-goUITests-umbrella.h */,
+				6BE70783CF9036C435B46BEC232D1448 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */,
+				858CF5BFB821650477F8FA463D718D34 /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */,
+			);
+			name = "Pods-toastgo-go-toastgo-goUITests";
+			path = "Target Support Files/Pods-toastgo-go-toastgo-goUITests";
+			sourceTree = "<group>";
+		};
+		D93804E5607F6EEAC407CAE23AFDEE61 /* Pods-toastgo-go */ = {
+			isa = PBXGroup;
+			children = (
+				DDF443A992AFD93EF2DF56912CE1EA92 /* Pods-toastgo-go.modulemap */,
+				8B2F43DCA08FC20FBFDBF24474ECE206 /* Pods-toastgo-go-acknowledgements.markdown */,
+				AEF4C18B6DDBFD5C89EE8910A2D211FD /* Pods-toastgo-go-acknowledgements.plist */,
+				04FFA682754ACF8A76B8391C05482B76 /* Pods-toastgo-go-dummy.m */,
+				ACBD26A4C3BDC65814FC39D82FE01155 /* Pods-toastgo-go-frameworks.sh */,
+				6AE64FCFBC6403601BB5CB5CF032DCD3 /* Pods-toastgo-go-Info.plist */,
+				30C528EE95AFA76879F32D5848B026AF /* Pods-toastgo-go-umbrella.h */,
+				420055231CB29B1AFFB09A2F68631A49 /* Pods-toastgo-go.debug.xcconfig */,
+				4ECC8BEA06553EF8A5ADB81DC8F25A13 /* Pods-toastgo-go.release.xcconfig */,
+			);
+			name = "Pods-toastgo-go";
+			path = "Target Support Files/Pods-toastgo-go";
+			sourceTree = "<group>";
+		};
+		DA14A0BABAB417D91C180250543BBB50 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D93804E5607F6EEAC407CAE23AFDEE61 /* Pods-toastgo-go */,
+				D3D5B5D4E6B6EB3FD42F2F8D8BA7346F /* Pods-toastgo-go-toastgo-goUITests */,
+				0CD5B0A9E93EB593D0E94038CDDFC542 /* Pods-toastgo-goTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E3A89E3937644A966D3A8C3F5C8FE262 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD3F0963C1025A788EB11263EF1BA9 /* CountryPickerSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5EB405AA15A7A15C5FD228BD8BB86E9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				446BDA73608380CF0075651430AE6A5F /* CountryPickerSwift.modulemap */,
+				ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */,
+				3DB7669E851D6380FAA5224FF5A4A885 /* CountryPickerSwift-Info.plist */,
+				263E4F62A39665EACAC69634C46E3CB6 /* CountryPickerSwift-prefix.pch */,
+				527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */,
+				26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */,
+				36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CountryPickerSwift";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0325AF81CFD9CDC2BC0EE3FE93E2AC9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1CCA6B23A09BD18BA1467BE4DC1A672 /* Pods-toastgo-goTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23743C61029C39F26B632472104DE0CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CA2CE25BA4B9895FE5A98D27AA80D9 /* Pods-toastgo-go-toastgo-goUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		563F8CAC0F1C81C435ACF3201EBC28A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348DB8EBC797D71D9A38F9DCCA7E2B93 /* CountryPickerSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8EB8992FD9120B44970E40DDFDF4C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DF67635FABA70D4B716AA78C84BE8DE /* Pods-toastgo-go-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		503DBF22C78875ADE1EF9040B73B939E /* Pods-toastgo-go */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88FF8546EE68E85378FB692C974904D6 /* Build configuration list for PBXNativeTarget "Pods-toastgo-go" */;
+			buildPhases = (
+				5A8EB8992FD9120B44970E40DDFDF4C1 /* Headers */,
+				51C7C30A635637828E55C1CF877FFC02 /* Sources */,
+				ACD8A0E29D6BD2FA8E02ECFA88A9FEA2 /* Frameworks */,
+				6E26F7B229337B9D8AC64E3C7F4B7110 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				505957B2E153744A97E56A7AB7571D21 /* PBXTargetDependency */,
+			);
+			name = "Pods-toastgo-go";
+			productName = "Pods-toastgo-go";
+			productReference = 58A45CF0ECD16A7F0CDEAE7B1E954D84 /* Pods_toastgo_go.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6426487799D91EB97056C0F94AD5EF4D /* Pods-toastgo-go-toastgo-goUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA91A5062BEFC9D36ADA7EB35E47A91 /* Build configuration list for PBXNativeTarget "Pods-toastgo-go-toastgo-goUITests" */;
+			buildPhases = (
+				23743C61029C39F26B632472104DE0CF /* Headers */,
+				FC085F1FDA0D5652891C066D5E3C11A1 /* Sources */,
+				F8A6E79542B1A90D2BA4B46C1710F81D /* Frameworks */,
+				765EA1B142661170A9884944AA5D42E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF163FDC5FC4943B0F8C8170D2E072B5 /* PBXTargetDependency */,
+			);
+			name = "Pods-toastgo-go-toastgo-goUITests";
+			productName = "Pods-toastgo-go-toastgo-goUITests";
+			productReference = 9C02434356CD1E234B1253C6E4FADCEC /* Pods_toastgo_go_toastgo_goUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D66185B5E2134F21EBFC18DBA5C0D08F /* Pods-toastgo-goTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D4FA27083EF8CCA5A13CCECFF98DB /* Build configuration list for PBXNativeTarget "Pods-toastgo-goTests" */;
+			buildPhases = (
+				0325AF81CFD9CDC2BC0EE3FE93E2AC9B /* Headers */,
+				A7F16714A5F3D9CE8D4CE12D9BE9FAC8 /* Sources */,
+				D3891F3889A9D51D2CCE88C5542C2422 /* Frameworks */,
+				ACAC40641B294F51CC238645C84D7613 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FA246CBDF7A738D58543B54F9365C4E /* PBXTargetDependency */,
+			);
+			name = "Pods-toastgo-goTests";
+			productName = "Pods-toastgo-goTests";
+			productReference = 6359419272526BAE2CD3442835E591F3 /* Pods_toastgo_goTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8EF0F75644DC2BD263363C2B1A81769 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */;
+			buildPhases = (
+				563F8CAC0F1C81C435ACF3201EBC28A3 /* Headers */,
+				05311737A7893D50633E3D2CED60D006 /* Sources */,
+				FBA316802E5C94A45EBFF76E3CB5FF22 /* Frameworks */,
+				3B578389B0CB8582A3B41901E6D5601C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CountryPickerSwift;
+			productName = CountryPickerSwift;
+			productReference = 560AB06D68F470172307F5EF827DF4F2 /* CountryPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = ADDF360EDE49CF5789EE8D2E88E52A67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */,
+				503DBF22C78875ADE1EF9040B73B939E /* Pods-toastgo-go */,
+				6426487799D91EB97056C0F94AD5EF4D /* Pods-toastgo-go-toastgo-goUITests */,
+				D66185B5E2134F21EBFC18DBA5C0D08F /* Pods-toastgo-goTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B578389B0CB8582A3B41901E6D5601C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E190B41F3FB80EBCD1D0461B3BFB55 /* CountryPicker.bundle in Resources */,
+				DC0B9ADE2E3CDC46619E951D2BAE7AB9 /* CountryView.xib in Resources */,
+				730EACADDA0101B0B76F4EC99D061266 /* Flags.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E26F7B229337B9D8AC64E3C7F4B7110 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765EA1B142661170A9884944AA5D42E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACAC40641B294F51CC238645C84D7613 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05311737A7893D50633E3D2CED60D006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95AFB10AD62E6BA384CC0E689DC4EBF4 /* CountryPicker.swift in Sources */,
+				B35D0079D8AD7710088BEDA8CF8E7EC8 /* CountryPickerSwift-dummy.m in Sources */,
+				4DED4D4077547D99C2F68A24C38C001E /* CountryView.swift in Sources */,
+				D2C275FF4B9EB80BC8C5291475FB1BE9 /* CountryViewTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51C7C30A635637828E55C1CF877FFC02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29B7622E10EF435C0E2D53A22892D688 /* Pods-toastgo-go-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F16714A5F3D9CE8D4CE12D9BE9FAC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				582A975AB72798386858A2DA74B133F9 /* Pods-toastgo-goTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC085F1FDA0D5652891C066D5E3C11A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4E5605C832826A5A50AF32109F4925 /* Pods-toastgo-go-toastgo-goUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		505957B2E153744A97E56A7AB7571D21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CountryPickerSwift;
+			target = E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */;
+			targetProxy = 1A3D1EF22026049AD8BD4B61E7C967B7 /* PBXContainerItemProxy */;
+		};
+		6FA246CBDF7A738D58543B54F9365C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-toastgo-go";
+			target = 503DBF22C78875ADE1EF9040B73B939E /* Pods-toastgo-go */;
+			targetProxy = 6A1524ACE8C4330CAC6D2BEB3BA29045 /* PBXContainerItemProxy */;
+		};
+		AF163FDC5FC4943B0F8C8170D2E072B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CountryPickerSwift;
+			target = E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */;
+			targetProxy = 4A9CD2AED757AFDDBCC67C6889797AAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45DD09EA7E89FB3D1B1C12506A69C7FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		73DD0D387A1143A563CFAFCFFCE3EA58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78BA418DC92F8EBE7E8B92C6C036D34C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BE70783CF9036C435B46BEC232D1448 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C62AFD40131ADFEB36254D09874DD921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80645F6F1AA67A07976CDC9B68334D2C /* Pods-toastgo-goTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4DA323A2684AFCC6BF888869B01CE7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 858CF5BFB821650477F8FA463D718D34 /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D6CCE7AC64395EBB8C70CA322ECD0C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F9F01DD83BE968453A0C9DE42E7D8A3 /* Pods-toastgo-goTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3D6BD4F3DC7D7FB653229DE18D7BE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420055231CB29B1AFFB09A2F68631A49 /* Pods-toastgo-go.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F1D8CADC024EF6AB9F558953A84E6D49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ECC8BEA06553EF8A5ADB81DC8F25A13 /* Pods-toastgo-go.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D4FA27083EF8CCA5A13CCECFF98DB /* Build configuration list for PBXNativeTarget "Pods-toastgo-goTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62AFD40131ADFEB36254D09874DD921 /* Debug */,
+				D6CCE7AC64395EBB8C70CA322ECD0C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88FF8546EE68E85378FB692C974904D6 /* Build configuration list for PBXNativeTarget "Pods-toastgo-go" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D6BD4F3DC7D7FB653229DE18D7BE66 /* Debug */,
+				F1D8CADC024EF6AB9F558953A84E6D49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA91A5062BEFC9D36ADA7EB35E47A91 /* Build configuration list for PBXNativeTarget "Pods-toastgo-go-toastgo-goUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78BA418DC92F8EBE7E8B92C6C036D34C /* Debug */,
+				D4DA323A2684AFCC6BF888869B01CE7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8EF0F75644DC2BD263363C2B1A81769 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73DD0D387A1143A563CFAFCFFCE3EA58 /* Debug */,
+				45DD09EA7E89FB3D1B1C12506A69C7FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

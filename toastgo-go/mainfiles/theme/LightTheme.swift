@@ -11,10 +11,10 @@ import UIKit
 
 enum LightTheme{
 	enum Colors{
-		static let brand:Color = Color(hex: 0xFFF0421F)
-		static let brandVariant:Color = Color(hex: 0xFFFF774C)
-		static let appLead:Color = Color(hex: 0xFF1ABCFE)
-		static let appLeadVariant:Color = Color(hex: 0xFF008CCB)
+		static let brand:Color = Color(hex: 0xFF6B5DD3)
+		static let brandVariant:Color = Color(hex: 0xFF998FE0)
+		static let appLead:Color = Color(hex: 0xFF3F8CFF)
+		static let appLeadVariant:Color = Color(hex: 0xFF82B4FF)
 		static let uiBackground:Color = Color(hex: 0xFFFFFFFF)
 		static let uiSurface:Color = Color(hex: 0xFFF2F2F3)
 		static let error:Color = Color(hex: 0xFFF32013)
@@ -25,7 +25,11 @@ enum LightTheme{
 		static let iconBackground:Color = Color(hex: 0xFFF2F2F3)
 		static let iconVector:Color = Color(hex: 0xFF161616)
 		static let sucesss:Color = Color(hex: 0xFF0ACF83)
-		static let notification: Color = Color(hex: 0xFFA259FF)
+		static let notification: Color = Color(hex: 0xFF5EF9BE)
+		static let special1: Color = Color(hex: 0xFFFE754D)
+		static let special2: Color = Color(hex: 0xFFF5FAFC)
+		static let special3: Color = Color(hex: 0xFF1ABCFE)
+		static let special4: Color = Color(hex: 0xFF26EEFF)
 	}
 	
 	enum Typography {

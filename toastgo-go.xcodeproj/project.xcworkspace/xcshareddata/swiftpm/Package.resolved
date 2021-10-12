@@ -9,6 +9,24 @@
           "revision": "8c65ddf756c633d01d9ae01092bf72f0c66dfc60",
           "version": "7.0.0"
         }
+      },
+      {
+        "package": "SwiftUIFontIcon",
+        "repositoryURL": "https://github.com/huybuidac/SwiftUIFontIcon",
+        "state": {
+          "branch": null,
+          "revision": "4f170fbf443d985ae518a14a12ec8194ec6b08eb",
+          "version": "2.1.0"
+        }
+      },
+      {
+        "package": "SwiftUIKitView",
+        "repositoryURL": "https://github.com/AvdLee/SwiftUIKitView.git",
+        "state": {
+          "branch": null,
+          "revision": "296bf2ccb97efed44dea76622f4a10359ce22f6a",
+          "version": "1.0.3"
+        }
       }
     ]
   },

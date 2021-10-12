@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2633A993271626AC005EB45C /* Pods_toastgo_go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; };
+		2633A994271626AC005EB45C /* Pods_toastgo_go.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */; };
 		264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB22F2704CB6100E394E6 /* Assets.xcassets */; };
 		264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2322704CB6100E394E6 /* Preview Assets.xcassets */; };
@@ -39,6 +41,13 @@
 		264AB2F42705A67000E394E6 /* GothamRounded-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */; };
 		264AB2F52705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
 		264AB2F62705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
+		268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A32715F9AF006686F8 /* SwiftUIFontIcon */; };
+		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
+		268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A82716211B006686F8 /* SwiftUIKitView */; };
+		26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769327162AE600FFE414 /* CountryPickerCustom.swift */; };
+		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
+		810C3948D45188CE2B52B51B /* Pods_toastgo_go_toastgo_goUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEDBE28AEEC71E1C0FC9E53 /* Pods_toastgo_go_toastgo_goUITests.framework */; };
+		DA3496DFFC01DD889A613585 /* Pods_toastgo_goTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D2D6E76279EA729CB6317C /* Pods_toastgo_goTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,20 @@
 			remoteInfo = "toastgo-go";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2633A995271626AC005EB45C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2633A994271626AC005EB45C /* Pods_toastgo_go.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		264AB2282704CB5F00E394E6 /* toastgo-go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toastgo-go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +114,18 @@
 		264AB2E42705A66F00E394E6 /* GothamRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Bold.otf"; sourceTree = "<group>"; };
 		264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-BoldItalic.otf"; sourceTree = "<group>"; };
 		264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Book.otf"; sourceTree = "<group>"; };
+		268422A52715F9F1006686F8 /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
+		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
+		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
+		27BD02ECE370AF0BB7226F77 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-go-toastgo-goUITests.debug.xcconfig"; path = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D045F812942A87186CADF84 /* Pods-toastgo-go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-go.release.xcconfig"; path = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go.release.xcconfig"; sourceTree = "<group>"; };
+		71B5DF041F27CE20F4564FC6 /* Pods-toastgo-goTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-goTests.release.xcconfig"; path = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toastgo_go.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0D2D6E76279EA729CB6317C /* Pods_toastgo_goTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toastgo_goTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63F1B9EDCD835AEB6288E41 /* Pods-toastgo-go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-go.debug.xcconfig"; path = "Target Support Files/Pods-toastgo-go/Pods-toastgo-go.debug.xcconfig"; sourceTree = "<group>"; };
+		E9B6DB813BD780C082DE861E /* Pods-toastgo-goTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-goTests.debug.xcconfig"; path = "Target Support Files/Pods-toastgo-goTests/Pods-toastgo-goTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ECEDBE28AEEC71E1C0FC9E53 /* Pods_toastgo_go_toastgo_goUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toastgo_go_toastgo_goUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F62D59EC5BDF78DFC62D6F6B /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toastgo-go-toastgo-goUITests.release.xcconfig"; path = "Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2633A993271626AC005EB45C /* Pods_toastgo_go.framework in Frameworks */,
+				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
+				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
 				264AB2692705018400E394E6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3496DFFC01DD889A613585 /* Pods_toastgo_goTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,12 +152,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810C3948D45188CE2B52B51B /* Pods_toastgo_go_toastgo_goUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12EB4B088F62385F52BC065E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */,
+				ECEDBE28AEEC71E1C0FC9E53 /* Pods_toastgo_go_toastgo_goUITests.framework */,
+				D0D2D6E76279EA729CB6317C /* Pods_toastgo_goTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		264AB21F2704CB5F00E394E6 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +176,8 @@
 				264AB2412704CB6200E394E6 /* toastgo-goTests */,
 				264AB24C2704CB6200E394E6 /* toastgo-goUITests */,
 				264AB2292704CB5F00E394E6 /* Products */,
+				EFB400730FC68310320F0A22 /* Pods */,
+				12EB4B088F62385F52BC065E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +242,7 @@
 		264AB25F2704F5F900E394E6 /* mainfiles */ = {
 			isa = PBXGroup;
 			children = (
+				268422A12715F7D9006686F8 /* uibits */,
 				26C5E8792705A93C0031447C /* fontfiles */,
 				264AB27D2705929A00E394E6 /* theme */,
 				264AB26A2705019C00E394E6 /* splash */,
@@ -232,6 +285,7 @@
 		264AB271270516B300E394E6 /* enterphone */ = {
 			isa = PBXGroup;
 			children = (
+				26B87695271633F400FFE414 /* countrypicker */,
 				264AB272270516C100E394E6 /* EnterPhoneScreen.swift */,
 			);
 			path = enterphone;
@@ -270,6 +324,23 @@
 			path = theme;
 			sourceTree = "<group>";
 		};
+		268422A12715F7D9006686F8 /* uibits */ = {
+			isa = PBXGroup;
+			children = (
+				268422A52715F9F1006686F8 /* CircleIcon.swift */,
+			);
+			path = uibits;
+			sourceTree = "<group>";
+		};
+		26B87695271633F400FFE414 /* countrypicker */ = {
+			isa = PBXGroup;
+			children = (
+				26B8769327162AE600FFE414 /* CountryPickerCustom.swift */,
+				26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */,
+			);
+			path = countrypicker;
+			sourceTree = "<group>";
+		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +356,19 @@
 			path = fontfiles;
 			sourceTree = "<group>";
 		};
+		EFB400730FC68310320F0A22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D63F1B9EDCD835AEB6288E41 /* Pods-toastgo-go.debug.xcconfig */,
+				6D045F812942A87186CADF84 /* Pods-toastgo-go.release.xcconfig */,
+				27BD02ECE370AF0BB7226F77 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */,
+				F62D59EC5BDF78DFC62D6F6B /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */,
+				E9B6DB813BD780C082DE861E /* Pods-toastgo-goTests.debug.xcconfig */,
+				71B5DF041F27CE20F4564FC6 /* Pods-toastgo-goTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,9 +376,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 264AB2522704CB6200E394E6 /* Build configuration list for PBXNativeTarget "toastgo-go" */;
 			buildPhases = (
+				FFCD239E1BD1693DEA386DB9 /* [CP] Check Pods Manifest.lock */,
 				264AB2242704CB5F00E394E6 /* Sources */,
 				264AB2252704CB5F00E394E6 /* Frameworks */,
 				264AB2262704CB5F00E394E6 /* Resources */,
+				2633A995271626AC005EB45C /* Embed Frameworks */,
+				DDC14736E0BA88314B9BAD82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +390,8 @@
 			name = "toastgo-go";
 			packageProductDependencies = (
 				264AB2682705018400E394E6 /* Kingfisher */,
+				268422A32715F9AF006686F8 /* SwiftUIFontIcon */,
+				268422A82716211B006686F8 /* SwiftUIKitView */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -312,6 +401,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 264AB2552704CB6200E394E6 /* Build configuration list for PBXNativeTarget "toastgo-goTests" */;
 			buildPhases = (
+				0F1943ACEE91C416318F7F45 /* [CP] Check Pods Manifest.lock */,
 				264AB23A2704CB6200E394E6 /* Sources */,
 				264AB23B2704CB6200E394E6 /* Frameworks */,
 				264AB23C2704CB6200E394E6 /* Resources */,
@@ -330,9 +420,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 264AB2582704CB6200E394E6 /* Build configuration list for PBXNativeTarget "toastgo-goUITests" */;
 			buildPhases = (
+				8595FFE4E28293252296F360 /* [CP] Check Pods Manifest.lock */,
 				264AB2452704CB6200E394E6 /* Sources */,
 				264AB2462704CB6200E394E6 /* Frameworks */,
 				264AB2472704CB6200E394E6 /* Resources */,
+				7FB1FD0DEEE5E9E8B728D828 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +469,8 @@
 			mainGroup = 264AB21F2704CB5F00E394E6;
 			packageReferences = (
 				264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+				268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -428,11 +522,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F1943ACEE91C416318F7F45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toastgo-goTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FB1FD0DEEE5E9E8B728D828 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toastgo-go-toastgo-goUITests/Pods-toastgo-go-toastgo-goUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8595FFE4E28293252296F360 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toastgo-go-toastgo-goUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDC14736E0BA88314B9BAD82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-toastgo-go/Pods-toastgo-go-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-toastgo-go/Pods-toastgo-go-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toastgo-go/Pods-toastgo-go-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFCD239E1BD1693DEA386DB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toastgo-go-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		264AB2242704CB5F00E394E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
+				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
 				264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
@@ -440,6 +639,7 @@
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
+				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				264AB2382704CB6100E394E6 /* toastgo_go.xcdatamodeld in Sources */,
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
@@ -600,6 +800,7 @@
 		};
 		264AB2532704CB6200E394E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63F1B9EDCD835AEB6288E41 /* Pods-toastgo-go.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -622,6 +823,7 @@
 		};
 		264AB2542704CB6200E394E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D045F812942A87186CADF84 /* Pods-toastgo-go.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -644,6 +846,7 @@
 		};
 		264AB2562704CB6200E394E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9B6DB813BD780C082DE861E /* Pods-toastgo-goTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -666,6 +869,7 @@
 		};
 		264AB2572704CB6200E394E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B5DF041F27CE20F4564FC6 /* Pods-toastgo-goTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -688,6 +892,7 @@
 		};
 		264AB2592704CB6200E394E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BD02ECE370AF0BB7226F77 /* Pods-toastgo-go-toastgo-goUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,6 +913,7 @@
 		};
 		264AB25A2704CB6200E394E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F62D59EC5BDF78DFC62D6F6B /* Pods-toastgo-go-toastgo-goUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -776,6 +982,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AvdLee/SwiftUIKitView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -783,6 +1005,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		268422A32715F9AF006686F8 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+		268422A82716211B006686F8 /* SwiftUIKitView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */;
+			productName = SwiftUIKitView;
 		};
 /* End XCSwiftPackageProductDependency section */
 

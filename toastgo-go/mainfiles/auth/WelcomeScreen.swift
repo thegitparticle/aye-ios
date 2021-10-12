@@ -21,9 +21,9 @@ struct WelcomeScreen: View {
 				Spacer()
 				Image("aye_green_grad").resizable().frame(width: 200, height: 111.11)
 				Spacer()
-				NavigationLink(destination: LandingScreen(),  isActive: $buttonActive) {
+				NavigationLink(destination: EnterPhoneScreen(),  isActive: $buttonActive) {
 					Button(action: {
-						UserDefaults.standard.set(true, forKey: "LoginState");
+//						UserDefaults.standard.set(true, forKey: "LoginState");
 						buttonActive = true
 					}) {
 						Text("dive in")
