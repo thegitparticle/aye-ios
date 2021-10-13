@@ -11,10 +11,11 @@ import SwiftUIFontIcon
 struct CircleIcon: View {
 	
 	var size: Int
-//	var iconName:
+	var iconName: IonIconsCode
 	
-	public init (size: Int = 20) {
+	public init (size: Int = 20, iconName: IonIconsCode = .ios_apps) {
 		self.size = size
+		self.iconName = iconName
 	}
 	
     var body: some View {
@@ -22,7 +23,7 @@ struct CircleIcon: View {
 			action: {
 				// did tap
 			},
-			label: { FontIcon.text(.ionicon(code: .ios_apps), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.iconVector) }
+			label: { FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.iconVector) }
 		)
 		.frame(width: CGFloat((self.size))*1.5, height: CGFloat((self.size))*1.5)
 		.padding()
@@ -35,10 +36,11 @@ struct CircleIcon: View {
 struct CircleIconAuthFlow: View {
 	
 	var size: Int
-	//	var iconName:
+	var iconName: IonIconsCode
 	
-	public init (size: Int = 17) {
+	public init (size: Int = 20, iconName: IonIconsCode = .ios_apps) {
 		self.size = size
+		self.iconName = iconName
 	}
 	
 	var body: some View {
@@ -46,7 +48,7 @@ struct CircleIconAuthFlow: View {
 			action: {
 				// did tap
 			},
-			label: { FontIcon.text(.ionicon(code: .ios_apps), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.uiSurface.opacity(0.75)) }
+			label: { FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.uiSurface.opacity(0.75)) }
 		)
 		.frame(width: CGFloat((self.size)), height: CGFloat((self.size)))
 		.padding()

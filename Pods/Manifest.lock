@@ -1,16 +1,20 @@
 PODS:
   - CountryPickerSwift (1.8.2)
+  - Wormholy (1.6.4)
 
 DEPENDENCIES:
   - CountryPickerSwift
+  - Wormholy
 
 SPEC REPOS:
   trunk:
     - CountryPickerSwift
+    - Wormholy
 
 SPEC CHECKSUMS:
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
+  Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
 
-PODFILE CHECKSUM: e4ee8edadfc424deafe62146e5567a4fda0190e1
+PODFILE CHECKSUM: baccc1c0b832c8d57645aeccdfe0e9ec06933b35
 
 COCOAPODS: 1.10.1
