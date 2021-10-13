@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */; };
 		264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */; };
 		264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB22F2704CB6100E394E6 /* Assets.xcassets */; };
 		264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2322704CB6100E394E6 /* Preview Assets.xcassets */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOtpViewModel.swift; sourceTree = "<group>"; };
 		264AB2282704CB5F00E394E6 /* toastgo-go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toastgo-go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastgo_goApp.swift; sourceTree = "<group>"; };
 		264AB22F2704CB6100E394E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				264AB276270516E400E394E6 /* LoginOtpScreen.swift */,
+				260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */,
 			);
 			path = loginotp;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
 				264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */,
+				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,

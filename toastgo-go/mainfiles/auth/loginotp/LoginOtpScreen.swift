@@ -6,26 +6,58 @@
 //
 
 import SwiftUI
+import SwiftUIKitView
+import SwiftUIX
+import PopupView
+import AudioToolbox
 
 struct LoginOtpScreen: View {
 	
 	var phoneNumber: String
 	var countryCode: String
+	@State var otpPassword = ""
 	@State var showSpinner: Bool = false
 	@State var showingErrorPopup = false
+	@ObservedObject var textFieldManager = TextFieldManager()
 	
 	var body: some View {
 		ZStack(alignment: .leading) {
-			VStack {
+			VStack(alignment: HorizontalAlignment.leading) {
+				
 				ScreenHeader()
-				Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-				Text(self.phoneNumber)
-				Text(self.countryCode)
+				
+				HStack(alignment: .center) {
+					CocoaTextField("", text: $textFieldManager.userInput).isFirstResponder(true).keyboardType(.decimalPad).frame(width: 100, height: 40).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2).background(LightTheme.Colors.textSecondary.opacity(0.75)).cornerRadius(10)
+				}.padding(20).frame(maxWidth: .infinity)
+				
+				HStack(alignment: .center) {
+					CircleIconAuthFlow(size: 17, iconName: .ios_arrow_round_forward)
+				}.padding(20).frame(maxWidth: .infinity).onPress {
+//					viewModel.checkPhoneNumber(phone: self.countryCode + self.phoneNumber)
+					print("debuglogs", self.otpPassword)
+					self.showSpinner = true
+				}
+				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 		}.navigationBarHidden(true).background(LightTheme.Colors.textPrimary).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingErrorPopup, autohideIn: 5) {
 			ErrorOtpContent()
 }
 	}
+}
+
+class TextFieldManager: ObservableObject {
+	
+	let characterLimit = 4
+	
+	@Published var userInput = "" {
+		didSet {
+			if userInput.count > characterLimit {
+				userInput = String(userInput.prefix(characterLimit))
+				AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { return }
+			}
+		}
+	}
+	
 }
 
 private struct ScreenHeader: View {
