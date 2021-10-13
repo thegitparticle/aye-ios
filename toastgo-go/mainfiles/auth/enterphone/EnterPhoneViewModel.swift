@@ -23,6 +23,8 @@ class EnterPhoneViewModel: ObservableObject {
 			return
 		}
 		
+		print("debuglogs api call - https://apisayepirates.life/api/users/send_otp/\(phone)")
+		
 		let request = URLRequest(url: url)
 		
 		URLSession.shared.dataTask(with: request) { data, response, error in
@@ -32,6 +34,7 @@ class EnterPhoneViewModel: ObservableObject {
 					
 					DispatchQueue.main.async {
 						self.phoneCheck = decodedResponse.user_exists
+						print("debuglogs Fetch worked: \(decodedResponse.user_exists)")
 					}
 					return
 				}

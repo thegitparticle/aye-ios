@@ -26,62 +26,73 @@ struct EnterPhoneScreen: View {
 	
 	var body: some View {
 		ZStack(alignment: .leading) {
-			ZStack {
-				VStack(alignment: HorizontalAlignment.leading) {
-					ScreenHeader()
-					HStack (spacing: 0) {
-						NavigationLink(destination: EnterDetailsScreen(), isActive: self.$activateEnterDetailsNav) { EmptyView() }
-						NavigationLink(destination: LoginOtpScreen(), isActive: self.$activateLoginOtpNav) { EmptyView() }
-						Text(countryCode.isEmpty ? "🇮🇳 +91" : "\(countryFlag) +\(countryCode)")
-							.frame(width: 80, height: 50)
-							.background(Color.secondary.opacity(0.2))
-							.cornerRadius(10)
-							.foregroundColor(LightTheme.Colors.uiBackground)
-							.font(LightTheme.Typography.body1)
-							.onTapGesture {
-								UIApplication.shared.endEditing()
-								withAnimation (.spring()) {
-									self.y = 0
-								}
+			VStack(alignment: HorizontalAlignment.leading) {
+				NavigationLink(destination: EnterDetailsScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode), isActive: self.$activateEnterDetailsNav) {EmptyView()}
+				
+				NavigationLink(destination: LoginOtpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode), isActive: self.$activateLoginOtpNav) {EmptyView()}
+				
+				ScreenHeader()
+				
+				HStack(spacing: 0) {
+					Text(countryCode.isEmpty ? "🇮🇳 +91" : "\(countryFlag) +\(countryCode)").frame(width: 80, height: 50)
+						.background(Color.secondary.opacity(0.2))
+						.cornerRadius(10)
+						.foregroundColor(LightTheme.Colors.uiBackground)
+						.font(LightTheme.Typography.body1)
+						.onTapGesture {
+							UIApplication.shared.endEditing()
+							withAnimation (.spring()) {
+								self.y = 0
 							}
-						CocoaTextField("phone number", text: $phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body1)
-					}.padding(20).onChange(of: viewModel.phoneCheck, perform: {phoneStatus in if (phoneStatus == "False") {
-						print("debuglogs code", "totally new user")
-						self.activateEnterDetailsNav = true
-						self.showSpinner = false
-					} else if (phoneStatus == "True") {
-						print("debuglogs code", "you re back?")
-						self.activateLoginOtpNav = true
-						self.showSpinner = false
-					} else {
-						print("debuglogs code", "api error")
-						self.showingErrorPopup = true
-						self.showSpinner = false
-					}
-					})
-					HStack(alignment: .center) {
-						CircleIconAuthFlow(size: 17, iconName: .ios_arrow_round_forward)
-					}.padding(20).frame(maxWidth: .infinity).onPress {
-						viewModel.checkPhoneNumber(phone: self.countryCode + self.phoneNumber)
-						print("debuglogs", self.countryCode + self.phoneNumber)
-						print("debuglogs code", self.countryCode)
-						self.showSpinner = true
-					}
+						}
+					CocoaTextField("phone number", text: $phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2)
+				}.padding(20).onChange(of: viewModel.phoneCheck, perform: {phoneStatus in onClickNextButton(status: phoneStatus)})
+				
+				HStack(alignment: .center) {
+					CircleIconAuthFlow(size: 17, iconName: .ios_arrow_round_forward)
+				}.padding(20).frame(maxWidth: .infinity).onPress {
+					viewModel.checkPhoneNumber(phone: self.countryCode + self.phoneNumber)
+					print("debuglogs", self.countryCode + self.phoneNumber)
+					print("debuglogs code", self.countryCode)
+					self.showSpinner = true
 				}
-				.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-				CountryCodePickerUI(countryCode: $countryCode, countryFlag: $countryFlag, y: $y)
-					.offset(y: y)
+				
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+			CountryCodePickerUI(countryCode: $countryCode, countryFlag: $countryFlag, y: $y)
+				.offset(y: y)
+			HStack(alignment: .center) {
 				ProgressView().visible(showSpinner)
-			}
+			}.frame(maxWidth: .infinity)
+			
 		}.navigationBarHidden(true).background(LightTheme.Colors.textPrimary).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingErrorPopup, autohideIn: 5) {
-			Text("please check your number and try again")
-				.frame(width: 300, height: 100)
-				.background(LightTheme.Colors.textSecondary.opacity(0.75))
-				.foregroundColor(LightTheme.Colors.error)
-				.cornerRadius(30.0)
+			ErrorPhoneNumberContent()
+		}
+	}
+	
+	func onClickNextButton (status: String) {
+		if (status == "False") {
+			print("debuglogs code", "totally new user")
+			self.activateEnterDetailsNav = true
+			self.showSpinner = false
+		} else if (status == "True") {
+			print("debuglogs code", "you re back?")
+			self.activateLoginOtpNav = true
+			self.showSpinner = false
+		} else {
+			print("debuglogs code", "api error")
+			self.showingErrorPopup = true
+			self.showSpinner = false
 		}
 	}
 }
+
+//private struct TextFieldHere: View {
+//	@State var phoneNumber: String
+//
+//	var body: some View {
+//		CocoaTextField("phone number", text: self.$phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2)
+//	}
+//}
 
 private struct ScreenHeader: View {
 	
@@ -101,36 +112,14 @@ private struct ScreenHeader: View {
 	}
 }
 
-struct PhoneNumberTextField : View {
-	@State var phoneNumber = ""
-	@State var y : CGFloat = 150
-	@State var countryCode = ""
-	@State var countryFlag = ""
+private struct ErrorPhoneNumberContent: View {
+	
 	var body: some View {
-		ZStack {
-			HStack (spacing: 0) {
-				Text(countryCode.isEmpty ? "🇦🇺 +61" : "\(countryFlag) +\(countryCode)")
-					.frame(width: 80, height: 50)
-					.background(Color.secondary.opacity(0.2))
-					.cornerRadius(10)
-					.foregroundColor(countryCode.isEmpty ? .secondary : .black)
-					.onTapGesture {
-						withAnimation (.spring()) {
-							self.y = 0
-						}
-					}
-				TextField("Phone Number", text: $phoneNumber)
-					.padding()
-					.frame(width: 200, height: 50)
-					.keyboardType(.phonePad)
-			}.padding(20)
-			
-			CountryCodePickerUI(countryCode: $countryCode, countryFlag: $countryFlag, y: $y)
-				.offset(y: y)
-			
-			RoundedRectangle(cornerRadius: 10).stroke()
-				.frame(width: 280, height: 50)
-		}
+		Text("please check your number and try again")
+			.frame(width: 300, height: 100)
+			.background(LightTheme.Colors.textSecondary.opacity(0.75))
+			.foregroundColor(LightTheme.Colors.error)
+			.cornerRadius(30.0)
 	}
 }
 
