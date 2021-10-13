@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */; };
+		260D719D27178D5100DD9F80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 260D719C27178D5100DD9F80 /* Lottie */; };
+		260D719F27178E4100DD9F80 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719E27178E4100DD9F80 /* LottieView.swift */; };
+		260D71A227178FA100DD9F80 /* loading_ping_pong_cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */; };
+		260D71A327178FA100DD9F80 /* contacts_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A127178FA100DD9F80 /* contacts_lottie.json */; };
 		264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */; };
 		264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB22F2704CB6100E394E6 /* Assets.xcassets */; };
 		264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2322704CB6100E394E6 /* Preview Assets.xcassets */; };
@@ -72,6 +76,9 @@
 
 /* Begin PBXFileReference section */
 		260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOtpViewModel.swift; sourceTree = "<group>"; };
+		260D719E27178E4100DD9F80 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_ping_pong_cup.json; sourceTree = "<group>"; };
+		260D71A127178FA100DD9F80 /* contacts_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts_lottie.json; sourceTree = "<group>"; };
 		264AB2282704CB5F00E394E6 /* toastgo-go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toastgo-go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastgo_goApp.swift; sourceTree = "<group>"; };
 		264AB22F2704CB6100E394E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26B876A72716DC9800FFE414 /* PopupView in Frameworks */,
+				260D719D27178D5100DD9F80 /* Lottie in Frameworks */,
 				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
@@ -165,6 +173,8 @@
 		264AB21F2704CB5F00E394E6 = {
 			isa = PBXGroup;
 			children = (
+				260D71A127178FA100DD9F80 /* contacts_lottie.json */,
+				260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */,
 				264AB22A2704CB5F00E394E6 /* toastgo-go */,
 				264AB2412704CB6200E394E6 /* toastgo-goTests */,
 				264AB24C2704CB6200E394E6 /* toastgo-goUITests */,
@@ -323,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				268422A52715F9F1006686F8 /* CircleIcon.swift */,
+				260D719E27178E4100DD9F80 /* LottieView.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -388,6 +399,7 @@
 				268422A82716211B006686F8 /* SwiftUIKitView */,
 				26B8769D2716994E00FFE414 /* SwiftUIX */,
 				26B876A62716DC9800FFE414 /* PopupView */,
+				260D719C27178D5100DD9F80 /* Lottie */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -469,6 +481,7 @@
 				268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */,
 				26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */,
+				260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -492,10 +505,12 @@
 				264AB2E92705A67000E394E6 /* GothamRounded-Light.otf in Resources */,
 				264AB2F32705A67000E394E6 /* GothamRounded-BoldItalic.otf in Resources */,
 				264AB2EF2705A67000E394E6 /* GothamRounded-LightItalic.otf in Resources */,
+				260D71A227178FA100DD9F80 /* loading_ping_pong_cup.json in Resources */,
 				264AB2F12705A67000E394E6 /* GothamRounded-Bold.otf in Resources */,
 				264AB2E72705A67000E394E6 /* GothamRounded-BookItalic.otf in Resources */,
 				264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */,
 				264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */,
+				260D71A327178FA100DD9F80 /* contacts_lottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +650,7 @@
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
+				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
@@ -980,6 +996,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
 		264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1023,6 +1047,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		260D719C27178D5100DD9F80 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		264AB2682705018400E394E6 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
