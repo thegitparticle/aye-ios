@@ -47,6 +47,7 @@
 		26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 26B8769D2716994E00FFE414 /* SwiftUIX */; };
 		26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */; };
 		26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; };
+		26B876A72716DC9800FFE414 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 26B876A62716DC9800FFE414 /* PopupView */; };
 		810C3948D45188CE2B52B51B /* Pods_toastgo_go_toastgo_goUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEDBE28AEEC71E1C0FC9E53 /* Pods_toastgo_go_toastgo_goUITests.framework */; };
 		DA3496DFFC01DD889A613585 /* Pods_toastgo_goTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D2D6E76279EA729CB6317C /* Pods_toastgo_goTests.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B876A72716DC9800FFE414 /* PopupView in Frameworks */,
 				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
@@ -274,7 +276,6 @@
 		264AB271270516B300E394E6 /* enterphone */ = {
 			isa = PBXGroup;
 			children = (
-				26B8769F27169AE100FFE414 /* network */,
 				26B87695271633F400FFE414 /* countrypicker */,
 				264AB272270516C100E394E6 /* EnterPhoneScreen.swift */,
 				26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */,
@@ -332,13 +333,6 @@
 			path = countrypicker;
 			sourceTree = "<group>";
 		};
-		26B8769F27169AE100FFE414 /* network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = network;
-			sourceTree = "<group>";
-		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +384,7 @@
 				268422A32715F9AF006686F8 /* SwiftUIFontIcon */,
 				268422A82716211B006686F8 /* SwiftUIKitView */,
 				26B8769D2716994E00FFE414 /* SwiftUIX */,
+				26B876A62716DC9800FFE414 /* PopupView */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -470,6 +465,7 @@
 				268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
 				268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */,
 				26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -1012,6 +1008,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1034,6 +1038,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		26B876A62716DC9800FFE414 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 

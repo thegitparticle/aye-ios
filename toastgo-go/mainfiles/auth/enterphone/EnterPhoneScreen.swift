@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUIKitView
 import CountryPicker
 import SwiftUIX
+import PopupView
 
 struct EnterPhoneScreen: View {
 	@StateObject private var viewModel = EnterPhoneViewModel()
@@ -19,6 +20,9 @@ struct EnterPhoneScreen: View {
 	@State var countryCode = "+91"
 	@State var countryFlag = "🇮🇳"
 	@State var showSpinner: Bool = false
+	@State var showingErrorPopup = false
+	@State private var activateEnterDetailsNav = false
+	@State private var activateLoginOtpNav = false
 	
 	var body: some View {
 		ZStack(alignment: .leading) {
@@ -26,6 +30,8 @@ struct EnterPhoneScreen: View {
 				VStack(alignment: HorizontalAlignment.leading) {
 					ScreenHeader()
 					HStack (spacing: 0) {
+						NavigationLink(destination: EnterDetailsScreen(), isActive: self.$activateEnterDetailsNav) { EmptyView() }
+						NavigationLink(destination: LoginOtpScreen(), isActive: self.$activateLoginOtpNav) { EmptyView() }
 						Text(countryCode.isEmpty ? "🇮🇳 +91" : "\(countryFlag) +\(countryCode)")
 							.frame(width: 80, height: 50)
 							.background(Color.secondary.opacity(0.2))
@@ -41,12 +47,17 @@ struct EnterPhoneScreen: View {
 						CocoaTextField("phone number", text: $phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body1)
 					}.padding(20).onChange(of: viewModel.phoneCheck, perform: {phoneStatus in if (phoneStatus == "False") {
 						print("debuglogs code", "totally new user")
+						self.activateEnterDetailsNav = true
+						self.showSpinner = false
 					} else if (phoneStatus == "True") {
 						print("debuglogs code", "you re back?")
+						self.activateLoginOtpNav = true
+						self.showSpinner = false
 					} else {
 						print("debuglogs code", "api error")
+						self.showingErrorPopup = true
+						self.showSpinner = false
 					}
-					
 					})
 					HStack(alignment: .center) {
 						CircleIconAuthFlow(size: 17, iconName: .ios_arrow_round_forward)
@@ -62,7 +73,13 @@ struct EnterPhoneScreen: View {
 					.offset(y: y)
 				ProgressView().visible(showSpinner)
 			}
-		}.navigationBarHidden(true).background(LightTheme.Colors.textPrimary).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.textPrimary).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingErrorPopup, autohideIn: 5) {
+			Text("please check your number and try again")
+				.frame(width: 300, height: 100)
+				.background(LightTheme.Colors.textSecondary.opacity(0.75))
+				.foregroundColor(LightTheme.Colors.error)
+				.cornerRadius(30.0)
+		}
 	}
 }
 
