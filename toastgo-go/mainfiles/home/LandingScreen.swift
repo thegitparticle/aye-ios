@@ -28,14 +28,16 @@ struct LandingScreen: View {
 							
 							VStack {
 								
-								Text("now, you are inside the clan!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the clan!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the clan!").font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.textPrimary)
-								Spacer()
-								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the clan!").font(.system(size: 13)).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2I).foregroundColor(LightTheme.Colors.textPrimary)
-								Spacer()
+								LiveClanComponent()
+								
+//								Text("now, you are inside the clan!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
+//								Text("now, you are inside the clan!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)
+//								Text("now, you are inside the clan!").font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.textPrimary)
+//								Spacer()
+//								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2).foregroundColor(LightTheme.Colors.textPrimary)
+//								Text("now, you are inside the clan!").font(.system(size: 13)).foregroundColor(LightTheme.Colors.textPrimary)
+//								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2I).foregroundColor(LightTheme.Colors.textPrimary)
+//								Spacer()
 							}.padding(.top , 100)
 							
 						} else {

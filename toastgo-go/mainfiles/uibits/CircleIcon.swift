@@ -46,11 +46,13 @@ struct CircleIconAuthFlow: View {
 	var body: some View {
 
 		ZStack {
+			
 			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
 				.padding()
 				.foregroundColor(LightTheme.Colors.textSecondary)
 				.background(LightTheme.Colors.textSecondary)
 				.cornerRadius(70)
+			
 			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.uiSurface.opacity(0.75))
 
 		}
