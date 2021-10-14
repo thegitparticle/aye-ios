@@ -12,7 +12,7 @@ struct LiveClanComponent: View {
 	
 	var body: some View {
 		
-		ScrollView {
+		
 			VStack (alignment: .center) {
 				
 				OneOtherPerson()
@@ -21,7 +21,6 @@ struct LiveClanComponent: View {
 				MoreOtherPeople()
 				
 			}.frame(maxWidth: .infinity).padding(20)
-		}
 		
 	}
 }
@@ -32,9 +31,11 @@ private struct OneOtherPerson: View {
 		VStack {
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
 					.cornerRadius(50.0)
+				
 			}
+			
 			TextPart()
 		}
 	}
@@ -53,6 +54,7 @@ private struct TwoOtherPeople: View {
 					.cornerRadius(50.0).offset(x: -5)
 				
 			}
+			
 			TextPart()
 		}
 	}

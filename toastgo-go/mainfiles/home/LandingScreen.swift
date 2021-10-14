@@ -28,7 +28,7 @@ struct LandingScreen: View {
 							
 							VStack {
 								
-								LiveClanComponent()
+								MyClansScreen()
 								
 //								Text("now, you are inside the clan!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
 //								Text("now, you are inside the clan!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)
@@ -44,14 +44,8 @@ struct LandingScreen: View {
 							
 							VStack {
 								
-								Text("now, you are inside the direct!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the direct!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the direct!").font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.textPrimary)
-								Spacer()
-								Text("now, you are inside the direct!").font(LightTheme.Typography.subtitle2).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the direct!").font(.system(size: 13)).foregroundColor(LightTheme.Colors.textPrimary)
-								Text("now, you are inside the direct!").font(LightTheme.Typography.subtitle2I).foregroundColor(LightTheme.Colors.textPrimary)
-								Spacer()
+								MyDirectsScreen()
+								
 							}.padding(.top, 100)
 						}
 					}
