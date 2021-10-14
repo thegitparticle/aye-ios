@@ -19,7 +19,10 @@ struct LoginOtpApiResponse: Codable {
 
 
 class LoginOtpViewModel: ObservableObject {
+	
 	@Published var otpWorked: String = ""
+	
+	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(username: "", phone: "", fullName: "", id: 0, clubsJoinedByUser: "", numberOfClubsJoined: 0, contactList: "", totalFramesParticipation: 0, countryCodeOfUser: "", contactListSyncStatus: false), bio: "", image: "", id: 0)
 	
 	public func postOtpToServer(phone: String, password: String) {
 		
@@ -66,6 +69,32 @@ class LoginOtpViewModel: ObservableObject {
 				DispatchQueue.main.async {
 					self.otpWorked = "Wrong"
 				}
+				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
+	public func getUserDetails(phone: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/profile/\(phone)/") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode(UserDetailsDataClass.self, from: data) {
+					
+					DispatchQueue.main.async {
+						self.userDeetsHere = decodedResponse
+						print("debuglogs Fetch worked: \(decodedResponse)")
+					}
+					return
+				}
+				
 				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			

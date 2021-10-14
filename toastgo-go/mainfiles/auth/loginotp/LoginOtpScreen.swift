@@ -28,9 +28,11 @@ struct LoginOtpScreen: View {
 		ZStack(alignment: .leading) {
 			VStack(alignment: HorizontalAlignment.leading) {
 				
-				NavigationLink(destination: LoginSettingUpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode), isActive: self.$activateLoginSettingUpNav) {EmptyView()}
+				NavigationLink(destination: LoginSettingUpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode, userDeets: viewModel.userDeetsHere), isActive: self.$activateLoginSettingUpNav) {EmptyView()}
 				
-				ScreenHeader()
+				ScreenHeader().onAppear() {
+					viewModel.getUserDetails(phone: self.countryCode + self.phoneNumber)
+				}
 				
 				HStack(alignment: .center) {
 					

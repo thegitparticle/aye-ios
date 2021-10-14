@@ -12,6 +12,8 @@
 		260D719F27178E4100DD9F80 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719E27178E4100DD9F80 /* LottieView.swift */; };
 		260D71A227178FA100DD9F80 /* loading_ping_pong_cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */; };
 		260D71A327178FA100DD9F80 /* contacts_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A127178FA100DD9F80 /* contacts_lottie.json */; };
+		260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D71A42718547A00DD9F80 /* LoginSettingUpViewModel.swift */; };
+		260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D71A72718601000DD9F80 /* UserDetailsDataClass.swift */; };
 		264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */; };
 		264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB22F2704CB6100E394E6 /* Assets.xcassets */; };
 		264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2322704CB6100E394E6 /* Preview Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		260D719E27178E4100DD9F80 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_ping_pong_cup.json; sourceTree = "<group>"; };
 		260D71A127178FA100DD9F80 /* contacts_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts_lottie.json; sourceTree = "<group>"; };
+		260D71A42718547A00DD9F80 /* LoginSettingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSettingUpViewModel.swift; sourceTree = "<group>"; };
+		260D71A72718601000DD9F80 /* UserDetailsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsDataClass.swift; sourceTree = "<group>"; };
 		264AB2282704CB5F00E394E6 /* toastgo-go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toastgo-go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264AB22B2704CB5F00E394E6 /* toastgo_goApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toastgo_goApp.swift; sourceTree = "<group>"; };
 		264AB22F2704CB6100E394E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		260D71A627185FFF00DD9F80 /* dataclasses */ = {
+			isa = PBXGroup;
+			children = (
+				260D71A72718601000DD9F80 /* UserDetailsDataClass.swift */,
+			);
+			path = dataclasses;
+			sourceTree = "<group>";
+		};
 		264AB21F2704CB5F00E394E6 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		264AB25F2704F5F900E394E6 /* mainfiles */ = {
 			isa = PBXGroup;
 			children = (
+				260D71A627185FFF00DD9F80 /* dataclasses */,
 				268422A12715F7D9006686F8 /* uibits */,
 				26C5E8792705A93C0031447C /* fontfiles */,
 				264AB27D2705929A00E394E6 /* theme */,
@@ -308,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				264AB278270516EC00E394E6 /* LoginSettingUpScreen.swift */,
+				260D71A42718547A00DD9F80 /* LoginSettingUpViewModel.swift */,
 			);
 			path = loginsettingup;
 			sourceTree = "<group>";
@@ -662,6 +676,8 @@
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
 				264AB281270593CB00E394E6 /* LightTheme.swift in Sources */,
 				26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */,
+				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
+				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
 				264AB27C2705186900E394E6 /* EnterDetailsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,8 @@ struct LoginSettingUpScreen: View {
 	
 	var phoneNumber: String
 	var countryCode: String
+	var userDeets: UserDetailsDataClass
+	
 	var permissionGiven: Bool = true
 	
 	@State private var contacts = [ContactInfo.init(fullName: "", phoneNumber: "")]
@@ -104,6 +106,10 @@ struct LoginSettingUpScreen: View {
 	func getContacts() {
 		DispatchQueue.main.async {
 			self.contacts = FetchContacts().fetchingContacts()
+			print("fetched contacts function done")
+			if (self.contacts.count > 2) {
+				
+			}
 			print(self.$contacts)
 		}
 	}
@@ -123,10 +129,13 @@ class FetchContacts {
 		let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		
+		print("fetched contacts fucntion called and request is setup")
+		
 		do {
 			try CNContactStore().enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
 				contacts.append(ContactInfo(fullName: contact.givenName, phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
 			})
+			print("fetched contacts success")
 		} catch let error {
 			print("Failed", error)
 		}
