@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Contacts
+import CoreLocation
 
 struct ContactInfo : Codable {
 	var fullName: String
@@ -22,6 +23,7 @@ struct LoginSettingUpScreen: View {
 	@State private var contacts = [ContactInfo.init(fullName: "", phoneNumber: "")]
 	
 	@State private var contactsButtonActive: Bool = false
+	@State private var showingSettingsGoingAlert = false
 	
 	var body: some View {
 		ZStack(alignment: .leading) {
@@ -38,16 +40,24 @@ struct LoginSettingUpScreen: View {
 					}
 				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
 				
-				Text("setting up your profile!").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+				if (contactsButtonActive) {
+				Text("sup? needs contacts to work").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+				} else {
+					Text("setting up your profile!").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+				}
 				
-				Spacer()
+				Spacer().onAppear() {
+					self.requestAccess()
+					self.getContacts()
+				}
 				
 				if (contactsButtonActive) {
 					Button(action: {
 						//						UserDefaults.standard.set(true, forKey: "LoginState");
 						contactsButtonActive = true
+						self.sendToSettingsForPermissions()
 					}) {
-						Text("allow contacts")
+						Text("allow contacts in settings")
 							.frame(minWidth: 0, maxWidth: 300, minHeight: 0, maxHeight: 40)
 							.padding()
 							.font(LightTheme.Typography.h5)
@@ -55,7 +65,7 @@ struct LoginSettingUpScreen: View {
 							.background(LightTheme.Colors.textSecondary)
 							.cornerRadius(50)
 					}
-					.padding(.vertical)
+					.padding(.vertical).padding(20)
 				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -94,7 +104,13 @@ struct LoginSettingUpScreen: View {
 	func getContacts() {
 		DispatchQueue.main.async {
 			self.contacts = FetchContacts().fetchingContacts()
+			print(self.$contacts)
 		}
+	}
+	
+	func sendToSettingsForPermissions() {
+		
+		UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
 	}
 	
  }
