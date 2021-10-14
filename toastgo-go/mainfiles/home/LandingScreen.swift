@@ -11,27 +11,44 @@ struct LandingScreen: View {
 	
 	@State private var buttonActive: Bool = false
 	
+	@State private var selectedTab = 0
+	
+	let numTabs = 2
+	let minDragTranslationForSwipe: CGFloat = 50
+	
     var body: some View {
-		VStack() {
-			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h1)
-			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h3)
-			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.body2)
-			Spacer()
-			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2)
-			Text("now, you are inside the ayeverse!").font(.system(size: 13))
-			Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2I)
-			Spacer()
-			NavigationLink(destination: WelcomeScreen(),  isActive: $buttonActive) {
-				Button(action: {
-					UserDefaults.standard.set(false, forKey: "LoginState");
-					buttonActive = true
-				}) {
-					Text("logout").foregroundColor(Color.red)
-				}
-			}
-		}
-		.navigationBarHidden(true)
+			TabView(selection: $selectedTab) {
+				
+				NavigationView{
+					Text("Hello, World!")
+				}.tabItem {
+					Image(systemName: "house")
+					Text("Home")
+				}.tag(0)
+				.highPriorityGesture(DragGesture().onEnded({
+					self.handleSwipe(translation: $0.translation.width)
+				}))
+				
+				NavigationView{
+					Text("Salut, tout le monde!")
+				}.tabItem {
+					Image(systemName: "timelapse")
+					Text("Space")
+				}.tag(1)
+				.highPriorityGesture(DragGesture().onEnded({
+					self.handleSwipe(translation: $0.translation.width)
+				}))
+				
+			}.navigationBarHidden(true)
     }
+	
+	private func handleSwipe(translation: CGFloat) {
+		if translation > minDragTranslationForSwipe && selectedTab > 0 {
+			selectedTab -= 1
+		} else  if translation < -minDragTranslationForSwipe && selectedTab < numTabs-1 {
+			selectedTab += 1
+		}
+	}
 }
 
 struct LandingScreen_Previews: PreviewProvider {
