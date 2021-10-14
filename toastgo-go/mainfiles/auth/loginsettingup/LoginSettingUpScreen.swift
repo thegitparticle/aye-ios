@@ -15,6 +15,7 @@ struct ContactInfo : Codable {
 }
 
 struct LoginSettingUpScreen: View {
+	@StateObject private var viewModel = LoginSettingUpViewModel()
 	
 	var phoneNumber: String
 	var countryCode: String
@@ -22,13 +23,17 @@ struct LoginSettingUpScreen: View {
 	
 	var permissionGiven: Bool = true
 	
-	@State private var contacts = [ContactInfo.init(fullName: "", phoneNumber: "")]
+	@State private var contacts = []
 	
 	@State private var contactsButtonActive: Bool = false
 	@State private var showingSettingsGoingAlert = false
 	
+	@State private var activateLandingScreenNav = false
+	
 	var body: some View {
 		ZStack(alignment: .leading) {
+			
+			NavigationLink(destination: LandingScreen(), isActive: self.$activateLandingScreenNav) {EmptyView()}
 			
 			VStack() {
 				
@@ -70,9 +75,22 @@ struct LoginSettingUpScreen: View {
 					.padding(.vertical).padding(20)
 				}
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity)
+			}.frame(maxWidth: .infinity, maxHeight: .infinity).onChange(of: viewModel.contactsSycned, perform: {syncStatus in onClickNextButton(status: syncStatus)})
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.textPrimary).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+	}
+	
+	func onClickNextButton (status: String) {
+		if (status == "Worked") {
+			print("debuglogs code", "contacts synced right")
+			self.activateLandingScreenNav = true
+		} else if (status == "No") {
+			print("debuglogs code", "contacts upload error")
+			self.requestAccess()
+			self.getContacts()
+		} else {
+			
+		}
 	}
 	
 	func requestAccess() {
@@ -108,7 +126,7 @@ struct LoginSettingUpScreen: View {
 			self.contacts = FetchContacts().fetchingContacts()
 			print("fetched contacts function done")
 			if (self.contacts.count > 2) {
-				
+				viewModel.postOtpToServer(userid: String(self.userDeets.user.id), countryCode: self.countryCode, contactsList: self.contacts)
 			}
 			print(self.$contacts)
 		}
@@ -124,8 +142,8 @@ struct LoginSettingUpScreen: View {
 
 class FetchContacts {
 	
-	func fetchingContacts() -> [ContactInfo]{
-		var contacts = [ContactInfo]()
+	func fetchingContacts() -> [Any]{
+		var contacts = [Any]()
 		let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		
@@ -133,7 +151,7 @@ class FetchContacts {
 		
 		do {
 			try CNContactStore().enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
-				contacts.append(ContactInfo(fullName: contact.givenName, phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
+				contacts.append(["name": contact.givenName, "phone": contact.phoneNumbers.first?.value.stringValue ?? ""])
 			})
 			print("fetched contacts success")
 		} catch let error {
@@ -146,8 +164,8 @@ class FetchContacts {
 	}
 }
 
-struct LoginSettingUpScreen_Previews: PreviewProvider {
-	static var previews: some View {
-		LoginSettingUpScreen(phoneNumber: "+919849167641", countryCode: "+91")
-	}
-}
+//struct LoginSettingUpScreen_Previews: PreviewProvider {
+//	static var previews: some View {
+//	LoginSettingUpScreen(phoneNumber: "+919849167641", countryCode: "+91")
+//	}
+//}
