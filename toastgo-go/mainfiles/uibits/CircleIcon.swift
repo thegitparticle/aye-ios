@@ -21,11 +21,13 @@ struct CircleIcon: View {
     var body: some View {
 
 		ZStack() {
-			Circle().frame(width: CGFloat((self.size))*1.5, height: CGFloat((self.size))*1.5)
+			
+			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
 				.padding()
 				.foregroundColor(LightTheme.Colors.iconBackground)
 				.background(LightTheme.Colors.iconBackground)
 				.cornerRadius(70)
+			
 			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.iconVector)
 		}
     }
@@ -44,7 +46,7 @@ struct CircleIconAuthFlow: View {
 	var body: some View {
 
 		ZStack {
-			Circle().frame(width: CGFloat((self.size))*1.5, height: CGFloat((self.size))*1.5)
+			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
 				.padding()
 				.foregroundColor(LightTheme.Colors.textSecondary)
 				.background(LightTheme.Colors.textSecondary)
@@ -59,6 +61,8 @@ struct CircleIcon_Previews: PreviewProvider {
     static var previews: some View {
 		VStack{
 			CircleIcon()
+			CircleIcon(size: 13, iconName: .ios_person_add)
+			CircleIconAuthFlow(size: 13, iconName: .ios_person_add)
 			CircleIconAuthFlow()
 		}
     }
