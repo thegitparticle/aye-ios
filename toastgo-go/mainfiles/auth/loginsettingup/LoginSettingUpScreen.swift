@@ -115,7 +115,9 @@ class FetchContacts {
 			print("Failed", error)
 		}
 		
+		print(contacts)
 		return contacts
+		
 	}
 }
 

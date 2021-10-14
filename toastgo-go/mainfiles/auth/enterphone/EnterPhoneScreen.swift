@@ -86,14 +86,6 @@ struct EnterPhoneScreen: View {
 	}
 }
 
-//private struct TextFieldHere: View {
-//	@State var phoneNumber: String
-//
-//	var body: some View {
-//		CocoaTextField("phone number", text: self.$phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2)
-//	}
-//}
-
 private struct ScreenHeader: View {
 	
 	var body: some View {
