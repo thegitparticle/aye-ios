@@ -11,6 +11,7 @@ let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
 
 struct LandingScreen: View {
+	@StateObject private var viewModel = LandingScreenViewModel()
 	
 	@State var index = 0
 	
