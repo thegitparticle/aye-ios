@@ -20,21 +20,37 @@ struct LandingScreen: View {
 			VStack {
 				
 				TabView(selection: $index) {
-					
 					ForEach (0..<2) { pageId in
-						VStack {
+						if (pageId == 0) {
 							
-							Text("Page \(pageId)").tag(pageId)
-							Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h1)
-							Text("now, you are inside the ayeverse!").font(LightTheme.Typography.h3)
-							Text("now, you are inside the ayeverse!").font(LightTheme.Typography.body2)
-							Spacer()
-							Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2)
-							Text("now, you are inside the ayeverse!").font(.system(size: 13))
-							Text("now, you are inside the ayeverse!").font(LightTheme.Typography.subtitle2I)
-							Spacer()
+							VStack {
+								
+								Text("now, you are inside the clan!").font(LightTheme.Typography.h1)
+								Text("now, you are inside the clan!").font(LightTheme.Typography.h3)
+								Text("now, you are inside the clan!").font(LightTheme.Typography.body2)
+								Spacer()
+								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2)
+								Text("now, you are inside the clan!").font(.system(size: 13))
+								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2I)
+								Spacer()
+							}
+							
+						} else {
+							
+							VStack {
+								
+								Text("now, you are inside the direct!").font(LightTheme.Typography.h1)
+								Text("now, you are inside the direct!").font(LightTheme.Typography.h3)
+								Text("now, you are inside the direct!").font(LightTheme.Typography.body2)
+								Spacer()
+								Text("now, you are inside the direct!").font(LightTheme.Typography.subtitle2)
+								Text("now, you are inside the direct!").font(.system(size: 13))
+								Text("now, you are inside the direct!").font(LightTheme.Typography.subtitle2I)
+								Spacer()
+							}
 						}
 					}
+					
 				}
 				.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 				
