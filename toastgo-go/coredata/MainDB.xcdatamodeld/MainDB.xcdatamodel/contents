@@ -4,7 +4,7 @@
         <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="user" optional="YES" attributeType="Transformable"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="UserDeets" positionX="-63" positionY="-18" width="128" height="89"/>

@@ -40,7 +40,7 @@ class LandingScreenViewModel: ObservableObject {
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
 		print("debugcoredata add spacecraft called func")
-		UserDeetsStore.shared.add(id: deets.id, image: deets.image, bio: deets.bio, user: deets.user)
+		UserDeetsStore.shared.add(id: deets.id, image: deets.image, bio: deets.bio, user: String(9))
 		print("debugcoredata add spacecraft called func ended workijng")
 	}
 	

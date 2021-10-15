@@ -37,7 +37,7 @@ class UserDeetsStore: NSObject, ObservableObject {
 		}
 	}
 	
-	func add(id: Int, image: String, bio: String, user: User) {
+	func add(id: Int, image: String, bio: String, user: String) {
 		let newUserDeets = UserDeets(context: PersistenceController.shared.container.viewContext)
 		newUserDeets.setValue(id, forKey: "id")
 		newUserDeets.setValue(image, forKey: "image")
