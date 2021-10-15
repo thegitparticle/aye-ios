@@ -28,7 +28,35 @@ struct LandingScreen: View {
 							
 							VStack {
 								
+//								Text(viewModel.userDeetsDB.image ?? "...loading").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
+								
+								Text("loading ... outside" )
+									.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
+								
+								List(viewModel.userDeetsDB, id: \.id) { item in
+									Text("loading ..." )
+										.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
+									
+									VStack(alignment: .leading) {
+										Text("loading ..." )
+											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
+										
+										Text(item.image ?? "loading ..." )
+											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
+										
+										Text(item.image ?? "loading ..." )
+											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.sucesss)
+									}
+									
+								}.background(LightTheme.Colors.appLead)
+								
+								Spacer()
+								
+//								Text(viewModel.userDeetsHere.image ).font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
+//
 								MyClansScreen()
+								
+								
 								
 //								Text("now, you are inside the clan!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
 //								Text("now, you are inside the clan!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)

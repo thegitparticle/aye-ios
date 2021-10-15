@@ -6,20 +6,47 @@
 //
 
 import Foundation
-
+import Combine
+import SwiftUI
 
 class LandingScreenViewModel: ObservableObject {
 	
 	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(username: "", phone: "", fullName: "", id: 0, clubsJoinedByUser: "", numberOfClubsJoined: 0, contactList: "", totalFramesParticipation: 0, countryCodeOfUser: "", contactListSyncStatus: false), bio: "", image: "", id: 0)
 	
+	@Published var userDeetsDB = [UserDeets]()
+	
 	@Published var clanHere: [MyClansDataClass] = []
 	
 	@Published var directsHere: [MyDirectsDataClass] = []
 	
+	private var cancellable: AnyCancellable?
+	
+	init (userDetailsPublisher: AnyPublisher<[UserDeets], Never> = UserDeetsStore.shared.userDetails.eraseToAnyPublisher()) {
+		print("debugcoredata userdetailspublisher init workng before channcellable")
+		cancellable = userDetailsPublisher.sink { [unowned self] deets in
+//			self.userDeetsHere.bio = deets.bio
+			self.userDeetsDB = deets
+		}
+		print("debugcoredata userdetailspublisher init workng after channcellable")
+		getUserDetails(phone: "+919849167641")
+	}
+	
 	init () {
 		getUserDetails(phone: "+919849167641")
+		print("debugcoredata normal init working")
 		getMyClans(userid: String(userDeetsHere.user.id))
 		getMyDirects(userid: String(userDeetsHere.user.id))
+	}
+	
+	func addSpaceCraft(deets: UserDetailsDataClass) {
+		print("debugcoredata add spacecraft called func")
+		UserDeetsStore.shared.add(id: deets.id, image: deets.image, bio: deets.bio, user: deets.user)
+		print("debugcoredata add spacecraft called func ended workijng")
+	}
+	
+	func deleteCourse(deets: UserDetailsDataClass) {
+		
+		UserDeetsStore.shared.delete(id: deets.id)
 	}
 	
 	public func getUserDetails(phone: String) {
@@ -36,7 +63,11 @@ class LandingScreenViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode(UserDetailsDataClass.self, from: data) {
 					
 					DispatchQueue.main.async {
+//						print("debugcoredata response before \(decodedResponse)")
 						self.userDeetsHere = decodedResponse
+						self.addSpaceCraft(deets: decodedResponse)
+//						print("debugcoredata response \(decodedResponse)")
+						print("debugcoredata \(String(describing: self.userDeetsDB))")
 					}
 					return
 				}

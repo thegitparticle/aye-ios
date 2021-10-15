@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreData
+import SwiftUI
 
 struct UserDetailsDataClass: Codable {
 	let user: User
@@ -36,3 +38,43 @@ struct User: Codable {
 		case contactListSyncStatus = "contact_list_sync_status"
 	}
 }
+
+
+extension UserDeets {
+	
+	enum Request: RawRepresentable {
+		
+		typealias RawValue = NSFetchRequest<UserDeets>
+		
+		case all
+		case limited
+		
+		init?(rawValue: NSFetchRequest<UserDeets>) {
+			return nil
+		}
+		
+		var rawValue: NSFetchRequest<UserDeets> {
+			switch self {
+			
+			case .all:
+				let request: NSFetchRequest<UserDeets> = UserDeets.fetchRequest()
+				request.sortDescriptors = []
+				return request
+				
+			case .limited:
+				let request: NSFetchRequest<UserDeets> = UserDeets.fetchRequest()
+				request.sortDescriptors = []
+				return request
+			}
+		}
+	}
+}
+
+extension UserDeets {
+	
+//	public class func fetchRequest() -> NSFetchRequest<UserDeets> {
+//
+//		NSFetchRequest<UserDeets>(entityName: "UserDeets")
+//	}
+}
+
