@@ -9,19 +9,25 @@ import SwiftUI
 
 struct MyDirectsScreen: View {
 	
+	var directsListHere: [MyDirectsDataClass]
+	
     var body: some View {
 		
 		VStack {
 			
-			DirectComponent()
+			List (directsListHere, id: \.direct_channel_id) { item in
+				DirectComponent()
+			}.onAppear() {
+				print("debuglandingsetup", directsListHere)
+			}
 			
-			NudgeItemComponent()
+//			NudgeItemComponent()
 		}
     }
 }
 
-struct MyDirectsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MyDirectsScreen()
-    }
-}
+//struct MyDirectsScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyDirectsScreen()
+//    }
+//}

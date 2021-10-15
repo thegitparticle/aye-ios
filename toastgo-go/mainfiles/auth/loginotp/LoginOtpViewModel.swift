@@ -22,7 +22,7 @@ class LoginOtpViewModel: ObservableObject {
 	
 	@Published var otpWorked: String = ""
 	
-	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(username: "", phone: "", fullName: "", id: 0, clubsJoinedByUser: "", numberOfClubsJoined: 0, contactList: "", totalFramesParticipation: 0, countryCodeOfUser: "", contactListSyncStatus: false), bio: "", image: "", id: 0)
+	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(user_name: "", phone: "", full_name: "", id: 0, clubs_joined_by_user: "", number_of_clubs_joined: 0, contact_list: "", total_frames_participation: 0, country_code_of_user: "", contact_list_sync_status: false), bio: "", image: "", id: 0)
 	
 	public func postOtpToServer(phone: String, password: String) {
 		

@@ -10,33 +10,35 @@ import CoreData
 import SwiftUI
 
 struct UserDetailsDataClass: Codable {
-	let user: User
-	let bio: String
-	let image: String
-	let id: Int
+	var user: User
+	var bio: String
+	var image: String
+	var id: Int
 }
 
 struct User: Codable {
-	let username, phone, fullName: String
-	let id: Int
-	let clubsJoinedByUser: String
-	let numberOfClubsJoined: Int
-	let contactList: String
-	let totalFramesParticipation: Int
-	let countryCodeOfUser: String
-	let contactListSyncStatus: Bool
+	var user_name: String
+	var phone: String
+	var full_name: String
+	var id: Int
+	var clubs_joined_by_user: String
+	var number_of_clubs_joined: Int
+	var contact_list: String
+	var total_frames_participation: Int
+	var country_code_of_user: String
+	var contact_list_sync_status: Bool
 	
-	enum CodingKeys: String, CodingKey {
-		case username, phone
-		case fullName = "full_name"
-		case id
-		case clubsJoinedByUser = "clubs_joined_by_user"
-		case numberOfClubsJoined = "number_of_clubs_joined"
-		case contactList = "contact_list"
-		case totalFramesParticipation = "total_frames_participation"
-		case countryCodeOfUser = "country_code_of_user"
-		case contactListSyncStatus = "contact_list_sync_status"
-	}
+//	enum CodingKeys: String, CodingKey {
+//		case username, phone
+//		case fullName = "full_name"
+//		case id
+//		case clubsJoinedByUser = "clubs_joined_by_user"
+//		case numberOfClubsJoined = "number_of_clubs_joined"
+//		case contactList = "contact_list"
+//		case totalFramesParticipation = "total_frames_participation"
+//		case countryCodeOfUser = "country_code_of_user"
+//		case contactListSyncStatus = "contact_list_sync_status"
+//	}
 }
 
 

@@ -26,55 +26,11 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							VStack {
-								
-//								Text(viewModel.userDeetsDB.image ?? "...loading").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-								
-								Text("loading ... outside" )
-									.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
-								
-								List(viewModel.userDeetsDB, id: \.id) { item in
-									Text("loading ..." )
-										.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
-									
-									VStack(alignment: .leading) {
-										Text("loading ..." )
-											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.appLead)
-										
-										Text(item.image ?? "loading ..." )
-											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-										
-										Text(item.image ?? "loading ..." )
-											.font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.sucesss)
-									}
-									
-								}.background(LightTheme.Colors.appLead)
-								
-								Spacer()
-								
-//								Text(viewModel.userDeetsHere.image ).font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-//
-								MyClansScreen()
-								
-								
-								
-//								Text("now, you are inside the clan!").font(LightTheme.Typography.h1).foregroundColor(LightTheme.Colors.textPrimary)
-//								Text("now, you are inside the clan!").font(LightTheme.Typography.h3).foregroundColor(LightTheme.Colors.textPrimary)
-//								Text("now, you are inside the clan!").font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.textPrimary)
-//								Spacer()
-//								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2).foregroundColor(LightTheme.Colors.textPrimary)
-//								Text("now, you are inside the clan!").font(.system(size: 13)).foregroundColor(LightTheme.Colors.textPrimary)
-//								Text("now, you are inside the clan!").font(LightTheme.Typography.subtitle2I).foregroundColor(LightTheme.Colors.textPrimary)
-//								Spacer()
-							}.padding(.top , 100)
+							MyClansScreen(clansListHere: viewModel.clanHere).padding(.top, 75).padding(.bottom, 75)
 							
 						} else {
 							
-							VStack {
-								
-								MyDirectsScreen()
-								
-							}.padding(.top, 100)
+							MyDirectsScreen(directsListHere: viewModel.directsHere).padding(.top, 75).padding(.bottom, 75)
 						}
 					}
 					
@@ -144,4 +100,22 @@ struct LandingScreen_Previews: PreviewProvider {
 	static var previews: some View {
 		LandingScreen()
 	}
+}
+
+
+struct Book: Identifiable {
+	var id = UUID()
+	var title: String
+	var author: String
+	var isbn: String
+	var pages: Int
+	var isRead: Bool = false
+}
+extension Book {
+	static let samples = [
+		Book(title: "Changer", author: "Matt Gemmell", isbn: "9781916265202", pages: 476),
+		Book(title: "SwiftUI for Absolute Beginners", author: "Jayant Varma", isbn: "9781484255155", pages: 200),
+		Book(title: "Why we sleep", author: "Matthew Walker", isbn: "9780141983769", pages: 368),
+		Book(title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", isbn: "9780671461492", pages: 216)
+	]
 }

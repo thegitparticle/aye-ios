@@ -11,13 +11,13 @@ import SwiftUI
 
 class LandingScreenViewModel: ObservableObject {
 	
-	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(username: "", phone: "", fullName: "", id: 0, clubsJoinedByUser: "", numberOfClubsJoined: 0, contactList: "", totalFramesParticipation: 0, countryCodeOfUser: "", contactListSyncStatus: false), bio: "", image: "", id: 0)
+	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(user_name: "", phone: "", full_name: "", id: 0, clubs_joined_by_user: "", number_of_clubs_joined: 0, contact_list: "", total_frames_participation: 0, country_code_of_user: "", contact_list_sync_status: false), bio: "", image: "", id: 0)
 	
 	@Published var userDeetsDB = [UserDeets]()
 	
-	@Published var clanHere: [MyClansDataClass] = []
+	@Published var clanHere = [MyClansDataClass]()
 	
-	@Published var directsHere: [MyDirectsDataClass] = []
+	@Published var directsHere = [MyDirectsDataClass]()
 	
 	private var cancellable: AnyCancellable?
 	
@@ -34,8 +34,8 @@ class LandingScreenViewModel: ObservableObject {
 	init () {
 		getUserDetails(phone: "+919849167641")
 		print("debugcoredata normal init working")
-		getMyClans(userid: String(userDeetsHere.user.id))
-		getMyDirects(userid: String(userDeetsHere.user.id))
+		getMyClans(userid: String(82))
+		getMyDirects(userid: String(82))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
@@ -93,11 +93,12 @@ class LandingScreenViewModel: ObservableObject {
 					
 					DispatchQueue.main.async {
 						self.clanHere = decodedResponse
+						print(decodedResponse)
 					}
 					return
 				}
 				
-				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuglogs Fetch failed calns: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -105,7 +106,7 @@ class LandingScreenViewModel: ObservableObject {
 	
 	public func getMyDirects(userid: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/my_directs/\(userid)/") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/my_directs/\(userid)") else {
 			return
 		}
 		
@@ -122,7 +123,7 @@ class LandingScreenViewModel: ObservableObject {
 					return
 				}
 				
-				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuglogs Fetch failed directs: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
