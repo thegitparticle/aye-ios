@@ -14,6 +14,8 @@ struct DirectComponent: View {
 	
 	var body: some View {
 		
+		NavigationLink(destination: TalkScreen(clubName: directHere.display_guys.full_name, clubId: 0, channelId: directHere.direct_channel_id, ongoingFrame: directHere.ongoing_frame, startTime: directHere.start_time, endTime: directHere.end_time, ongoingStream: directHere.stream_status, ongoingStreamUser: directHere.stream_started_by, directornot: true)) {
+		
 		HStack (alignment: .center) {
 			
 			HStack (alignment: .center) {
@@ -33,6 +35,8 @@ struct DirectComponent: View {
 			}
 			
 		}.frame(maxWidth: .infinity).padding(.vertical, 10)
+			
+		}
 		
 	}
 }

@@ -17,94 +17,113 @@ struct LiveClanComponent: View {
 	var body: some View {
 		
 		if (clanHere.display_photos.count == 1) {
-			
-			HStack () {
-			
-				if (indexInList/2 == 0) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false)) {
+				HStack () {
 					
-					OneOtherPerson(liveClanHere: clanHere)
+					if (indexInList/2 == 0) {
+						
+						OneOtherPerson(liveClanHere: clanHere)
+						
+						Spacer()
+					} else {
+						
+						Spacer()
+						
+						OneOtherPerson(liveClanHere: clanHere)
+					}
 					
-					Spacer()
-				} else {
-					
-					Spacer()
-					
-					OneOtherPerson(liveClanHere: clanHere)
-				}
+				}.frame(maxWidth: .infinity).padding(20)
 				
-			}.frame(maxWidth: .infinity).padding(20)
+			}
 			
 		} else if (clanHere.display_photos.count == 2) {
 			
-			HStack () {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false)) {
 				
-				if (indexInList/2 == 0) {
+				HStack () {
 					
-					TwoOtherPeople(liveClanHere: clanHere)
+					if (indexInList/2 == 0) {
+						
+						TwoOtherPeople(liveClanHere: clanHere)
+						
+						Spacer()
+					} else {
+						
+						Spacer()
+						
+						TwoOtherPeople(liveClanHere: clanHere)
+					}
 					
-					Spacer()
-				} else {
-					
-					Spacer()
-					
-					TwoOtherPeople(liveClanHere: clanHere)
-				}
+				}.frame(maxWidth: .infinity).padding(20)
 				
-			}.frame(maxWidth: .infinity).padding(20)
+			}
 			
 		} else if (clanHere.display_photos.count == 3) {
 			
-			HStack () {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false)) {
 				
-				if (indexInList/2 == 0) {
+				HStack () {
 					
-					ThreeOtherPeople(liveClanHere: clanHere)
+					if (indexInList/2 == 0) {
+						
+						ThreeOtherPeople(liveClanHere: clanHere)
+						
+						Spacer()
+					} else {
+						
+						Spacer()
+						
+						ThreeOtherPeople(liveClanHere: clanHere)
+					}
 					
-					Spacer()
-				} else {
 					
-					Spacer()
-					
-					ThreeOtherPeople(liveClanHere: clanHere)
-				}
-					
+				}.frame(maxWidth: .infinity).padding(20)
 				
-			}.frame(maxWidth: .infinity).padding(20)
+			}
 			
 		} else if (clanHere.display_photos.count > 3) {
 			
-			HStack () {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false)) {
 				
-				if (indexInList/2 == 0) {
+				HStack () {
 					
-					MoreOtherPeople(liveClanHere: clanHere)
+					if (indexInList/2 == 0) {
+						
+						MoreOtherPeople(liveClanHere: clanHere)
+						
+						Spacer()
+					} else {
+						
+						Spacer()
+						
+						MoreOtherPeople(liveClanHere: clanHere)
+					}
 					
-					Spacer()
-				} else {
-					
-					Spacer()
-					
-					MoreOtherPeople(liveClanHere: clanHere)
-				}
+				}.frame(maxWidth: .infinity).padding(20)
 				
-			}.frame(maxWidth: .infinity).padding(20)
+			}
 			
 		} else {
-			HStack () {
+			
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false)) {
 				
-				if (indexInList/2 == 0) {
+				HStack () {
 					
-					OneOtherPerson(liveClanHere: clanHere)
+					if (indexInList/2 == 0) {
+						
+						OneOtherPerson(liveClanHere: clanHere)
+						
+						Spacer()
+					} else {
+						
+						Spacer()
+						
+						OneOtherPerson(liveClanHere: clanHere)
+					}
 					
-					Spacer()
-				} else {
-					
-					Spacer()
-					
-					OneOtherPerson(liveClanHere: clanHere)
-				}
+				}.frame(maxWidth: .infinity).padding(20)
 				
-			}.frame(maxWidth: .infinity).padding(20)
+			}
 		}
 		
 	}
