@@ -45,6 +45,7 @@
 		264AB2F42705A67000E394E6 /* GothamRounded-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */; };
 		264AB2F52705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
 		264AB2F62705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
+		2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */; };
 		268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A32715F9AF006686F8 /* SwiftUIFontIcon */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
 		268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A82716211B006686F8 /* SwiftUIKitView */; };
@@ -122,6 +123,7 @@
 		264AB2E42705A66F00E394E6 /* GothamRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Bold.otf"; sourceTree = "<group>"; };
 		264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-BoldItalic.otf"; sourceTree = "<group>"; };
 		264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Book.otf"; sourceTree = "<group>"; };
+		2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		268422A52715F9F1006686F8 /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
 		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			children = (
 				268422A52715F9F1006686F8 /* CircleIcon.swift */,
 				260D719E27178E4100DD9F80 /* LottieView.swift */,
+				2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
+				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
 				26D119C22718F5DB000044A3 /* MyDirectsScreen.swift in Sources */,

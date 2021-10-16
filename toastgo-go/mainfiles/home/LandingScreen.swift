@@ -26,11 +26,11 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere)
+							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere, refreshFunction: self.refreshLandingViewModelHere)
 							
 						} else {
 							
-							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere)
+							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, refreshFunction: self.refreshLandingViewModelHere )
 						}
 					}
 					
@@ -44,6 +44,15 @@ struct LandingScreen: View {
 			TabBarView(index: $index)
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+	}
+	
+	func refreshLandingViewModelHere () -> Bool {
+		
+		viewModel.refreshLandingViewModel()
+		
+		print("refreshed")
+		
+		return true
 	}
 	
 }

@@ -12,10 +12,19 @@ struct MyClansScreen: View {
 	
 	var clansListHere: [MyClansDataClass]
 	var liveClansHere: [MyClansDataClass]
+	var refreshFunction: () -> Bool
+	
+	@State private var now = Date()
 	
 	var body: some View {
 		
-		ScrollView {
+		RefreshableScrollView(onRefresh: { done in
+			DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+				self.refreshFunction()
+				self.now = Date()
+				done()
+			}
+		}) {
 			
 			LazyVStack {
 				

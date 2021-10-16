@@ -54,6 +54,16 @@ class LandingScreenViewModel: ObservableObject {
 		UserDeetsStore.shared.delete(id: deets.id)
 	}
 	
+	public func refreshLandingViewModel () {
+		
+		getUserDetails(phone: "+919849167641")
+		print("debugcoredata normal init working")
+		getMyClans(userid: String(82))
+		getMyDirects(userid: String(82))
+		getMyNudgeList(userid: String(82))
+		
+	}
+	
 	public func getUserDetails(phone: String) {
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/users/profile/\(phone)/") else {
@@ -97,6 +107,9 @@ class LandingScreenViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode([MyClansDataClass].self, from: data) {
 					
 					DispatchQueue.main.async {
+						
+						self.liveClansHere = []
+						self.clanHere = []
 						
 						for item in decodedResponse {
 							
