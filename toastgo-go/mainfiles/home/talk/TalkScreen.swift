@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIFontIcon
 
 struct TalkScreen: View {
 	
@@ -27,15 +28,97 @@ struct TalkScreen: View {
 			
 			VStack {
 				
-				Text(clubName).foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.h4).padding(20)
+				if (ongoingFrame) {
+					
+					BottomButtons()
+					
+				} else {
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+					StartFramePart()
+					
+				}
+				
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
 			
 			HeaderHere(titleText: clubName)
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 	}
 	
+}
+
+private struct BottomButtons: View {
+	
+	var body: some View {
+		
+		HStack {
+			
+			ZStack {
+				
+				Circle().frame(width: 20, height: 20)
+					.padding()
+					.foregroundColor(LightTheme.Colors.textSecondary)
+					.background(LightTheme.Colors.textSecondary)
+					.cornerRadius(70)
+				
+				FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+				
+			}.padding(.horizontal, 20)
+			
+			ZStack {
+				
+				Circle().frame(width: 35, height: 35)
+					.padding()
+					.foregroundColor(LightTheme.Colors.sucesss)
+					.background(LightTheme.Colors.sucesss)
+					.cornerRadius(70)
+				
+				FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
+				
+			}.padding(.horizontal, 20)
+			
+			ZStack {
+				
+				Circle().frame(width: 20, height: 20)
+					.padding()
+					.foregroundColor(LightTheme.Colors.appLead)
+					.background(LightTheme.Colors.appLead)
+					.cornerRadius(70)
+				
+				FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+				
+			}.padding(.horizontal, 20)
+		}.padding(.vertical, 30)
+		
+	}
+}
+
+private struct StartFramePart: View {
+	
+	var body: some View{
+		
+		ZStack {
+			
+			Rectangle().fill(LightTheme.Colors.appLeadVariant).frame(maxWidth: .infinity, maxHeight: 300, alignment: .top).background(LightTheme.Colors.appLeadVariant).cornerRadius(30)
+			
+			VStack {
+				Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+				Text("frame lasts for 12 hours").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.caption).padding(20)
+				
+				SliderComponent(thumbnailColor: Color.red,
+								didReachEndAction: { view in
+									print("reach end!!")
+									DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+										view.resetState()
+									}
+								})
+					.frame(width: 320, height: 56)
+					.background(Color.yellow)
+					.cornerRadius(28)
+			}
+			
+		}.frame(alignment: .center)
+	}
 }
 
 private struct HeaderHere: View {

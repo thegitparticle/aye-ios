@@ -48,6 +48,7 @@
 		2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */; };
 		2677FF59271B25210035EABC /* TalkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF58271B25210035EABC /* TalkScreen.swift */; };
 		2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5A271B25510035EABC /* TalkViewModel.swift */; };
+		2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5C271B6B020035EABC /* SliderComponent.swift */; };
 		268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A32715F9AF006686F8 /* SwiftUIFontIcon */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
 		268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A82716211B006686F8 /* SwiftUIKitView */; };
@@ -128,6 +129,7 @@
 		2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		2677FF58271B25210035EABC /* TalkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkScreen.swift; sourceTree = "<group>"; };
 		2677FF5A271B25510035EABC /* TalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewModel.swift; sourceTree = "<group>"; };
+		2677FF5C271B6B020035EABC /* SliderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderComponent.swift; sourceTree = "<group>"; };
 		268422A52715F9F1006686F8 /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
 		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				268422A52715F9F1006686F8 /* CircleIcon.swift */,
 				260D719E27178E4100DD9F80 /* LottieView.swift */,
 				2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */,
+				2677FF5C271B6B020035EABC /* SliderComponent.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
+				2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */,
 				2677FF59271B25210035EABC /* TalkScreen.swift in Sources */,
 				26D119C22718F5DB000044A3 /* MyDirectsScreen.swift in Sources */,
 				26D119BD2718ED7C000044A3 /* DormantClanComponent.swift in Sources */,
