@@ -56,7 +56,14 @@ private struct HeaderHere: View {
 				
 				HStack () {
 					
-					CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+					HStack {
+						
+						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+						
+					}.onPress {
+						
+						self.mode.wrappedValue.dismiss()
+					}
 					
 					Spacer()
 					
@@ -66,11 +73,11 @@ private struct HeaderHere: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_arrow_down).padding(.horizontal, 20)
+						CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
 						
 					}.onPress {
 						
-						self.mode.wrappedValue.dismiss()
+						// add nav to frames view
 					}
 					
 				}.padding(.bottom, 5)
