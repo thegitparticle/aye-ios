@@ -12,28 +12,31 @@ struct MyDirectsScreen: View {
 	var directsListHere: [MyDirectsDataClass]
 	var nudgeListHere: [NudgeListItemDataClass]
 	
-    var body: some View {
+	var body: some View {
 		
-		List {
+		ScrollView {
 			
-			ForEach(directsListHere, id: \.direct_channel_id) {item in
+			LazyVStack {
 				
-				DirectComponent(directHere: item)
-			}
-			
-			Spacer().frame(height: 50)
-			
-			ForEach(nudgeListHere, id: \.id) {item in
+				ForEach(directsListHere, id: \.direct_channel_id) {item in
+					
+					DirectComponent(directHere: item)
+				}
 				
-				NudgeItemComponent(nudgeItemHere: item)
-			}
+				Spacer().frame(height: 50)
+				
+				ForEach(nudgeListHere, id: \.id) {item in
+					
+					NudgeItemComponent(nudgeItemHere: item)
+				}
+				
+				Spacer().frame(height: 200)
+				
+			}.padding(.top, 75).padding(.horizontal, 20)
 			
-			Spacer().frame(height: 200)
-			
-		}.padding(.top, 75)
-
-			
-    }
+		}
+		
+	}
 }
 
 //struct MyDirectsScreen_Previews: PreviewProvider {

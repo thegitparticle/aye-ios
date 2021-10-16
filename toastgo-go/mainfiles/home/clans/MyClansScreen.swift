@@ -13,17 +13,20 @@ struct MyClansScreen: View {
 	var clansListHere: [MyClansDataClass]
 	
 	var body: some View {
-			
-		List {
-	
-			ForEach(clansListHere, id: \.club_id) {item in
-			
-				DormantClanComponent(clanHere: item)
-			}
 		
-			Spacer().frame(height: 200)
+		ScrollView {
 			
-		}.padding(.top, 75)
+			LazyVStack {
+				
+				ForEach(clansListHere, id: \.club_id) {item in
+					
+					DormantClanComponent(clanHere: item)
+				}
+				
+				Spacer().frame(height: 200)
+				
+			}.padding(.top, 75).padding(.horizontal, 20)
+		}
 		
 	}
 }
