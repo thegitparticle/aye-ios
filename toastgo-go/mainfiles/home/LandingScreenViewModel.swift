@@ -17,6 +17,8 @@ class LandingScreenViewModel: ObservableObject {
 	
 	@Published var clanHere = [MyClansDataClass]()
 	
+	@Published var liveClansHere = [MyClansDataClass] ()
+	
 	@Published var directsHere = [MyDirectsDataClass]()
 	
 	@Published var nudgeListHere = [NudgeListItemDataClass]()
@@ -95,7 +97,18 @@ class LandingScreenViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode([MyClansDataClass].self, from: data) {
 					
 					DispatchQueue.main.async {
-						self.clanHere = decodedResponse
+						
+						for item in decodedResponse {
+							
+							if (item.ongoing_frame) {
+								
+								self.liveClansHere.append(item)
+							} else {
+								
+								self.clanHere.append(item)
+							}
+						}
+//						self.clanHere = decodedResponse
 						print(decodedResponse)
 					}
 					return

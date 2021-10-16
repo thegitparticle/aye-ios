@@ -10,28 +10,115 @@ import Kingfisher
 
 struct LiveClanComponent: View {
 	
+	var clanHere: MyClansDataClass
+	
+	var indexInList: Int
+	
 	var body: some View {
 		
-		
-			VStack (alignment: .center) {
-				
-				OneOtherPerson()
-				TwoOtherPeople()
-				ThreeOtherPeople()
-				MoreOtherPeople()
+		if (clanHere.display_photos.count == 1) {
+			
+			HStack () {
+			
+				if (indexInList/2 == 0) {
+					
+					OneOtherPerson(liveClanHere: clanHere)
+					
+					Spacer()
+				} else {
+					
+					Spacer()
+					
+					OneOtherPerson(liveClanHere: clanHere)
+				}
 				
 			}.frame(maxWidth: .infinity).padding(20)
+			
+		} else if (clanHere.display_photos.count == 2) {
+			
+			HStack () {
+				
+				if (indexInList/2 == 0) {
+					
+					TwoOtherPeople(liveClanHere: clanHere)
+					
+					Spacer()
+				} else {
+					
+					Spacer()
+					
+					TwoOtherPeople(liveClanHere: clanHere)
+				}
+				
+			}.frame(maxWidth: .infinity).padding(20)
+			
+		} else if (clanHere.display_photos.count == 3) {
+			
+			HStack () {
+				
+				if (indexInList/2 == 0) {
+					
+					ThreeOtherPeople(liveClanHere: clanHere)
+					
+					Spacer()
+				} else {
+					
+					Spacer()
+					
+					ThreeOtherPeople(liveClanHere: clanHere)
+				}
+					
+				
+			}.frame(maxWidth: .infinity).padding(20)
+			
+		} else if (clanHere.display_photos.count > 3) {
+			
+			HStack () {
+				
+				if (indexInList/2 == 0) {
+					
+					MoreOtherPeople(liveClanHere: clanHere)
+					
+					Spacer()
+				} else {
+					
+					Spacer()
+					
+					MoreOtherPeople(liveClanHere: clanHere)
+				}
+				
+			}.frame(maxWidth: .infinity).padding(20)
+			
+		} else {
+			HStack () {
+				
+				if (indexInList/2 == 0) {
+					
+					OneOtherPerson(liveClanHere: clanHere)
+					
+					Spacer()
+				} else {
+					
+					Spacer()
+					
+					OneOtherPerson(liveClanHere: clanHere)
+				}
+				
+			}.frame(maxWidth: .infinity).padding(20)
+		}
 		
 	}
 }
 
 private struct OneOtherPerson: View {
 	
+	var liveClanHere: MyClansDataClass
+	
 	var body: some View {
-		VStack {
+		VStack() {
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[0].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0)
 				
 			}
@@ -43,14 +130,16 @@ private struct OneOtherPerson: View {
 
 private struct TwoOtherPeople: View {
 	
+	var liveClanHere: MyClansDataClass
+	
 	var body: some View {
-		VStack(alignment: .center) {
+		VStack() {
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[0].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: +5)
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[1].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: -5)
 				
 			}
@@ -62,20 +151,22 @@ private struct TwoOtherPeople: View {
 
 private struct ThreeOtherPeople: View {
 	
+	var liveClanHere: MyClansDataClass
+	
 	var body: some View {
 		
 		VStack () {
 			
-			KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+			KFImage.url(URL(string: liveClanHere.display_photos[0].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 				.cornerRadius(50.0).offset(y: +10)
 			
 			
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[1].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: +5)
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[2].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: -5)
 			}.offset(y: -10)
 			
@@ -87,20 +178,22 @@ private struct ThreeOtherPeople: View {
 
 private struct MoreOtherPeople: View {
 	
+	var liveClanHere: MyClansDataClass
+	
 	var body: some View {
 		
 		VStack () {
 			
-			KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+			KFImage.url(URL(string: liveClanHere.display_photos[0].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 				.cornerRadius(50.0).offset(y: +10)
 			
 			
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[1].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: +5)
 				
-				KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaws.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+				KFImage.url(URL(string: liveClanHere.display_photos[2].display_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 					.cornerRadius(50.0).offset(x: -5)
 				
 			}.offset(y: -10)
@@ -136,8 +229,8 @@ private struct TextPart: View {
 	}
 }
 
-struct LiveClanComponent_Previews: PreviewProvider {
-	static var previews: some View {
-		LiveClanComponent()
-	}
-}
+//struct LiveClanComponent_Previews: PreviewProvider {
+//	static var previews: some View {
+//		LiveClanComponent()
+//	}
+//}

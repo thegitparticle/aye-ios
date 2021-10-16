@@ -26,7 +26,7 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							MyClansScreen(clansListHere: viewModel.clanHere)
+							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere)
 							
 						} else {
 							

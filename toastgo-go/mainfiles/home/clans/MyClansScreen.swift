@@ -11,12 +11,18 @@ import Kingfisher
 struct MyClansScreen: View {
 	
 	var clansListHere: [MyClansDataClass]
+	var liveClansHere: [MyClansDataClass]
 	
 	var body: some View {
 		
 		ScrollView {
 			
 			LazyVStack {
+				
+				ForEach(liveClansHere, id: \.club_id) {item in
+					
+					LiveClanComponent(clanHere: item, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+				}
 				
 				ForEach(clansListHere, id: \.club_id) {item in
 					
