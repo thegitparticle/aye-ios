@@ -61,6 +61,10 @@ private struct HeaderHere: View {
 	
 	var body: some View {
 		
+		ZStack {
+			
+			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
+			
 		VStack (alignment: .center) {
 			
 			Spacer(minLength: statusBarHeight)
@@ -76,9 +80,10 @@ private struct HeaderHere: View {
 				Spacer()
 				
 				CircleIcon(size: 13, iconName: .ios_person).padding(.horizontal, 20)
-			}
+			}.padding(.bottom, 5)
 			
-		}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground)
+		}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+		}
 	}
 }
 
