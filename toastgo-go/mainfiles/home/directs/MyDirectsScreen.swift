@@ -10,19 +10,29 @@ import SwiftUI
 struct MyDirectsScreen: View {
 	
 	var directsListHere: [MyDirectsDataClass]
+	var nudgeListHere: [NudgeListItemDataClass]
 	
     var body: some View {
 		
-		VStack {
+		List {
 			
-			List (directsListHere, id: \.direct_channel_id) { item in
-				DirectComponent()
-			}.onAppear() {
-				print("debuglandingsetup", directsListHere)
+			ForEach(directsListHere, id: \.direct_channel_id) {item in
+				
+				DirectComponent(directHere: item)
 			}
 			
-//			NudgeItemComponent()
-		}
+			Spacer().frame(height: 50)
+			
+			ForEach(nudgeListHere, id: \.id) {item in
+				
+				NudgeItemComponent(nudgeItemHere: item)
+			}
+			
+			Spacer().frame(height: 200)
+			
+		}.padding(.top, 75)
+
+			
     }
 }
 

@@ -80,3 +80,12 @@ struct DisplayGuysMyDirects: Codable, Equatable {
 //		case fullName = "full_name"
 //	}
 }
+
+// MARK: - Nudge List Item
+
+struct NudgeListItemDataClass: Codable, Equatable {
+	
+	var name: String
+	var id: Int
+	var profile_pic: String
+}

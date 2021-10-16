@@ -10,20 +10,25 @@ import Kingfisher
 
 struct NudgeItemComponent: View {
 	
+	var nudgeItemHere: NudgeListItemDataClass
+	
 	var body: some View {
 		
 		HStack (alignment: .center) {
 			
-			KFImage.url(URL(string: "https://aye-media-bucket.s3.amazonaw.com/media/club_images/moneyh_1.jpg")!).cornerRadius(30).frame(maxWidth: 60, maxHeight: 60).aspectRatio(100.0 / 100.0, contentMode: .fit)
+			HStack (alignment: .center) {
+			
+			KFImage.url(URL(string: nudgeItemHere.profile_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 				.cornerRadius(50.0)
 			
-			Text("Daven Willians").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 3)
+			Text(nudgeItemHere.name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 3)
 			
 			Spacer()
 			
 			StartButtonHere()
+			}
 			
-		}.frame(maxWidth: .infinity).padding(20)
+		}.frame(maxWidth: .infinity).padding(.vertical, 10)
 	}
 }
 
@@ -43,8 +48,8 @@ private struct StartButtonHere: View {
 	}
 }
 
-struct NudgeItemComponent_Previews: PreviewProvider {
-	static var previews: some View {
-		NudgeItemComponent()
-	}
-}
+//struct NudgeItemComponent_Previews: PreviewProvider {
+//	static var previews: some View {
+//		NudgeItemComponent()
+//	}
+//}

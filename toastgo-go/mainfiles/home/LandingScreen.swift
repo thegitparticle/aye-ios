@@ -26,11 +26,11 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							MyClansScreen(clansListHere: viewModel.clanHere).padding(.top, 75).padding(.bottom, 75)
+							MyClansScreen(clansListHere: viewModel.clanHere)
 							
 						} else {
 							
-							MyDirectsScreen(directsListHere: viewModel.directsHere).padding(.top, 75).padding(.bottom, 75)
+							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere)
 						}
 					}
 					

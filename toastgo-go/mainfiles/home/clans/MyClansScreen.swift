@@ -14,12 +14,17 @@ struct MyClansScreen: View {
 	
 	var body: some View {
 			
-		List (clansListHere, id: \.club_id) { item in
-			Text("tap to start new frame").foregroundColor(LightTheme.Colors.textPrimary.opacity(0.2)).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 3)
+		List {
+	
+			ForEach(clansListHere, id: \.club_id) {item in
+			
 				DormantClanComponent(clanHere: item)
-		}.onAppear() {
-			print("debuglandingsetup", clansListHere)
-		}
+			}
+		
+			Spacer().frame(height: 200)
+			
+		}.padding(.top, 75)
+		
 	}
 }
 

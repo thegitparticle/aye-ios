@@ -19,6 +19,8 @@ class LandingScreenViewModel: ObservableObject {
 	
 	@Published var directsHere = [MyDirectsDataClass]()
 	
+	@Published var nudgeListHere = [NudgeListItemDataClass]()
+	
 	private var cancellable: AnyCancellable?
 	
 	init (userDetailsPublisher: AnyPublisher<[UserDeets], Never> = UserDeetsStore.shared.userDetails.eraseToAnyPublisher()) {
@@ -36,6 +38,7 @@ class LandingScreenViewModel: ObservableObject {
 		print("debugcoredata normal init working")
 		getMyClans(userid: String(82))
 		getMyDirects(userid: String(82))
+		getMyNudgeList(userid: String(82))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
@@ -124,6 +127,31 @@ class LandingScreenViewModel: ObservableObject {
 				}
 				
 				print("debuglogs Fetch failed directs: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
+	public func getMyNudgeList(userid: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/friends_but_not_friends/\(userid)/") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([NudgeListItemDataClass].self, from: data) {
+					
+					DispatchQueue.main.async {
+						self.nudgeListHere = decodedResponse
+					}
+					return
+				}
+				
+				print("debuglogs Fetch failed nudge list: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
