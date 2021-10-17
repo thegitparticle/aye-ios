@@ -10,6 +10,10 @@ import SwiftUIFontIcon
 
 struct TalkScreen: View {
 	
+	@StateObject private var viewModel = TalkViewModel()
+	
+	@State var showButtons: Bool = false
+	
 	var clubName: String
 	var clubId: Int
 	var channelId: String
@@ -20,29 +24,32 @@ struct TalkScreen: View {
 	var ongoingStreamUser: String
 	var directornot: Bool
 	
-	
 	var body: some View {
-		
 		
 		ZStack(alignment: .top) {
 			
 			VStack {
 				
-				if (ongoingFrame) {
+				if (self.showButtons) {
 					
 					BottomButtons()
 					
 				} else {
 				
-					StartFramePart()
+					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true})
 					
 				}
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).onAppear { self.showButtons = ongoingFrame }
 			
 			HeaderHere(titleText: clubName)
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+	}
+	
+	func startFrameChangeUi () {
+		print ("startframedebug start frame change ui func called")
+		self.showButtons = true
 	}
 	
 }
@@ -95,6 +102,13 @@ private struct BottomButtons: View {
 
 private struct StartFramePart: View {
 	
+	var clubName: String
+	var clubId: Int
+	var channelId: String
+	var showButton: () -> ()
+	
+	@StateObject private var viewModel = TalkViewModel()
+	
 	var body: some View{
 		
 		ZStack {
@@ -107,9 +121,11 @@ private struct StartFramePart: View {
 				
 				SliderComponent(thumbnailColor: Color.red,
 								didReachEndAction: { view in
-									print("reach end!!")
+									print("startframedebug reach end!!")
 									DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-										view.resetState()
+										print("startframedebug async after dispatch queue is cqalled")
+										viewModel.postStartClanFrame(club_name: clubId, channel_id: channelId)
+										showButton()
 									}
 								})
 					.frame(width: 320, height: 56)
