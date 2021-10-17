@@ -30,18 +30,88 @@ struct TalkCameraScreen: View {
 		
 		ZStack {
 			
-			CameraView(events: events, applicationName: "toastgo-go")
+			CameraView(events: events, applicationName: "toastgo-go").frame(maxHeight: .infinity)
 			
 			VStack {
-				CameraInterfaceView(events: events)
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+				
+				TopButtons(events: events)
+				
+				Spacer()
+				
+				BottomButtons(events: events)
+				
+			}.frame(maxWidth: .infinity, maxHeight: .infinity)
 			
 		}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
 	}
 }
 
-struct CameraInterfaceView: View, CameraActions {
+struct TopButtons: View, CameraActions {
+	@ObservedObject var events: UserEvents
+	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+	
+	var body: some View {
+		
+		HStack {
+			
+			ZStack {
+				
+				Circle().frame(width: 20, height: 20)
+					.padding()
+					.foregroundColor(Color.black.opacity(0.25))
+					.background(Color.black.opacity(0.25))
+					.cornerRadius(70)
+				
+				FontIcon.text(.materialIcon(code: .close), fontsize: 35).foregroundColor(Color.white)
+				
+			}.padding(.horizontal, 10).onTapGesture {
+				self.mode.wrappedValue.dismiss()
+			}
+			
+			Spacer ()
+			
+			ZStack {
+				
+				Circle().frame(width: 20, height: 20)
+					.padding()
+					.foregroundColor(Color.black.opacity(0.25))
+					.background(Color.black.opacity(0.25))
+					.cornerRadius(70)
+				
+				FontIcon.text(.ionicon(code: .ios_flash), fontsize: 35).foregroundColor(Color.white)
+				
+			}.padding(.horizontal, 10)
+			
+		}.padding(.top, 20)
+	}
+}
+
+struct CaptureButton: View, CameraActions {
+	@ObservedObject var events: UserEvents
+	
+	var body: some View {
+		
+		HStack {
+			
+			ZStack {
+				
+				Circle().frame(width: 35, height: 35)
+					.padding()
+					.foregroundColor(Color.black.opacity(0.25))
+					.background(Color.black.opacity(0.25))
+					.cornerRadius(70)
+				
+			}.padding(.horizontal, 20).onTapGesture {
+				self.takePhoto(events: events)
+			}
+			
+		}
+	}
+	
+}
+
+struct BottomButtons: View, CameraActions {
 	@ObservedObject var events: UserEvents
 	
 	var body: some View {
@@ -52,57 +122,34 @@ struct CameraInterfaceView: View, CameraActions {
 				
 				Circle().frame(width: 20, height: 20)
 					.padding()
-					.foregroundColor(Color.white)
-					.background(Color.white)
+					.foregroundColor(Color.black.opacity(0.25))
+					.background(Color.black.opacity(0.25))
 					.cornerRadius(70)
 				
-				FontIcon.text(.ionicon(code: .ios_images), fontsize: 25).foregroundColor(Color.black)
+				FontIcon.text(.ionicon(code: .ios_images), fontsize: 35).foregroundColor(Color.white)
 				
-			}.padding(.horizontal, 20)
-			
-			ZStack {
-				
-				Circle().frame(width: 35, height: 35)
-					.padding()
-					.foregroundColor(Color.white)
-					.background(Color.white)
-					.cornerRadius(70)
-				
-			}.padding(.horizontal, 20).onTapGesture {
-				self.takePhoto(events: events)
+			}.padding(.horizontal, 10).onTapGesture {
+				self.changeFlashMode(events: events)
 			}
+			
+			Spacer()
 			
 			ZStack {
 				
 				Circle().frame(width: 20, height: 20)
 					.padding()
-					.foregroundColor(Color.white)
-					.background(Color.white)
+					.foregroundColor(Color.black.opacity(0.25))
+					.background(Color.black.opacity(0.25))
 					.cornerRadius(70)
 				
-				FontIcon.text(.ionicon(code: .ios_reverse_camera), fontsize: 25).foregroundColor(Color.black)
+				FontIcon.text(.ionicon(code: .ios_reverse_camera), fontsize: 35).foregroundColor(Color.white)
 				
-			}.padding(.horizontal, 20).onTapGesture {
+			}.padding(.horizontal, 10).onTapGesture {
 				self.rotateCamera(events: events)
 			}
 			
-		}.padding(.vertical, 30)
+		}.padding(.bottom, 20)
 		
-		//		VStack {
-		//			HStack {
-		////				rotateButton().onTapGesture {
-		////					self.rotateCamera(events: events)
-		////				}
-		//				Spacer()
-		////				flashButton().onTapGesture {
-		////					self.changeFlashMode(events: events)
-		////				}
-		//			}
-		//			Spacer()
-		////			captureButton().onTapGesture {
-		////				self.takePhoto(events: events)
-		////			}
-		//		}
 	}
 }
 
