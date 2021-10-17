@@ -67,11 +67,11 @@ class LoginSettingUpViewModel: ObservableObject {
 //		self.setUserDetailsInStore()
 //	}
 //	
-	func setUserDetailsInStore () {
-		
-		UserDefaults.standard.set(82, forKey: "MyId");
-//		UserDefaults.standard.set("san", forKey: "MyName");
-//		UserDefaults.standard.set("+919849167641", forKey: "MyPhone");
-//		UserDefaults.standard.set(self.userDeets.image, forKey: "MyDp");
-	}
+//	func setUserDetailsInStore () {
+//
+//		UserDefaults.standard.set(82, forKey: "MyId");
+////		UserDefaults.standard.set("san", forKey: "MyName");
+////		UserDefaults.standard.set("+919849167641", forKey: "MyPhone");
+////		UserDefaults.standard.set(self.userDeets.image, forKey: "MyDp");
+//	}
 }

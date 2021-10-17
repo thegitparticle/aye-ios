@@ -89,7 +89,7 @@ struct LoginSettingUpScreen: View {
 	func onClickNextButton (status: String) {
 		if (status == "Worked") {
 			print("debuglogs code", "contacts synced right")
-			UserDefaults.standard.set("82", forKey: "MyId");
+//			UserDefaults.standard.set("82", forKey: "MyId");
 			UserDefaults.standard.set(true, forKey: "LoginState");
 			self.activateLandingScreenNav = true
 		} else if (status == "No") {
