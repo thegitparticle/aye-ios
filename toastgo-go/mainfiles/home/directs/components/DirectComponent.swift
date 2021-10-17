@@ -31,7 +31,14 @@ struct DirectComponent: View {
 					
 					Text(directHere.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 					
-					Text("tap and start new frame").foregroundColor(LightTheme.Colors.textPrimary.opacity(0.2)).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 1)
+					if (directHere.ongoing_frame) {
+						
+						Text("live frame").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 1)
+						
+					} else {
+						
+						Text("tap and start new frame").foregroundColor(LightTheme.Colors.textPrimary.opacity(0.2)).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 1)
+					}
 				}
 				
 				Spacer()
