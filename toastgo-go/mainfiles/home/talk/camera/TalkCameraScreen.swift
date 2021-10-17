@@ -38,7 +38,9 @@ struct TalkCameraScreen: View {
 				
 				Spacer()
 				
-				BottomButtons(events: events)
+				CaptureButton(events: events)
+				
+				BottomButtonsCamera(events: events)
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity)
 			
@@ -50,6 +52,8 @@ struct TalkCameraScreen: View {
 struct TopButtons: View, CameraActions {
 	@ObservedObject var events: UserEvents
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+	
+	@State var flashLightIconState: Bool = false
 	
 	var body: some View {
 		
@@ -79,9 +83,19 @@ struct TopButtons: View, CameraActions {
 					.background(Color.black.opacity(0.25))
 					.cornerRadius(70)
 				
-				FontIcon.text(.ionicon(code: .ios_flash), fontsize: 35).foregroundColor(Color.white)
+				if (flashLightIconState) {
 				
-			}.padding(.horizontal, 10)
+					FontIcon.text(.ionicon(code: .ios_flash), fontsize: 35).foregroundColor(Color.white)
+					
+				} else {
+						
+					FontIcon.text(.ionicon(code: .ios_flash_off), fontsize: 35).foregroundColor(Color.white)
+				}
+				
+			}.padding(.horizontal, 10).onTapGesture {
+				self.changeFlashMode(events: events)
+				self.flashLightIconState = (!flashLightIconState)
+			}
 			
 		}.padding(.top, 20)
 	}
@@ -98,20 +112,20 @@ struct CaptureButton: View, CameraActions {
 				
 				Circle().frame(width: 35, height: 35)
 					.padding()
-					.foregroundColor(Color.black.opacity(0.25))
-					.background(Color.black.opacity(0.25))
+					.foregroundColor(Color.white)
+					.background(Color.white)
 					.cornerRadius(70)
 				
 			}.padding(.horizontal, 20).onTapGesture {
 				self.takePhoto(events: events)
 			}
 			
-		}
+		}.padding(.vertical, 30)
 	}
 	
 }
 
-struct BottomButtons: View, CameraActions {
+struct BottomButtonsCamera: View, CameraActions {
 	@ObservedObject var events: UserEvents
 	
 	var body: some View {
