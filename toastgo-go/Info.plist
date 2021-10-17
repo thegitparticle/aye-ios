@@ -22,6 +22,12 @@
 	<true/>
 	<key>NSContactsUsageDescription</key>
 	<string>sup? needs contacts to connect you to your friends!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>needs camera access to click, click and share with friends</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>needs microphone access for camera recording to work</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>needs photos access</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GothamRounded-Bold.otf</string>

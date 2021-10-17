@@ -35,10 +35,10 @@ struct TalkScreen: View {
 				
 				if (self.showButtons) {
 					
-					BottomButtons()
+					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
 					
 				} else {
-				
+					
 					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
 					
 				}
@@ -54,21 +54,38 @@ struct TalkScreen: View {
 
 private struct BottomButtons: View {
 	
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
+	var channelId: String
+	var ongoingFrame: Bool
+	var startTime: String
+	var endTime: String
+	var ongoingStream: Bool
+	var ongoingStreamUser: String
+	var directornot: Bool
+	
+	var my_id: Int
+	var my_name: String
+	
 	var body: some View {
 		
 		HStack {
 			
-			ZStack {
+			NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
 				
-				Circle().frame(width: 20, height: 20)
-					.padding()
-					.foregroundColor(LightTheme.Colors.textSecondary)
-					.background(LightTheme.Colors.textSecondary)
-					.cornerRadius(70)
+				ZStack {
+					
+					Circle().frame(width: 20, height: 20)
+						.padding()
+						.foregroundColor(LightTheme.Colors.textSecondary)
+						.background(LightTheme.Colors.textSecondary)
+						.cornerRadius(70)
+					
+					FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+					
+				}.padding(.horizontal, 20)
 				
-				FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
-				
-			}.padding(.horizontal, 20)
+			}
 			
 			ZStack {
 				
@@ -93,6 +110,7 @@ private struct BottomButtons: View {
 				FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
 				
 			}.padding(.horizontal, 20)
+			
 		}.padding(.vertical, 30)
 		
 	}
@@ -194,8 +212,8 @@ private struct HeaderHere: View {
 	}
 }
 
-//struct TalkScreen_Previews: PreviewProvider {
-//	static var previews: some View {
-//		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false)
-//	}
-//}
+struct TalkScreen_Previews: PreviewProvider {
+	static var previews: some View {
+		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false, my_id: 82, my_name: "San")
+	}
+}
