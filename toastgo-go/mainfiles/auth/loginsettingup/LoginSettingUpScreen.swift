@@ -56,6 +56,12 @@ struct LoginSettingUpScreen: View {
 				Spacer().onAppear() {
 					self.requestAccess()
 					self.getContacts()
+//						print("defaultsdatadebug - onapprar is called")
+//						UserDefaults.standard.set(82, forKey: "MyId");
+//						UserDefaults.standard.set("san", forKey: "MyName");
+//						UserDefaults.standard.set("+919849167641", forKey: "MyPhone");
+//						UserDefaults.standard.set(self.userDeets.image, forKey: "MyDp");
+//						print("defaultsdatadebug - onapprar is done")
 				}
 				
 				if (contactsButtonActive) {
@@ -83,6 +89,7 @@ struct LoginSettingUpScreen: View {
 	func onClickNextButton (status: String) {
 		if (status == "Worked") {
 			print("debuglogs code", "contacts synced right")
+			UserDefaults.standard.set("82", forKey: "MyId");
 			UserDefaults.standard.set(true, forKey: "LoginState");
 			self.activateLandingScreenNav = true
 		} else if (status == "No") {

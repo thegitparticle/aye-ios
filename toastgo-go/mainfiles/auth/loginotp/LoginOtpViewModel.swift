@@ -75,6 +75,7 @@ class LoginOtpViewModel: ObservableObject {
 		}.resume()
 	}
 	
+	
 	public func getUserDetails(phone: String) {
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/users/profile/\(phone)/") else {
@@ -89,7 +90,9 @@ class LoginOtpViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode(UserDetailsDataClass.self, from: data) {
 					
 					DispatchQueue.main.async {
+						
 						self.userDeetsHere = decodedResponse
+						
 //						print("debuglogs Fetch worked: \(decodedResponse)")
 					}
 					return

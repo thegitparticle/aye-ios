@@ -28,16 +28,27 @@ class LandingScreenViewModel: ObservableObject {
 	private var cancellable: AnyCancellable?
 	
 	init (userDetailsPublisher: AnyPublisher<[UserDeets], Never> = UserDeetsStore.shared.userDetails.eraseToAnyPublisher()) {
+		
 		print("debugcoredata userdetailspublisher init workng before channcellable")
+		
 		cancellable = userDetailsPublisher.sink { [unowned self] deets in
 //			self.userDeetsHere.bio = deets.bio
 			self.userDeetsDB = deets
 		}
+		
 		print("debugcoredata userdetailspublisher init workng after channcellable")
+		
 		getUserDetails(phone: "+919849167641")
 	}
 	
+//	var userIdHereToCallFunctions = UserDefaults.standard.string(forKey: "MyId") ?? ""
+	
+	
+//	print("userdefaultsdebug", UserDefaults.standard.string(forKey: "MyId") ?? "")
+//	print("userdefaultsdebug", UserDefaults.standard.string(forKey: "LoginState") ?? "")
+	
 	init () {
+		
 		getUserDetails(phone: "+919849167641")
 		print("debugcoredata normal init working")
 		getMyClans(userid: String(82))
@@ -46,9 +57,23 @@ class LandingScreenViewModel: ObservableObject {
 		getDefaultRecos(userid: String(82))
 	}
 	
+	
+//		print ("userdefaultsdebug", self.userIdHereToCallFunctions)
+		
+//		getMyClans(userid: String(82))
+//		getMyDirects(userid: self.userIdHereToCallFunctions)
+//		getMyNudgeList(userid: self.userIdHereToCallFunctions)
+//		getDefaultRecos(userid: self.userIdHereToCallFunctions)
+//		getUserDetails(phone: UserDefaults.standard.string(forKey: "MyPhone") ?? "")
+		
+//	}
+	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
+		
 		print("debugcoredata add spacecraft called func")
+		
 		UserDeetsStore.shared.add(id: deets.id, image: deets.image, bio: deets.bio, user: String(9))
+		
 		print("debugcoredata add spacecraft called func ended workijng")
 	}
 	
@@ -59,11 +84,9 @@ class LandingScreenViewModel: ObservableObject {
 	
 	public func refreshLandingViewModel () {
 		
-		getUserDetails(phone: "+919849167641")
-		print("debugcoredata normal init working")
-		getMyClans(userid: String(82))
-		getMyDirects(userid: String(82))
-		getMyNudgeList(userid: String(82))
+		getMyClans(userid: String(UserDefaults.standard.integer(forKey: "my_Id")))
+		getMyDirects(userid: String(UserDefaults.standard.integer(forKey: "my_Id")))
+		getMyNudgeList(userid: String(UserDefaults.standard.integer(forKey: "my_Id")))
 		
 	}
 	
@@ -81,10 +104,10 @@ class LandingScreenViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode(UserDetailsDataClass.self, from: data) {
 					
 					DispatchQueue.main.async {
-//						print("debugcoredata response before \(decodedResponse)")
+
 						self.userDeetsHere = decodedResponse
 						self.addSpaceCraft(deets: decodedResponse)
-//						print("debugcoredata response \(decodedResponse)")
+
 						print("debugtextinput \(String(describing: self.userDeetsDB))")
 					}
 					return
@@ -103,6 +126,8 @@ class LandingScreenViewModel: ObservableObject {
 		}
 		
 		let request = URLRequest(url: url)
+		
+		print("userdefaultsdebug", "getMyClans function called")
 		
 		URLSession.shared.dataTask(with: request) { data, response, error in
 			
@@ -125,7 +150,7 @@ class LandingScreenViewModel: ObservableObject {
 							}
 						}
 //						self.clanHere = decodedResponse
-						print(decodedResponse)
+						print("userdefaultsdebug", decodedResponse)
 					}
 					return
 				}
@@ -151,6 +176,7 @@ class LandingScreenViewModel: ObservableObject {
 					
 					DispatchQueue.main.async {
 						self.directsHere = decodedResponse
+						print("userdefaultsdebug", decodedResponse)
 					}
 					return
 				}
@@ -176,6 +202,7 @@ class LandingScreenViewModel: ObservableObject {
 					
 					DispatchQueue.main.async {
 						self.nudgeListHere = decodedResponse
+						print("userdefaultsdebug", decodedResponse)
 					}
 					return
 				}

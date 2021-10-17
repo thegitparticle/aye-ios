@@ -2,7 +2,7 @@
 //  LoginSettingUpViewModel.swift
 //  toastgo-go
 //
-//  Created by SAN on 10/14/21.
+//  Created by SAN on 10/14/21.``
 //
 
 import Foundation
@@ -61,5 +61,17 @@ class LoginSettingUpViewModel: ObservableObject {
 				}
 				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
 			}.resume()
+	}
+	
+//	init () {
+//		self.setUserDetailsInStore()
+//	}
+//	
+	func setUserDetailsInStore () {
+		
+		UserDefaults.standard.set(82, forKey: "MyId");
+//		UserDefaults.standard.set("san", forKey: "MyName");
+//		UserDefaults.standard.set("+919849167641", forKey: "MyPhone");
+//		UserDefaults.standard.set(self.userDeets.image, forKey: "MyDp");
 	}
 }
