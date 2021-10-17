@@ -23,6 +23,8 @@ class LandingScreenViewModel: ObservableObject {
 	
 	@Published var nudgeListHere = [NudgeListItemDataClass]()
 	
+	@Published var defaultRecos = [DefaultRecosDataClass]()
+	
 	private var cancellable: AnyCancellable?
 	
 	init (userDetailsPublisher: AnyPublisher<[UserDeets], Never> = UserDeetsStore.shared.userDetails.eraseToAnyPublisher()) {
@@ -41,6 +43,7 @@ class LandingScreenViewModel: ObservableObject {
 		getMyClans(userid: String(82))
 		getMyDirects(userid: String(82))
 		getMyNudgeList(userid: String(82))
+		getDefaultRecos(userid: String(82))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
@@ -82,7 +85,7 @@ class LandingScreenViewModel: ObservableObject {
 						self.userDeetsHere = decodedResponse
 						self.addSpaceCraft(deets: decodedResponse)
 //						print("debugcoredata response \(decodedResponse)")
-						print("debugcoredata \(String(describing: self.userDeetsDB))")
+						print("debugtextinput \(String(describing: self.userDeetsDB))")
 					}
 					return
 				}
@@ -178,6 +181,36 @@ class LandingScreenViewModel: ObservableObject {
 				}
 				
 				print("debuglogs Fetch failed nudge list: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
+	public func getDefaultRecos (userid: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		print("debugtextinput get def recos func is called")
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+					
+					DispatchQueue.main.async {
+						
+						self.defaultRecos = decodedResponse
+						
+						print("debugtextinput \(String(describing: self.defaultRecos))")
+					}
+					return
+				}
+				
+				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()

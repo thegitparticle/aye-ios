@@ -47,6 +47,8 @@
 		264AB2F62705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
 		26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D81271C207F0043C750 /* TalkCameraScreen.swift */; };
 		26613D85271C287E0043C750 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = 26613D84271C287E0043C750 /* SwiftUICam */; };
+		26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */; };
+		26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */; };
 		2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */; };
 		2677FF59271B25210035EABC /* TalkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF58271B25210035EABC /* TalkScreen.swift */; };
 		2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5A271B25510035EABC /* TalkViewModel.swift */; };
@@ -129,6 +131,8 @@
 		264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-BoldItalic.otf"; sourceTree = "<group>"; };
 		264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Book.otf"; sourceTree = "<group>"; };
 		26613D81271C207F0043C750 /* TalkCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraScreen.swift; sourceTree = "<group>"; };
+		26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
+		26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRecosDataClass.swift; sourceTree = "<group>"; };
 		2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		2677FF58271B25210035EABC /* TalkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkScreen.swift; sourceTree = "<group>"; };
 		2677FF5A271B25510035EABC /* TalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		260D71A627185FFF00DD9F80 /* dataclasses */ = {
 			isa = PBXGroup;
 			children = (
+				26613D88271C6FC50043C750 /* recos */,
 				26D119C9271995B0000044A3 /* clansdeets */,
 				26D119C8271995A9000044A3 /* userdeets */,
 			);
@@ -383,6 +388,14 @@
 			path = camera;
 			sourceTree = "<group>";
 		};
+		26613D88271C6FC50043C750 /* recos */ = {
+			isa = PBXGroup;
+			children = (
+				26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */,
+			);
+			path = recos;
+			sourceTree = "<group>";
+		};
 		2677FF55271B242D0035EABC /* talk */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +421,7 @@
 				260D719E27178E4100DD9F80 /* LottieView.swift */,
 				2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */,
 				2677FF5C271B6B020035EABC /* SliderComponent.swift */,
+				26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -782,6 +796,7 @@
 				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
+				26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */,
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
@@ -789,6 +804,7 @@
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */,
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
+				26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */,
 				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				26D119BF2718ED87000044A3 /* LiveClanComponent.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,

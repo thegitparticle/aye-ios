@@ -17,6 +17,8 @@ struct MyDirectsScreen: View {
 	
 	var refreshFunction: () -> Bool
 	
+	var defaultRecosPassing: [DefaultRecosDataClass]
+	
 	@State private var now = Date()
 	
 	var body: some View {
@@ -33,7 +35,7 @@ struct MyDirectsScreen: View {
 				
 				ForEach(directsListHere, id: \.direct_channel_id) {item in
 					
-					DirectComponent(directHere: item, my_id: my_id, my_name: my_name)
+					DirectComponent(directHere: item, my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)
 				}
 				
 				Spacer().frame(height: 50)

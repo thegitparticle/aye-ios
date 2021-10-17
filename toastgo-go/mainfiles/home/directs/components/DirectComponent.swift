@@ -15,9 +15,11 @@ struct DirectComponent: View {
 	var my_id: Int
 	var my_name: String
 	
+	var defaultRecosPassing: [DefaultRecosDataClass]
+	
 	var body: some View {
 		
-		NavigationLink(destination: TalkScreen(clubName: directHere.display_guys.full_name, clubId: Int(directHere.display_guys.user_id) ?? 0, channelId: directHere.direct_channel_id, ongoingFrame: directHere.ongoing_frame, startTime: directHere.start_time, endTime: directHere.end_time, ongoingStream: directHere.stream_status, ongoingStreamUser: directHere.stream_started_by, directornot: true, my_id: my_id, my_name: my_name)) {
+		NavigationLink(destination: TalkScreen(clubName: directHere.display_guys.full_name, clubId: Int(directHere.display_guys.user_id) ?? 0, channelId: directHere.direct_channel_id, ongoingFrame: directHere.ongoing_frame, startTime: directHere.start_time, endTime: directHere.end_time, ongoingStream: directHere.stream_status, ongoingStreamUser: directHere.stream_started_by, directornot: true, my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
 		
 		HStack (alignment: .center) {
 			
