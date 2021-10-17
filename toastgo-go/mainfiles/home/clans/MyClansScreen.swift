@@ -12,6 +12,10 @@ struct MyClansScreen: View {
 	
 	var clansListHere: [MyClansDataClass]
 	var liveClansHere: [MyClansDataClass]
+	
+	var my_id: Int
+	var my_name: String
+	
 	var refreshFunction: () -> Bool
 	
 	@State private var now = Date()
@@ -30,12 +34,12 @@ struct MyClansScreen: View {
 				
 				ForEach(liveClansHere, id: \.club_id) {item in
 					
-					LiveClanComponent(clanHere: item, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+					LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
 				}
 				
 				ForEach(clansListHere, id: \.club_id) {item in
 					
-					DormantClanComponent(clanHere: item)
+					DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name)
 				}
 				
 				Spacer().frame(height: 200)

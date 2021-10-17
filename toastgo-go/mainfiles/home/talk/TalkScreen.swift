@@ -14,8 +14,8 @@ struct TalkScreen: View {
 	
 	@State var showButtons: Bool = false
 	
-	var clubName: String
-	var clubId: Int
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
 	var channelId: String
 	var ongoingFrame: Bool
 	var startTime: String
@@ -23,6 +23,9 @@ struct TalkScreen: View {
 	var ongoingStream: Bool
 	var ongoingStreamUser: String
 	var directornot: Bool
+	
+	var my_id: Int
+	var my_name: String
 	
 	var body: some View {
 		
@@ -36,7 +39,7 @@ struct TalkScreen: View {
 					
 				} else {
 				
-					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true})
+					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
 					
 				}
 				
@@ -45,11 +48,6 @@ struct TalkScreen: View {
 			HeaderHere(titleText: clubName)
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
-	}
-	
-	func startFrameChangeUi () {
-		print ("startframedebug start frame change ui func called")
-		self.showButtons = true
 	}
 	
 }
@@ -106,6 +104,8 @@ private struct StartFramePart: View {
 	var clubId: Int
 	var channelId: String
 	var showButton: () -> ()
+	var directornot: Bool
+	var my_id: Int
 	
 	@StateObject private var viewModel = TalkViewModel()
 	
@@ -116,15 +116,23 @@ private struct StartFramePart: View {
 			Rectangle().fill(LightTheme.Colors.appLeadVariant).frame(maxWidth: .infinity, maxHeight: 300, alignment: .top).background(LightTheme.Colors.appLeadVariant).cornerRadius(30)
 			
 			VStack {
+				
 				Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+				
 				Text("frame lasts for 12 hours").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.caption).padding(20)
 				
 				SliderComponent(thumbnailColor: Color.red,
+								
 								didReachEndAction: { view in
-									print("startframedebug reach end!!")
+									
 									DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-										print("startframedebug async after dispatch queue is cqalled")
-										viewModel.postStartClanFrame(club_name: clubId, channel_id: channelId)
+										if (directornot) {
+											
+											viewModel.postStartDirectFrame(other_user_id: clubId, channel_id: channelId, my_id: my_id)
+										} else {
+											
+											viewModel.postStartClanFrame(club_name: clubId, channel_id: channelId)
+										}
 										showButton()
 									}
 								})
@@ -186,8 +194,8 @@ private struct HeaderHere: View {
 	}
 }
 
-struct TalkScreen_Previews: PreviewProvider {
-	static var previews: some View {
-		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false)
-	}
-}
+//struct TalkScreen_Previews: PreviewProvider {
+//	static var previews: some View {
+//		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false)
+//	}
+//}

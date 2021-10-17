@@ -11,6 +11,10 @@ struct MyDirectsScreen: View {
 	
 	var directsListHere: [MyDirectsDataClass]
 	var nudgeListHere: [NudgeListItemDataClass]
+	
+	var my_id: Int
+	var my_name: String
+	
 	var refreshFunction: () -> Bool
 	
 	@State private var now = Date()
@@ -29,7 +33,7 @@ struct MyDirectsScreen: View {
 				
 				ForEach(directsListHere, id: \.direct_channel_id) {item in
 					
-					DirectComponent(directHere: item)
+					DirectComponent(directHere: item, my_id: my_id, my_name: my_name)
 				}
 				
 				Spacer().frame(height: 50)

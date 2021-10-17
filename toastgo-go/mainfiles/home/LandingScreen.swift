@@ -26,14 +26,14 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere, refreshFunction: self.refreshLandingViewModelHere)
+							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere)
 							
 						} else {
 							
-							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, refreshFunction: self.refreshLandingViewModelHere )
+							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere )
 						}
 					}
-					
+			
 				}
 				.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 				
