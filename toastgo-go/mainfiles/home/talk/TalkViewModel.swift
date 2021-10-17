@@ -9,13 +9,6 @@ import Foundation
 
 class TalkViewModel: ObservableObject {
 	
-	@Published var defaultRecos = [DefaultRecosDataClass]()
-	
-	init () {
-		
-		getDefaultRecos(userid: String(82))
-	}
-	
 	public func postStartClanFrame(club_name: Int, channel_id: String) {
 		
 		var payload = ["start_time": String(Int(NSDate().timeIntervalSince1970)) , "end_time": String(Int(NSDate().timeIntervalSince1970) + 43200), "club_name": club_name, "channel_id": channel_id] as [AnyHashable : Any]
@@ -85,35 +78,4 @@ class TalkViewModel: ObservableObject {
 			}
 		}.resume()
 	}
-	
-	public func getDefaultRecos (userid: String) {
-		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
-			return
-		}
-		
-		let request = URLRequest(url: url)
-		
-		print("debugtextinput get def recos func is called")
-		
-		URLSession.shared.dataTask(with: request) { data, response, error in
-			
-			if let data = data {
-				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
-					
-					DispatchQueue.main.async {
-						
-						self.defaultRecos = decodedResponse
-
-						print("debugtextinput \(String(describing: self.defaultRecos))")
-					}
-					return
-				}
-				
-				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-			}
-			
-		}.resume()
-	}
-	
 }
