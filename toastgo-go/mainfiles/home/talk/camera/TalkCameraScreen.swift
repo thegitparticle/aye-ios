@@ -32,12 +32,15 @@ struct TalkCameraScreen: View {
 	@StateObject var model = TalkCameraViewModel()
 	
 	@State var currentZoomFactor: CGFloat = 1.0
+	@State var showCraftView: Bool = false
 	
 	var body: some View {
 		
 		GeometryReader { reader in
 			
 			ZStack {
+				
+				if (!showCraftView) {
 				
 				VStack {
 					
@@ -70,6 +73,12 @@ struct TalkCameraScreen: View {
 					bottomButtons
 					
 				}
+					
+				} else {
+					
+					craftView
+					
+				}
 				
 				
 			}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
@@ -84,7 +93,8 @@ struct TalkCameraScreen: View {
 			
 			ZStack {
 				Button(action: {
-					model.capturePhoto()
+					model.capturePhoto();
+					self.showCraftView = true
 				}, label: {
 					Circle()
 						.foregroundColor(.white)
@@ -179,6 +189,51 @@ struct TalkCameraScreen: View {
 			}
 			
 		}.padding(.bottom, 20)
+	}
+	
+	var craftView: some View {
+		
+		VStack {
+			if (model.photoClicked != nil ) {
+				
+				Image(uiImage: model.photoClicked.image ?? UIImage(imageLiteralResourceName: "")).resizable().aspectRatio(contentMode: .fit).animation(.spring())
+			
+			HStack {
+				
+				ZStack {
+					
+					Circle().frame(width: 20, height: 20)
+						.padding()
+						.foregroundColor(Color.white.opacity(0.75))
+						.background(Color.white.opacity(0.75))
+						.cornerRadius(70)
+					
+					FontIcon.text(.ionicon(code: .ios_backspace), fontsize: 35).foregroundColor(Color.black)
+					
+				}.padding(.horizontal, 10).onTapGesture {
+					self.showCraftView = false
+				}
+				
+				Spacer()
+				
+				ZStack {
+					
+					RoundedRectangle(cornerRadius: 10).frame(width: 60, height: 40)
+						.padding()
+						.foregroundColor(Color.white.opacity(0.75))
+						.background(Color.white.opacity(0.75))
+					
+					Text("send").foregroundColor(Color.black).font(LightTheme.Typography.subtitle2).padding(.horizontal, 10).padding(.vertical, 3)
+					
+				}.padding(.horizontal, 10).onTapGesture {
+					// send to pubnub logic
+				}
+				
+			}.padding(.bottom, 20).background(Color.black)
+				
+		}
+			
+		}.background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 	
 }

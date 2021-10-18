@@ -13,13 +13,11 @@ import Camera_SwiftUI
 final class TalkCameraViewModel: ObservableObject {
 	private let service = CameraService()
 	
-	@Published var photo: Photo!
+	@Published var photoClicked: Photo!
 	
 	@Published var showAlertError = false
 	
 	@Published var isFlashOn = false
-	
-//	var alertError: AlertError!
 	
 	var session: AVCaptureSession
 	
@@ -30,15 +28,9 @@ final class TalkCameraViewModel: ObservableObject {
 		
 		service.$photo.sink { [weak self] (photo) in
 			guard let pic = photo else { return }
-			self?.photo = pic 
+			self?.photoClicked = pic 
 		}
 		.store(in: &self.subscriptions)
-		
-//		service.$shouldShowAlertView.sink { [weak self] (val) in
-//			self?.alertError = self?.service.alertError
-//			self?.showAlertError = val
-//		}
-//		.store(in: &self.subscriptions)
 		
 		service.$flashMode.sink { [weak self] (mode) in
 			self?.isFlashOn = mode == .on
