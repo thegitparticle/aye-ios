@@ -63,6 +63,8 @@
 		26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; };
 		26B876A72716DC9800FFE414 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 26B876A62716DC9800FFE414 /* PopupView */; };
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
+		26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */; };
+		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -143,6 +145,7 @@
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
 		26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		26C2A237271D6013001B5D76 /* ic_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arrow.png; sourceTree = "<group>"; };
+		26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraViewModel.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
 				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
 				26613D85271C287E0043C750 /* SwiftUICam in Frameworks */,
+				26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */,
 				264AB2692705018400E394E6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				26613D81271C207F0043C750 /* TalkCameraScreen.swift */,
+				26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */,
 			);
 			path = camera;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				26B876A62716DC9800FFE414 /* PopupView */,
 				260D719C27178D5100DD9F80 /* Lottie */,
 				26613D84271C287E0043C750 /* SwiftUICam */,
+				26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -628,6 +634,7 @@
 				26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */,
 				260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
+				26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -817,6 +824,7 @@
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
+				26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */,
 				2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */,
 				2677FF59271B25210035EABC /* TalkScreen.swift in Sources */,
 				26D119C22718F5DB000044A3 /* MyDirectsScreen.swift in Sources */,
@@ -1216,6 +1224,14 @@
 				minimumVersion = 1.0.2;
 			};
 		};
+		26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1253,6 +1269,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			productName = "Camera-SwiftUI";
 		};
 /* End XCSwiftPackageProductDependency section */
 

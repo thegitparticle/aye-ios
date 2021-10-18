@@ -8,10 +8,13 @@
 import SwiftUI
 import SwiftUICam
 import SwiftUIFontIcon
+import Camera_SwiftUI
 
 struct TalkCameraScreen: View {
 	
 	@ObservedObject var events = UserEvents()
+	
+	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
 	var clubName: String     // in directs, its the other user's name
 	var clubId: Int 			// in directs, its the other user's id
@@ -26,36 +29,78 @@ struct TalkCameraScreen: View {
 	var my_id: Int
 	var my_name: String
 	
+	@StateObject var model = TalkCameraViewModel()
+	
+	@State var currentZoomFactor: CGFloat = 1.0
+	
 	var body: some View {
 		
-		ZStack {
+		GeometryReader { reader in
 			
-			CameraView(events: events, applicationName: "toastgo-go").frame(maxHeight: .infinity)
+			ZStack {
+				
+				VStack {
+					
+					topButtons
+					
+					CameraPreview(session: model.session)
+						.gesture(
+							DragGesture().onChanged({ (val) in
+								//  Only accept vertical drag
+								if abs(val.translation.height) > abs(val.translation.width) {
+									//  Get the percentage of vertical screen space covered by drag
+									let percentage: CGFloat = -(val.translation.height / reader.size.height)
+									//  Calculate new zoom factor
+									let calc = currentZoomFactor + percentage
+									//  Limit zoom factor to a maximum of 5x and a minimum of 1x
+									let zoomFactor: CGFloat = min(max(calc, 1), 5)
+									//  Store the newly calculated zoom factor
+									currentZoomFactor = zoomFactor
+									//  Sets the zoom factor to the capture device session
+									model.zoom(with: zoomFactor)
+								}
+							})
+						).onAppear {
+							model.configure()
+						}
+						.animation(.easeInOut)
+					
+					captureButton
+					
+					bottomButtons
+					
+				}
+				
+				
+			}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 			
-			VStack {
-				
-				TopButtons(events: events)
-				
-				Spacer()
-				
-				CaptureButton(events: events)
-				
-				BottomButtonsCamera(events: events)
-				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity)
-			
-		}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}
 		
 	}
-}
-
-struct TopButtons: View, CameraActions {
-	@ObservedObject var events: UserEvents
-	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
-	@State var flashLightIconState: Bool = false
+	var captureButton: some View {
+		
+		HStack {
+			
+			ZStack {
+				Button(action: {
+					model.capturePhoto()
+				}, label: {
+					Circle()
+						.foregroundColor(.white)
+						.frame(width: 80, height: 80, alignment: .center)
+						.overlay(
+							Circle()
+								.stroke(Color.black.opacity(0.8), lineWidth: 2)
+								.frame(width: 65, height: 65, alignment: .center)
+						)
+				})
+				
+			}.padding(.vertical, 30)
+		}
+	}
 	
-	var body: some View {
+	var topButtons: some View {
 		
 		HStack {
 			
@@ -83,52 +128,24 @@ struct TopButtons: View, CameraActions {
 					.background(Color.black.opacity(0.25))
 					.cornerRadius(70)
 				
-				if (flashLightIconState) {
-				
+				if (model.isFlashOn) {
+					
 					FontIcon.text(.ionicon(code: .ios_flash), fontsize: 35).foregroundColor(Color.white)
 					
 				} else {
-						
+					
 					FontIcon.text(.ionicon(code: .ios_flash_off), fontsize: 35).foregroundColor(Color.white)
 				}
 				
 			}.padding(.horizontal, 10).onTapGesture {
-				self.changeFlashMode(events: events)
-				self.flashLightIconState = (!flashLightIconState)
+				model.switchFlash()
 			}
 			
 		}.padding(.top, 20)
 	}
-}
-
-struct CaptureButton: View, CameraActions {
-	@ObservedObject var events: UserEvents
 	
-	var body: some View {
-		
-		HStack {
-			
-			ZStack {
-				
-				Circle().frame(width: 35, height: 35)
-					.padding()
-					.foregroundColor(Color.white)
-					.background(Color.white)
-					.cornerRadius(70)
-				
-			}.padding(.horizontal, 20).onTapGesture {
-				self.takePhoto(events: events)
-			}
-			
-		}.padding(.vertical, 30)
-	}
 	
-}
-
-struct BottomButtonsCamera: View, CameraActions {
-	@ObservedObject var events: UserEvents
-	
-	var body: some View {
+	var bottomButtons: some View {
 		
 		HStack {
 			
@@ -143,7 +160,6 @@ struct BottomButtonsCamera: View, CameraActions {
 				FontIcon.text(.ionicon(code: .ios_images), fontsize: 35).foregroundColor(Color.white)
 				
 			}.padding(.horizontal, 10).onTapGesture {
-				self.changeFlashMode(events: events)
 			}
 			
 			Spacer()
@@ -159,12 +175,12 @@ struct BottomButtonsCamera: View, CameraActions {
 				FontIcon.text(.ionicon(code: .ios_reverse_camera), fontsize: 35).foregroundColor(Color.white)
 				
 			}.padding(.horizontal, 10).onTapGesture {
-				self.rotateCamera(events: events)
+				model.flipCamera()
 			}
 			
 		}.padding(.bottom, 20)
-		
 	}
+	
 }
 
 struct TalkCameraScreen_Previews: PreviewProvider {
