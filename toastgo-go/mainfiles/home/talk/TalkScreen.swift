@@ -84,6 +84,8 @@ private struct BottomButtons: View {
 	@State var showTextInput: Bool = false
 	@ObservedObject var textFieldManagerTalkScreen = TextFieldManagerTalkScreen()
 	
+	@State var selectedReco: String = ""
+	
 	var body: some View {
 		
 		if (!showTextInput) {
@@ -139,21 +141,32 @@ private struct BottomButtons: View {
 			
 			VStack {
 				
-				ScrollView(.horizontal) {
+				HStack {
 					
-					LazyHStack(alignment: .center) {
+					if (self.selectedReco.count > 2) {
 						
-						ForEach(viewModel.defaultRecos , id: \.id) { set in
+						KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+					}
+					
+					ScrollView(.horizontal) {
+						
+						LazyHStack(alignment: .center) {
 							
-							ForEach(set.links, id: \.self) { link in
+							ForEach(viewModel.defaultRecos , id: \.id) { set in
 								
-								KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+								ForEach(set.links, id: \.self) { link in
+									
+									KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+										self.selectedReco = link
+									}
+								}
 							}
-						}
+							
+						}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
 						
-					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+					}
 					
-				}
+				}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
 				
 				HStack(alignment: .center) {
 					
@@ -161,7 +174,7 @@ private struct BottomButtons: View {
 					
 				}
 				
-			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding()
+			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding().padding(.bottom, 30)
 			
 		}
 	}
