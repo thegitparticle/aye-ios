@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUICam
 import SwiftUIFontIcon
 import Camera_SwiftUI
+import ImagePickerView
 
 struct TalkCameraScreen: View {
 	
@@ -32,7 +33,12 @@ struct TalkCameraScreen: View {
 	@StateObject var model = TalkCameraViewModel()
 	
 	@State var currentZoomFactor: CGFloat = 1.0
+	
 	@State var showCraftView: Bool = false
+	@State var showCraftViewPickedImage: Bool = false
+	
+	@State var showImagePicker: Bool = false
+	@State var imageSelectedFromDevice: UIImage?
 	
 	var body: some View {
 		
@@ -72,11 +78,25 @@ struct TalkCameraScreen: View {
 					
 					bottomButtons
 					
+				}.sheet(isPresented: self.$showImagePicker) {
+					ImagePickerView(sourceType: .photoLibrary) { image in
+						self.showCraftViewPickedImage = true
+						self.showCraftView = true
+						self.imageSelectedFromDevice = image
+						print ("cameradebug", image)
+					}
 				}
 					
 				} else {
 					
-					craftView
+					if (!showCraftViewPickedImage) {
+					
+						craftView
+						
+					} else {
+						
+						craftViewPickedFromDevice
+					}
 					
 				}
 				
@@ -94,6 +114,7 @@ struct TalkCameraScreen: View {
 			ZStack {
 				Button(action: {
 					model.capturePhoto();
+					self.showCraftViewPickedImage = false
 					self.showCraftView = true
 				}, label: {
 					Circle()
@@ -170,6 +191,8 @@ struct TalkCameraScreen: View {
 				FontIcon.text(.ionicon(code: .ios_images), fontsize: 35).foregroundColor(Color.white)
 				
 			}.padding(.horizontal, 10).onTapGesture {
+				
+				self.showImagePicker = true
 			}
 			
 			Spacer()
@@ -232,6 +255,50 @@ struct TalkCameraScreen: View {
 			}.padding(.bottom, 20).background(Color.black)
 				
 		}
+			
+		}.background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity)
+	}
+	
+	var craftViewPickedFromDevice: some View {
+		
+		VStack {
+				
+			Image(uiImage: self.imageSelectedFromDevice ?? UIImage(imageLiteralResourceName: "")).resizable().aspectRatio(contentMode: .fit).animation(.spring())
+				
+				HStack {
+					
+					ZStack {
+						
+						Circle().frame(width: 20, height: 20)
+							.padding()
+							.foregroundColor(Color.white.opacity(0.75))
+							.background(Color.white.opacity(0.75))
+							.cornerRadius(70)
+						
+						FontIcon.text(.ionicon(code: .ios_backspace), fontsize: 35).foregroundColor(Color.black)
+						
+					}.padding(.horizontal, 10).onTapGesture {
+						self.showCraftViewPickedImage = false
+						self.showCraftView = false
+					}
+					
+					Spacer()
+					
+					ZStack {
+						
+						RoundedRectangle(cornerRadius: 10).frame(width: 60, height: 40)
+							.padding()
+							.foregroundColor(Color.white.opacity(0.75))
+							.background(Color.white.opacity(0.75))
+						
+						Text("send").foregroundColor(Color.black).font(LightTheme.Typography.subtitle2).padding(.horizontal, 10).padding(.vertical, 3)
+						
+					}.padding(.horizontal, 10).onTapGesture {
+						// send to pubnub logic
+					}
+					
+				}.padding(.bottom, 20).background(Color.black)
+				
 			
 		}.background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity)
 	}

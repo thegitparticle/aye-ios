@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "ImagePickerView",
+        "repositoryURL": "https://github.com/ralfebert/ImagePickerView.git",
+        "state": {
+          "branch": null,
+          "revision": "b84dd1c85a65cddba40c89699cd63ba0cb248dbd",
+          "version": "0.5.0"
+        }
+      },
+      {
         "package": "Kingfisher",
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {

@@ -65,6 +65,7 @@
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
 		26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
+		26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23F271DFB29001B5D76 /* ImagePickerView */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -176,6 +177,7 @@
 				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
+				26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */,
 				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
 				26613D85271C287E0043C750 /* SwiftUICam in Frameworks */,
 				26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */,
@@ -551,6 +553,7 @@
 				260D719C27178D5100DD9F80 /* Lottie */,
 				26613D84271C287E0043C750 /* SwiftUICam */,
 				26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */,
+				26C2A23F271DFB29001B5D76 /* ImagePickerView */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -635,6 +638,7 @@
 				260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
 				26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -1232,6 +1236,14 @@
 				minimumVersion = 0.0.5;
 			};
 		};
+		26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ralfebert/ImagePickerView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1274,6 +1286,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
 			productName = "Camera-SwiftUI";
+		};
+		26C2A23F271DFB29001B5D76 /* ImagePickerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
+			productName = ImagePickerView;
 		};
 /* End XCSwiftPackageProductDependency section */
 
