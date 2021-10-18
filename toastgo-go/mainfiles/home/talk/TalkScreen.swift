@@ -141,25 +141,17 @@ private struct BottomButtons: View {
 				
 				ScrollView(.horizontal) {
 					
-					
 					LazyHStack(alignment: .center) {
-						
-						Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
 						
 						ForEach(viewModel.defaultRecos , id: \.id) { set in
 							
-							Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
-							
 							ForEach(set.links, id: \.self) { link in
 								
-								Text("frame lasts for 12 hours").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.caption).padding(20)
-								
-								KFImage.url(URL(string: link)!).resizable().cornerRadius(10).frame(width: 100, height: 40)
-									.cornerRadius(10.0)
+								KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
 							}
 						}
 						
-					}.background(LightTheme.Colors.uiSurface).frame(width: 120, height: 50)
+					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
 					
 				}
 				
@@ -169,7 +161,7 @@ private struct BottomButtons: View {
 					
 				}
 				
-			}.padding(20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding()
+			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding()
 			
 		}
 	}
