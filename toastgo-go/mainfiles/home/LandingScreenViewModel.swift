@@ -23,7 +23,7 @@ class LandingScreenViewModel: ObservableObject {
 	
 	@Published var nudgeListHere = [NudgeListItemDataClass]()
 	
-	@Published var defaultRecos = [DefaultRecosDataClass]()
+//	@Published var defaultRecos = [DefaultRecosDataClass]()
 	
 	private var cancellable: AnyCancellable?
 	
@@ -38,12 +38,12 @@ class LandingScreenViewModel: ObservableObject {
 	}
 	
 	init () {
-		getUserDetails(phone: "+919849167641")
+//		getUserDetails(phone: "+919849167641")
 		print("debugcoredata normal init working")
 		getMyClans(userid: String(82))
 		getMyDirects(userid: String(82))
 		getMyNudgeList(userid: String(82))
-		getDefaultRecos(userid: String(82))
+//		getDefaultRecos(userid: String(82))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
@@ -59,11 +59,11 @@ class LandingScreenViewModel: ObservableObject {
 	
 	public func refreshLandingViewModel () {
 		
-		getUserDetails(phone: "+919849167641")
-		print("debugcoredata normal init working")
-		getMyClans(userid: String(82))
-		getMyDirects(userid: String(82))
-		getMyNudgeList(userid: String(82))
+//		getUserDetails(phone: "+919849167641")
+//		print("debugcoredata normal init working")
+//		getMyClans(userid: String(82))
+//		getMyDirects(userid: String(82))
+//		getMyNudgeList(userid: String(82))
 		
 	}
 	
@@ -90,7 +90,7 @@ class LandingScreenViewModel: ObservableObject {
 					return
 				}
 				
-				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuglogs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -115,12 +115,12 @@ class LandingScreenViewModel: ObservableObject {
 						self.clanHere = []
 						
 						for item in decodedResponse {
-							
+
 							if (item.ongoing_frame) {
-								
+
 								self.liveClansHere.append(item)
 							} else {
-								
+
 								self.clanHere.append(item)
 							}
 						}
@@ -186,33 +186,33 @@ class LandingScreenViewModel: ObservableObject {
 		}.resume()
 	}
 	
-	public func getDefaultRecos (userid: String) {
-		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
-			return
-		}
-		
-		let request = URLRequest(url: url)
-		
-		print("debugtextinput get def recos func is called")
-		
-		URLSession.shared.dataTask(with: request) { data, response, error in
-			
-			if let data = data {
-				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
-					
-					DispatchQueue.main.async {
-						
-						self.defaultRecos = decodedResponse
-						
-						print("debugtextinput \(String(describing: self.defaultRecos))")
-					}
-					return
-				}
-				
-				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-			}
-			
-		}.resume()
-	}
+//	public func getDefaultRecos (userid: String) {
+//
+//		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+//			return
+//		}
+//
+//		let request = URLRequest(url: url)
+//
+//		print("debugtextinput get def recos func is called")
+//
+//		URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//			if let data = data {
+//				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+//
+//					DispatchQueue.main.async {
+//
+//						self.defaultRecos = decodedResponse
+//
+//						print("debugtextinput \(String(describing: self.defaultRecos))")
+//					}
+//					return
+//				}
+//
+//				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+//			}
+//
+//		}.resume()
+//	}
 }

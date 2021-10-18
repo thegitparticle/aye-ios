@@ -9,6 +9,6 @@ import Foundation
 
 struct DefaultRecosDataClass: Codable, Equatable {
 	
-	var id: String
+	var id: Int
 	var links: [String]
 }

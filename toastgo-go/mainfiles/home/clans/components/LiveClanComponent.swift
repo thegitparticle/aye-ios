@@ -10,6 +10,8 @@ import Kingfisher
 
 struct LiveClanComponent: View {
 	
+	@StateObject private var viewModel = LandingScreenViewModel()
+	
 	var clanHere: MyClansDataClass
 	
 	var my_id: Int
@@ -17,12 +19,12 @@ struct LiveClanComponent: View {
 	
 	var indexInList: Int
 	
-	var defaultRecosPassing: [DefaultRecosDataClass]
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	var body: some View {
 		
 		if (clanHere.display_photos.count == 1) {
-			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name)) {
 				HStack () {
 					
 					if (indexInList/2 == 0) {
@@ -43,7 +45,7 @@ struct LiveClanComponent: View {
 			
 		} else if (clanHere.display_photos.count == 2) {
 			
-			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false, my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false, my_id: my_id, my_name: my_name)) {
 				
 				HStack () {
 					
@@ -65,7 +67,7 @@ struct LiveClanComponent: View {
 			
 		} else if (clanHere.display_photos.count == 3) {
 			
-			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name)) {
 				
 				HStack () {
 					
@@ -88,7 +90,7 @@ struct LiveClanComponent: View {
 			
 		} else if (clanHere.display_photos.count > 3) {
 			
-			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name)) {
 				
 				HStack () {
 					
@@ -110,7 +112,7 @@ struct LiveClanComponent: View {
 			
 		} else {
 			
-			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+			NavigationLink(destination: TalkScreen(clubName: clanHere.club_name, clubId: clanHere.club_id, channelId: clanHere.pn_channel_id, ongoingFrame: clanHere.ongoing_frame, startTime: clanHere.start_time, endTime: clanHere.end_time, ongoingStream: clanHere.on_going_stream_status, ongoingStreamUser: clanHere.stream_started_by, directornot: false,  my_id: my_id, my_name: my_name)) {
 				
 				HStack () {
 					

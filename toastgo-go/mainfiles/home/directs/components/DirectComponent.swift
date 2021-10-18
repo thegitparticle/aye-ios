@@ -15,18 +15,18 @@ struct DirectComponent: View {
 	var my_id: Int
 	var my_name: String
 	
-	var defaultRecosPassing: [DefaultRecosDataClass]
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	var body: some View {
 		
-		NavigationLink(destination: TalkScreen(clubName: directHere.display_guys.full_name, clubId: Int(directHere.display_guys.user_id) ?? 0, channelId: directHere.direct_channel_id, ongoingFrame: directHere.ongoing_frame, startTime: directHere.start_time, endTime: directHere.end_time, ongoingStream: directHere.stream_status, ongoingStreamUser: directHere.stream_started_by, directornot: true, my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)) {
+		NavigationLink(destination: TalkScreen(clubName: directHere.display_guys.full_name, clubId: Int(directHere.display_guys.user_id) ?? 0, channelId: directHere.direct_channel_id, ongoingFrame: directHere.ongoing_frame, startTime: directHere.start_time, endTime: directHere.end_time, ongoingStream: directHere.stream_status, ongoingStreamUser: directHere.stream_started_by, directornot: true, my_id: my_id, my_name: my_name)) {
 		
 		HStack (alignment: .center) {
 			
 			HStack (alignment: .center) {
 				
-				KFImage.url(URL(string: directHere.display_guys.profile_picture)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
-					.cornerRadius(50.0)
+//				KFImage.url(URL(string: directHere.display_guys.profile_picture)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
+//					.cornerRadius(50.0)
 				
 				
 				VStack(alignment: .leading) {

@@ -30,7 +30,7 @@ struct TalkScreen: View {
 	var my_id: Int
 	var my_name: String
 	
-	var defaultRecosPassing: [DefaultRecosDataClass]
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	var body: some View {
 		
@@ -40,7 +40,7 @@ struct TalkScreen: View {
 				
 				if (self.showButtons) {
 					
-					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, default_recos: defaultRecosPassing)
+					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
 					
 				} else {
 					
@@ -52,7 +52,7 @@ struct TalkScreen: View {
 				
 				self.showButtons = ongoingFrame
 				
-				viewModel.getDefaultRecos(userid: String(my_id))
+//				viewModel.getDefaultRecos(userid: String(my_id))
 			}
 			
 			HeaderHere(titleText: clubName)
@@ -79,7 +79,7 @@ private struct BottomButtons: View {
 	var my_id: Int
 	var my_name: String
 	
-	var default_recos: [DefaultRecosDataClass]
+//	var default_recos: [DefaultRecosDataClass]
 	
 	@State var showTextInput: Bool = false
 	@ObservedObject var textFieldManagerTalkScreen = TextFieldManagerTalkScreen()
@@ -142,21 +142,21 @@ private struct BottomButtons: View {
 				HStack(alignment: .center) {
 					
 					Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20).onAppear() {
-						print("debugrecoshere", viewModel.defaultRecos)
+//						print("debugrecoshere", viewModel.defaultRecos)
 					}
 					
-					ForEach(viewModel.defaultRecos , id: \.id) { set in
-						
-						Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
-						
-						ForEach(set.links, id: \.self) { link in
-							
-							Text("frame lasts for 12 hours").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.caption).padding(20)
-							
-							KFImage.url(URL(string: link)!).resizable().cornerRadius(5).frame(width: 100, height: 40)
-								.cornerRadius(50.0)
-						}
-					}
+//					ForEach(viewModel.defaultRecos , id: \.id) { set in
+//
+//						Text("Slide to start a frame").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.h5).padding(20)
+//
+//						ForEach(set.links, id: \.self) { link in
+//
+//							Text("frame lasts for 12 hours").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.caption).padding(20)
+//
+//							KFImage.url(URL(string: link)!).resizable().cornerRadius(5).frame(width: 100, height: 40)
+//								.cornerRadius(50.0)
+//						}
+//					}
 					
 				}.background(LightTheme.Colors.uiSurface).frame(width: 120, height: 50)
 				

@@ -18,7 +18,7 @@ struct MyClansScreen: View {
 	
 	var refreshFunction: () -> Bool
 	
-	var defaultRecosPassing: [DefaultRecosDataClass]
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	@State private var now = Date()
 	
@@ -36,12 +36,12 @@ struct MyClansScreen: View {
 				
 				ForEach(liveClansHere, id: \.club_id) {item in
 					
-					LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0, defaultRecosPassing: defaultRecosPassing)
+					LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
 				}
 				
 				ForEach(clansListHere, id: \.club_id) {item in
 					
-					DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name, defaultRecosPassing: defaultRecosPassing)
+					DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name)
 				}
 				
 				Spacer().frame(height: 200)
