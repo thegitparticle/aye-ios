@@ -82,9 +82,16 @@ struct LoginSettingUpScreen: View {
 	
 	func onClickNextButton (status: String) {
 		if (status == "Worked") {
-			print("debuglogs code", "contacts synced right")
+			
+			UserDefaults.standard.set(userDeets.image, forKey: "MyDp");
+			UserDefaults.standard.set(userDeets.user.full_name, forKey: "MyName");
+			UserDefaults.standard.set(userDeets.user.id, forKey: "MyId");
+			UserDefaults.standard.set(userDeets.user.phone, forKey: "MyPhone");
+			
 			UserDefaults.standard.set(true, forKey: "LoginState");
+			
 			self.activateLandingScreenNav = true
+			
 		} else if (status == "No") {
 			print("debuglogs code", "contacts upload error")
 			self.requestAccess()
