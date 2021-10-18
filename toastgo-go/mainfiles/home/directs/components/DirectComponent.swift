@@ -25,8 +25,7 @@ struct DirectComponent: View {
 			
 			HStack (alignment: .center) {
 				
-//				KFImage.url(URL(string: directHere.display_guys.profile_picture)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
-//					.cornerRadius(50.0)
+				KFImage.url(URL(string: directHere.display_guys.profile_picture)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
 				
 				
 				VStack(alignment: .leading) {
