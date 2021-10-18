@@ -11,10 +11,10 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var defaultRecos = [DefaultRecosDataClass]()
 	
-//	init () {
-//		
-//		getDefaultRecos(userid: String(82))
-//	}
+	init () {
+		
+		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+	}
 	
 	public func postStartClanFrame(club_name: Int, channel_id: String) {
 		
@@ -86,34 +86,34 @@ class TalkViewModel: ObservableObject {
 		}.resume()
 	}
 	
-//	public func getDefaultRecos (userid: String) {
-//
-//		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
-//			return
-//		}
-//
-//		let request = URLRequest(url: url)
-//
-//		print("debugtextinput get def recos func is called")
-//
-//		URLSession.shared.dataTask(with: request) { data, response, error in
-//
-//			if let data = data {
-//				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
-//
-//					DispatchQueue.main.async {
-//
-//						self.defaultRecos = decodedResponse
-//
-//						print("debugtextinput \(String(describing: self.defaultRecos))")
-//					}
-//					return
-//				}
-//
-//				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-//			}
-//
-//		}.resume()
-//	}
+	public func getDefaultRecosTalkVM (userid: String) {
+
+		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+			return
+		}
+
+		let request = URLRequest(url: url)
+
+		print("debugtextinput get def recos func is called")
+
+		URLSession.shared.dataTask(with: request) { data, response, error in
+
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+
+					DispatchQueue.main.async {
+
+						self.defaultRecos = decodedResponse
+
+						print("debugtextinput \(String(describing: self.defaultRecos))")
+					}
+					return
+				}
+
+				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+			}
+
+		}.resume()
+	}
 	
 }

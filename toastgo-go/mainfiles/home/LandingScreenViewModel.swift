@@ -43,7 +43,7 @@ class LandingScreenViewModel: ObservableObject {
 		getMyClans(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 		getMyDirects(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 		getMyNudgeList(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
-		getDefaultRecos(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+//		getDefaultRecos(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
