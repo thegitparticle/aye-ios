@@ -144,30 +144,6 @@ struct TalkCameraScreen: View {
 			
 			case let .success((task, newFile, publishedAt)):
 
-//				let fileUploaded = PubNubLocalFileBase(
-//					channel: channelId,
-//					fileId: newFile.fileId,
-//					fileURL: newFile.
-//				)
-//
-//				var publishRequestExtras = PubNub.PublishFileRequest(additionalMessage: "", store: true, meta: (metaHere as! JSONCodable))
-//
-//				pubnub.publish(
-//
-//					file: fileUploaded,
-//					request: publishRequestExtras
-//
-//				) { result in
-//
-//					switch result {
-//
-//					case let .success(timetoken):
-//						print("File Successfully Published at: \(timetoken)")
-//					case let .failure(error):
-//						print("Error publishing file: \(error.localizedDescription)")
-//					}
-//				}
-
 				print("The file with an ID of \(newFile.fileId) was uploaded at \(publishedAt) timetoken) ")
 
 			case let .failure(error):
