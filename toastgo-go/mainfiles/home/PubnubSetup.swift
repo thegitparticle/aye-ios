@@ -21,5 +21,9 @@ class PubnubSetup: ObservableObject {
 		)
 		
 		self.pubnub = PubNub(configuration: config)
+		
+		PubNub.log.levels = [.all]
+		PubNub.log.writers = [ConsoleLogWriter(), FileLogWriter()]
+
 	}
 }

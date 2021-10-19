@@ -14,7 +14,7 @@ class TalkViewModel: ObservableObject {
 	
 	init () {
 		
-		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+//		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 	}
 	
 	public func postStartClanFrame(club_name: Int, channel_id: String) {
@@ -145,23 +145,14 @@ class TalkViewModel: ObservableObject {
 	
 	public func getOldMessagesFromPn (channelId: String, start: Int, end: Int, pubnubConfig: PubnubSetup) {
 		
-//		print("pubnubmessagesgrabdebug", "get old messages called - before on config ")
-//
-//		let config = PubNubConfiguration(
-//			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
-//			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
-//			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
-//		)
-//
-//		let pubnub = PubNub(configuration: config)
-		
 		print("pubnubmessagesgrabdebug", "get old messages called - after config ")
 		
 		pubnubConfig.pubnub.fetchMessageHistory(for: [channelId], includeMeta: true, page: PubNubBoundedPageBase(start: Timetoken(start), end: Timetoken(end))) { result in
 			
 			switch result {
 			case let .success(response):
-				if let myChannelMessages = response.messagesByChannel["my_channel"] {
+				print(response)
+				if let myChannelMessages = response.messagesByChannel[channelId] {
 					print("pubnubmessagesgrabdebug", "The list of messages returned for `my_channel`: \(myChannelMessages)")
 				}
 				if let nextPage = response.next {

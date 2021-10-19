@@ -56,12 +56,12 @@ struct TalkScreen: View {
 				//				viewModel.getDefaultRecos(userid: String(my_id))
 			}
 			
-			HeaderHere(titleText: clubName)
+			HeaderHere(titleText: clubName).onAppear() {
+				
+				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: Int(startTime) ?? 0 * 10000000, pubnubConfig: pubnubSetUp)
+			}
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
-			
-			viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: Int(startTime) ?? 0 * 10000000, pubnubConfig: pubnubSetUp)
-		}
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 	}
 	
 }
