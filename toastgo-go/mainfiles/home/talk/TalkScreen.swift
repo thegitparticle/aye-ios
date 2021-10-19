@@ -10,6 +10,7 @@ import SwiftUIFontIcon
 import SwiftUIX
 import AudioToolbox
 import Kingfisher
+import PubNub
 
 struct TalkScreen: View {
 	
@@ -39,6 +40,16 @@ struct TalkScreen: View {
 			
 			VStack {
 				
+				if (viewModel.oldMessagesReceived.count > 0) {
+					
+					ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
+						
+						OldMessageComponent(anOldMessage: item)
+						
+//						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+					}
+				}
+				
 				if (self.showButtons) {
 					
 					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
@@ -58,7 +69,7 @@ struct TalkScreen: View {
 			
 			HeaderHere(titleText: clubName).onAppear() {
 				
-				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: Int(startTime) ?? 0 * 10000000, pubnubConfig: pubnubSetUp)
+				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
 			}
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)

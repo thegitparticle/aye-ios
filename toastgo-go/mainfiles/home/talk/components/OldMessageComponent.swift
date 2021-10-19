@@ -9,11 +9,18 @@ import SwiftUI
 import PubNub
 
 struct OldMessageComponent: View {
-	
+
 	var anOldMessage: PubNubMessage
-	
+
+//	@State var x: JSONCodable
+
     var body: some View {
-		Text("message here")
+
+		VStack {
+
+			Text("\(self.anOldMessage.payload.rawValue)" as String)
+
+		}
     }
 }
 

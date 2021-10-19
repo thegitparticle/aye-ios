@@ -12,9 +12,11 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var defaultRecos = [DefaultRecosDataClass]()
 	
+	@Published var oldMessagesReceived = [PubNubMessage]()
+	
 	init () {
 		
-//		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 	}
 	
 	public func postStartClanFrame(club_name: Int, channel_id: String) {
@@ -153,7 +155,24 @@ class TalkViewModel: ObservableObject {
 			case let .success(response):
 				print(response)
 				if let myChannelMessages = response.messagesByChannel[channelId] {
-					print("pubnubmessagesgrabdebug", "The list of messages returned for `my_channel`: \(myChannelMessages)")
+//					print("pubnubmessagesgrabdebug", "The list of messages returned for `my_channel`: \(myChannelMessages)")
+					
+					for message in myChannelMessages {
+						print("pubnubmessagesgrabdebug", message.payload.rawValue)
+						print("pubnubmessagesgrabdebug", type(of: message.published))
+					}
+					
+					self.oldMessagesReceived = myChannelMessages
+	
+//					if let decodedResponse = JSONDecoder().decode([PubNubMessage].self, from: response.messagesByChannel[channelId]) {
+//
+//					DispatchQueue.main.async {
+//						self.oldMessagesReceived = decodedResponse
+//					}
+//					return
+//
+//					}
+					
 				}
 				if let nextPage = response.next {
 					print("The next page used for pagination: \(nextPage)")
