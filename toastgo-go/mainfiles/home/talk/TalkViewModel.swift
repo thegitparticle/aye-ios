@@ -155,23 +155,41 @@ class TalkViewModel: ObservableObject {
 			case let .success(response):
 				print(response)
 				if let myChannelMessages = response.messagesByChannel[channelId] {
-//					print("pubnubmessagesgrabdebug", "The list of messages returned for `my_channel`: \(myChannelMessages)")
 					
-					for message in myChannelMessages {
-						print("pubnubmessagesgrabdebug", message.payload.rawValue)
-						print("pubnubmessagesgrabdebug", type(of: message.published))
-					}
+//					for message in myChannelMessages {
+//
+//						let x_here = message.metadata?.rawValue as! [String: Any]
+//
+//						for (key, value) in x_here {
+//
+//							if (key == "type") {
+//								print ("pubnubmessagesgrabdebug", value)
+//
+//
+//
+//							}
+//						}
+//
+//
+//						if (((x_here as AnyObject) as? MetaDataCMessage) != nil) {
+//
+//							var x_here_here = (x_here as AnyObject) as? MetaDataCMessage
+//
+//							print("pubnubmessagesgrabdebug", "c message")
+//							print("pubnubmessagesgrabdebug", x_here_here?.type)
+//
+//						} else {
+//
+//							var x_here_here = (x_here as AnyObject) as? MetaDataHMessage
+//
+//							print("pubnubmessagesgrabdebug", "h message")
+//							print("pubnubmessagesgrabdebug",  x_here_here?.type)
+//						}
+//
+//					}
 					
 					self.oldMessagesReceived = myChannelMessages
-	
-//					if let decodedResponse = JSONDecoder().decode([PubNubMessage].self, from: response.messagesByChannel[channelId]) {
-//
-//					DispatchQueue.main.async {
-//						self.oldMessagesReceived = decodedResponse
-//					}
-//					return
-//
-//					}
+
 					
 				}
 				if let nextPage = response.next {
