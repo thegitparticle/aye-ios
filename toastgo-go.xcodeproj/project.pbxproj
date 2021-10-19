@@ -68,6 +68,7 @@
 		26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23F271DFB29001B5D76 /* ImagePickerView */; };
 		26C2A243271E066E001B5D76 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A242271E066E001B5D76 /* PubNub */; };
 		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
+		26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A248271EB779001B5D76 /* TypeInputComponent.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -150,6 +151,7 @@
 		26C2A237271D6013001B5D76 /* ic_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arrow.png; sourceTree = "<group>"; };
 		26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraViewModel.swift; sourceTree = "<group>"; };
 		26C2A245271EAD18001B5D76 /* PubNubTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubTalk.swift; sourceTree = "<group>"; };
+		26C2A248271EB779001B5D76 /* TypeInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInputComponent.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		2677FF55271B242D0035EABC /* talk */ = {
 			isa = PBXGroup;
 			children = (
+				26C2A247271EB712001B5D76 /* recotalk */,
 				26613D80271C206C0043C750 /* camera */,
 				2677FF57271B24410035EABC /* components */,
 				2677FF58271B25210035EABC /* TalkScreen.swift */,
@@ -456,6 +459,14 @@
 				26C2A245271EAD18001B5D76 /* PubNubTalk.swift */,
 			);
 			path = talk;
+			sourceTree = "<group>";
+		};
+		26C2A247271EB712001B5D76 /* recotalk */ = {
+			isa = PBXGroup;
+			children = (
+				26C2A248271EB779001B5D76 /* TypeInputComponent.swift */,
+			);
+			path = recotalk;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -832,6 +843,7 @@
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
+				26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */,
 				2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */,
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
 				26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */,

@@ -15,3 +15,10 @@ struct MetaDataCMessage: Codable, JSONCodable {
 	
 }
 
+struct MetaDataHMessage: Codable, JSONCodable {
+	
+	var type: String
+	var image_url: String
+	var user_dp: String
+	
+}

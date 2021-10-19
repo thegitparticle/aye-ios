@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PubNub
 
 class TalkViewModel: ObservableObject {
 	
@@ -87,33 +88,61 @@ class TalkViewModel: ObservableObject {
 	}
 	
 	public func getDefaultRecosTalkVM (userid: String) {
-
+		
 		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
 			return
 		}
-
+		
 		let request = URLRequest(url: url)
-
+		
 		print("debugtextinput get def recos func is called")
-
+		
 		URLSession.shared.dataTask(with: request) { data, response, error in
-
+			
 			if let data = data {
 				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
-
+					
 					DispatchQueue.main.async {
-
+						
 						self.defaultRecos = decodedResponse
-
+						
 						print("debugtextinput \(String(describing: self.defaultRecos))")
 					}
 					return
 				}
-
+				
 				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
 			}
-
+			
 		}.resume()
+	}
+	
+	public func sendPubnubHMessage (message: String, selectedReco: String, channelId: String) {
+		
+		let config = PubNubConfiguration(
+			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
+			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
+			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
+		)
+		
+		let pubnub = PubNub(configuration: config)
+		
+		let metaHere = MetaDataHMessage(type: "h", image_url: selectedReco ,user_dp: UserDefaults.standard.string(forKey: "MyDp") ?? "")
+		
+		pubnub.publish(channel: channelId, message: message, shouldStore: true, meta: metaHere) { result in
+			
+			switch result {
+			
+				case let .success(timetoken):
+					
+					print("Message Successfully Published at: \(timetoken)")
+					
+				case let .failure(error):
+					
+					print("Failed Response: \(error.localizedDescription)")
+				
+			}
+		}
 	}
 	
 }

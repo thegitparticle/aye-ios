@@ -172,6 +172,15 @@ private struct BottomButtons: View {
 					
 					CocoaTextField("", text: $textFieldManagerTalkScreen.userInput).isFirstResponder(true).keyboardType(.default).frame(width: .infinity, height: 30).padding().foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
 					
+					if (self.selectedReco.count > 2) {
+						
+						FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
+							
+							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId)
+							
+						}
+					}
+					
 				}
 				
 			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding().padding(.bottom, 30)
