@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "PubNub",
+        "repositoryURL": "https://github.com/pubnub/swift.git",
+        "state": {
+          "branch": null,
+          "revision": "b8716e6b336523f33349ebb5b143dadd187d41e5",
+          "version": "4.1.0"
+        }
+      },
+      {
         "package": "SwiftUICam",
         "repositoryURL": "https://github.com/pierreveron/SwiftUICam",
         "state": {

@@ -66,6 +66,8 @@
 		26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
 		26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23F271DFB29001B5D76 /* ImagePickerView */; };
+		26C2A243271E066E001B5D76 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A242271E066E001B5D76 /* PubNub */; };
+		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -147,6 +149,7 @@
 		26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		26C2A237271D6013001B5D76 /* ic_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arrow.png; sourceTree = "<group>"; };
 		26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraViewModel.swift; sourceTree = "<group>"; };
+		26C2A245271EAD18001B5D76 /* PubNubTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubTalk.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
+				26C2A243271E066E001B5D76 /* PubNub in Frameworks */,
 				26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */,
 				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
 				26613D85271C287E0043C750 /* SwiftUICam in Frameworks */,
@@ -217,6 +221,7 @@
 		260D71A627185FFF00DD9F80 /* dataclasses */ = {
 			isa = PBXGroup;
 			children = (
+				26C2A244271EAD08001B5D76 /* talk */,
 				26613D88271C6FC50043C750 /* recos */,
 				26D119C9271995B0000044A3 /* clansdeets */,
 				26D119C8271995A9000044A3 /* userdeets */,
@@ -445,6 +450,14 @@
 			path = countrypicker;
 			sourceTree = "<group>";
 		};
+		26C2A244271EAD08001B5D76 /* talk */ = {
+			isa = PBXGroup;
+			children = (
+				26C2A245271EAD18001B5D76 /* PubNubTalk.swift */,
+			);
+			path = talk;
+			sourceTree = "<group>";
+		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +567,7 @@
 				26613D84271C287E0043C750 /* SwiftUICam */,
 				26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */,
 				26C2A23F271DFB29001B5D76 /* ImagePickerView */,
+				26C2A242271E066E001B5D76 /* PubNub */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -639,6 +653,7 @@
 				26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
 				26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
 				26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
+				26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -825,6 +840,7 @@
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
+				26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */,
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
@@ -1244,6 +1260,14 @@
 				minimumVersion = 0.5.0;
 			};
 		};
+		26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pubnub/swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1291,6 +1315,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
 			productName = ImagePickerView;
+		};
+		26C2A242271E066E001B5D76 /* PubNub */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */;
+			productName = PubNub;
 		};
 /* End XCSwiftPackageProductDependency section */
 
