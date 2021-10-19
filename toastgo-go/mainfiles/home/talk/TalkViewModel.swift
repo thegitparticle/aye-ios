@@ -115,19 +115,19 @@ class TalkViewModel: ObservableObject {
 		}.resume()
 	}
 	
-	public func sendPubnubHMessage (message: String, selectedReco: String, channelId: String) {
+	public func sendPubnubHMessage (message: String, selectedReco: String, channelId: String, pubnubConfig: PubnubSetup) {
 		
-		let config = PubNubConfiguration(
-			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
-			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
-			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
-		)
-		
-		let pubnub = PubNub(configuration: config)
+//		let config = PubNubConfiguration(
+//			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
+//			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
+//			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
+//		)
+//
+//		let pubnub = PubNub(configuration: config)
 		
 		let metaHere = MetaDataHMessage(type: "h", image_url: selectedReco ,user_dp: UserDefaults.standard.string(forKey: "MyDp") ?? "")
 		
-		pubnub.publish(channel: channelId, message: message, shouldStore: true, meta: metaHere) { result in
+		pubnubConfig.pubnub.publish(channel: channelId, message: message, shouldStore: true, meta: metaHere) { result in
 			
 			switch result {
 			
@@ -143,21 +143,21 @@ class TalkViewModel: ObservableObject {
 		}
 	}
 	
-	public func getOldMessagesFromPn (channelId: String, start: Int, end: Int) {
+	public func getOldMessagesFromPn (channelId: String, start: Int, end: Int, pubnubConfig: PubnubSetup) {
 		
-		print("pubnubmessagesgrabdebug", "get old messages called - before on config ")
-		
-		let config = PubNubConfiguration(
-			publishKey: "pub_key",
-			subscribeKey: "sub-key",
-			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
-		)
-		
-		let pubnub = PubNub(configuration: config)
+//		print("pubnubmessagesgrabdebug", "get old messages called - before on config ")
+//
+//		let config = PubNubConfiguration(
+//			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
+//			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
+//			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
+//		)
+//
+//		let pubnub = PubNub(configuration: config)
 		
 		print("pubnubmessagesgrabdebug", "get old messages called - after config ")
 		
-		pubnub.fetchMessageHistory(for: [channelId], includeMeta: true, page: PubNubBoundedPageBase(start: Timetoken(start), end: Timetoken(end))) { result in
+		pubnubConfig.pubnub.fetchMessageHistory(for: [channelId], includeMeta: true, page: PubNubBoundedPageBase(start: Timetoken(start), end: Timetoken(end))) { result in
 			
 			switch result {
 			case let .success(response):

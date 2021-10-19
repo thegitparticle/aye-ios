@@ -15,6 +15,7 @@ import PubNub
 struct TalkCameraScreen: View {
 	
 	@ObservedObject var events = UserEvents()
+	@ObservedObject var pubnubSetUpHere = PubnubSetup()
 	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
@@ -110,13 +111,13 @@ struct TalkCameraScreen: View {
 	
 	private func sendPubnubCameraMessage (imageFileHere: UIImage) {
 		
-		let config = PubNubConfiguration(
-			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
-			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
-			uuid: String(my_id)
-		)
-		
-		let pubnub = PubNub(configuration: config)
+//		let config = PubNubConfiguration(
+//			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
+//			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
+//			uuid: String(my_id)
+//		)
+//
+//		let pubnub = PubNub(configuration: config)
 		
 		let metaHere = MetaDataCMessage(type: "c", user_dp: UserDefaults.standard.string(forKey: "MyDp") ?? "")
 		
@@ -124,7 +125,7 @@ struct TalkCameraScreen: View {
 		
 		let customData = PubNub.PublishFileRequest(additionalMessage: "", store: true, meta: metaHere)
 		
-		pubnub.send(
+		pubnubSetUpHere.pubnub.send(
 
 			.data(dataOfImage, contentType: "png"),
 			

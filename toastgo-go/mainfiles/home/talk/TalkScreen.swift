@@ -14,6 +14,7 @@ import Kingfisher
 struct TalkScreen: View {
 	
 	@StateObject private var viewModel = TalkViewModel()
+	@StateObject private var pubnubSetUp = PubnubSetup()
 	
 	@State var showButtons: Bool = false
 	
@@ -59,7 +60,7 @@ struct TalkScreen: View {
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
 			
-			viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: Int(startTime) ?? 0 * 10000000)
+			viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: Int(startTime) ?? 0 * 10000000, pubnubConfig: pubnubSetUp)
 		}
 	}
 	
@@ -68,6 +69,7 @@ struct TalkScreen: View {
 private struct BottomButtons: View {
 	
 	@StateObject private var viewModel = TalkViewModel()
+	@StateObject private var pubnubSetUp = PubnubSetup()
 	
 	var clubName: String     // in directs, its the other user's name
 	var clubId: Int 			// in directs, its the other user's id
@@ -179,7 +181,7 @@ private struct BottomButtons: View {
 						
 						FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
 							
-							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId)
+							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
 							
 						}
 					}
