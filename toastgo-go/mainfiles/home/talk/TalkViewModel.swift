@@ -94,8 +94,7 @@ class TalkViewModel: ObservableObject {
 		}
 		
 		let request = URLRequest(url: url)
-		
-		print("debugtextinput get def recos func is called")
+
 		
 		URLSession.shared.dataTask(with: request) { data, response, error in
 			
@@ -106,7 +105,6 @@ class TalkViewModel: ObservableObject {
 						
 						self.defaultRecos = decodedResponse
 						
-						print("debugtextinput \(String(describing: self.defaultRecos))")
 					}
 					return
 				}
@@ -143,6 +141,52 @@ class TalkViewModel: ObservableObject {
 				
 			}
 		}
+	}
+	
+	public func getOldMessagesFromPn (channelId: String, start: Int, end: Int) {
+		
+		print("pubnubmessagesgrabdebug", "get old messages called - before on config ")
+		
+		let config = PubNubConfiguration(
+			publishKey: "pub_key",
+			subscribeKey: "sub-key",
+			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
+		)
+		
+		let pubnub = PubNub(configuration: config)
+		
+		print("pubnubmessagesgrabdebug", "get old messages called - after config ")
+		
+		pubnub.fetchMessageHistory(for: [channelId], includeMeta: true, page: PubNubBoundedPageBase(start: Timetoken(start), end: Timetoken(end))) { result in
+			
+			switch result {
+			case let .success(response):
+				if let myChannelMessages = response.messagesByChannel["my_channel"] {
+					print("pubnubmessagesgrabdebug", "The list of messages returned for `my_channel`: \(myChannelMessages)")
+				}
+				if let nextPage = response.next {
+					print("The next page used for pagination: \(nextPage)")
+				}
+			case let .failure(error):
+				print("pubnubmessagesgrabdebug", "Failed History Fetch Response: \(error.localizedDescription)")
+			}
+		}
+	}
+	
+	
+	public func subscribeToPnChannel (channelId: String) {
+		
+		let config = PubNubConfiguration(
+			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
+			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
+			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
+		)
+		
+		let pubnub = PubNub(configuration: config)
+		
+		pubnub.subscribe(to: [channelId])
+		
+		
 	}
 	
 }

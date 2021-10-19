@@ -22,3 +22,8 @@ struct MetaDataHMessage: Codable, JSONCodable {
 	var user_dp: String
 	
 }
+
+//struct OldPNMessageDataClass: Codable, JSONCodable, Equatable {
+//	
+//	
+//}
