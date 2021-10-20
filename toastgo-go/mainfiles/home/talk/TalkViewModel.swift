@@ -156,38 +156,6 @@ class TalkViewModel: ObservableObject {
 				print(response)
 				if let myChannelMessages = response.messagesByChannel[channelId] {
 					
-//					for message in myChannelMessages {
-//
-//						let x_here = message.metadata?.rawValue as! [String: Any]
-//
-//						for (key, value) in x_here {
-//
-//							if (key == "type") {
-//								print ("pubnubmessagesgrabdebug", value)
-//
-//
-//
-//							}
-//						}
-//
-//
-//						if (((x_here as AnyObject) as? MetaDataCMessage) != nil) {
-//
-//							var x_here_here = (x_here as AnyObject) as? MetaDataCMessage
-//
-//							print("pubnubmessagesgrabdebug", "c message")
-//							print("pubnubmessagesgrabdebug", x_here_here?.type)
-//
-//						} else {
-//
-//							var x_here_here = (x_here as AnyObject) as? MetaDataHMessage
-//
-//							print("pubnubmessagesgrabdebug", "h message")
-//							print("pubnubmessagesgrabdebug",  x_here_here?.type)
-//						}
-//
-//					}
-					
 					self.oldMessagesReceived = myChannelMessages
 
 					
