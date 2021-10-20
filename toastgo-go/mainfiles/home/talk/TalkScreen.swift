@@ -55,6 +55,11 @@ struct TalkScreen: View {
 								//						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
 							}
 							
+							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
+								
+								NewMessageComponent(aNewMessage: item)
+							}
+							
 							Spacer().frame(height: 200)
 							
 						}
@@ -70,6 +75,8 @@ struct TalkScreen: View {
 			HeaderHere(titleText: clubName).onAppear() {
 				
 				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
+				
+				viewModel.subscribeToPnChannel(channelId: channelId, pubnubConfig: pubnubSetUp)
 			}
 			
 			if (self.showButtons) {

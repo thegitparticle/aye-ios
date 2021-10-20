@@ -14,6 +14,8 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var oldMessagesReceived = [PubNubMessage]()
 	
+	@Published var newMessagesReceived = [PubNubMessage]()
+	
 	init () {
 		
 		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
@@ -170,19 +172,33 @@ class TalkViewModel: ObservableObject {
 	}
 	
 	
-//	public func subscribeToPnChannel (channelId: String) {
-//
-//		let config = PubNubConfiguration(
-//			publishKey: "pub-c-a65bb691-5b8a-4c4b-aef5-e2a26677122d",
-//			subscribeKey: "sub-c-d099e214-9bcf-11eb-9adf-f2e9c1644994",
-//			uuid: String(UserDefaults.standard.integer(forKey: "MyId"))
-//		)
-//
-//		let pubnub = PubNub(configuration: config)
-//
-//		pubnub.subscribe(to: [channelId])
-//
-//
-//	}
+	public func subscribeToPnChannel (channelId: String, pubnubConfig: PubnubSetup) {
+
+		pubnubConfig.pubnub.subscribe(to: [channelId])
+
+		let listener = SubscriptionListener()
+		
+		listener.didReceiveSubscription = { event in
+			switch event {
+			case let .messageReceived(message):
+				
+				self.newMessagesReceived.append(message)
+				
+				print("\(message)")
+			case let .connectionStatusChanged(status):
+				print("Status Received: \(status)")
+			case let .presenceChanged(presence):
+				print("Presence Received: \(presence)")
+			case let .subscribeError(error):
+				print("Subscription Error \(error)")
+			default:
+				break
+			}
+		}
+		
+		// Start receiving subscription events
+		pubnubConfig.pubnub.add(listener)
+
+	}
 	
 }

@@ -71,6 +71,7 @@
 		26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A248271EB779001B5D76 /* TypeInputComponent.swift */; };
 		26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */; };
 		26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24C271F0602001B5D76 /* PubnubSetup.swift */; };
+		26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24E27201089001B5D76 /* NewMessageComponent.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -156,6 +157,7 @@
 		26C2A248271EB779001B5D76 /* TypeInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInputComponent.swift; sourceTree = "<group>"; };
 		26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMessageComponent.swift; sourceTree = "<group>"; };
 		26C2A24C271F0602001B5D76 /* PubnubSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubnubSetup.swift; sourceTree = "<group>"; };
+		26C2A24E27201089001B5D76 /* NewMessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageComponent.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */,
+				26C2A24E27201089001B5D76 /* NewMessageComponent.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				26D119C52718F5FA000044A3 /* DirectComponent.swift in Sources */,
 				264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */,
 				26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */,
+				26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */,
 				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
