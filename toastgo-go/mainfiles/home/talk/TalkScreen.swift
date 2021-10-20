@@ -51,8 +51,7 @@ struct TalkScreen: View {
 							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
 								
 								OldMessageComponent(anOldMessage: item)
-								
-								//						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+
 							}
 							
 							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
