@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftUIKitView
 import AgoraRtcKit
+import SwiftUIFontIcon
 
 struct CamStreamScreen: View {
 	
@@ -48,39 +49,93 @@ struct CamStreamScreen: View {
 	}
 	
 	
-    var body: some View {
+	var body: some View {
 		
 		ZStack() {
 			CamStreamSessionView(
-				backColor: Color("remoteBackColor"),
+				
+				backColor: Color("localBackColor"),
 				backImage: Image("big_logo"),
-				hideCanvas: isRemoteVideoMuted || !isRemoteInSession || !isLocalInSession,
-				canvas: remoteCanvas
+				hideCanvas: !isLocalInSession,
+				canvas: localCanvas
+				
 			).edgesIgnoringSafeArea(.all).onAppear() {print(agora_token)}
+			
 			VStack {
 				HStack {
+					
 					Spacer()
+					
 					CamStreamSessionView(
+						
 						backColor: Color("localBackColor"),
 						backImage: Image("logo"),
-						hideCanvas: !isLocalInSession,
-						canvas: localCanvas
+						hideCanvas: isRemoteVideoMuted || !isRemoteInSession || !isLocalInSession,
+						canvas: remoteCanvas
+						
 					).frame(width: 84, height: 112)
+					
 				}.padding()
+				
 				Spacer()
+				
 				HStack {
+					
 					Button(action: toggleLocalAudio) {
-						Image(isLocalAudioMuted ? "mute" : "mic")
-							.resizable()
+						
+						ZStack {
+							
+							Circle().frame(width: 20, height: 20)
+								.padding()
+								.foregroundColor(Color.black.opacity(0.25))
+								.background(Color.black.opacity(0.25))
+								.cornerRadius(70)
+							
+							if (isLocalAudioMuted) {
+								
+								FontIcon.text(.ionicon(code: .ios_mic_off), fontsize: 35).foregroundColor(Color.white)
+								
+							} else {
+								
+								FontIcon.text(.ionicon(code: .ios_mic), fontsize: 35).foregroundColor(Color.white)
+							}
+							
+						}
+						
 					}.frame(width: 55, height: 55)
+					
 					Button(action: toggleLocalSession) {
-						Image(isLocalInSession ? "end" : "call")
-							.resizable()
+						
+						ZStack {
+							
+							Circle().frame(width: 20, height: 20)
+								.padding()
+								.foregroundColor(LightTheme.Colors.error)
+								.background(LightTheme.Colors.error)
+								.cornerRadius(70)
+							
+						}
+						
 					}.frame(width: 70, height: 70)
+					
 					Button(action: switchCamera) {
-						Image("switch").resizable()
+						
+						ZStack {
+							
+							Circle().frame(width: 20, height: 20)
+								.padding()
+								.foregroundColor(Color.black.opacity(0.25))
+								.background(Color.black.opacity(0.25))
+								.cornerRadius(70)
+							
+							FontIcon.text(.ionicon(code: .ios_reverse_camera), fontsize: 35).foregroundColor(Color.white)
+							
+						}
+						
 					}.frame(width: 55, height: 55)
+					
 				}.padding()
+				
 			}
 		}.onAppear {
 			// This is our usual steps for joining
@@ -90,7 +145,7 @@ struct CamStreamScreen: View {
 			self.setupLocalVideo()
 			self.toggleLocalSession()
 		}
-    }
+	}
 }
 
 extension CamStreamScreen {
@@ -161,6 +216,7 @@ fileprivate extension CamStreamScreen {
 			joinChannel()
 		} else {
 			leaveChannel()
+			self.mode.wrappedValue.dismiss()
 		}
 	}
 	
