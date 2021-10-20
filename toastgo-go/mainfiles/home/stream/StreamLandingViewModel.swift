@@ -32,7 +32,7 @@ final class StreamLandingViewModel: ObservableObject {
 	
 	public func getAgoraToken(channelId: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_token_generator/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_token_generator/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)/") else {
 			
 			return
 		}

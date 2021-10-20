@@ -141,6 +141,15 @@ struct CamStreamScreen: View {
 			// This is our usual steps for joining
 			// a channel and starting a call.
 			self.initializeAgoraEngine()
+			
+			if (directornot) {
+				
+				viewModel.startStreamDirectServerCalls(channelId: channelId)
+			} else {
+				
+				viewModel.startStreamClubServerCalls(channelId: channelId, clubId: String(clubId))
+			}
+ 
 			self.setupVideo()
 			self.setupLocalVideo()
 			self.toggleLocalSession()
@@ -216,6 +225,15 @@ fileprivate extension CamStreamScreen {
 			joinChannel()
 		} else {
 			leaveChannel()
+			
+			if (directornot) {
+				
+				viewModel.stopStreamDirectServerCalls(channelId: channelId)
+			} else {
+				
+				viewModel.stopStreamClubServerCalls(channelId: channelId, clubId: String(clubId))
+			}
+			
 			self.mode.wrappedValue.dismiss()
 		}
 	}

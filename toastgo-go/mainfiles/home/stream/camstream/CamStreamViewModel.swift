@@ -11,12 +11,12 @@ class CamStreamViewModel: ObservableObject {
 	
 	public func startStreamClubServerCalls(channelId: String, clubId: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_start_composite_recording/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_start_composite_recording/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)/") else {
 			
 			return
 		}
 		
-		guard let url2 = URL(string: "https://apisayepirates.life/api/users/start_club_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(clubId)") else {
+		guard let url2 = URL(string: "https://apisayepirates.life/api/users/start_club_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(clubId)/") else {
 			
 			return
 		}
@@ -28,7 +28,7 @@ class CamStreamViewModel: ObservableObject {
 			
 			if let data = data {
 				
-				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuguserdefs Fetch failed startStreamClubServerCalls: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -41,7 +41,7 @@ class CamStreamViewModel: ObservableObject {
 	
 	public func stopStreamClubServerCalls(channelId: String, clubId: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/stop_club_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(clubId)") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/stop_club_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(clubId)/") else {
 			
 			return
 		}
@@ -52,7 +52,7 @@ class CamStreamViewModel: ObservableObject {
 			
 			if let data = data {
 				
-				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuguserdefs Fetch failed stopStreamClubServerCalls: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -61,12 +61,12 @@ class CamStreamViewModel: ObservableObject {
 	
 	public func startStreamDirectServerCalls(channelId: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_start_composite_recording/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_start_composite_recording/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)/") else {
 			
 			return
 		}
 		
-		guard let url2 = URL(string: "https://apisayepirates.life/api/users/start_direct_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+		guard let url2 = URL(string: "https://apisayepirates.life/api/users/start_direct_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)/") else {
 			
 			return
 		}
@@ -78,7 +78,7 @@ class CamStreamViewModel: ObservableObject {
 			
 			if let data = data {
 				
-				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuguserdefs Fetch failed startStreamDirectServerCalls: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -91,7 +91,7 @@ class CamStreamViewModel: ObservableObject {
 	
 	public func stopStreamDirectServerCalls(channelId: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/stop_direct_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+		guard let url = URL(string: "https://apisayepirates.life/api/users/stop_direct_stream/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)/") else {
 			
 			return
 		}
@@ -102,7 +102,7 @@ class CamStreamViewModel: ObservableObject {
 			
 			if let data = data {
 				
-				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuguserdefs Fetch failed stopStreamDirectServerCalls: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
