@@ -80,6 +80,10 @@
 		26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */; };
 		26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */; };
 		26C2A265272077CA001B5D76 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A264272077CA001B5D76 /* AgoraRtcKit */; };
+		26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2662720877A001B5D76 /* AgoraViewController.swift */; };
+		26C2A26B2720AFDC001B5D76 /* CamStreamVideoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */; };
+		26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */; };
+		26C2A26F2720B143001B5D76 /* CamStreamVideoCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -171,6 +175,10 @@
 		26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamLandingViewModel.swift; sourceTree = "<group>"; };
 		26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamScreen.swift; sourceTree = "<group>"; };
 		26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamViewModel.swift; sourceTree = "<group>"; };
+		26C2A2662720877A001B5D76 /* AgoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraViewController.swift; sourceTree = "<group>"; };
+		26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamVideoEngine.swift; sourceTree = "<group>"; };
+		26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamSessionView.swift; sourceTree = "<group>"; };
+		26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamVideoCanvas.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -511,6 +519,7 @@
 				26C2A25D2720655A001B5D76 /* camstream */,
 				26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */,
 				26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */,
+				26C2A2662720877A001B5D76 /* AgoraViewController.swift */,
 			);
 			path = stream;
 			sourceTree = "<group>";
@@ -520,6 +529,9 @@
 			children = (
 				26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */,
 				26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */,
+				26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */,
+				26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */,
+				26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */,
 			);
 			path = camstream;
 			sourceTree = "<group>";
@@ -896,6 +908,7 @@
 			files = (
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
+				26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
 				26D119C72718F606000044A3 /* NudgeItemComponent.swift in Sources */,
 				26D119C52718F5FA000044A3 /* DirectComponent.swift in Sources */,
@@ -907,11 +920,13 @@
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
 				26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */,
+				26C2A26B2720AFDC001B5D76 /* CamStreamVideoEngine.swift in Sources */,
 				26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */,
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
+				26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */,
 				26C2A25A2720419A001B5D76 /* StreamLandingScreen.swift in Sources */,
@@ -928,6 +943,7 @@
 				26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */,
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
+				26C2A26F2720B143001B5D76 /* CamStreamVideoCanvas.swift in Sources */,
 				264AB273270516C100E394E6 /* EnterPhoneScreen.swift in Sources */,
 				26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */,
 				2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */,

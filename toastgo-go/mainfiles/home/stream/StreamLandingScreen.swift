@@ -37,6 +37,8 @@ struct StreamLandingScreen: View {
 				
 				VStack() {
 					
+					NavigationLink(destination: CamStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+					
 					HStack () {
 						
 						ZStack {
@@ -53,6 +55,8 @@ struct StreamLandingScreen: View {
 						}
 						
 					}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(LightTheme.Colors.sucesss)
+						
+					}
 					
 					HStack () {
 						
