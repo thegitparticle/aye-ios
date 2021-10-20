@@ -41,7 +41,7 @@ struct OldMessageComponent: View {
 	
 	var HMessageComponent: some View {
 		
-		VStack () {
+		ZStack () {
 			
 			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200)
 			
@@ -49,7 +49,7 @@ struct OldMessageComponent: View {
 				
 				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 10).background(LightTheme.Colors.uiSurface)
 				
-			}.offset(y: -20).cornerRadius(5)
+			}.cornerRadius(5).padding(.top, 180)
 			
 		}.padding(.horizontal, 20).padding(.vertical, 20)
 		
