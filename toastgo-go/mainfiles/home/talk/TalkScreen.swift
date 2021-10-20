@@ -11,6 +11,13 @@ import SwiftUIX
 import AudioToolbox
 import Kingfisher
 import PubNub
+import ImageViewerRemote
+
+extension UIScreen{
+	static let screenWidth = UIScreen.main.bounds.size.width
+	static let screenHeight = UIScreen.main.bounds.size.height
+	static let screenSize = UIScreen.main.bounds.size
+}
 
 struct TalkScreen: View {
 	
@@ -31,6 +38,8 @@ struct TalkScreen: View {
 	
 	var my_id: Int
 	var my_name: String
+	
+	@ObservedObject var imageViewer = ImageViewDataClass()
 	
 	//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
@@ -62,7 +71,7 @@ struct TalkScreen: View {
 							Spacer().frame(height: 200)
 							
 						}
-					}
+					}.overlay(ImageViewerRemote(imageURL: self.$imageViewer.overlayImageURL , viewerShown: self.$imageViewer.showImageOverlayViewer).frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight))
 				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear {

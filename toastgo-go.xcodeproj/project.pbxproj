@@ -72,6 +72,9 @@
 		26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */; };
 		26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24C271F0602001B5D76 /* PubnubSetup.swift */; };
 		26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24E27201089001B5D76 /* NewMessageComponent.swift */; };
+		26C2A25227201C1A001B5D76 /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A25127201C1A001B5D76 /* ImageViewerRemote */; };
+		26C2A25427201C1A001B5D76 /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A25327201C1A001B5D76 /* ImageViewer */; };
+		26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -158,6 +161,7 @@
 		26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMessageComponent.swift; sourceTree = "<group>"; };
 		26C2A24C271F0602001B5D76 /* PubnubSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubnubSetup.swift; sourceTree = "<group>"; };
 		26C2A24E27201089001B5D76 /* NewMessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageComponent.swift; sourceTree = "<group>"; };
+		26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerDataClass.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -185,12 +189,14 @@
 			files = (
 				26B876A72716DC9800FFE414 /* PopupView in Frameworks */,
 				260D719D27178D5100DD9F80 /* Lottie in Frameworks */,
+				26C2A25227201C1A001B5D76 /* ImageViewerRemote in Frameworks */,
 				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
 				26C2A243271E066E001B5D76 /* PubNub in Frameworks */,
 				26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */,
 				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
+				26C2A25427201C1A001B5D76 /* ImageViewer in Frameworks */,
 				26613D85271C287E0043C750 /* SwiftUICam in Frameworks */,
 				26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */,
 				264AB2692705018400E394E6 /* Kingfisher in Frameworks */,
@@ -229,6 +235,7 @@
 		260D71A627185FFF00DD9F80 /* dataclasses */ = {
 			isa = PBXGroup;
 			children = (
+				26C2A25527202597001B5D76 /* imageviewer */,
 				26C2A244271EAD08001B5D76 /* talk */,
 				26613D88271C6FC50043C750 /* recos */,
 				26D119C9271995B0000044A3 /* clansdeets */,
@@ -478,6 +485,14 @@
 			path = recotalk;
 			sourceTree = "<group>";
 		};
+		26C2A25527202597001B5D76 /* imageviewer */ = {
+			isa = PBXGroup;
+			children = (
+				26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */,
+			);
+			path = imageviewer;
+			sourceTree = "<group>";
+		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +603,8 @@
 				26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */,
 				26C2A23F271DFB29001B5D76 /* ImagePickerView */,
 				26C2A242271E066E001B5D76 /* PubNub */,
+				26C2A25127201C1A001B5D76 /* ImageViewerRemote */,
+				26C2A25327201C1A001B5D76 /* ImageViewer */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -674,6 +691,7 @@
 				26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
 				26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
 				26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */,
+				26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -878,6 +896,7 @@
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
 				26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */,
+				26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */,
 				264AB27C2705186900E394E6 /* EnterDetailsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1292,6 +1311,14 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1344,6 +1371,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */;
 			productName = PubNub;
+		};
+		26C2A25127201C1A001B5D76 /* ImageViewerRemote */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewerRemote;
+		};
+		26C2A25327201C1A001B5D76 /* ImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewer;
 		};
 /* End XCSwiftPackageProductDependency section */
 

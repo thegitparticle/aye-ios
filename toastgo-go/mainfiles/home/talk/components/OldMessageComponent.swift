@@ -8,6 +8,7 @@
 import SwiftUI
 import PubNub
 import Kingfisher
+import ImageViewerRemote
 
 struct OldMessageComponent: View {
 	
@@ -15,6 +16,8 @@ struct OldMessageComponent: View {
 	
 	var anOldMessage: PubNubMessage
 	var channelId: String
+	
+	@StateObject var imageViewer = ImageViewDataClass()
 	
 	var body: some View {
 		
@@ -42,7 +45,9 @@ struct OldMessageComponent: View {
 		
 		ZStack () {
 			
-			KFImage.url(grabURLFromPubNub(name: "galgalga", Id: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String)).resizable().cornerRadius(10).frame(width: .infinity, height: 200)
+			KFImage.url(grabURLFromPubNub(name: "galgalga", Id: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String)).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+//				imageViewer.showImageOverlayViewer = true
+			}
 			
 			ZStack {
 				
@@ -60,6 +65,8 @@ struct OldMessageComponent: View {
 		
 		do {
 			downloadURL = try pubnubSetUp.pubnub.generateFileDownloadURL(channel: channelId, fileId: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String, filename: "galgalgal")
+			print("got pic from pn")
+//			imageViewer.overlayImageURL = downloadURL.absoluteString
 		} catch {
 			downloadURL = URL(fileURLWithPath: "")
 		}
@@ -72,7 +79,13 @@ struct OldMessageComponent: View {
 		
 		ZStack () {
 			
-			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200)
+			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+//				self.imageViewer.overlayImageURL = (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String
+//				self.imageViewer.showImageOverlayViewer = true
+				
+				imageViewer.changeImageOverlayLink(link: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+				imageViewer.changeImageOverlayState()
+			}
 			
 			ZStack {
 				
@@ -81,7 +94,6 @@ struct OldMessageComponent: View {
 			}.cornerRadius(5).padding(.top, 180)
 			
 		}.padding(.horizontal, 20).padding(.vertical, 20)
-		
 	}
 	
 }
