@@ -50,7 +50,7 @@ struct TalkScreen: View {
 							
 							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
 								
-								OldMessageComponent(anOldMessage: item)
+								OldMessageComponent(anOldMessage: item, channelId: channelId)
 
 							}
 							
