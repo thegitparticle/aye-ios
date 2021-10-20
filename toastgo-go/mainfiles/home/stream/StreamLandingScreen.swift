@@ -9,11 +9,6 @@ import SwiftUI
 import Camera_SwiftUI
 import SwiftUIFontIcon
 
-//extension UIScreen{
-//	static let screenWidth = UIScreen.main.bounds.size.width
-//	static let screenHeight = UIScreen.main.bounds.size.height
-//	static let screenSize = UIScreen.main.bounds.size
-//}
 
 struct StreamLandingScreen: View {
 	
@@ -39,33 +34,36 @@ struct StreamLandingScreen: View {
 		GeometryReader { proxy in
 			
 			ZStack {
-			
-			VStack() {
 				
-				HStack () {
+				VStack() {
 					
-					ZStack {
+					HStack () {
 						
-						CameraPreview(session: viewModel.session).frame(width: proxy.size.width, height: (proxy.size.height / 2))
-							.onAppear {
-								viewModel.configure()
-							}
-							.animation(.easeInOut)
+						ZStack {
+							
+							CameraPreview(session: viewModel.session).frame(width: proxy.size.width, height: (proxy.size.height / 2))
+								.onAppear {
+									viewModel.configure()
+								}
+								.animation(.easeInOut)
+							
+							
+							Text("stream from camera").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
+							
+						}
 						
+					}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(LightTheme.Colors.sucesss)
 					
-						Text("stream from camera").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
+					HStack () {
 						
-					}
+						Text("stream your fav app").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
+						
+					}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(Color.black)
 					
-				}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(LightTheme.Colors.sucesss)
-				
-				HStack () {
+				}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
 					
-					Text("stream your fav app").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
-					
-				}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(Color.black)
-				
-			}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+					viewModel.getAgoraToken(channelId: channelId)
+				}
 				
 				
 				topButtons

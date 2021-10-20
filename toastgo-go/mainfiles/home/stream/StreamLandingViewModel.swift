@@ -10,7 +10,7 @@ import Camera_SwiftUI
 import Combine
 import AVFoundation
 
-class StreamLandingViewModel: ObservableObject {
+final class StreamLandingViewModel: ObservableObject {
 	
 	private let service = CameraService()
 	
@@ -27,4 +27,33 @@ class StreamLandingViewModel: ObservableObject {
 		service.checkForPermissions()
 		service.configure()
 	}
+	
+	@Published var agoraToken: String = ""
+	
+	public func getAgoraToken(channelId: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/agora_token_generator/\(String(UserDefaults.standard.integer(forKey: "MyId")))/\(channelId)") else {
+			
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode(String.self, from: data) {
+					
+					DispatchQueue.main.async {
+						self.agoraToken = decodedResponse
+					}
+					return
+				}
+				
+				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
 }
