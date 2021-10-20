@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PubNub
+import Kingfisher
 
 struct OldMessageComponent: View {
 	
@@ -41,6 +42,28 @@ struct OldMessageComponent: View {
 		}
 		
 	}
+	
+	
+	var HMessageComponent: some View {
+		
+		VStack () {
+			
+			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 100)
+			
+			ZStack {
+				
+				Rectangle()
+					.fill(Color.gray)
+					.frame(width: .infinity, height: 100)
+				
+				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 1)
+				
+			}
+			
+		}.padding(.horizontal, 20).padding(.vertical, 20)
+		
+	}
+	
 }
 
 
