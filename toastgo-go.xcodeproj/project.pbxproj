@@ -77,6 +77,9 @@
 		26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */; };
 		26C2A25A2720419A001B5D76 /* StreamLandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */; };
 		26C2A25C272041EC001B5D76 /* StreamLandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */; };
+		26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */; };
+		26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */; };
+		26C2A265272077CA001B5D76 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A264272077CA001B5D76 /* AgoraRtcKit */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -166,6 +169,8 @@
 		26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerDataClass.swift; sourceTree = "<group>"; };
 		26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamLandingScreen.swift; sourceTree = "<group>"; };
 		26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamLandingViewModel.swift; sourceTree = "<group>"; };
+		26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamScreen.swift; sourceTree = "<group>"; };
+		26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamViewModel.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C2A265272077CA001B5D76 /* AgoraRtcKit in Frameworks */,
 				26B876A72716DC9800FFE414 /* PopupView in Frameworks */,
 				260D719D27178D5100DD9F80 /* Lottie in Frameworks */,
 				26C2A25227201C1A001B5D76 /* ImageViewerRemote in Frameworks */,
@@ -501,10 +507,28 @@
 		26C2A25827204184001B5D76 /* stream */ = {
 			isa = PBXGroup;
 			children = (
+				26C2A25E27206562001B5D76 /* screenstream */,
+				26C2A25D2720655A001B5D76 /* camstream */,
 				26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */,
 				26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */,
 			);
 			path = stream;
+			sourceTree = "<group>";
+		};
+		26C2A25D2720655A001B5D76 /* camstream */ = {
+			isa = PBXGroup;
+			children = (
+				26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */,
+				26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */,
+			);
+			path = camstream;
+			sourceTree = "<group>";
+		};
+		26C2A25E27206562001B5D76 /* screenstream */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = screenstream;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -619,6 +643,7 @@
 				26C2A242271E066E001B5D76 /* PubNub */,
 				26C2A25127201C1A001B5D76 /* ImageViewerRemote */,
 				26C2A25327201C1A001B5D76 /* ImageViewer */,
+				26C2A264272077CA001B5D76 /* AgoraRtcKit */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -706,6 +731,7 @@
 				26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
 				26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */,
 				26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+				26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -880,6 +906,7 @@
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
+				26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */,
 				26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */,
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
@@ -909,6 +936,7 @@
 				26D119BD2718ED7C000044A3 /* DormantClanComponent.swift in Sources */,
 				264AB281270593CB00E394E6 /* LightTheme.swift in Sources */,
 				26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */,
+				26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */,
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
 				26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */,
@@ -1335,6 +1363,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1397,6 +1433,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
 			productName = ImageViewer;
+		};
+		26C2A264272077CA001B5D76 /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

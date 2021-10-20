@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AgoraRtcKit",
+        "repositoryURL": "https://github.com/AgoraIO/AgoraRtcEngine_iOS",
+        "state": {
+          "branch": null,
+          "revision": "945008c63997517ddf5e83339e2bfee477914f14",
+          "version": "3.5.1"
+        }
+      },
+      {
         "package": "Camera-SwiftUI",
         "repositoryURL": "https://github.com/rorodriguez116/Camera-SwiftUI.git",
         "state": {
