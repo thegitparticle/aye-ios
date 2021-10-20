@@ -42,34 +42,44 @@ struct TalkScreen: View {
 				
 				if (viewModel.oldMessagesReceived.count > 0) {
 					
-					ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
+					ScrollView {
 						
-						OldMessageComponent(anOldMessage: item)
-						
-//						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+						LazyVStack {
+							
+							Spacer().frame(height: 200)
+							
+							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
+								
+								OldMessageComponent(anOldMessage: item)
+								
+								//						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+							}
+							
+							Spacer().frame(height: 200)
+							
+						}
 					}
 				}
 				
-				if (self.showButtons) {
-					
-					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
-					
-				} else {
-					
-					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
-					
-				}
-				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).onAppear {
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear {
 				
 				self.showButtons = ongoingFrame
 				
-				//				viewModel.getDefaultRecos(userid: String(my_id))
 			}
 			
 			HeaderHere(titleText: clubName).onAppear() {
 				
 				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
+			}
+			
+			if (self.showButtons) {
+				
+				BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+				
+			} else {
+				
+				StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
+				
 			}
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
@@ -151,7 +161,7 @@ private struct BottomButtons: View {
 					self.showTextInput = true
 				}
 				
-			}.padding(.vertical, 30)
+			}.padding(.vertical, 30).frame(maxHeight: .infinity, alignment: .bottom)
 			
 		} else {
 			
@@ -199,7 +209,7 @@ private struct BottomButtons: View {
 					
 				}
 				
-			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: 100).KeyboardAwarePadding().padding(.bottom, 30)
+			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 			
 		}
 	}
@@ -248,7 +258,7 @@ private struct StartFramePart: View {
 					.cornerRadius(28)
 			}
 			
-		}.frame(alignment: .center)
+		}.frame( maxHeight: .infinity, alignment: .center)
 	}
 }
 

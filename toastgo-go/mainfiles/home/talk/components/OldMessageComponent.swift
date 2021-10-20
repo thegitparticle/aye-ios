@@ -16,7 +16,6 @@ struct OldMessageComponent: View {
 	var body: some View {
 		
 		
-		
 		if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "c") {
 			VStack {
 				
@@ -26,11 +25,7 @@ struct OldMessageComponent: View {
 			
 		} else if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "h") {
 			
-			VStack {
-				
-				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(Color.blue)
-				
-			}
+			HMessageComponent
 			
 		} else {
 			
@@ -48,17 +43,13 @@ struct OldMessageComponent: View {
 		
 		VStack () {
 			
-			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 100)
+			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200)
 			
 			ZStack {
 				
-				Rectangle()
-					.fill(Color.gray)
-					.frame(width: .infinity, height: 100)
+				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 10).background(LightTheme.Colors.uiSurface)
 				
-				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 1)
-				
-			}
+			}.offset(y: -20).cornerRadius(5)
 			
 		}.padding(.horizontal, 20).padding(.vertical, 20)
 		
