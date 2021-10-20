@@ -17,7 +17,7 @@ struct OldMessageComponent: View {
 	var anOldMessage: PubNubMessage
 	var channelId: String
 	
-	@StateObject var imageViewer = ImageViewDataClass()
+//	@StateObject var imageViewer = ImageViewDataClass()
 	
 	var body: some View {
 		
@@ -83,8 +83,8 @@ struct OldMessageComponent: View {
 //				self.imageViewer.overlayImageURL = (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String
 //				self.imageViewer.showImageOverlayViewer = true
 				
-				imageViewer.changeImageOverlayLink(link: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
-				imageViewer.changeImageOverlayState()
+//				imageViewer.changeImageOverlayLink(link: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+//				imageViewer.changeImageOverlayState()
 			}
 			
 			ZStack {

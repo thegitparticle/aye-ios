@@ -39,7 +39,7 @@ struct TalkScreen: View {
 	var my_id: Int
 	var my_name: String
 	
-	@ObservedObject var imageViewer = ImageViewDataClass()
+//	@ObservedObject var imageViewer = ImageViewDataClass()
 	
 	//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
@@ -71,7 +71,7 @@ struct TalkScreen: View {
 							Spacer().frame(height: 200)
 							
 						}
-					}.overlay(ImageViewerRemote(imageURL: self.$imageViewer.overlayImageURL , viewerShown: self.$imageViewer.showImageOverlayViewer).frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight))
+					}
 				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear {
@@ -149,6 +149,8 @@ private struct BottomButtons: View {
 					
 				}
 				
+				NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+				
 				ZStack {
 					
 					Circle().frame(width: 35, height: 35)
@@ -160,6 +162,8 @@ private struct BottomButtons: View {
 					FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
 					
 				}.padding(.horizontal, 20)
+					
+				}
 				
 				ZStack {
 					
