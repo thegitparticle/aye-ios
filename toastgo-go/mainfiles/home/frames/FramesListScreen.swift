@@ -12,7 +12,7 @@ import SwiftDate;
 
 struct FramesListScreen: View {
 	
-	@StateObject private var viewModel = TalkViewModel()
+	@StateObject private var viewModel = FramesListViewModel()
 	@StateObject private var pubnubSetUp = PubnubSetup()
 	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
@@ -47,6 +47,8 @@ struct FramesListScreen: View {
 				Spacer(minLength: 100)
 				
 				MonthChanger
+				
+				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString)
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear() {
 				
