@@ -27,20 +27,22 @@ struct AMonthComponent: View {
 	var renderMonth: Int
 	var renderMonthString: String
 	
+	var framesListHere: [ClanFramesListItem]
+	
     var body: some View {
 		
 		ScrollView {
 			
 			LazyVStack {
 				
-				ForEach(viewModel.framesList, id: \.id) {item in
+				ForEach(framesListHere, id: \.id) {item in
+					
+					Text("frame here")
 					
 					Text(item.frame_picture_link)
 				}
 			}
-		}.onAppear() {
 			
-			viewModel.getMyDirects(month: String(renderMonth), clubId: String(clubId))
 		}
 		
     }

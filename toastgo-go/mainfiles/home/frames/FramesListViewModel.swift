@@ -11,7 +11,7 @@ class FramesListViewModel: ObservableObject {
 	
 	@Published var framesList = [ClanFramesListItem]()
 	
-	public func getMyDirects(month: String, clubId: String) {
+	public func getClubFramesPerMonth(month: String, clubId: String) {
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/clubs/frames_clubs_filter/2021/\(month)/\(clubId)/") else {
 			return

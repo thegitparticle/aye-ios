@@ -48,7 +48,7 @@ struct FramesListScreen: View {
 				
 				MonthChanger
 				
-				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString)
+				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, framesListHere: viewModel.framesList)
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear() {
 				
@@ -68,18 +68,21 @@ struct FramesListScreen: View {
 		
 		self.renderMonth = self.thisMonth
 		self.renderMonthString = self.thisMonthString
+		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
 	}
 	
 	func monthChangeControllerIncrease () {
 		
 		self.renderMonth = self.renderMonth + 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth )
+		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
 	}
 	
 	func monthChangeControllerDecrease () {
 		
 		self.renderMonth = self.renderMonth - 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth)
+		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
 	}
 	
 	var MonthChanger: some View {
