@@ -42,8 +42,6 @@ struct FramesListScreen: View {
 			
 			VStack {
 				
-				Spacer(minLength: statusBarHeight)
-				
 				Spacer(minLength: 100)
 				
 				MonthChanger
@@ -93,8 +91,8 @@ struct FramesListScreen: View {
 				
 				Circle().frame(width: 25, height: 25)
 					.padding()
-					.foregroundColor(LightTheme.Colors.iconBackground)
-					.background(LightTheme.Colors.iconBackground)
+					.foregroundColor(LightTheme.Colors.uiBackground)
+					.background(LightTheme.Colors.uiBackground)
 					.cornerRadius(70)
 			
 				FontIcon.text(.ionicon(code: .ios_arrow_back), fontsize: 25).foregroundColor(LightTheme.Colors.textPrimary).onPress {
@@ -114,8 +112,8 @@ struct FramesListScreen: View {
 				
 				Circle().frame(width: 25, height: 25)
 					.padding()
-					.foregroundColor(LightTheme.Colors.iconBackground)
-					.background(LightTheme.Colors.iconBackground)
+					.foregroundColor(LightTheme.Colors.uiBackground)
+					.background(LightTheme.Colors.uiBackground)
 					.cornerRadius(70)
 			
 			FontIcon.text(.ionicon(code: .ios_arrow_forward), fontsize: 25).foregroundColor(LightTheme.Colors.textPrimary)
@@ -125,7 +123,7 @@ struct FramesListScreen: View {
 				print(self.renderMonthString)
 			}
 			
-		}.frame(width: .infinity, height: 100).padding(20)
+		}.frame(width: .infinity).padding(.vertical, 10).padding(.horizontal, 20)
 	}
 	
 	var HeaderHere: some View {

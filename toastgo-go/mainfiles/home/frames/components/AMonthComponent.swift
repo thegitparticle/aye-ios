@@ -43,7 +43,7 @@ struct AMonthComponent: View {
 				}
 			}
 			
-		}
+		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 		
     }
 	
