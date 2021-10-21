@@ -84,6 +84,7 @@
 		26C2A26B2720AFDC001B5D76 /* CamStreamVideoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */; };
 		26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */; };
 		26C2A26F2720B143001B5D76 /* CamStreamVideoCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */; };
+		26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2712721478F001B5D76 /* FramesListScreen.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -179,6 +180,7 @@
 		26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamVideoEngine.swift; sourceTree = "<group>"; };
 		26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamSessionView.swift; sourceTree = "<group>"; };
 		26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamStreamVideoCanvas.swift; sourceTree = "<group>"; };
+		26C2A2712721478F001B5D76 /* FramesListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesListScreen.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				26C2A2702721477A001B5D76 /* frames */,
 				26C2A25827204184001B5D76 /* stream */,
 				2677FF55271B242D0035EABC /* talk */,
 				26D119B52718DC81000044A3 /* directs */,
@@ -541,6 +544,14 @@
 			children = (
 			);
 			path = screenstream;
+			sourceTree = "<group>";
+		};
+		26C2A2702721477A001B5D76 /* frames */ = {
+			isa = PBXGroup;
+			children = (
+				26C2A2712721478F001B5D76 /* FramesListScreen.swift */,
+			);
+			path = frames;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -926,6 +937,7 @@
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
+				26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */,
 				26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
 				26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */,

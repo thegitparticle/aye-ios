@@ -24,6 +24,8 @@ struct TalkScreen: View {
 	@StateObject private var viewModel = TalkViewModel()
 	@StateObject private var pubnubSetUp = PubnubSetup()
 	
+	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+	
 	@State var showButtons: Bool = false
 	
 	var clubName: String     // in directs, its the other user's name
@@ -80,7 +82,7 @@ struct TalkScreen: View {
 				
 			}
 			
-			HeaderHere(titleText: clubName).onAppear() {
+			HeaderHere.onAppear() {
 				
 				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
 				
@@ -98,6 +100,50 @@ struct TalkScreen: View {
 			}
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+	}
+	
+	var HeaderHere: some View {
+		
+		ZStack {
+			
+			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
+			
+			VStack (alignment: .center) {
+				
+				Spacer(minLength: statusBarHeight)
+				
+				HStack () {
+					
+					HStack {
+						
+						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+						
+					}.onPress {
+						
+						self.mode.wrappedValue.dismiss()
+					}
+					
+					Spacer()
+					
+					Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+					
+					Spacer()
+					
+					NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						
+						HStack {
+							
+							CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+							
+						}
+						
+					}
+					
+				}.padding(.bottom, 5)
+				
+			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+		}
+		
 	}
 	
 }
@@ -281,54 +327,55 @@ private struct StartFramePart: View {
 	}
 }
 
-private struct HeaderHere: View {
-	
-	var titleText: String
-	
-	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
-	
-	var body: some View {
-		
-		ZStack {
-			
-			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
-			
-			VStack (alignment: .center) {
-				
-				Spacer(minLength: statusBarHeight)
-				
-				HStack () {
-					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
-					
-					Spacer()
-					
-					Text(titleText).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
-					
-					Spacer()
-					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						// add nav to frames view
-					}
-					
-				}.padding(.bottom, 5)
-				
-			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
-		}
-	}
-}
+//private struct HeaderHere: View {
+//
+//	var titleText: String
+//
+//	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+//
+//	var body: some View {
+//
+//		ZStack {
+//
+//			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
+//
+//			VStack (alignment: .center) {
+//
+//				Spacer(minLength: statusBarHeight)
+//
+//				HStack () {
+//
+//					HStack {
+//
+//						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+//
+//					}.onPress {
+//
+//						self.mode.wrappedValue.dismiss()
+//					}
+//
+//					Spacer()
+//
+//					Text(titleText).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+//
+//					Spacer()
+//
+//					NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+//
+//						HStack {
+//
+//							CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+//
+//						}
+//
+//					}
+//
+//				}.padding(.bottom, 5)
+//
+//			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+//		}
+//	}
+//}
 
 class TextFieldManagerTalkScreen: ObservableObject {
 	
