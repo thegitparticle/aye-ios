@@ -8,6 +8,7 @@ target 'toastgo-go' do
   # Pods for toastgo-go
 	pod 'CountryPickerSwift'
 	pod 'Wormholy', :configurations => ['Debug']
+	pod 'SwiftDate', '~> 4.0'
 
   target 'toastgo-goTests' do
     inherit! :search_paths

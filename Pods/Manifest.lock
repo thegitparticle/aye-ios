@@ -1,20 +1,24 @@
 PODS:
   - CountryPickerSwift (1.8.2)
+  - SwiftDate (4.5.1)
   - Wormholy (1.6.4)
 
 DEPENDENCIES:
   - CountryPickerSwift
+  - SwiftDate (~> 4.0)
   - Wormholy
 
 SPEC REPOS:
   trunk:
     - CountryPickerSwift
+    - SwiftDate
     - Wormholy
 
 SPEC CHECKSUMS:
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
 
-PODFILE CHECKSUM: baccc1c0b832c8d57645aeccdfe0e9ec06933b35
+PODFILE CHECKSUM: 249496a759237ed81562ac44d2d3b15b51f35e85
 
 COCOAPODS: 1.10.1

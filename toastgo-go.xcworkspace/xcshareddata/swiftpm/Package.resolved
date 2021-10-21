@@ -110,6 +110,15 @@
         }
       },
       {
+        "package": "Time",
+        "repositoryURL": "https://github.com/davedelong/time.git",
+        "state": {
+          "branch": null,
+          "revision": "be6cbbbb97aa4570e3b51bd56f98ca3cf62aa3cb",
+          "version": "0.9.2"
+        }
+      },
+      {
         "package": "URLImage",
         "repositoryURL": "https://github.com/dmytro-anokhin/url-image.git",
         "state": {
