@@ -46,7 +46,14 @@ struct FramesListScreen: View {
 				
 				MonthChanger
 				
+				if (!directornot) {
+				
 				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesList, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+					
+				} else {
+					
+					AMonthComponentDirects(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesListDirects, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear() {
 				
@@ -66,21 +73,36 @@ struct FramesListScreen: View {
 		
 		self.renderMonth = self.thisMonth
 		self.renderMonthString = self.thisMonthString
-		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	func monthChangeControllerIncrease () {
 		
 		self.renderMonth = self.renderMonth + 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth )
-		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	func monthChangeControllerDecrease () {
 		
 		self.renderMonth = self.renderMonth - 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth)
-		viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	var MonthChanger: some View {

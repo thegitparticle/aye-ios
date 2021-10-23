@@ -20,3 +20,18 @@ struct ClanFramesListItem: Codable, Equatable {
 	var frame_status: Bool
 	
 }
+
+
+struct DirectFramesListItem: Codable, Equatable {
+	
+	var id: Int
+	var users: String
+	var published_date: String
+	var frame_picture: String?
+	var start_time: String
+	var end_time: String
+	var channel_id: String
+	var frame_picture_link: String
+	var frame_status: Bool
+	
+}

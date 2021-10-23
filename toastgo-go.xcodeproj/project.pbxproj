@@ -91,6 +91,9 @@
 		26C2A28027217E1A001B5D76 /* AMonthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A27F27217E1A001B5D76 /* AMonthComponent.swift */; };
 		26C2A2822722AA37001B5D76 /* AStripComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2812722AA37001B5D76 /* AStripComponent.swift */; };
 		26C4D2C42723E5860055DF63 /* ADayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C32723E5860055DF63 /* ADayComponent.swift */; };
+		26C4D2C62723EF170055DF63 /* ADayComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C52723EF170055DF63 /* ADayComponentDirects.swift */; };
+		26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C72723EF210055DF63 /* AStripComponentDirects.swift */; };
+		26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -192,6 +195,9 @@
 		26C2A27F27217E1A001B5D76 /* AMonthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMonthComponent.swift; sourceTree = "<group>"; };
 		26C2A2812722AA37001B5D76 /* AStripComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStripComponent.swift; sourceTree = "<group>"; };
 		26C4D2C32723E5860055DF63 /* ADayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADayComponent.swift; sourceTree = "<group>"; };
+		26C4D2C52723EF170055DF63 /* ADayComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADayComponentDirects.swift; sourceTree = "<group>"; };
+		26C4D2C72723EF210055DF63 /* AStripComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStripComponentDirects.swift; sourceTree = "<group>"; };
+		26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMonthComponentDirects.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -575,6 +581,9 @@
 				26C2A27F27217E1A001B5D76 /* AMonthComponent.swift */,
 				26C2A2812722AA37001B5D76 /* AStripComponent.swift */,
 				26C4D2C32723E5860055DF63 /* ADayComponent.swift */,
+				26C4D2C52723EF170055DF63 /* ADayComponentDirects.swift */,
+				26C4D2C72723EF210055DF63 /* AStripComponentDirects.swift */,
+				26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -985,6 +994,7 @@
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
 				26C2A27B2721797F001B5D76 /* FramesListViewModel.swift in Sources */,
 				26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */,
+				26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */,
 				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				26D119BF2718ED87000044A3 /* LiveClanComponent.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
@@ -1004,8 +1014,10 @@
 				26D119BD2718ED7C000044A3 /* DormantClanComponent.swift in Sources */,
 				264AB281270593CB00E394E6 /* LightTheme.swift in Sources */,
 				26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */,
+				26C4D2C62723EF170055DF63 /* ADayComponentDirects.swift in Sources */,
 				26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */,
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
+				26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
 				26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */,
 				26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */,
