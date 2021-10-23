@@ -14,6 +14,10 @@ struct AStripComponent: View {
 	
 	var framesListHere: [ClanFramesListItem]
 	
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
+	var channelId: String
+	
 //	var thisMonth: Int
 //	var renderMonth: Int
 	
@@ -30,7 +34,7 @@ struct AStripComponent: View {
 					
 				ForEach (self.startDate ... self.endDate, id: \.self) { item in
 					
-					ADayComponent(whichDay: item, framesListHere: self.framesListHere)
+					ADayComponent(whichDay: item, framesListHere: self.framesListHere, clubName: clubName, clubId: clubId, channelId: channelId)
 				}
 				
 			}

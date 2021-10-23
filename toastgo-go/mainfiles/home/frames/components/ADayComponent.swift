@@ -14,6 +14,10 @@ struct ADayComponent: View {
 	
 	var framesListHere: [ClanFramesListItem]
 	
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
+	var channelId: String
+	
 	@State var daysFramesList = [ClanFramesListItem]()
 	
 	var body: some View {
@@ -24,11 +28,16 @@ struct ADayComponent: View {
 				
 				ForEach(self.daysFramesList, id: \.id) {item in
 					
-					VStack {
-					KFImage.url(URL(string: item.frame_picture_link)).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
-						.cornerRadius(50.0)
+					NavigationLink(destination: ViewOldFrame(clubName: clubName, clubId: clubId, channelId: channelId, oldFrameStartTime: item.start_time, oldFrameEndTime: item.end_time, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.string(forKey: "MyName") ?? "")) {
 					
+					VStack {
+						
+						KFImage.url(URL(string: item.frame_picture_link)).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
+							.cornerRadius(50.0)
+						
 						Text("\(item.published_date)").foregroundColor(Color.white.opacity(0.75)).font(LightTheme.Typography.subtitle2)
+					}
+						
 					}
 					
 				}

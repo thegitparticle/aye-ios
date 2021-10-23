@@ -94,6 +94,8 @@
 		26C4D2C62723EF170055DF63 /* ADayComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C52723EF170055DF63 /* ADayComponentDirects.swift */; };
 		26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C72723EF210055DF63 /* AStripComponentDirects.swift */; };
 		26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */; };
+		26C4D2CD2723F4D10055DF63 /* ViewOldFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2CC2723F4D10055DF63 /* ViewOldFrame.swift */; };
+		26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -198,6 +200,8 @@
 		26C4D2C52723EF170055DF63 /* ADayComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADayComponentDirects.swift; sourceTree = "<group>"; };
 		26C4D2C72723EF210055DF63 /* AStripComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStripComponentDirects.swift; sourceTree = "<group>"; };
 		26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMonthComponentDirects.swift; sourceTree = "<group>"; };
+		26C4D2CC2723F4D10055DF63 /* ViewOldFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOldFrame.swift; sourceTree = "<group>"; };
+		26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOldFrameViewModel.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -568,6 +572,7 @@
 		26C2A2702721477A001B5D76 /* frames */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D2CB2723F4BC0055DF63 /* viewframes */,
 				26C2A27327214EFD001B5D76 /* components */,
 				26C2A2712721478F001B5D76 /* FramesListScreen.swift */,
 				26C2A27A2721797F001B5D76 /* FramesListViewModel.swift */,
@@ -594,6 +599,15 @@
 				26C2A27D27217CD6001B5D76 /* FramesListItems.swift */,
 			);
 			path = frames;
+			sourceTree = "<group>";
+		};
+		26C4D2CB2723F4BC0055DF63 /* viewframes */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D2CC2723F4D10055DF63 /* ViewOldFrame.swift */,
+				26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */,
+			);
+			path = viewframes;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -963,6 +977,7 @@
 			files = (
 				26C4D2C42723E5860055DF63 /* ADayComponent.swift in Sources */,
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
+				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
 				26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
@@ -971,6 +986,7 @@
 				264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */,
 				26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */,
 				26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */,
+				26C4D2CD2723F4D10055DF63 /* ViewOldFrame.swift in Sources */,
 				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
