@@ -51,29 +51,29 @@ struct AMonthComponent: View {
 						
 						if (self.todayDate < 11) {
 							
-							AStripComponent(startDate: 0, endDate: self.todayDate, framesListHere: self.framesListHere)
+							AStripComponent(startDate: 1, endDate: self.todayDate, framesListHere: self.framesListHere)
 							
 						} else if (self.twoStripRange.contains(self.todayDate)) {
 							
-							AStripComponent(startDate: 0, endDate: 10, framesListHere: self.framesListHere)
+							AStripComponent(startDate: 1, endDate: 10, framesListHere: self.framesListHere)
 							AStripComponent(startDate: 11, endDate: self.todayDate, framesListHere: self.framesListHere)
 							
 						} else if (self.todayDate > 20) {
 							
-							AStripComponent(startDate: 0, endDate: 10, framesListHere: self.framesListHere)
+							AStripComponent(startDate: 1, endDate: 10, framesListHere: self.framesListHere)
 							AStripComponent(startDate: 11, endDate: 20, framesListHere: self.framesListHere)
 							AStripComponent(startDate: 11, endDate: self.todayDate, framesListHere: self.framesListHere)
 							
 						} else {
 							
-							AStripComponent(startDate: 0, endDate: 10, framesListHere: self.framesListHere)
+							AStripComponent(startDate: 1, endDate: 10, framesListHere: self.framesListHere)
 							AStripComponent(startDate: 11, endDate: 20, framesListHere: self.framesListHere)
 							AStripComponent(startDate: 21, endDate: daysInThisMonth, framesListHere: self.framesListHere)
 							
 						}
 					} else {
 						
-						AStripComponent(startDate: 0, endDate: 10, framesListHere: self.framesListHere)
+						AStripComponent(startDate: 1, endDate: 10, framesListHere: self.framesListHere)
 						AStripComponent(startDate: 11, endDate: 20, framesListHere: self.framesListHere)
 						AStripComponent(startDate: 21, endDate: daysInThisMonth, framesListHere: self.framesListHere)
 					}
