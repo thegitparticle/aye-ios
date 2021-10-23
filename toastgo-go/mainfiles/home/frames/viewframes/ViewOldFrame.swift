@@ -50,10 +50,11 @@ struct ViewOldFrame: View {
 						}
 					}
 				}
-			}
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 			
 			HeaderHere
-		}
+			
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
     }
 	
