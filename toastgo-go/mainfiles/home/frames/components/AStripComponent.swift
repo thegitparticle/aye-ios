@@ -12,6 +12,8 @@ struct AStripComponent: View {
 	var startDate: Int
 	var endDate: Int
 	
+	var framesListHere: [ClanFramesListItem]
+	
 //	var thisMonth: Int
 //	var renderMonth: Int
 	
@@ -28,7 +30,7 @@ struct AStripComponent: View {
 					
 				ForEach (self.startDate ... self.endDate, id: \.self) { item in
 					
-					Text("\(item)")
+					ADayComponent(whichDay: item, framesListHere: self.framesListHere)
 				}
 				
 			}
@@ -36,10 +38,11 @@ struct AStripComponent: View {
 		}
 		
     }
+
 }
 
-struct AStripComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        AStripComponent(startDate: 1, endDate: 10)
-    }
-}
+//struct AStripComponent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AStripComponent(startDate: 1, endDate: 10)
+//    }
+//}
