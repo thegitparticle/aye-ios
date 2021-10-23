@@ -27,7 +27,17 @@ struct AMonthComponent: View {
 	var renderMonth: Int
 	var renderMonthString: String
 	
+	var thisMonth = 0
+	var thisMonthString = ""
+	
 	var framesListHere: [ClanFramesListItem]
+	
+	var daysInThisMonth: Int
+	
+	@State var todayDate = Date().day
+	
+	let oneStripRange = 1...10
+	let twoStripRange = 11...20
 	
     var body: some View {
 		
@@ -35,12 +45,47 @@ struct AMonthComponent: View {
 			
 			LazyVStack {
 				
-				ForEach(framesListHere, id: \.id) {item in
+				HStack {
 					
-					Text("frame here")
+					if (thisMonth == renderMonth) {
+						
+						if (self.todayDate < 11) {
+							
+							AStripComponent(startDate: 0, endDate: self.todayDate)
+							
+						} else if (self.twoStripRange.contains(self.todayDate)) {
+							
+							AStripComponent(startDate: 0, endDate: 10)
+							AStripComponent(startDate: 11, endDate: self.todayDate)
+							
+						} else if (self.todayDate > 20) {
+							
+							AStripComponent(startDate: 0, endDate: 10)
+							AStripComponent(startDate: 11, endDate: 20)
+							AStripComponent(startDate: 11, endDate: self.todayDate)
+							
+						} else {
+							
+							AStripComponent(startDate: 0, endDate: 10)
+							AStripComponent(startDate: 11, endDate: 20)
+							AStripComponent(startDate: 21, endDate: daysInThisMonth)
+							
+						}
+					} else {
+						
+						AStripComponent(startDate: 0, endDate: 10)
+						AStripComponent(startDate: 11, endDate: 20)
+						AStripComponent(startDate: 21, endDate: daysInThisMonth)
+					}
 					
-					Text(item.frame_picture_link)
 				}
+				
+//				ForEach(framesListHere, id: \.id) {item in
+//
+//					Text("frame here")
+//
+//					Text(item.frame_picture_link)
+//				}
 			}
 			
 		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

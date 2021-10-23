@@ -46,7 +46,7 @@ struct FramesListScreen: View {
 				
 				MonthChanger
 				
-				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, framesListHere: viewModel.framesList)
+				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString ,framesListHere: viewModel.framesList, daysInThisMonth: self.getMonthEnd(month: renderMonth))
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear() {
 				
@@ -168,6 +168,52 @@ struct FramesListScreen: View {
 			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
 		}
 	}
+	
+	private func getMonthEnd (month: Int) -> Int {
+		
+		if (month == 1) {
+			
+			return 31
+		} else if (month == 2) {
+			
+			return 28
+			
+		} else if (month == 3) {
+			
+			return 31
+		} else if (month == 4) {
+			
+			return 30
+		} else if (month == 5) {
+			
+			return 31
+		} else if (month == 6) {
+			
+			return 30
+		} else if (month == 7) {
+			
+			return 31
+		} else if (month == 8) {
+			
+			return 31
+		} else if (month == 9) {
+			
+			return 30
+		} else if (month == 10) {
+			
+			return 31
+		} else if (month == 11) {
+			
+			return 30
+		} else if (month == 12) {
+			
+			return 31
+		} else  {
+			
+			return 0
+		}
+	}
+	
 	
 	private func giveMonthName (month: Int) -> String {
 		
