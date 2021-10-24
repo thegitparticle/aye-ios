@@ -8,6 +8,7 @@
 import SwiftUI
 import Camera_SwiftUI
 import SwiftUIFontIcon
+import UIKit
 
 
 struct StreamLandingScreen: View {
@@ -58,15 +59,22 @@ struct StreamLandingScreen: View {
 						
 					}
 					
+					NavigationLink(destination: ScreenStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+					
 					HStack () {
 						
 						Text("stream your fav app").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
 						
 					}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(Color.black)
+						
+					}
 					
 				}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
 					
 					viewModel.getAgoraToken(channelId: channelId)
+				}.onPress {
+					
+//					self.showMainView()
 				}
 				
 				
@@ -76,6 +84,15 @@ struct StreamLandingScreen: View {
 		}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
 	}
+	
+//	func showMainView() {
+//		let host = UIHostingController(rootView: ScreenShare() { [weak self] in
+//			self?.navigationController?.popViewController(animated: true)  // << here !!
+//		})
+//
+//		self.navigationController?.navigationBar.isHidden = true
+//		self.navigationController?.pushViewController(host, animated: true)
+//	}
 	
 	var topButtons: some View {
 		
