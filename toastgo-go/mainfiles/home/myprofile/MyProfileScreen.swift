@@ -11,6 +11,7 @@ import Kingfisher
 struct MyProfileScreen: View {
 	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+	@StateObject private var viewModel = MyProfileViewModel()
 	
     var body: some View {
 		
@@ -20,7 +21,7 @@ struct MyProfileScreen: View {
 				
 				MyDeets
 			
-				Spacer().frame(height: 20)
+				Spacer()
 				
 				BottomButtons
 				
@@ -37,15 +38,15 @@ struct MyProfileScreen: View {
 		
 		VStack(alignment: .center) {
 			
-			KFImage.url(URL(string: "")).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
+			KFImage.url(URL(string: viewModel.userDeetsHere.image)).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
 			
-			Spacer()
+			Spacer().frame(height: 20)
 			
 			VStack {
 				
-				Text("Jjjff Lop").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+				Text(viewModel.userDeetsHere.user.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 				
-				Text("jklo").foregroundColor(LightTheme.Colors.textPrimary.opacity(0.75)).font(LightTheme.Typography.subtitle2).padding(.horizontal, 10).padding(.vertical, 1)
+				Text(viewModel.userDeetsHere.user.username).foregroundColor(LightTheme.Colors.textPrimary.opacity(0.75)).font(LightTheme.Typography.subtitle2).padding(.horizontal, 10).padding(.vertical, 1)
 			}
 			
 			
@@ -56,9 +57,12 @@ struct MyProfileScreen: View {
 		
 		VStack(alignment: .center) {
 		
-			IconButtonForOptionsWithInfo(title: "clans", info: "1", iconName: .ios_planet, size: 30)
-			IconButtonForOptionsWithInfo(title: "frames", info: "21", iconName: .ios_planet, size: 30)
+			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_planet, size: 30)
+			
+			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_planet, size: 30)
+			
 			IconButtonForOptions(title: "edit profile", iconName: .ios_planet, size: 30)
+			
 			IconButtonForOptions(title: "settings", iconName: .ios_planet, size: 30)
 			
 		}.padding(.vertical, 30).frame(width: UIScreen.screenWidth)

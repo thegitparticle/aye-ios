@@ -120,7 +120,7 @@ class LandingScreenViewModel: ObservableObject {
 							}
 						}
 //						self.clanHere = decodedResponse
-						print(decodedResponse)
+//						print(decodedResponse)
 					}
 					return
 				}
@@ -200,7 +200,7 @@ class LandingScreenViewModel: ObservableObject {
 
 						self.defaultRecos = decodedResponse
 
-						print("debugtextinput \(String(describing: self.defaultRecos))")
+//						print("debugtextinput \(String(describing: self.defaultRecos))")
 					}
 					return
 				}
