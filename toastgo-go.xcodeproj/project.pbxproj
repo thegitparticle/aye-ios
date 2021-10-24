@@ -96,6 +96,9 @@
 		26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */; };
 		26C4D2CD2723F4D10055DF63 /* ViewOldFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2CC2723F4D10055DF63 /* ViewOldFrame.swift */; };
 		26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */; };
+		26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */; };
+		26C4D2D627253F000055DF63 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */; };
+		26C4D2D9272540D60055DF63 /* IconButtonForOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -202,6 +205,9 @@
 		26C4D2C92723EF2D0055DF63 /* AMonthComponentDirects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMonthComponentDirects.swift; sourceTree = "<group>"; };
 		26C4D2CC2723F4D10055DF63 /* ViewOldFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOldFrame.swift; sourceTree = "<group>"; };
 		26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOldFrameViewModel.swift; sourceTree = "<group>"; };
+		26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileScreen.swift; sourceTree = "<group>"; };
+		26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonForOptions.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -390,6 +396,9 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D2D227253C2A0055DF63 /* aye */,
+				26C4D2D127253C1F0055DF63 /* invitecontacts */,
+				26C4D2D027253C1A0055DF63 /* myprofile */,
 				26C2A2702721477A001B5D76 /* frames */,
 				26C2A25827204184001B5D76 /* stream */,
 				2677FF55271B242D0035EABC /* talk */,
@@ -608,6 +617,38 @@
 				26C4D2CE2723F4DB0055DF63 /* ViewOldFrameViewModel.swift */,
 			);
 			path = viewframes;
+			sourceTree = "<group>";
+		};
+		26C4D2D027253C1A0055DF63 /* myprofile */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D2D72725409D0055DF63 /* components */,
+				26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */,
+				26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */,
+			);
+			path = myprofile;
+			sourceTree = "<group>";
+		};
+		26C4D2D127253C1F0055DF63 /* invitecontacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = invitecontacts;
+			sourceTree = "<group>";
+		};
+		26C4D2D227253C2A0055DF63 /* aye */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = aye;
+			sourceTree = "<group>";
+		};
+		26C4D2D72725409D0055DF63 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -997,6 +1038,7 @@
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
 				26C2A28027217E1A001B5D76 /* AMonthComponent.swift in Sources */,
+				26C4D2D627253F000055DF63 /* MyProfileViewModel.swift in Sources */,
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */,
@@ -1014,6 +1056,7 @@
 				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				26D119BF2718ED87000044A3 /* LiveClanComponent.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
+				26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
 				26C2A25C272041EC001B5D76 /* StreamLandingViewModel.swift in Sources */,
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
@@ -1032,6 +1075,7 @@
 				26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */,
 				26C4D2C62723EF170055DF63 /* ADayComponentDirects.swift in Sources */,
 				26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */,
+				26C4D2D9272540D60055DF63 /* IconButtonForOptions.swift in Sources */,
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
 				26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,

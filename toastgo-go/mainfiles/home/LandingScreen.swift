@@ -33,7 +33,7 @@ struct LandingScreen: View {
 							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere)
 						}
 					}
-			
+					
 				}
 				.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 				
@@ -59,30 +59,38 @@ struct LandingScreen: View {
 
 private struct HeaderHere: View {
 	
+	@State private var showMyProfileModal = false
+	
 	var body: some View {
 		
 		ZStack {
 			
 			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
 			
-		VStack (alignment: .center) {
+			VStack (alignment: .center) {
+				
+				Spacer(minLength: statusBarHeight)
+				
+				HStack () {
+					
+					CircleIcon(size: 13, iconName: .ios_person_add).padding(.horizontal, 20)
+					
+					Spacer()
+					
+					CircleIcon(size: 13, iconName: .ios_rocket)
+					
+					Spacer()
+					
+					CircleIcon(size: 13, iconName: .ios_person).padding(.horizontal, 20).onPress {
+						self.showMyProfileModal = true
+					}
+					
+				}.padding(.bottom, 5)
+				
+			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
 			
-			Spacer(minLength: statusBarHeight)
-			
-			HStack () {
-				
-				CircleIcon(size: 13, iconName: .ios_person_add).padding(.horizontal, 20)
-				
-				Spacer()
-				
-				CircleIcon(size: 13, iconName: .ios_rocket)
-				
-				Spacer()
-				
-				CircleIcon(size: 13, iconName: .ios_person).padding(.horizontal, 20)
-			}.padding(.bottom, 5)
-			
-		}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+		}.sheet(isPresented: $showMyProfileModal) {
+			MyProfileScreen()
 		}
 	}
 }
