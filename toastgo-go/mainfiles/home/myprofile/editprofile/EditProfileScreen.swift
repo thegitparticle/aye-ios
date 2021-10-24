@@ -11,7 +11,7 @@ import Kingfisher
 struct EditProfileScreen: View {
 	
 	var dpLink: String
-	var changeCurrentShowingView: ()
+	var changeCurrentShowingView: () -> ()
 	
     var body: some View {
 		
@@ -26,7 +26,7 @@ struct EditProfileScreen: View {
 				KFImage.url(URL(string: self.dpLink)).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
 				
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
 			
 			
 			HeaderHere
@@ -53,7 +53,7 @@ struct EditProfileScreen: View {
 						
 					}.onPress {
 						
-						self.changeCurrentShowingView
+						self.changeCurrentShowingView()
 					}
 					
 					Spacer()

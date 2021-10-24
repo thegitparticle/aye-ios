@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsScreen: View {
 	
-	var changeCurrentShowingView: ()
+	var changeCurrentShowingView: () -> ()
 	
     var body: some View {
 		
@@ -21,10 +21,14 @@ struct SettingsScreen: View {
 				
 				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 30, color: LightTheme.Colors.textSecondary)
 				
-				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error)
+				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error).onPress {
+					
+					UserDefaults.standard.set(false, forKey: "LoginState");
+					
+				}
 				
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
 			
 			
 			HeaderHere
@@ -51,7 +55,7 @@ struct SettingsScreen: View {
 						
 					}.onPress {
 						
-						self.changeCurrentShowingView
+						self.changeCurrentShowingView()
 					}
 					
 					Spacer()
@@ -64,8 +68,8 @@ struct SettingsScreen: View {
 	}
 }
 
-struct SettingsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsScreen()
-    }
-}
+//struct SettingsScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsScreen()
+//    }
+//}

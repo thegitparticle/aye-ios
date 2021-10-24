@@ -23,11 +23,11 @@ struct MyProfileScreen: View {
 			
 		} else if (self.currentShowingView == "SETTINGS") {
 			
-			SettingsScreen()
+			SettingsScreen(changeCurrentShowingView: self.changeCurrentShowingView)
 			
 		} else if (self.currentShowingView == "EDITPROFILE") {
 			
-			EditProfileScreen(dpLink: viewModel.userDeetsHere.image)
+			EditProfileScreen(dpLink: viewModel.userDeetsHere.image, changeCurrentShowingView: self.changeCurrentShowingView)
 			
 		} else {
 			
