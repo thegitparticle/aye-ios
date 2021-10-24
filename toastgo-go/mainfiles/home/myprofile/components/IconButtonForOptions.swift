@@ -13,6 +13,7 @@ struct IconButtonForOptions: View {
 	var title: String
 	var iconName: IonIconsCode
 	var size: Int
+	var color: Color
 	
 	var body: some View {
 		
@@ -43,11 +44,11 @@ struct IconButtonForOptions: View {
 			
 			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
 				.padding()
-				.foregroundColor(LightTheme.Colors.iconBackground)
-				.background(LightTheme.Colors.iconBackground)
+				.foregroundColor(color.opacity(0.25))
+				.background(color.opacity(0.25))
 				.cornerRadius(10)
 			
-			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.iconVector)
+			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(color)
 			
 		}
 	}
@@ -60,6 +61,7 @@ struct IconButtonForOptionsWithInfo: View {
 	var info: String
 	var iconName: IonIconsCode
 	var size: Int
+	var color: Color
 	
 	var body: some View {
 		
@@ -91,11 +93,11 @@ struct IconButtonForOptionsWithInfo: View {
 			
 			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
 				.padding()
-				.foregroundColor(LightTheme.Colors.iconBackground)
-				.background(LightTheme.Colors.iconBackground)
+				.foregroundColor(color.opacity(0.25))
+				.background(color.opacity(0.25))
 				.cornerRadius(10)
 			
-			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(LightTheme.Colors.iconVector)
+			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(color)
 			
 		}
 	}

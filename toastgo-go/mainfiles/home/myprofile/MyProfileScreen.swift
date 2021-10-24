@@ -57,13 +57,13 @@ struct MyProfileScreen: View {
 		
 		VStack(alignment: .center) {
 		
-			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_planet, size: 30)
+			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 30, color: LightTheme.Colors.special1)
 			
-			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_planet, size: 30)
+			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 30, color: LightTheme.Colors.special2)
 			
-			IconButtonForOptions(title: "edit profile", iconName: .ios_planet, size: 30)
+			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss)
 			
-			IconButtonForOptions(title: "settings", iconName: .ios_planet, size: 30)
+			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error)
 			
 		}.padding(.vertical, 30).frame(width: UIScreen.screenWidth)
 	}
