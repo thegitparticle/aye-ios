@@ -99,6 +99,8 @@
 		26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */; };
 		26C4D2D627253F000055DF63 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */; };
 		26C4D2D9272540D60055DF63 /* IconButtonForOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */; };
+		26C4D2DD27256CF40055DF63 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2DC27256CF40055DF63 /* SettingsScreen.swift */; };
+		26C4D2DF2725759B0055DF63 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D2DE2725759B0055DF63 /* EditProfileScreen.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -208,6 +210,8 @@
 		26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileScreen.swift; sourceTree = "<group>"; };
 		26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonForOptions.swift; sourceTree = "<group>"; };
+		26C4D2DC27256CF40055DF63 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		26C4D2DE2725759B0055DF63 /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -622,6 +626,8 @@
 		26C4D2D027253C1A0055DF63 /* myprofile */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D2DB272563ED0055DF63 /* editprofile */,
+				26C4D2DA272563E60055DF63 /* settings */,
 				26C4D2D72725409D0055DF63 /* components */,
 				26C4D2D327253EF30055DF63 /* MyProfileScreen.swift */,
 				26C4D2D527253F000055DF63 /* MyProfileViewModel.swift */,
@@ -649,6 +655,22 @@
 				26C4D2D8272540D60055DF63 /* IconButtonForOptions.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		26C4D2DA272563E60055DF63 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D2DC27256CF40055DF63 /* SettingsScreen.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		26C4D2DB272563ED0055DF63 /* editprofile */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D2DE2725759B0055DF63 /* EditProfileScreen.swift */,
+			);
+			path = editprofile;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -1021,6 +1043,7 @@
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
 				26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */,
+				26C4D2DF2725759B0055DF63 /* EditProfileScreen.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
 				26D119C72718F606000044A3 /* NudgeItemComponent.swift in Sources */,
 				26D119C52718F5FA000044A3 /* DirectComponent.swift in Sources */,
@@ -1059,6 +1082,7 @@
 				26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
 				26C2A25C272041EC001B5D76 /* StreamLandingViewModel.swift in Sources */,
+				26C4D2DD27256CF40055DF63 /* SettingsScreen.swift in Sources */,
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
 				26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */,
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,

@@ -13,14 +13,42 @@ struct MyProfileScreen: View {
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	@StateObject private var viewModel = MyProfileViewModel()
 	
+	@State var currentShowingView = "MYPROFILE" // can be MYPROFILE or SETTINGS or EDITPROFILE
+	
     var body: some View {
+		
+		if (self.currentShowingView == "MYPROFILE") {
+		
+			MyProfile
+			
+		} else if (self.currentShowingView == "SETTINGS") {
+			
+			SettingsScreen()
+			
+		} else if (self.currentShowingView == "EDITPROFILE") {
+			
+			EditProfileScreen(dpLink: viewModel.userDeetsHere.image)
+			
+		} else {
+			
+			MyProfile
+		}
+		
+    }
+	
+	func changeCurrentShowingView () {
+		
+		self.currentShowingView = "MYPROFILE"
+	}
+	
+	var MyProfile: some View {
 		
 		ZStack(alignment: .top) {
 			
 			VStack(alignment: .center) {
 				
 				MyDeets
-			
+				
 				Spacer()
 				
 				BottomButtons
@@ -32,7 +60,7 @@ struct MyProfileScreen: View {
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
-    }
+	}
 	
 	var MyDeets: some View {
 		
@@ -61,9 +89,17 @@ struct MyProfileScreen: View {
 			
 			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 30, color: LightTheme.Colors.special2)
 			
-			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss)
+			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss).onPress {
+
+				self.currentShowingView = "EDITPROFILE"
+
+			}
 			
-			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error)
+			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error).onPress {
+				
+				self.currentShowingView = "SETTINGS"
+				
+			}
 			
 		}.padding(.vertical, 30).frame(width: UIScreen.screenWidth)
 	}
@@ -100,7 +136,9 @@ struct MyProfileScreen: View {
 }
 
 struct MyProfileScreen_Previews: PreviewProvider {
+	
     static var previews: some View {
+		
         MyProfileScreen()
     }
 }
