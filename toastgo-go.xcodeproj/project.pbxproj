@@ -111,6 +111,10 @@
 		26C4D32C2726FC490055DF63 /* ViewLiveStreamVideoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D32B2726FC490055DF63 /* ViewLiveStreamVideoEngine.swift */; };
 		26C4D32E2726FC540055DF63 /* ViewLiveStreamVideoCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D32D2726FC540055DF63 /* ViewLiveStreamVideoCanvas.swift */; };
 		26C4D3302726FC5D0055DF63 /* ViewLiveStreamSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D32F2726FC5D0055DF63 /* ViewLiveStreamSessionView.swift */; };
+		26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3312726FE3B0055DF63 /* InviteContactsScreen.swift */; };
+		26C4D3342726FE4A0055DF63 /* InviteContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3332726FE4A0055DF63 /* InviteContactsViewModel.swift */; };
+		26C4D337272700020055DF63 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D336272700020055DF63 /* ContactsList.swift */; };
+		26C4D3392727078E0055DF63 /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -232,6 +236,10 @@
 		26C4D32B2726FC490055DF63 /* ViewLiveStreamVideoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLiveStreamVideoEngine.swift; sourceTree = "<group>"; };
 		26C4D32D2726FC540055DF63 /* ViewLiveStreamVideoCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLiveStreamVideoCanvas.swift; sourceTree = "<group>"; };
 		26C4D32F2726FC5D0055DF63 /* ViewLiveStreamSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLiveStreamSessionView.swift; sourceTree = "<group>"; };
+		26C4D3312726FE3B0055DF63 /* InviteContactsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContactsScreen.swift; sourceTree = "<group>"; };
+		26C4D3332726FE4A0055DF63 /* InviteContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContactsViewModel.swift; sourceTree = "<group>"; };
+		26C4D336272700020055DF63 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
+		26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -307,6 +315,7 @@
 		260D71A627185FFF00DD9F80 /* dataclasses */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D3352726FFF50055DF63 /* contacts */,
 				26C2A27C27217CC9001B5D76 /* frames */,
 				26C2A25527202597001B5D76 /* imageviewer */,
 				26C2A244271EAD08001B5D76 /* talk */,
@@ -534,6 +543,7 @@
 				2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */,
 				2677FF5C271B6B020035EABC /* SliderComponent.swift */,
 				26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */,
+				26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -652,6 +662,8 @@
 		26C4D2D127253C1F0055DF63 /* invitecontacts */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D3312726FE3B0055DF63 /* InviteContactsScreen.swift */,
+				26C4D3332726FE4A0055DF63 /* InviteContactsViewModel.swift */,
 			);
 			path = invitecontacts;
 			sourceTree = "<group>";
@@ -709,6 +721,14 @@
 				26C4D32F2726FC5D0055DF63 /* ViewLiveStreamSessionView.swift */,
 			);
 			path = viewlivestream;
+			sourceTree = "<group>";
+		};
+		26C4D3352726FFF50055DF63 /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				26C4D336272700020055DF63 /* ContactsList.swift */,
+			);
+			path = contacts;
 			sourceTree = "<group>";
 		};
 		26C5E8792705A93C0031447C /* fontfiles */ = {
@@ -1078,6 +1098,7 @@
 			files = (
 				26C4D2C42723E5860055DF63 /* ADayComponent.swift in Sources */,
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
+				26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */,
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
 				26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */,
@@ -1093,6 +1114,7 @@
 				26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */,
 				26C4D2CD2723F4D10055DF63 /* ViewOldFrame.swift in Sources */,
 				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
+				26C4D3342726FE4A0055DF63 /* InviteContactsViewModel.swift in Sources */,
 				264AB279270516EC00E394E6 /* LoginSettingUpScreen.swift in Sources */,
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
@@ -1109,6 +1131,7 @@
 				26C4D32E2726FC540055DF63 /* ViewLiveStreamVideoCanvas.swift in Sources */,
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
+				26C4D337272700020055DF63 /* ContactsList.swift in Sources */,
 				26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */,
 				26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */,
 				264AB2352704CB6100E394E6 /* Persistence.swift in Sources */,
@@ -1131,6 +1154,7 @@
 				264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */,
 				26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */,
 				26C4D3252726F61C0055DF63 /* ScreenStreamScreen.swift in Sources */,
+				26C4D3392727078E0055DF63 /* CheckBoxStyle.swift in Sources */,
 				2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */,
 				264AB22C2704CB5F00E394E6 /* toastgo_goApp.swift in Sources */,
 				26C2A26F2720B143001B5D76 /* CamStreamVideoCanvas.swift in Sources */,
