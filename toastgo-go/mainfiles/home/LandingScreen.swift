@@ -61,6 +61,7 @@ private struct HeaderHere: View {
 	
 	@State private var showMyProfileModal = false
 	@State private var showInvitePeopleModal = false
+	@State private var showTheAyeModal = false
 	
 	var body: some View {
 		
@@ -80,7 +81,9 @@ private struct HeaderHere: View {
 					
 					Spacer()
 					
-					CircleIcon(size: 13, iconName: .ios_rocket)
+					CircleIcon(size: 13, iconName: .ios_rocket).onPress {
+						self.showTheAyeModal = true
+					}
 					
 					Spacer()
 					
@@ -96,6 +99,8 @@ private struct HeaderHere: View {
 			MyProfileScreen()
 		}.sheet(isPresented: $showInvitePeopleModal) {
 			InviteContactsScreen()
+		}.sheet(isPresented: $showTheAyeModal) {
+			TheAyeScreen()
 		}
 	}
 }

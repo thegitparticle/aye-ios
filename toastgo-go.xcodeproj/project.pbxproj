@@ -115,6 +115,9 @@
 		26C4D3342726FE4A0055DF63 /* InviteContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3332726FE4A0055DF63 /* InviteContactsViewModel.swift */; };
 		26C4D337272700020055DF63 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D336272700020055DF63 /* ContactsList.swift */; };
 		26C4D3392727078E0055DF63 /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */; };
+		26C4D33B272711E00055DF63 /* TheAyeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D33A272711E00055DF63 /* TheAyeViewModel.swift */; };
+		26C4D33D272711E90055DF63 /* TheAyeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D33C272711E90055DF63 /* TheAyeScreen.swift */; };
+		26C4D33F272713850055DF63 /* sup_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4D33E272713850055DF63 /* sup_transparent.png */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -240,6 +243,9 @@
 		26C4D3332726FE4A0055DF63 /* InviteContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContactsViewModel.swift; sourceTree = "<group>"; };
 		26C4D336272700020055DF63 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
 		26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
+		26C4D33A272711E00055DF63 /* TheAyeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAyeViewModel.swift; sourceTree = "<group>"; };
+		26C4D33C272711E90055DF63 /* TheAyeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAyeScreen.swift; sourceTree = "<group>"; };
+		26C4D33E272713850055DF63 /* sup_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sup_transparent.png; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -332,6 +338,7 @@
 				26C2A237271D6013001B5D76 /* ic_arrow.png */,
 				260D71A127178FA100DD9F80 /* contacts_lottie.json */,
 				260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */,
+				26C4D33E272713850055DF63 /* sup_transparent.png */,
 				264AB22A2704CB5F00E394E6 /* toastgo-go */,
 				264AB2412704CB6200E394E6 /* toastgo-goTests */,
 				264AB24C2704CB6200E394E6 /* toastgo-goUITests */,
@@ -671,6 +678,8 @@
 		26C4D2D227253C2A0055DF63 /* aye */ = {
 			isa = PBXGroup;
 			children = (
+				26C4D33A272711E00055DF63 /* TheAyeViewModel.swift */,
+				26C4D33C272711E90055DF63 /* TheAyeScreen.swift */,
 			);
 			path = aye;
 			sourceTree = "<group>";
@@ -960,6 +969,7 @@
 				260D71A227178FA100DD9F80 /* loading_ping_pong_cup.json in Resources */,
 				264AB2F12705A67000E394E6 /* GothamRounded-Bold.otf in Resources */,
 				264AB2E72705A67000E394E6 /* GothamRounded-BookItalic.otf in Resources */,
+				26C4D33F272713850055DF63 /* sup_transparent.png in Resources */,
 				264AB2332704CB6100E394E6 /* Preview Assets.xcassets in Resources */,
 				264AB2302704CB6100E394E6 /* Assets.xcassets in Resources */,
 				26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */,
@@ -1101,6 +1111,7 @@
 				26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */,
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
+				26C4D33B272711E00055DF63 /* TheAyeViewModel.swift in Sources */,
 				26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */,
 				26C4D2DF2725759B0055DF63 /* EditProfileScreen.swift in Sources */,
 				26C4D32A2726FC400055DF63 /* ViewLiveStreamViewModel.swift in Sources */,
@@ -1144,6 +1155,7 @@
 				26C2A27B2721797F001B5D76 /* FramesListViewModel.swift in Sources */,
 				26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */,
 				26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */,
+				26C4D33D272711E90055DF63 /* TheAyeScreen.swift in Sources */,
 				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				26D119BF2718ED87000044A3 /* LiveClanComponent.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
