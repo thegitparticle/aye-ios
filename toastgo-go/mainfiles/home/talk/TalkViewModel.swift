@@ -16,6 +16,8 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var newMessagesReceived = [PubNubMessage]()
 	
+	@Published var otherUserDetailsHere = [OtherUserDetailsDataClass]()
+	
 	init () {
 		
 		getDefaultRecosTalkVM(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
@@ -199,6 +201,31 @@ class TalkViewModel: ObservableObject {
 		// Start receiving subscription events
 		pubnubConfig.pubnub.add(listener)
 
+	}
+	
+	public func getOtherUserDetails (otheruserid: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/profile-update/?id=&user=\(otheruserid)") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([OtherUserDetailsDataClass].self, from: data) {
+					
+					DispatchQueue.main.async {
+						self.otherUserDetailsHere = decodedResponse
+					}
+					return
+				}
+				
+				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
 	}
 	
 }

@@ -118,6 +118,7 @@
 		26C4D33B272711E00055DF63 /* TheAyeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D33A272711E00055DF63 /* TheAyeViewModel.swift */; };
 		26C4D33D272711E90055DF63 /* TheAyeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D33C272711E90055DF63 /* TheAyeScreen.swift */; };
 		26C4D33F272713850055DF63 /* sup_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4D33E272713850055DF63 /* sup_transparent.png */; };
+		26C4D3412727353B0055DF63 /* OtherUserDetailsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4D3402727353B0055DF63 /* OtherUserDetailsDataClass.swift */; };
 		26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */; };
 		26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */; };
 		26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D119BA2718E33F000044A3 /* MyClansScreen.swift */; };
@@ -246,6 +247,7 @@
 		26C4D33A272711E00055DF63 /* TheAyeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAyeViewModel.swift; sourceTree = "<group>"; };
 		26C4D33C272711E90055DF63 /* TheAyeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAyeScreen.swift; sourceTree = "<group>"; };
 		26C4D33E272713850055DF63 /* sup_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sup_transparent.png; sourceTree = "<group>"; };
+		26C4D3402727353B0055DF63 /* OtherUserDetailsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserDetailsDataClass.swift; sourceTree = "<group>"; };
 		26D119B62718DCA2000044A3 /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansDirectsDataClasses.swift; sourceTree = "<group>"; };
 		26D119BA2718E33F000044A3 /* MyClansScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClansScreen.swift; sourceTree = "<group>"; };
@@ -796,6 +798,7 @@
 			children = (
 				260D71A72718601000DD9F80 /* UserDetailsDataClass.swift */,
 				26D119CA271995C6000044A3 /* UserDeetsStore.swift */,
+				26C4D3402727353B0055DF63 /* OtherUserDetailsDataClass.swift */,
 			);
 			path = userdeets;
 			sourceTree = "<group>";
@@ -1123,6 +1126,7 @@
 				26C4D3302726FC5D0055DF63 /* ViewLiveStreamSessionView.swift in Sources */,
 				26D119B72718DCA2000044A3 /* LandingScreenViewModel.swift in Sources */,
 				26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */,
+				26C4D3412727353B0055DF63 /* OtherUserDetailsDataClass.swift in Sources */,
 				26C4D2CD2723F4D10055DF63 /* ViewOldFrame.swift in Sources */,
 				260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */,
 				26C4D3342726FE4A0055DF63 /* InviteContactsViewModel.swift in Sources */,

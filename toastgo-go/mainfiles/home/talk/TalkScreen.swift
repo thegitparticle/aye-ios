@@ -41,6 +41,8 @@ struct TalkScreen: View {
 	var my_id: Int
 	var my_name: String
 	
+	var streamerName = ""
+	
 //	@ObservedObject var imageViewer = ImageViewDataClass()
 	
 	//	var defaultRecosPassing: [DefaultRecosDataClass]
@@ -108,40 +110,101 @@ struct TalkScreen: View {
 			
 			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
 			
-			VStack (alignment: .center) {
-				
-				Spacer(minLength: statusBarHeight)
-				
-				HStack () {
+			if (self.ongoingStream) {
+			
+				VStack (alignment: .center) {
 					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
+					Spacer(minLength: statusBarHeight)
 					
-					Spacer()
-					
-					Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
-					
-					Spacer()
-					
-					NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+					HStack () {
 						
 						HStack {
 							
-							CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+							CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+							
+						}.onPress {
+							
+							self.mode.wrappedValue.dismiss()
+						}
+						
+						Spacer()
+						
+						Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+							
+							HStack {
+								
+								CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+								
+							}
 							
 						}
 						
-					}
+					}.padding(.bottom, 5)
 					
-				}.padding(.bottom, 5)
+					HStack () {
+						
+						Text("\(self.streamerName) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+							
+							ZStack {
+								
+								RoundedRectangle(cornerRadius: 15, style: .continuous).frame(width: 75, height: 30)
+									.padding()
+									.foregroundColor(LightTheme.Colors.sucesss.opacity(0.25))
+								
+								Text("join").foregroundColor(LightTheme.Colors.sucesss).font(LightTheme.Typography.subtitle2)
+								
+							}
+						}
+						
+					}.padding(.bottom, 5)
+					
+				}.frame(maxWidth: .infinity, maxHeight: 200, alignment: .top)
 				
-			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			} else {
+				
+				VStack (alignment: .center) {
+					
+					Spacer(minLength: statusBarHeight)
+					
+					HStack () {
+						
+						HStack {
+							
+							CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+							
+						}.onPress {
+							
+							self.mode.wrappedValue.dismiss()
+						}
+						
+						Spacer()
+						
+						Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+							
+							HStack {
+								
+								CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+								
+							}
+							
+						}
+						
+					}.padding(.bottom, 5)
+					
+				}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			}
 		}
 		
 	}
