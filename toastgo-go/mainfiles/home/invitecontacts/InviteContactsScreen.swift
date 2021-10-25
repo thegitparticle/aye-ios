@@ -10,7 +10,10 @@ import SwiftUI
 struct InviteContactsScreen: View {
 	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
+	
 	@StateObject private var viewModel = InviteContactsViewModel()
+	
+	@State var showingCurrentOverlayPopup = false
 	
 	var body: some View {
 		
@@ -29,7 +32,10 @@ struct InviteContactsScreen: View {
 			
 			HeaderHere
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingCurrentOverlayPopup, autohideIn: 5) {
+			
+			CurrentOverlay()
+		}
 		
 	}
 	
@@ -62,6 +68,7 @@ struct InviteContactsScreen: View {
 		}
 		
 	}
+	
 }
 
 struct ContactItemComponent: View {
@@ -88,6 +95,19 @@ struct ContactItemComponent: View {
 			Spacer().frame(width: 20)
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10)
+		
+	}
+}
+
+struct CurrentOverlay: View {
+	
+	var body: some View {
+		
+			Text("we are currently onboarding users slowly. you'd be able to invite soon!")
+				.frame(width: 300, height: 100)
+				.background(LightTheme.Colors.textSecondary.opacity(0.75))
+				.foregroundColor(LightTheme.Colors.error)
+				.cornerRadius(30.0)
 		
 	}
 }
