@@ -32,9 +32,12 @@ struct InviteContactsScreen: View {
 			
 			HeaderHere
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingCurrentOverlayPopup, autohideIn: 5) {
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).popup(isPresented: $showingCurrentOverlayPopup) {
 			
 			CurrentOverlay()
+		}.onAppear() {
+			
+			self.showingCurrentOverlayPopup = true
 		}
 		
 	}
@@ -105,8 +108,9 @@ struct CurrentOverlay: View {
 		
 			Text("we are currently onboarding users slowly. you'd be able to invite soon!")
 				.frame(width: 300, height: 100)
-				.background(LightTheme.Colors.textSecondary.opacity(0.75))
+				.background(LightTheme.Colors.uiSurface.opacity(0.75))
 				.foregroundColor(LightTheme.Colors.error)
+				.font(LightTheme.Typography.body1)
 				.cornerRadius(30.0)
 		
 	}

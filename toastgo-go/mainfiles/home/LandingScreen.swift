@@ -60,6 +60,7 @@ struct LandingScreen: View {
 private struct HeaderHere: View {
 	
 	@State private var showMyProfileModal = false
+	@State private var showInvitePeopleModal = false
 	
 	var body: some View {
 		
@@ -73,7 +74,9 @@ private struct HeaderHere: View {
 				
 				HStack () {
 					
-					CircleIcon(size: 13, iconName: .ios_person_add).padding(.horizontal, 20)
+					CircleIcon(size: 13, iconName: .ios_person_add).padding(.horizontal, 20).onPress {
+						self.showInvitePeopleModal = true
+					}
 					
 					Spacer()
 					
@@ -91,6 +94,8 @@ private struct HeaderHere: View {
 			
 		}.sheet(isPresented: $showMyProfileModal) {
 			MyProfileScreen()
+		}.sheet(isPresented: $showInvitePeopleModal) {
+			InviteContactsScreen()
 		}
 	}
 }
@@ -122,22 +127,4 @@ struct LandingScreen_Previews: PreviewProvider {
 	static var previews: some View {
 		LandingScreen()
 	}
-}
-
-
-struct Book: Identifiable {
-	var id = UUID()
-	var title: String
-	var author: String
-	var isbn: String
-	var pages: Int
-	var isRead: Bool = false
-}
-extension Book {
-	static let samples = [
-		Book(title: "Changer", author: "Matt Gemmell", isbn: "9781916265202", pages: 476),
-		Book(title: "SwiftUI for Absolute Beginners", author: "Jayant Varma", isbn: "9781484255155", pages: 200),
-		Book(title: "Why we sleep", author: "Matthew Walker", isbn: "9780141983769", pages: 368),
-		Book(title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", isbn: "9780671461492", pages: 216)
-	]
 }

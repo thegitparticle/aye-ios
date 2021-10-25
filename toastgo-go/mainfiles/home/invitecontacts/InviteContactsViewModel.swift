@@ -39,7 +39,7 @@ class InviteContactsViewModel: ObservableObject {
 					return
 				}
 				
-				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuglogs Fetch failed contacts list: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
