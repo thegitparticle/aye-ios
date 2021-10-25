@@ -28,6 +28,11 @@ final class StreamLandingViewModel: ObservableObject {
 		service.configure()
 	}
 	
+	func destroyCamera() {
+		
+		service.stop()
+	}
+	
 	@Published var agoraToken: String = ""
 	
 	public func getAgoraToken(channelId: String) {

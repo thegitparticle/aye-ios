@@ -554,7 +554,6 @@
 		26C2A25827204184001B5D76 /* stream */ = {
 			isa = PBXGroup;
 			children = (
-				26C2A25E27206562001B5D76 /* screenstream */,
 				26C2A25D2720655A001B5D76 /* camstream */,
 				26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */,
 				26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */,
@@ -573,13 +572,6 @@
 				26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */,
 			);
 			path = camstream;
-			sourceTree = "<group>";
-		};
-		26C2A25E27206562001B5D76 /* screenstream */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = screenstream;
 			sourceTree = "<group>";
 		};
 		26C2A2702721477A001B5D76 /* frames */ = {

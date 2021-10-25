@@ -185,6 +185,9 @@ struct TalkCameraScreen: View {
 				FontIcon.text(.materialIcon(code: .close), fontsize: 35).foregroundColor(Color.white)
 				
 			}.padding(.horizontal, 10).onTapGesture {
+				
+				model.destroyCamera()
+				
 				self.mode.wrappedValue.dismiss()
 			}
 			

@@ -58,4 +58,9 @@ final class TalkCameraViewModel: ObservableObject {
 	func switchFlash() {
 		service.flashMode = service.flashMode == .on ? .off : .on
 	}
+	
+	func destroyCamera() {
+		
+		service.stop()
+	}
 }

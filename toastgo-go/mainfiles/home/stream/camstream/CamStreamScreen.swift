@@ -215,6 +215,7 @@ fileprivate extension CamStreamScreen {
 	func leaveChannel() {
 		// leave channel and end chat
 		rtcEngine.leaveChannel(nil)
+		AgoraRtcEngineKit.destroy()
 	}
 }
 

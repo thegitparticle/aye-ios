@@ -92,6 +92,8 @@ struct StreamLandingScreen: View {
 				FontIcon.text(.materialIcon(code: .close), fontsize: 35).foregroundColor(Color.white)
 				
 			}.padding(.horizontal, 10).onTapGesture {
+				
+				viewModel.destroyCamera()
 				self.mode.wrappedValue.dismiss()
 			}
 			
