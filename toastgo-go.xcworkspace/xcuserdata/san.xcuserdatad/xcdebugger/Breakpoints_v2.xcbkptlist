@@ -14,9 +14,9 @@
             filePath = "toastgo-go/mainfiles/home/talk/TalkScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "BottomButtons"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "TalkScreen"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>

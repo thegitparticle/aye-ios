@@ -41,7 +41,6 @@ struct TalkScreen: View {
 	var my_id: Int
 	var my_name: String
 	
-	var streamerName = ""
 	
 //	@ObservedObject var imageViewer = ImageViewDataClass()
 	
@@ -147,11 +146,11 @@ struct TalkScreen: View {
 					
 					HStack () {
 						
-						Text("\(self.streamerName) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						Text("\( viewModel.otherUserDetailsHere[0].user.full_name ) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
 						
 						Spacer()
 						
-						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						NavigationLink(destination: ViewLiveStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
 							
 							ZStack {
 								
@@ -161,6 +160,10 @@ struct TalkScreen: View {
 								
 								Text("join").foregroundColor(LightTheme.Colors.sucesss).font(LightTheme.Typography.subtitle2)
 								
+							}.onAppear() {
+								
+								viewModel.getOtherUserDetails(otheruserid: self.ongoingStreamUser)
+								viewModel.getAgoraToken(channelId: self.channelId)
 							}
 						}
 						
