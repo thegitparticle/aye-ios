@@ -58,11 +58,15 @@ struct StreamLandingScreen: View {
 						
 					}
 					
+					NavigationLink(destination: ScreenStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+					
 					HStack () {
 						
 						Text("stream your fav app").foregroundColor(Color.gray).font(LightTheme.Typography.subtitle1)
 						
 					}.frame(width: proxy.size.width, height: (proxy.size.height / 2) ).background(Color.black)
+						
+					}
 					
 				}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
 					
