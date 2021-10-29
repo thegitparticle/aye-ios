@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "BottomSheet",
+        "repositoryURL": "https://github.com/weitieda/bottom-sheet.git",
+        "state": {
+          "branch": null,
+          "revision": "98e2ae0b47875faef28e181cf968b9645f7678af",
+          "version": "1.0.6"
+        }
+      },
+      {
         "package": "Camera-SwiftUI",
         "repositoryURL": "https://github.com/rorodriguez116/Camera-SwiftUI.git",
         "state": {

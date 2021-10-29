@@ -56,6 +56,7 @@
 		268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A32715F9AF006686F8 /* SwiftUIFontIcon */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
 		268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A82716211B006686F8 /* SwiftUIKitView */; };
+		26B77828272C44060016A998 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 26B77827272C44060016A998 /* BottomSheet */; };
 		26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769327162AE600FFE414 /* CountryPickerCustom.swift */; };
 		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
 		26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 26B8769D2716994E00FFE414 /* SwiftUIX */; };
@@ -282,6 +283,7 @@
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
 				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
 				26C2A243271E066E001B5D76 /* PubNub in Frameworks */,
+				26B77828272C44060016A998 /* BottomSheet in Frameworks */,
 				26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */,
 				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
 				26C2A25427201C1A001B5D76 /* ImageViewer in Frameworks */,
@@ -857,6 +859,7 @@
 				26C2A25327201C1A001B5D76 /* ImageViewer */,
 				26C2A264272077CA001B5D76 /* AgoraRtcKit */,
 				26C2A2782721530D001B5D76 /* Time */,
+				26B77827272C44060016A998 /* BottomSheet */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -946,6 +949,7 @@
 				26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 				26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 				26C2A2772721530D001B5D76 /* XCRemoteSwiftPackageReference "time" */,
+				26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -1567,6 +1571,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/bottom-sheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
 		26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -1658,6 +1670,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */;
 			productName = SwiftUIKitView;
+		};
+		26B77827272C44060016A998 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
 		};
 		26B8769D2716994E00FFE414 /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;

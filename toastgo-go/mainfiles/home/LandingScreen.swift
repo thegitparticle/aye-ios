@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIFontIcon
+import BottomSheet
 
 let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
@@ -112,6 +113,8 @@ struct TabBarView: View {
 	
 	var titles = ["Home", "Directs"]
 	
+	@State var showStreamBottomSheet = false
+	
 	var body: some View {
 		
 		HStack {
@@ -153,13 +156,17 @@ struct TabBarView: View {
 							.cornerRadius(70)
 						
 						FontIcon.text(.ionicon(code: .ios_add), fontsize: 35).foregroundColor(LightTheme.Colors.uiBackground)
+					}.onPress {
+						self.showStreamBottomSheet = true
 					}
 					
 				}.frame(width: 60, height: 60, alignment: .center).shadow(color: LightTheme.Colors.textSecondary.opacity(0.25), radius: 40, x: 0, y: 10).cornerRadius(30)
 				
 			}
 			
-		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).padding(.vertical, 50)
+		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).padding(.vertical, 50).bottomSheet(isPresented: self.$showStreamBottomSheet, height: UIScreen.screenHeight * 0.5) {
+			List(20..<40) { Text("\($0)") }.listStyle(PlainListStyle())
+		}
 		
 	}
 	
