@@ -121,6 +121,7 @@ private struct StreamSheetContent: View {
 					ForEach(viewModel.liveClansHere , id: \.club_id) {item in
 						
 //						NavigationLink(destination: StreamLandingScreen(clubName: item.club_name, clubId: item.club_id, channelId: item.pn_channel_id, ongoingFrame: item.ongoing_frame, startTime: item.start_time, endTime: item.end_time, ongoingStream: item.on_going_stream_status, ongoingStreamUser: item.stream_started_by, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.integer(forKey: "MyName")) ) {
+						
 							
 							HStack {
 								

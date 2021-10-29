@@ -9,6 +9,7 @@ import SwiftUI
 import PubNub
 import Kingfisher
 import ImageViewerRemote
+import VideoPlayer
 
 struct OldMessageComponent: View {
 	
@@ -16,6 +17,8 @@ struct OldMessageComponent: View {
 	
 	var anOldMessage: PubNubMessage
 	var channelId: String
+	
+	@State private var playVideo: Bool = true
 	
 //	@StateObject var imageViewer = ImageViewDataClass()
 	
@@ -29,6 +32,10 @@ struct OldMessageComponent: View {
 		} else if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "h") {
 			
 			HMessageComponent
+			
+		} else if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "s") {
+			
+			SMessageComponent
 			
 		} else {
 			
@@ -74,6 +81,28 @@ struct OldMessageComponent: View {
 		return downloadURL
 	}
 	
+	var SMessageComponent: some View {
+		
+		ZStack () {
+			
+			VideoPlayer(url: URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!, play: self.$playVideo)
+			
+//			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+//				//				self.imageViewer.overlayImageURL = (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String
+//				//				self.imageViewer.showImageOverlayViewer = true
+//
+//				//				imageViewer.changeImageOverlayLink(link: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+//				//				imageViewer.changeImageOverlayState()
+//			}
+			
+			ZStack {
+				
+				Text("\(self.anOldMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 10).background(LightTheme.Colors.uiSurface)
+				
+			}.cornerRadius(5).padding(.top, 180)
+			
+		}.padding(.horizontal, 20).padding(.vertical, 20)
+	}
 	
 	var HMessageComponent: some View {
 		
