@@ -42,10 +42,6 @@ struct TalkScreen: View {
 	var my_name: String
 	
 	
-//	@ObservedObject var imageViewer = ImageViewDataClass()
-	
-	//	var defaultRecosPassing: [DefaultRecosDataClass]
-	
 	var body: some View {
 		
 		ZStack(alignment: .top) {
@@ -85,7 +81,11 @@ struct TalkScreen: View {
 			
 			HeaderHere.onAppear() {
 				
-				viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
+				if (self.ongoingFrame) {
+				
+					viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
+					
+				}
 				
 				viewModel.subscribeToPnChannel(channelId: channelId, pubnubConfig: pubnubSetUp)
 			}
@@ -392,56 +392,6 @@ private struct StartFramePart: View {
 		}.frame( maxHeight: .infinity, alignment: .center)
 	}
 }
-
-//private struct HeaderHere: View {
-//
-//	var titleText: String
-//
-//	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
-//
-//	var body: some View {
-//
-//		ZStack {
-//
-//			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
-//
-//			VStack (alignment: .center) {
-//
-//				Spacer(minLength: statusBarHeight)
-//
-//				HStack () {
-//
-//					HStack {
-//
-//						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
-//
-//					}.onPress {
-//
-//						self.mode.wrappedValue.dismiss()
-//					}
-//
-//					Spacer()
-//
-//					Text(titleText).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
-//
-//					Spacer()
-//
-//					NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
-//
-//						HStack {
-//
-//							CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
-//
-//						}
-//
-//					}
-//
-//				}.padding(.bottom, 5)
-//
-//			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
-//		}
-//	}
-//}
 
 class TextFieldManagerTalkScreen: ObservableObject {
 	

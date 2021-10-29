@@ -156,7 +156,7 @@ private struct StreamSheetContent: View {
 								
 								Text(item.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
 								
-								Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+								Text("live frame").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
 								
 							}.frame(width: .infinity)
 							
