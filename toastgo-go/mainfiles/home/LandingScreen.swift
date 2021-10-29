@@ -120,8 +120,17 @@ private struct StreamSheetContent: View {
 					
 					ForEach(viewModel.liveClansHere , id: \.club_id) {item in
 						
-						Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-						
+						HStack {
+							
+							Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							
+							Spacer()
+							
+							Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							
+							
+							
+						}.frame(width: .infinity)
 						
 					}
 					
@@ -141,8 +150,21 @@ private struct StreamSheetContent: View {
 					
 					ForEach(viewModel.directsHere , id: \.direct_channel_id) {item in
 						
-						Text(item.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-						
+						if (item.ongoing_frame) {
+							
+							HStack {
+								
+								Text(item.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+								
+								Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+								
+							}.frame(width: .infinity)
+							
+						} else {
+							
+							Text(item.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							
+						}
 						
 					}
 					
