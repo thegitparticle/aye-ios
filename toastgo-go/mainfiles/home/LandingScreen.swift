@@ -120,23 +120,31 @@ private struct StreamSheetContent: View {
 					
 					ForEach(viewModel.liveClansHere , id: \.club_id) {item in
 						
-						HStack {
+//						NavigationLink(destination: StreamLandingScreen(clubName: item.club_name, clubId: item.club_id, channelId: item.pn_channel_id, ongoingFrame: item.ongoing_frame, startTime: item.start_time, endTime: item.end_time, ongoingStream: item.on_going_stream_status, ongoingStreamUser: item.stream_started_by, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.integer(forKey: "MyName")) ) {
 							
-							Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							HStack {
+								
+								Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+								
+								Spacer()
+								
+								Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+								
+								
+								
+							}.frame(width: .infinity)
 							
-							Spacer()
-							
-							Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-							
-							
-							
-						}.frame(width: .infinity)
+//						}
 						
 					}
 					
 					ForEach(viewModel.clanHere, id: \.club_id) {item in
 						
-						Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+//						NavigationLink(destination: StreamLandingScreen(clubName: item.club_name, clubId: item.club_id, channelId: item.pn_channel_id, ongoingFrame: item.ongoing_frame, startTime: item.start_time, endTime: item.end_time, ongoingStream: item.on_going_stream_status, ongoingStreamUser: item.stream_started_by, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.integer(forKey: "MyName")) ) {
+							
+							Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							
+//						}
 						
 					}
 					

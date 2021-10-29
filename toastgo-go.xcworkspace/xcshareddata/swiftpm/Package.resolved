@@ -12,7 +12,7 @@
       },
       {
         "package": "BottomSheet",
-        "repositoryURL": "https://github.com/weitieda/bottom-sheet.git",
+        "repositoryURL": "https://github.com/weitieda/bottom-sheet",
         "state": {
           "branch": null,
           "revision": "98e2ae0b47875faef28e181cf968b9645f7678af",
@@ -48,7 +48,7 @@
       },
       {
         "package": "Lottie",
-        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios",
         "state": {
           "branch": null,
           "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
@@ -120,7 +120,7 @@
       },
       {
         "package": "Time",
-        "repositoryURL": "https://github.com/davedelong/time.git",
+        "repositoryURL": "https://github.com/davedelong/time",
         "state": {
           "branch": null,
           "revision": "be6cbbbb97aa4570e3b51bd56f98ca3cf62aa3cb",

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		260D719927176DF100DD9F80 /* LoginOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719827176DF100DD9F80 /* LoginOtpViewModel.swift */; };
-		260D719D27178D5100DD9F80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 260D719C27178D5100DD9F80 /* Lottie */; };
 		260D719F27178E4100DD9F80 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D719E27178E4100DD9F80 /* LottieView.swift */; };
 		260D71A227178FA100DD9F80 /* loading_ping_pong_cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A027178FA100DD9F80 /* loading_ping_pong_cup.json */; };
 		260D71A327178FA100DD9F80 /* contacts_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 260D71A127178FA100DD9F80 /* contacts_lottie.json */; };
@@ -22,7 +21,6 @@
 		264AB24E2704CB6200E394E6 /* toastgo_goUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB24D2704CB6200E394E6 /* toastgo_goUITests.swift */; };
 		264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 264AB25C2704F54500E394E6 /* MainDB.xcdatamodeld */; };
 		264AB2612704F62000E394E6 /* OpenerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB2602704F62000E394E6 /* OpenerScreen.swift */; };
-		264AB2692705018400E394E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 264AB2682705018400E394E6 /* Kingfisher */; };
 		264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26B270501BF00E394E6 /* SplashScreen.swift */; };
 		264AB26E270507AC00E394E6 /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26D270507AC00E394E6 /* LandingScreen.swift */; };
 		264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AB26F270507B700E394E6 /* WelcomeScreen.swift */; };
@@ -45,48 +43,50 @@
 		264AB2F42705A67000E394E6 /* GothamRounded-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E52705A66F00E394E6 /* GothamRounded-BoldItalic.otf */; };
 		264AB2F52705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
 		264AB2F62705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
+		266019AA272C77CC00AD9919 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 266019A9272C77CC00AD9919 /* Kingfisher */; };
+		266019AD272C79F200AD9919 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AC272C79F200AD9919 /* SwiftUIFontIcon */; };
+		266019B0272C7ABF00AD9919 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AF272C7ABF00AD9919 /* SwiftUIKitView */; };
+		266019B3272C7AD200AD9919 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 266019B2272C7AD200AD9919 /* SwiftUIX */; };
+		266019B6272C7B1B00AD9919 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 266019B5272C7B1B00AD9919 /* PopupView */; };
+		266019B9272C7B8A00AD9919 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 266019B8272C7B8A00AD9919 /* Lottie */; };
+		266019BC272C7BAB00AD9919 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = 266019BB272C7BAB00AD9919 /* SwiftUICam */; };
+		266019BF272C7BBE00AD9919 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 266019BE272C7BBE00AD9919 /* Camera-SwiftUI */; };
+		266019C2272C7BD900AD9919 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 266019C1272C7BD900AD9919 /* ImagePickerView */; };
+		266019C5272C7C0E00AD9919 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 266019C4272C7C0E00AD9919 /* PubNub */; };
+		266019C8272C7C3700AD9919 /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 266019C7272C7C3700AD9919 /* ImageViewerRemote */; };
+		266019CA272C7C3700AD9919 /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 266019C9272C7C3700AD9919 /* ImageViewer */; };
+		266019CD272C7C5200AD9919 /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 266019CC272C7C5200AD9919 /* Time */; };
+		266019D0272C7C9F00AD9919 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 266019CF272C7C9F00AD9919 /* BottomSheet */; };
+		266019D3272C7E6200AD9919 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 266019D2272C7E6200AD9919 /* AgoraRtcKit */; };
 		26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D81271C207F0043C750 /* TalkCameraScreen.swift */; };
-		26613D85271C287E0043C750 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = 26613D84271C287E0043C750 /* SwiftUICam */; };
 		26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */; };
 		26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */; };
 		2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */; };
 		2677FF59271B25210035EABC /* TalkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF58271B25210035EABC /* TalkScreen.swift */; };
 		2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5A271B25510035EABC /* TalkViewModel.swift */; };
 		2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5C271B6B020035EABC /* SliderComponent.swift */; };
-		268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A32715F9AF006686F8 /* SwiftUIFontIcon */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
-		268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 268422A82716211B006686F8 /* SwiftUIKitView */; };
-		26B77828272C44060016A998 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 26B77827272C44060016A998 /* BottomSheet */; };
 		26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769327162AE600FFE414 /* CountryPickerCustom.swift */; };
 		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
-		26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 26B8769D2716994E00FFE414 /* SwiftUIX */; };
 		26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */; };
 		26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; };
-		26B876A72716DC9800FFE414 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 26B876A62716DC9800FFE414 /* PopupView */; };
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
-		26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
-		26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A23F271DFB29001B5D76 /* ImagePickerView */; };
-		26C2A243271E066E001B5D76 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A242271E066E001B5D76 /* PubNub */; };
 		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
 		26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A248271EB779001B5D76 /* TypeInputComponent.swift */; };
 		26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24A271ED979001B5D76 /* OldMessageComponent.swift */; };
 		26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24C271F0602001B5D76 /* PubnubSetup.swift */; };
 		26C2A24F2720108A001B5D76 /* NewMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A24E27201089001B5D76 /* NewMessageComponent.swift */; };
-		26C2A25227201C1A001B5D76 /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A25127201C1A001B5D76 /* ImageViewerRemote */; };
-		26C2A25427201C1A001B5D76 /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A25327201C1A001B5D76 /* ImageViewer */; };
 		26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A256272025A9001B5D76 /* ImageViewerDataClass.swift */; };
 		26C2A25A2720419A001B5D76 /* StreamLandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2592720419A001B5D76 /* StreamLandingScreen.swift */; };
 		26C2A25C272041EC001B5D76 /* StreamLandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A25B272041EC001B5D76 /* StreamLandingViewModel.swift */; };
 		26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A25F272066B2001B5D76 /* CamStreamScreen.swift */; };
 		26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A261272066C5001B5D76 /* CamStreamViewModel.swift */; };
-		26C2A265272077CA001B5D76 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A264272077CA001B5D76 /* AgoraRtcKit */; };
 		26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2662720877A001B5D76 /* AgoraViewController.swift */; };
 		26C2A26B2720AFDC001B5D76 /* CamStreamVideoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26A2720AFDB001B5D76 /* CamStreamVideoEngine.swift */; };
 		26C2A26D2720B10F001B5D76 /* CamStreamSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26C2720B10F001B5D76 /* CamStreamSessionView.swift */; };
 		26C2A26F2720B143001B5D76 /* CamStreamVideoCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A26E2720B143001B5D76 /* CamStreamVideoCanvas.swift */; };
 		26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A2712721478F001B5D76 /* FramesListScreen.swift */; };
-		26C2A2792721530D001B5D76 /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 26C2A2782721530D001B5D76 /* Time */; };
 		26C2A27B2721797F001B5D76 /* FramesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A27A2721797F001B5D76 /* FramesListViewModel.swift */; };
 		26C2A27E27217CD6001B5D76 /* FramesListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A27D27217CD6001B5D76 /* FramesListItems.swift */; };
 		26C2A28027217E1A001B5D76 /* AMonthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A27F27217E1A001B5D76 /* AMonthComponent.swift */; };
@@ -274,22 +274,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C2A265272077CA001B5D76 /* AgoraRtcKit in Frameworks */,
-				26B876A72716DC9800FFE414 /* PopupView in Frameworks */,
-				26C2A2792721530D001B5D76 /* Time in Frameworks */,
-				260D719D27178D5100DD9F80 /* Lottie in Frameworks */,
-				26C2A25227201C1A001B5D76 /* ImageViewerRemote in Frameworks */,
-				268422A42715F9AF006686F8 /* SwiftUIFontIcon in Frameworks */,
+				266019B6272C7B1B00AD9919 /* PopupView in Frameworks */,
+				266019B9272C7B8A00AD9919 /* Lottie in Frameworks */,
+				266019C8272C7C3700AD9919 /* ImageViewerRemote in Frameworks */,
+				266019CD272C7C5200AD9919 /* Time in Frameworks */,
+				266019B0272C7ABF00AD9919 /* SwiftUIKitView in Frameworks */,
+				266019AD272C79F200AD9919 /* SwiftUIFontIcon in Frameworks */,
+				266019D3272C7E6200AD9919 /* AgoraRtcKit in Frameworks */,
+				266019AA272C77CC00AD9919 /* Kingfisher in Frameworks */,
+				266019C5272C7C0E00AD9919 /* PubNub in Frameworks */,
+				266019C2272C7BD900AD9919 /* ImagePickerView in Frameworks */,
+				266019B3272C7AD200AD9919 /* SwiftUIX in Frameworks */,
+				266019D0272C7C9F00AD9919 /* BottomSheet in Frameworks */,
+				266019CA272C7C3700AD9919 /* ImageViewer in Frameworks */,
+				266019BC272C7BAB00AD9919 /* SwiftUICam in Frameworks */,
+				266019BF272C7BBE00AD9919 /* Camera-SwiftUI in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
-				268422A92716211B006686F8 /* SwiftUIKitView in Frameworks */,
-				26C2A243271E066E001B5D76 /* PubNub in Frameworks */,
-				26B77828272C44060016A998 /* BottomSheet in Frameworks */,
-				26C2A240271DFB29001B5D76 /* ImagePickerView in Frameworks */,
-				26B8769E2716994E00FFE414 /* SwiftUIX in Frameworks */,
-				26C2A25427201C1A001B5D76 /* ImageViewer in Frameworks */,
-				26613D85271C287E0043C750 /* SwiftUICam in Frameworks */,
-				26C2A23B271DD6FA001B5D76 /* Camera-SwiftUI in Frameworks */,
-				264AB2692705018400E394E6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,21 +845,21 @@
 			);
 			name = "toastgo-go";
 			packageProductDependencies = (
-				264AB2682705018400E394E6 /* Kingfisher */,
-				268422A32715F9AF006686F8 /* SwiftUIFontIcon */,
-				268422A82716211B006686F8 /* SwiftUIKitView */,
-				26B8769D2716994E00FFE414 /* SwiftUIX */,
-				26B876A62716DC9800FFE414 /* PopupView */,
-				260D719C27178D5100DD9F80 /* Lottie */,
-				26613D84271C287E0043C750 /* SwiftUICam */,
-				26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */,
-				26C2A23F271DFB29001B5D76 /* ImagePickerView */,
-				26C2A242271E066E001B5D76 /* PubNub */,
-				26C2A25127201C1A001B5D76 /* ImageViewerRemote */,
-				26C2A25327201C1A001B5D76 /* ImageViewer */,
-				26C2A264272077CA001B5D76 /* AgoraRtcKit */,
-				26C2A2782721530D001B5D76 /* Time */,
-				26B77827272C44060016A998 /* BottomSheet */,
+				266019A9272C77CC00AD9919 /* Kingfisher */,
+				266019AC272C79F200AD9919 /* SwiftUIFontIcon */,
+				266019AF272C7ABF00AD9919 /* SwiftUIKitView */,
+				266019B2272C7AD200AD9919 /* SwiftUIX */,
+				266019B5272C7B1B00AD9919 /* PopupView */,
+				266019B8272C7B8A00AD9919 /* Lottie */,
+				266019BB272C7BAB00AD9919 /* SwiftUICam */,
+				266019BE272C7BBE00AD9919 /* Camera-SwiftUI */,
+				266019C1272C7BD900AD9919 /* ImagePickerView */,
+				266019C4272C7C0E00AD9919 /* PubNub */,
+				266019C7272C7C3700AD9919 /* ImageViewerRemote */,
+				266019C9272C7C3700AD9919 /* ImageViewer */,
+				266019CC272C7C5200AD9919 /* Time */,
+				266019CF272C7C9F00AD9919 /* BottomSheet */,
+				266019D2272C7E6200AD9919 /* AgoraRtcKit */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -936,20 +936,20 @@
 			);
 			mainGroup = 264AB21F2704CB5F00E394E6;
 			packageReferences = (
-				264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
-				268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */,
-				26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
-				26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */,
-				260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
-				26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
-				26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
-				26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */,
-				26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
-				26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
-				26C2A2772721530D001B5D76 /* XCRemoteSwiftPackageReference "time" */,
-				26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
+				266019A8272C77CC00AD9919 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				266019AB272C79F200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+				266019AE272C7ABF00AD9919 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */,
+				266019B1272C7AD200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				266019B4272C7B1B00AD9919 /* XCRemoteSwiftPackageReference "PopupView" */,
+				266019B7272C7B8A00AD9919 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				266019BA272C7BAB00AD9919 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
+				266019BD272C7BBE00AD9919 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				266019C0272C7BD800AD9919 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
+				266019C3272C7C0E00AD9919 /* XCRemoteSwiftPackageReference "swift" */,
+				266019C6272C7C3700AD9919 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+				266019CB272C7C5200AD9919 /* XCRemoteSwiftPackageReference "time" */,
+				266019CE272C7C9F00AD9919 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
+				266019D1272C7E6200AD9919 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -1531,31 +1531,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.3;
-			};
-		};
-		264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		266019A8272C77CC00AD9919 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 7.1.1;
 			};
 		};
-		26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pierreveron/SwiftUICam";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+		266019AB272C79F200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
 			requirement = {
@@ -1563,7 +1547,7 @@
 				minimumVersion = 2.1.0;
 			};
 		};
-		268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */ = {
+		266019AE272C7ABF00AD9919 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AvdLee/SwiftUIKitView.git";
 			requirement = {
@@ -1571,15 +1555,7 @@
 				minimumVersion = 1.0.3;
 			};
 		};
-		26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weitieda/bottom-sheet.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.6;
-			};
-		};
-		26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+		266019B1272C7AD200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -1587,7 +1563,7 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+		266019B4272C7B1B00AD9919 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
 			requirement = {
@@ -1595,7 +1571,23 @@
 				minimumVersion = 1.0.2;
 			};
 		};
-		26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+		266019B7272C7B8A00AD9919 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
+		266019BA272C7BAB00AD9919 /* XCRemoteSwiftPackageReference "SwiftUICam" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pierreveron/SwiftUICam";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		266019BD272C7BBE00AD9919 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
 			requirement = {
@@ -1603,7 +1595,7 @@
 				minimumVersion = 0.0.5;
 			};
 		};
-		26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
+		266019C0272C7BD800AD9919 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ralfebert/ImagePickerView.git";
 			requirement = {
@@ -1611,7 +1603,7 @@
 				minimumVersion = 0.5.0;
 			};
 		};
-		26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */ = {
+		266019C3272C7C0E00AD9919 /* XCRemoteSwiftPackageReference "swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pubnub/swift.git";
 			requirement = {
@@ -1619,7 +1611,7 @@
 				minimumVersion = 4.1.0;
 			};
 		};
-		26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+		266019C6272C7C3700AD9919 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
 			requirement = {
@@ -1627,7 +1619,23 @@
 				minimumVersion = 2.3.1;
 			};
 		};
-		26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+		266019CB272C7C5200AD9919 /* XCRemoteSwiftPackageReference "time" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davedelong/time";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+		266019CE272C7C9F00AD9919 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/bottom-sheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+		266019D1272C7E6200AD9919 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
 			requirement = {
@@ -1635,91 +1643,83 @@
 				minimumVersion = 3.5.1;
 			};
 		};
-		26C2A2772721530D001B5D76 /* XCRemoteSwiftPackageReference "time" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/davedelong/time.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		260D719C27178D5100DD9F80 /* Lottie */ = {
+		266019A9272C77CC00AD9919 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 260D719B27178D5100DD9F80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		264AB2682705018400E394E6 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 264AB2672705018400E394E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 266019A8272C77CC00AD9919 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		26613D84271C287E0043C750 /* SwiftUICam */ = {
+		266019AC272C79F200AD9919 /* SwiftUIFontIcon */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26613D83271C287E0043C750 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
-			productName = SwiftUICam;
-		};
-		268422A32715F9AF006686F8 /* SwiftUIFontIcon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 268422A22715F9AF006686F8 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			package = 266019AB272C79F200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
 			productName = SwiftUIFontIcon;
 		};
-		268422A82716211B006686F8 /* SwiftUIKitView */ = {
+		266019AF272C7ABF00AD9919 /* SwiftUIKitView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 268422A72716211B006686F8 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */;
+			package = 266019AE272C7ABF00AD9919 /* XCRemoteSwiftPackageReference "SwiftUIKitView" */;
 			productName = SwiftUIKitView;
 		};
-		26B77827272C44060016A998 /* BottomSheet */ = {
+		266019B2272C7AD200AD9919 /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26B77826272C44050016A998 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
-			productName = BottomSheet;
-		};
-		26B8769D2716994E00FFE414 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 26B8769C2716994E00FFE414 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			package = 266019B1272C7AD200AD9919 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
 		};
-		26B876A62716DC9800FFE414 /* PopupView */ = {
+		266019B5272C7B1B00AD9919 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26B876A52716DC9800FFE414 /* XCRemoteSwiftPackageReference "PopupView" */;
+			package = 266019B4272C7B1B00AD9919 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
 		};
-		26C2A23A271DD6FA001B5D76 /* Camera-SwiftUI */ = {
+		266019B8272C7B8A00AD9919 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A239271DD6FA001B5D76 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			package = 266019B7272C7B8A00AD9919 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		266019BB272C7BAB00AD9919 /* SwiftUICam */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 266019BA272C7BAB00AD9919 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
+			productName = SwiftUICam;
+		};
+		266019BE272C7BBE00AD9919 /* Camera-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 266019BD272C7BBE00AD9919 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
 			productName = "Camera-SwiftUI";
 		};
-		26C2A23F271DFB29001B5D76 /* ImagePickerView */ = {
+		266019C1272C7BD900AD9919 /* ImagePickerView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A23E271DFB29001B5D76 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
+			package = 266019C0272C7BD800AD9919 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
 			productName = ImagePickerView;
 		};
-		26C2A242271E066E001B5D76 /* PubNub */ = {
+		266019C4272C7C0E00AD9919 /* PubNub */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A241271E066E001B5D76 /* XCRemoteSwiftPackageReference "swift" */;
+			package = 266019C3272C7C0E00AD9919 /* XCRemoteSwiftPackageReference "swift" */;
 			productName = PubNub;
 		};
-		26C2A25127201C1A001B5D76 /* ImageViewerRemote */ = {
+		266019C7272C7C3700AD9919 /* ImageViewerRemote */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			package = 266019C6272C7C3700AD9919 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
 			productName = ImageViewerRemote;
 		};
-		26C2A25327201C1A001B5D76 /* ImageViewer */ = {
+		266019C9272C7C3700AD9919 /* ImageViewer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A25027201C1A001B5D76 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			package = 266019C6272C7C3700AD9919 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
 			productName = ImageViewer;
 		};
-		26C2A264272077CA001B5D76 /* AgoraRtcKit */ = {
+		266019CC272C7C5200AD9919 /* Time */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26C2A263272077CA001B5D76 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
-			productName = AgoraRtcKit;
-		};
-		26C2A2782721530D001B5D76 /* Time */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 26C2A2772721530D001B5D76 /* XCRemoteSwiftPackageReference "time" */;
+			package = 266019CB272C7C5200AD9919 /* XCRemoteSwiftPackageReference "time" */;
 			productName = Time;
+		};
+		266019CF272C7C9F00AD9919 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 266019CE272C7C9F00AD9919 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
+		266019D2272C7E6200AD9919 /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 266019D1272C7E6200AD9919 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
