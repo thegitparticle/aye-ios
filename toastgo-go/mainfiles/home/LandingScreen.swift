@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIFontIcon
 
 let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
@@ -106,25 +107,62 @@ private struct HeaderHere: View {
 }
 
 struct TabBarView: View {
+	
 	@Binding var index: Int
+	
 	var titles = ["Home", "Directs"]
+	
 	var body: some View {
+		
 		HStack {
-			ForEach(titles.indices) {id in
-				let title = Text(titles[id]).id(id).foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.h4).padding(20)
-					.onTapGesture {
-						withAnimation() {
-							index = id
+			
+			ZStack {
+				
+				HStack(spacing: .some(90)) {
+					
+					ForEach(titles.indices) { id in
+						
+						let title = FontIcon.text(.ionicon(code: (titles[id] == "Home") ? .ios_home : .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.iconVector).onTapGesture {
+							withAnimation() {
+								index = id
+							}
 						}
+						
+						if self.index == id {
+							
+							title.foregroundColor(.black)
+							
+						} else {
+							
+							title.foregroundColor(.gray)
+							
+						}
+						
 					}
-				if self.index == id {
-					title.foregroundColor(.black)
-				} else {
-					title.foregroundColor(.gray)
-				}
+					
+				}.frame(width: 210, height: 60, alignment: .center).background(LightTheme.Colors.uiSurface).shadow(color: LightTheme.Colors.textSecondary.opacity(0.25), radius: 40, x: 0, y: 10).cornerRadius(30)
+				
+				HStack() {
+					
+					ZStack() {
+						
+						Circle().frame(width: 60, height: 60)
+							.padding()
+							.foregroundColor(LightTheme.Colors.sucesss)
+							.background(LightTheme.Colors.sucesss)
+							.cornerRadius(70)
+						
+						FontIcon.text(.ionicon(code: .ios_add), fontsize: 35).foregroundColor(LightTheme.Colors.uiBackground)
+					}
+					
+				}.frame(width: 60, height: 60, alignment: .center).shadow(color: LightTheme.Colors.textSecondary.opacity(0.25), radius: 40, x: 0, y: 10).cornerRadius(30)
+				
 			}
-		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).padding(40)
+			
+		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).padding(.vertical, 50)
+		
 	}
+	
 	private let leftOffset: CGFloat = 0.1
 }
 
