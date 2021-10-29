@@ -107,6 +107,55 @@ private struct HeaderHere: View {
 	}
 }
 
+private struct StreamSheetContent: View {
+	
+	@StateObject private var viewModel = LandingScreenViewModel()
+	
+	var body: some View {
+		
+		List {
+			Section(header: Text("Clans").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)) {
+				
+				VStack(alignment: .leading) {
+					
+					ForEach(viewModel.liveClansHere , id: \.club_id) {item in
+						
+						Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+						
+						
+					}
+					
+					ForEach(viewModel.clanHere, id: \.club_id) {item in
+						
+						Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+						
+					}
+					
+				}
+				
+			}
+			
+			Section(header: Text("Directs").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)) {
+				
+				VStack(alignment: .leading) {
+					
+					ForEach(viewModel.directsHere , id: \.direct_channel_id) {item in
+						
+						Text(item.display_guys.full_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+						
+						
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+	
+	
+}
+
 struct TabBarView: View {
 	
 	@Binding var index: Int
@@ -165,7 +214,7 @@ struct TabBarView: View {
 			}
 			
 		}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).padding(.vertical, 50).bottomSheet(isPresented: self.$showStreamBottomSheet, height: UIScreen.screenHeight * 0.5) {
-			List(20..<40) { Text("\($0)") }.listStyle(PlainListStyle())
+			StreamSheetContent()
 		}
 		
 	}
