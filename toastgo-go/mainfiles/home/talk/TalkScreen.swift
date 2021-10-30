@@ -67,13 +67,14 @@ struct TalkScreen: View {
 								NewMessageComponent(aNewMessage: item)
 							}
 							
-							Spacer().frame(height: 200)
+							Spacer().frame(height: 150)
 							
-						}
-					}
+						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+						
+					}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
 				}
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear {
+			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onAppear {
 				
 				self.showButtons = ongoingFrame
 				
