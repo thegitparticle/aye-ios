@@ -17,6 +17,7 @@ struct TalkCameraScreen: View {
 	@ObservedObject var events = UserEvents()
 	@ObservedObject var pubnubSetUpHere = PubnubSetup()
 	
+	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
 	var clubName: String     // in directs, its the other user's name
@@ -216,7 +217,6 @@ struct TalkCameraScreen: View {
 			
 		}.padding(.top, 20)
 	}
-	
 	
 	var bottomButtons: some View {
 		
