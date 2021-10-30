@@ -314,6 +314,20 @@ struct TalkScreen: View {
 						
 						LazyHStack(alignment: .center) {
 							
+							if (viewModel.customRecos.count > 1 && self.selectedText.count > 2) {
+								
+								ForEach(viewModel.customRecos , id: \.id) { set in
+									
+									ForEach(set.links, id: \.self) { link in
+										
+										KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+											self.selectedReco = link
+										}
+									}
+								}
+								
+							} else {
+							
 							ForEach(viewModel.defaultRecos , id: \.id) { set in
 								
 								ForEach(set.links, id: \.self) { link in
@@ -322,6 +336,7 @@ struct TalkScreen: View {
 										self.selectedReco = link
 									}
 								}
+							}
 							}
 							
 						}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
@@ -343,6 +358,8 @@ struct TalkScreen: View {
 							
 							print(self.selectedText)
 							
+							viewModel.getCustomRecosTalkVM(userid: String(my_id), word: self.selectedText)
+							
 						}
 						.introspect { editor in
 							// access underlying UITextView or NSTextView
@@ -357,7 +374,7 @@ struct TalkScreen: View {
 						
 						FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
 							
-//							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
+							viewModel.sendPubnubHMessage(message: self.typedText, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
 							
 						}
 					}
@@ -374,6 +391,7 @@ struct TalkScreen: View {
 	func closeKeyBoard () {
 		
 		self.showTextInput = false
+		self.selectedText = ""
 	}
 	
 }

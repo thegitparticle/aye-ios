@@ -12,6 +12,8 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var defaultRecos = [DefaultRecosDataClass]()
 	
+	@Published var customRecos = [DefaultRecosDataClass]()
+	
 	@Published var oldMessagesReceived = [PubNubMessage]()
 	
 	@Published var newMessagesReceived = [PubNubMessage]()
@@ -255,5 +257,32 @@ class TalkViewModel: ObservableObject {
 			
 		}.resume()
 	}
-	
+
+	public func getCustomRecosTalkVM (userid: String, word: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/\(userid)/\(word)/False/") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+					
+					DispatchQueue.main.async {
+						
+						self.customRecos = decodedResponse
+						
+					}
+					return
+				}
+				
+				print("debugtextinput Fetch failed custom recos: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
 }
