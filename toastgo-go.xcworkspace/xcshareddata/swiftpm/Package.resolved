@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "HighlightedTextEditor",
+        "repositoryURL": "https://github.com/kyle-n/HighlightedTextEditor.git",
+        "state": {
+          "branch": "main",
+          "revision": "aba43182473c1a0aa6c1af75287270b04e372f90",
+          "version": null
+        }
+      },
+      {
         "package": "ImagePickerView",
         "repositoryURL": "https://github.com/ralfebert/ImagePickerView.git",
         "state": {

@@ -12,6 +12,9 @@ import AudioToolbox
 import Kingfisher
 import PubNub
 import ImageViewerRemote
+import HighlightedTextEditor
+
+let betweenUnderscores = try! NSRegularExpression(pattern: "_[^_]+_", options: [])
 
 extension UIScreen{
 	static let screenWidth = UIScreen.main.bounds.size.width
@@ -28,6 +31,8 @@ struct TalkScreen: View {
 	
 	@State var showButtons: Bool = false
 	
+	@State private var keyboardIsFocused: Bool = false
+	
 	var clubName: String     // in directs, its the other user's name
 	var clubId: Int 			// in directs, its the other user's id
 	var channelId: String
@@ -40,6 +45,25 @@ struct TalkScreen: View {
 	
 	var my_id: Int
 	var my_name: String
+	
+	@State var showTextInput: Bool = false
+	
+	@State var selectedReco: String = ""
+	
+	@State private var typedText: String = ""
+	
+	@State private var selectedText = ""
+	
+	private let rules: [HighlightRule] = [
+		HighlightRule(pattern: betweenUnderscores, formattingRules: [
+			TextFormattingRule(fontTraits: [.traitItalic, .traitBold]),
+			TextFormattingRule(key: .foregroundColor, value: UIColor.red),
+			TextFormattingRule(key: .underlineStyle) { content, range in
+				if content.count > 10 { return NSUnderlineStyle.double.rawValue }
+				else { return NSUnderlineStyle.single.rawValue }
+			}
+		])
+	]
 	
 	
 	var body: some View {
@@ -78,6 +102,9 @@ struct TalkScreen: View {
 				
 				self.showButtons = ongoingFrame
 				
+			}.onTapGesture {
+				
+				self.closeKeyBoard()
 			}
 			
 			HeaderHere.onAppear() {
@@ -93,7 +120,9 @@ struct TalkScreen: View {
 			
 			if (self.showButtons) {
 				
-				BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+//				BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+				
+				BottomButtons
 				
 			} else {
 				
@@ -213,36 +242,11 @@ struct TalkScreen: View {
 		
 	}
 	
-}
-
-private struct BottomButtons: View {
-	
-	@StateObject private var viewModel = TalkViewModel()
-	@StateObject private var pubnubSetUp = PubnubSetup()
-	
-	var clubName: String     // in directs, its the other user's name
-	var clubId: Int 			// in directs, its the other user's id
-	var channelId: String
-	var ongoingFrame: Bool
-	var startTime: String
-	var endTime: String
-	var ongoingStream: Bool
-	var ongoingStreamUser: String
-	var directornot: Bool
-	
-	var my_id: Int
-	var my_name: String
-	
-	//	var default_recos: [DefaultRecosDataClass]
-	
-	@State var showTextInput: Bool = false
-	@ObservedObject var textFieldManagerTalkScreen = TextFieldManagerTalkScreen()
-	
-	@State var selectedReco: String = ""
-	
-	var body: some View {
+	var BottomButtons: some View {
 		
-		if (!showTextInput) {
+		VStack {
+		
+		if (!self.showTextInput) {
 			
 			HStack {
 				
@@ -263,18 +267,18 @@ private struct BottomButtons: View {
 				}
 				
 				NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
-				
-				ZStack {
 					
-					Circle().frame(width: 35, height: 35)
-						.padding()
-						.foregroundColor(LightTheme.Colors.sucesss)
-						.background(LightTheme.Colors.sucesss)
-						.cornerRadius(70)
-					
-					FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
-					
-				}.padding(.horizontal, 20)
+					ZStack {
+						
+						Circle().frame(width: 35, height: 35)
+							.padding()
+							.foregroundColor(LightTheme.Colors.sucesss)
+							.background(LightTheme.Colors.sucesss)
+							.cornerRadius(70)
+						
+						FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
+						
+					}.padding(.horizontal, 20)
 					
 				}
 				
@@ -328,13 +332,32 @@ private struct BottomButtons: View {
 				
 				HStack(alignment: .center) {
 					
-					CocoaTextField("", text: $textFieldManagerTalkScreen.userInput).isFirstResponder(true).keyboardType(.default).frame(width: .infinity, height: 30).padding().foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+					HighlightedTextEditor(text: $typedText, highlightRules: rules)
+						// optional modifiers
+						.onCommit { print("commited") }
+						.onEditingChanged { print("editing changed") }
+						// .onTextChange { print("latest text value", $0) }
+						.onSelectionChange { (range: NSRange) in
+							
+							self.selectedText = String(self.typedText.dropFirst(range.lowerBound).prefix(range.upperBound - range.lowerBound) as Substring)
+							
+							print(self.selectedText)
+							
+						}
+						.introspect { editor in
+							// access underlying UITextView or NSTextView
+							editor.textView.backgroundColor = UIColor(LightTheme.Colors.uiSurface)
+							editor.textView.font = UIFont(name: "GothamRounded-Book", size: 15)
+							editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
+							
+							
+						}.frame(width: UIScreen.screenWidth * 0.85, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
 					
 					if (self.selectedReco.count > 2) {
 						
 						FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
 							
-							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
+//							viewModel.sendPubnubHMessage(message: textFieldManagerTalkScreen.userInput, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
 							
 						}
 					}
@@ -344,7 +367,15 @@ private struct BottomButtons: View {
 			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 			
 		}
+			
+		}
 	}
+	
+	func closeKeyBoard () {
+		
+		self.showTextInput = false
+	}
+	
 }
 
 private struct StartFramePart: View {
@@ -408,9 +439,3 @@ class TextFieldManagerTalkScreen: ObservableObject {
 	}
 	
 }
-
-//struct TalkScreen_Previews: PreviewProvider {
-//	static var previews: some View {
-//		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false, my_id: 82, my_name: "San")
-//	}
-//}

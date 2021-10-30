@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Kingfisher
+import HighlightedTextEditor
+
 
 struct MyClansScreen: View {
 	

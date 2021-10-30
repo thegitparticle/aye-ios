@@ -59,6 +59,7 @@
 		266019D0272C7C9F00AD9919 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 266019CF272C7C9F00AD9919 /* BottomSheet */; };
 		266019D3272C7E6200AD9919 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 266019D2272C7E6200AD9919 /* AgoraRtcKit */; };
 		266019D6272C8B5700AD9919 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 266019D5272C8B5700AD9919 /* VideoPlayer */; };
+		26601A1D272D75D000AD9919 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 26601A1C272D75D000AD9919 /* HighlightedTextEditor */; };
 		26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D81271C207F0043C750 /* TalkCameraScreen.swift */; };
 		26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */; };
 		26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */; };
@@ -291,6 +292,7 @@
 				266019BC272C7BAB00AD9919 /* SwiftUICam in Frameworks */,
 				266019BF272C7BBE00AD9919 /* Camera-SwiftUI in Frameworks */,
 				26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */,
+				26601A1D272D75D000AD9919 /* HighlightedTextEditor in Frameworks */,
 				266019D6272C8B5700AD9919 /* VideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,6 +865,7 @@
 				266019CF272C7C9F00AD9919 /* BottomSheet */,
 				266019D2272C7E6200AD9919 /* AgoraRtcKit */,
 				266019D5272C8B5700AD9919 /* VideoPlayer */,
+				26601A1C272D75D000AD9919 /* HighlightedTextEditor */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -954,6 +957,7 @@
 				266019CE272C7C9F00AD9919 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 				266019D1272C7E6200AD9919 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 				266019D4272C8B5700AD9919 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
+				26601A1B272D75D000AD9919 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -1655,6 +1659,14 @@
 				minimumVersion = 1.2.3;
 			};
 		};
+		26601A1B272D75D000AD9919 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1737,6 +1749,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 266019D4272C8B5700AD9919 /* XCRemoteSwiftPackageReference "VideoPlayer" */;
 			productName = VideoPlayer;
+		};
+		26601A1C272D75D000AD9919 /* HighlightedTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26601A1B272D75D000AD9919 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
+			productName = HighlightedTextEditor;
 		};
 /* End XCSwiftPackageProductDependency section */
 

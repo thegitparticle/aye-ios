@@ -1,3 +1,4 @@
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HighlightedTextEditor.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wormholy.framework

@@ -65,6 +65,8 @@ private struct HeaderHere: View {
 	@State private var showInvitePeopleModal = false
 	@State private var showTheAyeModal = false
 	
+	
+	
 	var body: some View {
 		
 		ZStack {
