@@ -176,7 +176,7 @@ struct TalkScreen: View {
 					
 					HStack () {
 						
-						Text("\( viewModel.otherUserDetailsHere[0].user.full_name ) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						Text("\( ongoingStreamUser ) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
 						
 						Spacer()
 						

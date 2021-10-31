@@ -20,6 +20,8 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var otherUserDetailsHere = [OtherUserDetailsDataClass]()
 	
+//	@Published var otherUserDetailsHere = [OtherUserDetailsDataClass(user: OtherUserHere(username: "", phone: "", full_name: 0, id: false, clubs_joined_by_user: 0, number_of_clubs_joined: "", contact_list: "", total_frames_participation: "", country_code_of_user: 0, contact_list_sync_status: ""), bio: "", image: "", id: 0)]
+	
 	@Published var agoraToken: String = ""
 	
 	init () {
