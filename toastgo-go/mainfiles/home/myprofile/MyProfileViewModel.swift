@@ -154,9 +154,21 @@ class MyProfileViewModel: ObservableObject {
 		}
 		
 		body += "--\(boundary)--\r\n";
+		
+		
+//		var body2 = Data()
+//
+//		if let fileData = paramSrc.pngData() {
+//			body2.append("; filename=\"blah.png\"\r\n".data(using: .utf8)!)
+//			body2.append("Content-Type: \"content-type header\"\r\n\r\n".data(using: .utf8)!)
+//			body2.append(fileData)
+//			body2.append()
+//		}
+		
 		let postData = body.data(using: .utf8)
 		
-		var request = URLRequest(url: URL(string: "https://apisayepirates.life/api/users/profile-update/84/")!,timeoutInterval: Double.infinity)
+		var request = URLRequest(url: URL(string: "https://apisayepirates.life/api/users/profile-update/84/")!, timeoutInterval: Double.infinity)
+		
 		request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 		
 		request.httpMethod = "PUT"
