@@ -56,8 +56,8 @@ struct ViewLiveStreamScreen: View {
 				
 				backColor: Color("localBackColor"),
 				backImage: Image("big_logo"),
-				hideCanvas: !isLocalInSession,
-				canvas: localCanvas
+				hideCanvas: isRemoteVideoMuted || !isRemoteInSession || !isLocalInSession,
+				canvas: remoteCanvas
 				
 			).edgesIgnoringSafeArea(.all).onAppear() {print(agora_token)}
 			
@@ -70,8 +70,8 @@ struct ViewLiveStreamScreen: View {
 						
 						backColor: Color("localBackColor"),
 						backImage: Image("logo"),
-						hideCanvas: isRemoteVideoMuted || !isRemoteInSession || !isLocalInSession,
-						canvas: remoteCanvas
+						hideCanvas: !isLocalInSession,
+						canvas: localCanvas
 						
 					).frame(width: 84, height: 112)
 					

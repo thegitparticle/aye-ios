@@ -10,6 +10,7 @@ target 'toastgo-go' do
 	pod 'Wormholy', :configurations => ['Debug']
 	pod 'SwiftDate', '~> 4.0'
 	pod 'HighlightedTextEditor'
+	pod 'AGEVideoLayout', '~> 1.0.2'
 
   target 'toastgo-goTests' do
     inherit! :search_paths

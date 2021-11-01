@@ -1,10 +1,12 @@
 PODS:
+  - AGEVideoLayout (1.0.3)
   - CountryPickerSwift (1.8.2)
   - HighlightedTextEditor (2.0.2)
   - SwiftDate (4.5.1)
   - Wormholy (1.6.4)
 
 DEPENDENCIES:
+  - AGEVideoLayout (~> 1.0.2)
   - CountryPickerSwift
   - HighlightedTextEditor
   - SwiftDate (~> 4.0)
@@ -12,17 +14,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AGEVideoLayout
     - CountryPickerSwift
     - HighlightedTextEditor
     - SwiftDate
     - Wormholy
 
 SPEC CHECKSUMS:
+  AGEVideoLayout: db06e3eedfa1f72c6dfbce9e79b09621002e8197
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
   HighlightedTextEditor: c71301c0352cd772e8e9528edb5c6329d0d89590
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
 
-PODFILE CHECKSUM: c57da34689ab139b0525f6648352e5aa63e420d8
+PODFILE CHECKSUM: 95fb3b34d0edad4740ec0f443e31c1ba606556a1
 
 COCOAPODS: 1.10.1
