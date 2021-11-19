@@ -137,9 +137,9 @@ struct TalkScreen: View {
 		
 		ZStack {
 			
-			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
-			
 			if (self.ongoingStream) {
+				
+				Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 200, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
 			
 				VStack (alignment: .center) {
 					
@@ -202,6 +202,8 @@ struct TalkScreen: View {
 				}.frame(maxWidth: .infinity, maxHeight: 200, alignment: .top)
 				
 			} else {
+				
+				Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
 				
 				VStack (alignment: .center) {
 					
