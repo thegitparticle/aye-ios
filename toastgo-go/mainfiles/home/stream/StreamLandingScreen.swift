@@ -58,7 +58,9 @@ struct StreamLandingScreen: View {
 						
 //					}
 					
-										NavigationLink(destination: ScreenStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+//										NavigationLink(destination: ScreenStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+					
+					NavigationLink(destination: ScreenShare100UI()) {
 					
 					HStack () {
 						

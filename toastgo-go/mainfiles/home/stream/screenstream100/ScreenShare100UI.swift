@@ -14,11 +14,13 @@ struct ScreenShare100UI: View {
 		
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 		
+		ScreenShare100Canvas()
+		
     }
 }
 
-struct ScreenShare100UI_Previews: PreviewProvider {
-    static var previews: some View {
-        ScreenShare100UI()
-    }
-}
+//struct ScreenShare100UI_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScreenShare100UI()
+//    }
+//}

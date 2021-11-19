@@ -26,6 +26,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## AgoraRtcEngine_iOS
+
+Copyright 2018 agora.io. All rights reserved.
+
+
 ## CountryPickerSwift
 
 Copyright (c) 2016 4taras4 <4taras4@gmail.com>

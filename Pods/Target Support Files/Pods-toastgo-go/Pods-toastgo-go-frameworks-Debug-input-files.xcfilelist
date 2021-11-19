@@ -1,5 +1,15 @@
 ${PODS_ROOT}/Target Support Files/Pods-toastgo-go/Pods-toastgo-go-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AGEVideoLayout/AGEVideoLayout.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraAIDenoiseExtension.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraCore.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraDav1dExtension.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraFDExtension.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraJNDExtension.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraRtcKit.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraSoundTouch.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/AgoraVideoSegmentationExtension.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/Agorafdkaac.framework
+${PODS_ROOT}/AgoraRtcEngine_iOS/Agoraffmpeg.framework
 ${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework
 ${BUILT_PRODUCTS_DIR}/HighlightedTextEditor/HighlightedTextEditor.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework

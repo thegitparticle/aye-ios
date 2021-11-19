@@ -11,6 +11,7 @@ target 'toastgo-go' do
 	pod 'SwiftDate', '~> 4.0'
 	pod 'HighlightedTextEditor'
 	pod 'AGEVideoLayout', '~> 1.0.2'
+	pod 'AgoraRtcEngine_iOS', '~> 3.5.0.2'
 
   target 'toastgo-goTests' do
     inherit! :search_paths
@@ -21,4 +22,10 @@ target 'toastgo-go' do
     # Pods for testing
   end
 
+end
+
+target 'Agora-ScreenShare-Extension' do
+	
+	use_frameworks!
+	pod 'AgoraRtcEngine_iOS', '~> 3.5.0.2'
 end

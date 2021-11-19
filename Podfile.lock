@@ -1,5 +1,6 @@
 PODS:
   - AGEVideoLayout (1.0.3)
+  - AgoraRtcEngine_iOS (3.5.0.2)
   - CountryPickerSwift (1.8.2)
   - HighlightedTextEditor (2.0.2)
   - SwiftDate (4.5.1)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - AGEVideoLayout (~> 1.0.2)
+  - AgoraRtcEngine_iOS (~> 3.5.0.2)
   - CountryPickerSwift
   - HighlightedTextEditor
   - SwiftDate (~> 4.0)
@@ -15,6 +17,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AGEVideoLayout
+    - AgoraRtcEngine_iOS
     - CountryPickerSwift
     - HighlightedTextEditor
     - SwiftDate
@@ -22,11 +25,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AGEVideoLayout: db06e3eedfa1f72c6dfbce9e79b09621002e8197
+  AgoraRtcEngine_iOS: f83b2ff4e4fb7144d8621cbf8d8032c533cffa4d
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
   HighlightedTextEditor: c71301c0352cd772e8e9528edb5c6329d0d89590
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
 
-PODFILE CHECKSUM: 95fb3b34d0edad4740ec0f443e31c1ba606556a1
+PODFILE CHECKSUM: e75483c68344b83ffb05cc93938d13384d0dc493
 
 COCOAPODS: 1.10.1
