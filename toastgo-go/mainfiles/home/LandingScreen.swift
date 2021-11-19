@@ -86,9 +86,12 @@ private struct HeaderHere: View {
 					
 					Spacer()
 					
-					CircleIcon(size: 13, iconName: .ios_rocket).onPress {
-						self.showTheAyeModal = true
-					}
+					Image("sup_in_red")
+						.resizable()
+						.scaledToFit()
+						.frame(width: 60, height: 26).onPress {
+							self.showTheAyeModal = true
+						}
 					
 					Spacer()
 
