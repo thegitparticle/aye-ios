@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContactsListItemDataClass: Codable, Equatable {
+struct ContactsListItemDataClass: Codable, Equatable, Hashable {
 	
 	var name: String
 	var phone: String

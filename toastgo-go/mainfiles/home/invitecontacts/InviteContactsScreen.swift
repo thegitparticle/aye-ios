@@ -19,15 +19,24 @@ struct InviteContactsScreen: View {
 		
 		ZStack(alignment: .top) {
 			
-			VStack(alignment: .center) {
+			VStack(alignment: .leading) {
+			
+				ScrollView {
 				
-				ForEach(viewModel.contactsList, id: \.name) {item in
+				LazyVStack(alignment: .leading) {
+
+					ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
 					
-					ContactItemComponent(name: item.name, phone: item.phone)
+						ContactItemComponent(name: item.name, phone: item.phone).id(UUID())
+					
+					}
+				
+
 				}
 				
+			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top).padding(.top, 150)
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
+			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top)
 			
 			
 			HeaderHere
@@ -46,7 +55,7 @@ struct InviteContactsScreen: View {
 		
 		ZStack {
 			
-			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground)
+			Rectangle().fill(LightTheme.Colors.uiBackground).frame(width: UIScreen.screenWidth, height: 150, alignment: .top).background(LightTheme.Colors.uiBackground)
 			
 			VStack (alignment: .center) {
 				
@@ -61,13 +70,13 @@ struct InviteContactsScreen: View {
 					}.onPress {
 						
 						self.mode.wrappedValue.dismiss()
-					}
+					}.padding(.bottom, 25)
 					
 					Spacer()
 					
-				}.padding(.bottom, 5)
+				}
 				
-			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			}.frame(width: UIScreen.screenWidth, height: 150, alignment: .top)
 		}
 		
 	}
@@ -79,15 +88,15 @@ struct ContactItemComponent: View {
 	var name: String
 	var phone: String
 	
-	@State private var checkedThisItem = true
+	@State private var checkedThisItem = false
 	
 	var body: some View {
 		
-		HStack(alignment: .center) {
+		HStack() {
 			
 			Spacer().frame(width: 20)
 			
-			Toggle("Checkbox 1", isOn: self.$checkedThisItem)
+			Toggle("", isOn: self.$checkedThisItem)
 				.toggleStyle(CheckboxToggleStyle(style: .square))
 				.foregroundColor(.blue)
 			
@@ -95,7 +104,8 @@ struct ContactItemComponent: View {
 			
 			Text(self.name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 3)
 			
-			Spacer().frame(width: 20)
+			Spacer()
+			
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10)
 		
