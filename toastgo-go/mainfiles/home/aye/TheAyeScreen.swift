@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import HighlightedTextEditor
-
-//let betweenUnderscores = try! NSRegularExpression(pattern: "_[^_]+_", options: [])
 
 struct TheAyeScreen: View {
 	
@@ -18,47 +15,25 @@ struct TheAyeScreen: View {
 	
 	@State private var selectedText = ""
 	
-//	private let rules: [HighlightRule] = [
-//		HighlightRule(pattern: betweenUnderscores, formattingRules: [
-//			TextFormattingRule(fontTraits: [.traitItalic, .traitBold]),
-//			TextFormattingRule(key: .foregroundColor, value: UIColor.red),
-//			TextFormattingRule(key: .underlineStyle) { content, range in
-//				if content.count > 10 { return NSUnderlineStyle.double.rawValue }
-//				else { return NSUnderlineStyle.single.rawValue }
-//			}
-//		])
-//	]
-	
     var body: some View {
 		
 		ZStack(alignment: .top) {
 			
 			VStack(alignment: .center) {
 				
-//				HighlightedTextEditor(text: $text, highlightRules: rules)
-//					// optional modifiers
-//					.onCommit { print("commited") }
-//					.onEditingChanged { print("editing changed") }
-//					.onTextChange { print("latest text value", $0) }
-//					.onSelectionChange { (range: NSRange) in
-//
-//						print(self.text.dropFirst(range.lowerBound).prefix(range.upperBound - range.lowerBound) as Substring)
-//
-//					}
-//					.introspect { editor in
-//						// access underlying UITextView or NSTextView
-//						editor.textView.backgroundColor = UIColor(LightTheme.Colors.uiSurface)
-//						editor.textView.font = UIFont(name: "GothamRounded-Book", size: 15)
-//						editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
-//
-//					}.frame(width: .infinity, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+				Spacer()
 				
-				Image("sup_transparent")
+				Image("sup_in_red")
 					.resizable()
-					.aspectRatio(contentMode: .fit)
+					.scaledToFit()
+					.frame(width: 200, height: 86)
+				
+				Spacer()
 				
 				
 				ZStack(alignment: .center) {
+					
+					Rectangle().fill(Color.gray).frame(width: UIScreen.screenWidth * 0.7, height: 50).background(Color.gray).shadow(color: Color.white.opacity(0.05), radius: 40, x: 0, y: 10).cornerRadius(25)
 					
 					HStack(alignment: .center) {
 						
@@ -70,7 +45,7 @@ struct TheAyeScreen: View {
 						
 					}
 					
-				}.background(Color.gray).frame(width: UIScreen.screenWidth * 0.7, height: 50).cornerRadius(10)
+				}.frame(width: UIScreen.screenWidth, height: 100).padding(.bottom, 30)
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(Color.black)
 			
