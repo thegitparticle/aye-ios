@@ -83,7 +83,7 @@ struct TalkScreen: View {
 							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
 								
 								OldMessageComponent(anOldMessage: item, channelId: channelId)
-
+								
 							}
 							
 							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
@@ -110,7 +110,7 @@ struct TalkScreen: View {
 			HeaderHere.onAppear() {
 				
 				if (self.ongoingFrame) {
-				
+					
 					viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
 					
 				}
@@ -119,8 +119,6 @@ struct TalkScreen: View {
 			}
 			
 			if (self.showButtons) {
-				
-//				BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
 				
 				BottomButtons
 				
@@ -140,7 +138,7 @@ struct TalkScreen: View {
 			if (self.ongoingStream) {
 				
 				Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 200, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
-			
+				
 				VStack (alignment: .center) {
 					
 					Spacer(minLength: statusBarHeight)
@@ -247,145 +245,145 @@ struct TalkScreen: View {
 	var BottomButtons: some View {
 		
 		VStack {
-		
-		if (!self.showTextInput) {
 			
-			HStack {
+			if (!self.showTextInput) {
 				
-				NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+				HStack {
+					
+					NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						
+						ZStack {
+							
+							Circle().frame(width: 20, height: 20)
+								.padding()
+								.foregroundColor(LightTheme.Colors.textSecondary)
+								.background(LightTheme.Colors.textSecondary)
+								.cornerRadius(70)
+							
+							FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+							
+						}.padding(.horizontal, 20)
+						
+					}
+					
+					NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						
+						ZStack {
+							
+							Circle().frame(width: 35, height: 35)
+								.padding()
+								.foregroundColor(LightTheme.Colors.sucesss)
+								.background(LightTheme.Colors.sucesss)
+								.cornerRadius(70)
+							
+							FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
+							
+						}.padding(.horizontal, 20)
+						
+					}
 					
 					ZStack {
 						
 						Circle().frame(width: 20, height: 20)
 							.padding()
-							.foregroundColor(LightTheme.Colors.textSecondary)
-							.background(LightTheme.Colors.textSecondary)
+							.foregroundColor(LightTheme.Colors.appLead)
+							.background(LightTheme.Colors.appLead)
 							.cornerRadius(70)
 						
-						FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+						FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
 						
-					}.padding(.horizontal, 20)
-					
-				}
-				
-				NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
-					
-					ZStack {
+					}.padding(.horizontal, 20).onPress {
 						
-						Circle().frame(width: 35, height: 35)
-							.padding()
-							.foregroundColor(LightTheme.Colors.sucesss)
-							.background(LightTheme.Colors.sucesss)
-							.cornerRadius(70)
-						
-						FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
-						
-					}.padding(.horizontal, 20)
-					
-				}
-				
-				ZStack {
-					
-					Circle().frame(width: 20, height: 20)
-						.padding()
-						.foregroundColor(LightTheme.Colors.appLead)
-						.background(LightTheme.Colors.appLead)
-						.cornerRadius(70)
-					
-					FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
-					
-				}.padding(.horizontal, 20).onPress {
-					
-					self.showTextInput = true
-				}
-				
-			}.padding(.vertical, 30).frame(maxHeight: .infinity, alignment: .bottom)
-			
-		} else {
-			
-			VStack {
-				
-				HStack {
-					
-					if (self.selectedReco.count > 2) {
-						
-						KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+						self.showTextInput = true
 					}
 					
-					ScrollView(.horizontal) {
+				}.padding(.vertical, 30).frame(maxHeight: .infinity, alignment: .bottom)
+				
+			} else {
+				
+				VStack {
+					
+					HStack {
 						
-						LazyHStack(alignment: .center) {
+						if (self.selectedReco.count > 2) {
 							
-							if (viewModel.customRecos.count > 1 && self.selectedText.count > 2) {
+							KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+						}
+						
+						ScrollView(.horizontal) {
+							
+							LazyHStack(alignment: .center) {
 								
-								ForEach(viewModel.customRecos , id: \.id) { set in
+								if (viewModel.customRecos.count > 1 && self.selectedText.count > 2) {
 									
-									ForEach(set.links, id: \.self) { link in
+									ForEach(viewModel.customRecos , id: \.id) { set in
 										
-										KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
-											self.selectedReco = link
+										ForEach(set.links, id: \.self) { link in
+											
+											KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+												self.selectedReco = link
+											}
+										}
+									}
+									
+								} else {
+									
+									ForEach(viewModel.defaultRecos , id: \.id) { set in
+										
+										ForEach(set.links, id: \.self) { link in
+											
+											KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+												self.selectedReco = link
+											}
 										}
 									}
 								}
 								
-							} else {
+							}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
 							
-							ForEach(viewModel.defaultRecos , id: \.id) { set in
+						}
+						
+					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+					
+					HStack(alignment: .center) {
+						
+						HighlightedTextEditor(text: $typedText, highlightRules: rules)
+							// optional modifiers
+							.onCommit { print("commited") }
+							.onEditingChanged { print("editing changed") }
+							// .onTextChange { print("latest text value", $0) }
+							.onSelectionChange { (range: NSRange) in
 								
-								ForEach(set.links, id: \.self) { link in
-									
-									KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
-										self.selectedReco = link
-									}
-								}
+								self.selectedText = String(self.typedText.dropFirst(range.lowerBound).prefix(range.upperBound - range.lowerBound) as Substring)
+								
+								print(self.selectedText)
+								
+								viewModel.getCustomRecosTalkVM(userid: String(my_id), word: self.selectedText)
+								
 							}
-							}
+							.introspect { editor in
+								// access underlying UITextView or NSTextView
+								editor.textView.backgroundColor = UIColor(LightTheme.Colors.uiSurface)
+								editor.textView.font = UIFont(name: "GothamRounded-Book", size: 15)
+								editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
+								
+								
+							}.frame(width: UIScreen.screenWidth * 0.85, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+						
+						if (self.selectedReco.count > 2) {
 							
-						}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+							FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
+								
+								viewModel.sendPubnubHMessage(message: self.typedText, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
+								
+							}
+						}
 						
 					}
 					
-				}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+				}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 				
-				HStack(alignment: .center) {
-					
-					HighlightedTextEditor(text: $typedText, highlightRules: rules)
-						// optional modifiers
-						.onCommit { print("commited") }
-						.onEditingChanged { print("editing changed") }
-						// .onTextChange { print("latest text value", $0) }
-						.onSelectionChange { (range: NSRange) in
-							
-							self.selectedText = String(self.typedText.dropFirst(range.lowerBound).prefix(range.upperBound - range.lowerBound) as Substring)
-							
-							print(self.selectedText)
-							
-							viewModel.getCustomRecosTalkVM(userid: String(my_id), word: self.selectedText)
-							
-						}
-						.introspect { editor in
-							// access underlying UITextView or NSTextView
-							editor.textView.backgroundColor = UIColor(LightTheme.Colors.uiSurface)
-							editor.textView.font = UIFont(name: "GothamRounded-Book", size: 15)
-							editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
-							
-							
-						}.frame(width: UIScreen.screenWidth * 0.85, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
-					
-					if (self.selectedReco.count > 2) {
-						
-						FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
-							
-							viewModel.sendPubnubHMessage(message: self.typedText, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
-							
-						}
-					}
-					
-				}
-				
-			}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
-			
-		}
+			}
 			
 		}
 	}
@@ -441,7 +439,7 @@ private struct StartFramePart: View {
 					.cornerRadius(28)
 			}
 			
-		}.frame( maxHeight: .infinity, alignment: .center)
+		}.frame( maxHeight: .infinity, alignment: .bottom)
 	}
 }
 
