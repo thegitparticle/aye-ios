@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftUIFontIcon
 import BottomSheet
+import Kingfisher
 
 let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
@@ -79,7 +80,7 @@ private struct HeaderHere: View {
 				
 				HStack () {
 					
-					CircleIcon(size: 13, iconName: .ios_person_add).padding(.horizontal, 20).onPress {
+					CircleIcon(size: 11, iconName: .ios_person_add).padding(.horizontal, 20).onPress {
 						self.showInvitePeopleModal = true
 					}
 					
@@ -90,14 +91,14 @@ private struct HeaderHere: View {
 					}
 					
 					Spacer()
-					
-					CircleIcon(size: 13, iconName: .ios_person).padding(.horizontal, 20).onPress {
+
+					DPShow.onPress {
 						self.showMyProfileModal = true
 					}
 					
-				}.padding(.bottom, 5)
+				}.padding(.bottom, 45)
 				
-			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			}.frame(maxWidth: .infinity, maxHeight: 120, alignment: .top)
 			
 		}.sheet(isPresented: $showMyProfileModal) {
 			MyProfileScreen()
@@ -106,6 +107,12 @@ private struct HeaderHere: View {
 		}.sheet(isPresented: $showTheAyeModal) {
 			TheAyeScreen()
 		}
+	}
+	
+	var DPShow: some View {
+		
+		KFImage.url(URL(string: UserDefaults.standard.string(forKey: "MyDp") ?? "")!).resizable().cornerRadius(17.5).frame(width: 35, height: 35).cornerRadius(50.0).padding()
+		
 	}
 }
 
