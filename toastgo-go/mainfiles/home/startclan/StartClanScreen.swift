@@ -19,6 +19,9 @@ struct StartClanScreen: View {
 	
 	@ObservedObject var textFieldManager = TextFieldManager()
 	
+	@State var friendsAddedList: [Int] = []
+	@State var contactsInvitedList: [String] = []
+	
 	var body: some View {
 		
 		if (currentShowingView == "FRIENDSLIST") {
@@ -56,8 +59,8 @@ struct StartClanScreen: View {
 						
 						ForEach(Array(Set(viewModel.friendsList)), id: \.self) {item in
 							
-							FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic)
-							
+							FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
+														
 						}
 						
 						Spacer().frame(height: 250)
@@ -151,7 +154,7 @@ struct StartClanScreen: View {
 						
 						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
 							
-							ContactItemComponentHere(name: item.name, phone: item.phone).id(UUID())
+							ContactItemComponentHere(name: item.name, phone: item.phone, addFunction: addContactToList, removeFunction: removeContactFromList)
 							
 						}
 						
@@ -259,6 +262,8 @@ struct StartClanScreen: View {
 				}.padding(.vertical, 30).onPress {
 					
 					self.currentShowingView = "CREATINGCLAN"
+					
+					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput)
 				}
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
@@ -266,7 +271,11 @@ struct StartClanScreen: View {
 			NameClanViewHeader
 			
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
+			
+			print(friendsAddedList)
+			print(contactsInvitedList)
+		}
 		
 	}
 	
@@ -383,6 +392,31 @@ struct StartClanScreen: View {
 		
 	}
 	
+	func addFriendToList(friendId: Int) {
+	
+		self.friendsAddedList.append(friendId)
+	}
+	
+	func removeFriendFromList(friendId: Int) {
+		
+		if let index = self.friendsAddedList.firstIndex(of: friendId) {
+			self.friendsAddedList.remove(at: index)
+		}
+	}
+	
+	func addContactToList(contactPhone: String) {
+		
+		self.contactsInvitedList.append(contactPhone)
+	}
+	
+	func removeContactFromList(contactPhone: String) {
+		
+		if let index = self.contactsInvitedList.firstIndex(of: contactPhone) {
+			self.contactsInvitedList.remove(at: index)
+		}
+		
+	}
+	
 }
 
 private struct FriendItemComponentHere: View {
@@ -390,6 +424,9 @@ private struct FriendItemComponentHere: View {
 	var name: String
 	var id: Int
 	var dp: String
+	
+	var addFunction: (Int) -> ()
+	var removeFunction: (Int) -> ()
 	
 	@State private var checkedThisItem = false
 	
@@ -417,7 +454,16 @@ private struct FriendItemComponentHere: View {
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 5).onPress {
 			
-			self.checkedThisItem = (!self.checkedThisItem)
+			if (!self.checkedThisItem) {
+				
+				addFunction(id)
+				self.checkedThisItem = true
+			} else {
+				
+				removeFunction(id)
+				self.checkedThisItem = false
+			}
+			
 		}
 		
 	}
@@ -427,6 +473,9 @@ private struct ContactItemComponentHere: View {
 	
 	var name: String
 	var phone: String
+	
+	var addFunction: (String) -> ()
+	var removeFunction: (String) -> ()
 	
 	@State private var checkedThisItem = false
 	
@@ -449,7 +498,15 @@ private struct ContactItemComponentHere: View {
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10).onPress {
 			
-			self.checkedThisItem = (!self.checkedThisItem)
+			if (!self.checkedThisItem) {
+				
+				addFunction(phone)
+				self.checkedThisItem = true
+			} else {
+				
+				removeFunction(phone)
+				self.checkedThisItem = false
+			}
 		}
 		
 	}
