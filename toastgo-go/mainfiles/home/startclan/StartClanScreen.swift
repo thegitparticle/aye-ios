@@ -16,7 +16,7 @@ struct StartClanScreen: View {
 	
 	@State var currentShowingView = "FRIENDSLIST" // can be FRIENDSLIST, CONTACTSLIST, NAMECLAN or CREATINGCLAN
 	
-    var body: some View {
+	var body: some View {
 		
 		if (currentShowingView == "FRIENDSLIST") {
 			
@@ -39,10 +39,10 @@ struct StartClanScreen: View {
 			FriendsListView
 		}
 		
-    }
+	}
 	
 	var FriendsListView: some View {
-	
+		
 		ZStack(alignment: .top) {
 			
 			VStack(alignment: .leading) {
@@ -119,15 +119,15 @@ struct StartClanScreen: View {
 					
 					Spacer()
 					
-						ZStack() {
-							
-							Circle().frame(width: CGFloat(13), height: CGFloat(13))
-								.padding()
-								.foregroundColor(LightTheme.Colors.uiBackground)
-								.background(LightTheme.Colors.uiBackground)
-								.cornerRadius(70)
-							
-						}.padding(.horizontal, 20)
+					ZStack() {
+						
+						Circle().frame(width: CGFloat(13), height: CGFloat(13))
+							.padding()
+							.foregroundColor(LightTheme.Colors.uiBackground)
+							.background(LightTheme.Colors.uiBackground)
+							.cornerRadius(70)
+						
+					}.padding(.horizontal, 20)
 					
 				}.padding(.bottom, 5)
 				
@@ -152,6 +152,7 @@ struct StartClanScreen: View {
 							
 						}
 						
+						Spacer().frame(height: 250)
 						
 					}
 					
@@ -200,11 +201,11 @@ struct StartClanScreen: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
 						
 					}.onPress {
 						
-						self.mode.wrappedValue.dismiss()
+						self.currentShowingView = "FRIENDSLIST"
 					}
 					
 					Spacer()
@@ -213,14 +214,15 @@ struct StartClanScreen: View {
 					
 					Spacer()
 					
-					HStack {
+					ZStack() {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						Circle().frame(width: CGFloat(13), height: CGFloat(13))
+							.padding()
+							.foregroundColor(LightTheme.Colors.uiBackground)
+							.background(LightTheme.Colors.uiBackground)
+							.cornerRadius(70)
 						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
+					}.padding(.horizontal, 20)
 					
 				}.padding(.bottom, 5)
 				
@@ -449,7 +451,7 @@ private struct FriendItemComponentHere: View {
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 5).onPress {
 			
-			self.checkedThisItem = true
+			self.checkedThisItem = (!self.checkedThisItem)
 		}
 		
 	}
@@ -481,14 +483,14 @@ private struct ContactItemComponentHere: View {
 			
 		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10).onPress {
 			
-			self.checkedThisItem = true
+			self.checkedThisItem = (!self.checkedThisItem)
 		}
 		
 	}
 }
 
 struct StartClanScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        StartClanScreen()
-    }
+	static var previews: some View {
+		StartClanScreen()
+	}
 }
