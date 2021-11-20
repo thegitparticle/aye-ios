@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftUIFontIcon
 import Kingfisher
+import SwiftUIX
 
 struct StartClanScreen: View {
 	
@@ -15,6 +16,8 @@ struct StartClanScreen: View {
 	@StateObject private var viewModel = StartClanViewModel()
 	
 	@State var currentShowingView = "FRIENDSLIST" // can be FRIENDSLIST, CONTACTSLIST, NAMECLAN or CREATINGCLAN
+	
+	@ObservedObject var textFieldManager = TextFieldManager()
 	
 	var body: some View {
 		
@@ -235,28 +238,13 @@ struct StartClanScreen: View {
 		
 		ZStack(alignment: .top) {
 			
-			VStack(alignment: .leading) {
+			VStack(alignment: .center) {
 				
-				ScrollView {
+				HStack(alignment: .center) {
 					
-					LazyVStack(alignment: .leading) {
-						
-						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
-							
-							ContactItemComponentHere(name: item.name, phone: item.phone).id(UUID())
-							
-						}
-						
-						
-					}
+					CocoaTextField("", text: $textFieldManager.userInput).isFirstResponder(true).keyboardType(.default).frame(width: 200, height: 40).padding().foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
 					
-				}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top).padding(.top, 150)
-				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top)
-			
-			NameClanViewHeader
-			
-			VStack(alignment: .leading) {
+				}.padding(20).frame(maxWidth: .infinity)
 				
 				ZStack {
 					
@@ -273,7 +261,10 @@ struct StartClanScreen: View {
 					self.currentShowingView = "CREATINGCLAN"
 				}
 				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
+			
+			NameClanViewHeader
+			
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
@@ -295,11 +286,11 @@ struct StartClanScreen: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
 						
 					}.onPress {
 						
-						self.mode.wrappedValue.dismiss()
+						self.currentShowingView = "CONTACTSLIST"
 					}
 					
 					Spacer()
@@ -308,14 +299,15 @@ struct StartClanScreen: View {
 					
 					Spacer()
 					
-					HStack {
+					ZStack() {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						Circle().frame(width: CGFloat(13), height: CGFloat(13))
+							.padding()
+							.foregroundColor(LightTheme.Colors.uiBackground)
+							.background(LightTheme.Colors.uiBackground)
+							.cornerRadius(70)
 						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
+					}.padding(.horizontal, 20)
 					
 				}.padding(.bottom, 5)
 				
@@ -328,45 +320,18 @@ struct StartClanScreen: View {
 		
 		ZStack(alignment: .top) {
 			
-			VStack(alignment: .leading) {
+			VStack(alignment: .center) {
 				
-				ScrollView {
+				HStack(alignment: .center) {
 					
-					LazyVStack(alignment: .leading) {
-						
-						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
-							
-							ContactItemComponentHere(name: item.name, phone: item.phone).id(UUID())
-							
-						}
-						
-						
-					}
+						LottieView(filename: "loading_ping_pong_cup")
 					
-				}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top).padding(.top, 150)
+				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
 				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top)
+				Text("building your clan").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.h4).padding(20)
+				
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
 			
-			CreatingClanViewHeader
-			
-			VStack(alignment: .leading) {
-				
-				ZStack {
-					
-					Circle().frame(width: CGFloat(20), height: 20)
-						.padding()
-						.foregroundColor(LightTheme.Colors.textSecondary)
-						.background(LightTheme.Colors.textSecondary)
-						.cornerRadius(70)
-					
-					FontIcon.text(.ionicon(code: .ios_arrow_round_forward), fontsize: CGFloat(20)).foregroundColor(LightTheme.Colors.uiSurface.opacity(0.75))
-					
-				}.padding(.vertical, 30).onPress {
-					
-					self.mode.wrappedValue.dismiss()
-				}
-				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
@@ -388,27 +353,28 @@ struct StartClanScreen: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
 						
 					}.onPress {
 						
-						self.mode.wrappedValue.dismiss()
+						self.currentShowingView = "CONTACTSLIST"
 					}
 					
 					Spacer()
 					
-					Text("").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.h5).padding(.horizontal, 10).padding(.vertical, 3)
+					Text("Clan Name").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.h5).padding(.horizontal, 10).padding(.vertical, 3)
 					
 					Spacer()
 					
-					HStack {
+					ZStack() {
 						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
+						Circle().frame(width: CGFloat(13), height: CGFloat(13))
+							.padding()
+							.foregroundColor(LightTheme.Colors.uiBackground)
+							.background(LightTheme.Colors.uiBackground)
+							.cornerRadius(70)
 						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
+					}.padding(.horizontal, 20)
 					
 				}.padding(.bottom, 5)
 				
