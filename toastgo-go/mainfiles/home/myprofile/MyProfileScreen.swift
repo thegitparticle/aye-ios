@@ -15,10 +15,13 @@ struct MyProfileScreen: View {
 	
 	@State var currentShowingView = "MYPROFILE" // can be MYPROFILE or SETTINGS or EDITPROFILE
 	
-    var body: some View {
+	@State var showingClansOverlayPopup = false
+	@State var showingFramesOverlayPopup = false
+	
+	var body: some View {
 		
 		if (self.currentShowingView == "MYPROFILE") {
-		
+			
 			MyProfile
 			
 		} else if (self.currentShowingView == "SETTINGS") {
@@ -34,7 +37,7 @@ struct MyProfileScreen: View {
 			MyProfile
 		}
 		
-    }
+	}
 	
 	func changeCurrentShowingView () {
 		
@@ -53,7 +56,14 @@ struct MyProfileScreen: View {
 				
 				BottomButtons
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
+			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground).popup(isPresented: $showingClansOverlayPopup) {
+				
+				ClansOverlay
+				
+			}.popup(isPresented: $showingFramesOverlayPopup) {
+				
+				FramesOverlay
+			}
 			
 			
 			HeaderHere
@@ -84,15 +94,21 @@ struct MyProfileScreen: View {
 	var BottomButtons: some View {
 		
 		VStack(alignment: .center) {
-		
-			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 30, color: LightTheme.Colors.special1)
 			
-			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 30, color: LightTheme.Colors.special2)
+			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 30, color: LightTheme.Colors.special1).onPress {
+				
+				self.showingClansOverlayPopup = true
+			}
+			
+			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 30, color: LightTheme.Colors.special2).onPress {
+				
+				self.showingFramesOverlayPopup = true
+			}
 			
 			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss).onPress {
-
+				
 				self.currentShowingView = "EDITPROFILE"
-
+				
 			}
 			
 			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error).onPress {
@@ -104,8 +120,32 @@ struct MyProfileScreen: View {
 		}.padding(.vertical, 30).frame(width: UIScreen.screenWidth)
 	}
 	
-	var HeaderHere: some View {
 	
+	var ClansOverlay: some View {
+		
+		Text("you are in \(viewModel.userDeetsHere.user.number_of_clubs_joined) clans")
+			.frame(width: 300, height: 100)
+			.background(LightTheme.Colors.uiSurface.opacity(0.75))
+			.foregroundColor(LightTheme.Colors.error)
+			.font(LightTheme.Typography.body1)
+			.cornerRadius(30.0)
+		
+	}
+	
+	var FramesOverlay: some View {
+		
+		Text("you have texted in \(viewModel.userDeetsHere.user.total_frames_participation) frames")
+			.frame(width: 300, height: 100)
+			.background(LightTheme.Colors.uiSurface.opacity(0.75))
+			.foregroundColor(LightTheme.Colors.error)
+			.font(LightTheme.Typography.body1)
+			.cornerRadius(30.0)
+		
+	}
+	
+	
+	var HeaderHere: some View {
+		
 		ZStack {
 			
 			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground)
@@ -137,8 +177,8 @@ struct MyProfileScreen: View {
 
 struct MyProfileScreen_Previews: PreviewProvider {
 	
-    static var previews: some View {
+	static var previews: some View {
 		
-        MyProfileScreen()
-    }
+		MyProfileScreen()
+	}
 }
