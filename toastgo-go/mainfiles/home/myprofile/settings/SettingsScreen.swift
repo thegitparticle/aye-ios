@@ -17,15 +17,19 @@ struct SettingsScreen: View {
 			
 			VStack(alignment: .center) {
 				
-				IconButtonForOptions(title: "Privacy Policy", iconName: .ios_brush, size: 30, color: LightTheme.Colors.textSecondary)
+				VStack (alignment: .center) {
 				
-				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 30, color: LightTheme.Colors.textSecondary)
+				IconButtonForOptions(title: "Privacy Policy", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary)
 				
-				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error).onPress {
+				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary)
+				
+				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error).onPress {
 					
 					UserDefaults.standard.set(false, forKey: "LoginState");
 					
 				}
+					
+				}.frame(width: UIScreen.screenWidth)
 				
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)

@@ -23,46 +23,50 @@ struct EditProfileScreen: View {
 	@State var imageSelectedFromDevice: UIImage?
 	@State var imageSelectedFromDeviceUrl: URL?
 	
-    var body: some View {
+	var body: some View {
 		
 		ZStack(alignment: .top) {
 			
 			VStack(alignment: .center) {
 				
-				IconButtonForOptions(title: "Edit Profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss)
-				
-				Spacer().frame(height: 50)
-				
-				if ((self.imageSelectedFromDevice) != nil) {
+				VStack (alignment: .center) {
 					
-					Image(uiImage: self.imageSelectedFromDevice!).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0).onPress {
+					IconButtonForOptions(title: "Edit Profile", iconName: .ios_brush, size: 20, color: LightTheme.Colors.sucesss)
+					
+					Spacer().frame(height: 50)
+					
+					if ((self.imageSelectedFromDevice) != nil) {
 						
-						self.showImagePicker = true
+						Image(uiImage: self.imageSelectedFromDevice!).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0).onPress {
+							
+							self.showImagePicker = true
+						}
+						
+					} else {
+						
+						KFImage.url(URL(string: self.dpLink)).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0).onPress {
+							
+							self.showImagePicker = true
+						}
+						
 					}
 					
-				} else {
-				
-					KFImage.url(URL(string: self.dpLink)).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0).onPress {
+					Spacer().frame(height: 50)
+					
+					ZStack {
 						
-						self.showImagePicker = true
+						RoundedRectangle(cornerRadius: 30, style: .continuous)
+							.fill(LightTheme.Colors.sucesss)
+							.frame(width: 150, height: 60)
+						
+						Text("save").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+						
+					}.onPress {
+						
+						viewModel.editProfileDp2(imageToUpload: self.imageSelectedFromDeviceUrl!)
 					}
 					
-				}
-				
-				Spacer().frame(height: 50)
-				
-				ZStack {
-					
-					RoundedRectangle(cornerRadius: 30, style: .continuous)
-						.fill(LightTheme.Colors.sucesss)
-						.frame(width: 150, height: 60)
-					
-					Text("save").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
-				
-				}.onPress {
-					
-					viewModel.editProfileDp2(imageToUpload: self.imageSelectedFromDeviceUrl!)
-				}
+				}.frame(width: UIScreen.screenWidth)
 				
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
@@ -87,7 +91,7 @@ struct EditProfileScreen: View {
 			}
 		}
 		
-    }
+	}
 	
 	
 	func getDocumentsDirectory() -> URL {

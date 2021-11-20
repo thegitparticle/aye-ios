@@ -42,11 +42,10 @@ struct IconButtonForOptions: View {
 		
 		ZStack {
 			
-			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
+			Circle().frame(width: CGFloat(self.size * 2), height: CGFloat(self.size * 2))
 				.padding()
-				.foregroundColor(color.opacity(0.25))
-				.background(color.opacity(0.25))
-				.cornerRadius(10)
+				.foregroundColor(color.opacity(0.15))
+				.cornerRadius(CGFloat(self.size))
 			
 			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(color)
 			
@@ -91,11 +90,10 @@ struct IconButtonForOptionsWithInfo: View {
 		
 		ZStack {
 			
-			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
+			Circle().frame(width: CGFloat(self.size * 2), height: CGFloat(self.size * 2))
 				.padding()
-				.foregroundColor(color.opacity(0.25))
-				.background(color.opacity(0.25))
-				.cornerRadius(10)
+				.foregroundColor(color.opacity(0.15))
+				.cornerRadius(CGFloat(self.size))
 			
 			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(color)
 			
@@ -103,9 +101,3 @@ struct IconButtonForOptionsWithInfo: View {
 	}
 	
 }
-
-//struct IconButtonForOptions_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IconButtonForOptions()
-//    }
-//}

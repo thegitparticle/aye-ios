@@ -95,23 +95,23 @@ struct MyProfileScreen: View {
 		
 		VStack(alignment: .center) {
 			
-			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 30, color: LightTheme.Colors.special1).onPress {
+			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.userDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 20, color: LightTheme.Colors.special1).onPress {
 				
 				self.showingClansOverlayPopup = true
 			}
 			
-			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 30, color: LightTheme.Colors.special2).onPress {
+			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.userDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 20, color: LightTheme.Colors.special3).onPress {
 				
 				self.showingFramesOverlayPopup = true
 			}
 			
-			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 30, color: LightTheme.Colors.sucesss).onPress {
+			IconButtonForOptions(title: "edit profile", iconName: .ios_brush, size: 20, color: LightTheme.Colors.sucesss).onPress {
 				
 				self.currentShowingView = "EDITPROFILE"
 				
 			}
 			
-			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 30, color: LightTheme.Colors.error).onPress {
+			IconButtonForOptions(title: "settings", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error).onPress {
 				
 				self.currentShowingView = "SETTINGS"
 				
