@@ -10,12 +10,16 @@ import Kingfisher
 
 struct LiveClanComponent: View {
 	
+	@StateObject private var viewModel = LandingScreenViewModel()
+	
 	var clanHere: MyClansDataClass
 	
 	var my_id: Int
 	var my_name: String
 	
 	var indexInList: Int
+	
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	var body: some View {
 		

@@ -9,36 +9,24 @@ import Foundation
 import CoreData
 import SwiftUI
 
-struct UserDetailsDataClass: Codable {
-	var user: User
+struct UserDetailsDataClass: Codable, Equatable {
 	var bio: String
-	var image: String
 	var id: Int
+	var image: String
+	var user: User
 }
 
-struct User: Codable {
-	var user_name: String
+struct User: Codable, Equatable {
 	var phone: String
-	var full_name: String
-	var id: Int
-	var clubs_joined_by_user: String
 	var number_of_clubs_joined: Int
-	var contact_list: String
-	var total_frames_participation: Int
-	var country_code_of_user: String
 	var contact_list_sync_status: Bool
-	
-//	enum CodingKeys: String, CodingKey {
-//		case username, phone
-//		case fullName = "full_name"
-//		case id
-//		case clubsJoinedByUser = "clubs_joined_by_user"
-//		case numberOfClubsJoined = "number_of_clubs_joined"
-//		case contactList = "contact_list"
-//		case totalFramesParticipation = "total_frames_participation"
-//		case countryCodeOfUser = "country_code_of_user"
-//		case contactListSyncStatus = "contact_list_sync_status"
-//	}
+	var id: Int
+	var country_code_of_user: String
+	var username: String
+	var clubs_joined_by_user: String
+	var full_name: String
+	var total_frames_participation: Int
+	var contact_list: String
 }
 
 

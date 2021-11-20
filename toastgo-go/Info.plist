@@ -28,6 +28,8 @@
 	<string>needs microphone access for camera recording to work</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>needs photos access</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GothamRounded-Bold.otf</string>

@@ -46,7 +46,8 @@ struct LoginOtpScreen: View {
 					
 				}.padding(20).frame(maxWidth: .infinity).onPress {
 					
-					viewModel.postOtpToServer(phone: self.countryCode + self.phoneNumber, password: self.textFieldManager.userInput)
+					viewModel.postOtpToServer(phone: self.countryCode + self.phoneNumber, password: self.textFieldManager.userInput
+					)
 					
 					print("debuglogs", self.textFieldManager.userInput)
 					

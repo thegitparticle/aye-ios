@@ -2,17 +2,62 @@
   "object": {
     "pins": [
       {
+        "package": "BottomSheet",
+        "repositoryURL": "https://github.com/weitieda/bottom-sheet",
+        "state": {
+          "branch": null,
+          "revision": "98e2ae0b47875faef28e181cf968b9645f7678af",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "Camera-SwiftUI",
+        "repositoryURL": "https://github.com/rorodriguez116/Camera-SwiftUI.git",
+        "state": {
+          "branch": null,
+          "revision": "bec647c47f45cdfd588dd50e07571fb2642f4575",
+          "version": "0.0.5"
+        }
+      },
+      {
+        "package": "GSPlayer",
+        "repositoryURL": "https://github.com/wxxsw/GSPlayer.git",
+        "state": {
+          "branch": null,
+          "revision": "5904551cf33e0c38831fdc56c6a2c9770eadc30d",
+          "version": "0.2.25"
+        }
+      },
+      {
+        "package": "HighlightedTextEditor",
+        "repositoryURL": "https://github.com/kyle-n/HighlightedTextEditor.git",
+        "state": {
+          "branch": "main",
+          "revision": "aba43182473c1a0aa6c1af75287270b04e372f90",
+          "version": null
+        }
+      },
+      {
+        "package": "ImagePickerView",
+        "repositoryURL": "https://github.com/ralfebert/ImagePickerView.git",
+        "state": {
+          "branch": null,
+          "revision": "b84dd1c85a65cddba40c89699cd63ba0cb248dbd",
+          "version": "0.5.0"
+        }
+      },
+      {
         "package": "Kingfisher",
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": null,
-          "revision": "630cc7e82f2f0b4c6c3950e78c4b8b559008a023",
-          "version": "7.1.0"
+          "revision": "318e319998bf555c3e914d5c3adb6da05af86a32",
+          "version": "7.1.1"
         }
       },
       {
         "package": "Lottie",
-        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios",
         "state": {
           "branch": null,
           "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
@@ -26,6 +71,24 @@
           "branch": null,
           "revision": "0d37d6f94e0ec9b38ab43300213ad72d28af921f",
           "version": "1.0.2"
+        }
+      },
+      {
+        "package": "PubNub",
+        "repositoryURL": "https://github.com/pubnub/swift.git",
+        "state": {
+          "branch": null,
+          "revision": "b8716e6b336523f33349ebb5b143dadd187d41e5",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "SwiftUIImageViewer",
+        "repositoryURL": "https://github.com/Jake-Short/swiftui-image-viewer.git",
+        "state": {
+          "branch": null,
+          "revision": "f61f298c0100c81dfb0c7908091e68aad12a892c",
+          "version": "2.3.1"
         }
       },
       {
@@ -62,6 +125,33 @@
           "branch": null,
           "revision": "ac4959d321d2fbf6b66720426ef0716b6865ddd8",
           "version": "0.1.0"
+        }
+      },
+      {
+        "package": "Time",
+        "repositoryURL": "https://github.com/davedelong/time",
+        "state": {
+          "branch": null,
+          "revision": "be6cbbbb97aa4570e3b51bd56f98ca3cf62aa3cb",
+          "version": "0.9.2"
+        }
+      },
+      {
+        "package": "URLImage",
+        "repositoryURL": "https://github.com/dmytro-anokhin/url-image.git",
+        "state": {
+          "branch": null,
+          "revision": "ccab89ad1cedb04f25dd4df1776dd8c8583b914a",
+          "version": "2.2.5"
+        }
+      },
+      {
+        "package": "VideoPlayer",
+        "repositoryURL": "https://github.com/wxxsw/VideoPlayer",
+        "state": {
+          "branch": null,
+          "revision": "3c5b9531ee20e34d3a86142ca2c076a5b99afdb2",
+          "version": "1.2.3"
         }
       }
     ]

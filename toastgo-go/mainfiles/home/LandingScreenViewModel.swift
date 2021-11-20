@@ -11,7 +11,8 @@ import SwiftUI
 
 class LandingScreenViewModel: ObservableObject {
 	
-	@Published var userDeetsHere: UserDetailsDataClass = UserDetailsDataClass(user: User(user_name: "", phone: "", full_name: "", id: 0, clubs_joined_by_user: "", number_of_clubs_joined: 0, contact_list: "", total_frames_participation: 0, country_code_of_user: "", contact_list_sync_status: false), bio: "", image: "", id: 0)
+	@Published var userDeetsHere = UserDetailsDataClass(bio: "", id: 0, image: "", user: User(phone: "", number_of_clubs_joined: 0, contact_list_sync_status: false, id: 0, country_code_of_user: "", username: "", clubs_joined_by_user: "", full_name: "", total_frames_participation: 0, contact_list: ""))
+	
 	
 	@Published var userDeetsDB = [UserDeets]()
 	
@@ -23,12 +24,13 @@ class LandingScreenViewModel: ObservableObject {
 	
 	@Published var nudgeListHere = [NudgeListItemDataClass]()
 	
+	@Published var defaultRecos = [DefaultRecosDataClass]()
+	
 	private var cancellable: AnyCancellable?
 	
 	init (userDetailsPublisher: AnyPublisher<[UserDeets], Never> = UserDeetsStore.shared.userDetails.eraseToAnyPublisher()) {
 		print("debugcoredata userdetailspublisher init workng before channcellable")
 		cancellable = userDetailsPublisher.sink { [unowned self] deets in
-			//			self.userDeetsHere.bio = deets.bio
 			self.userDeetsDB = deets
 		}
 		print("debugcoredata userdetailspublisher init workng after channcellable")
@@ -36,15 +38,12 @@ class LandingScreenViewModel: ObservableObject {
 	}
 	
 	init () {
-		getUserDetails(phone: "+919849167641")
-		print("debugcoredata normal init working")
-		getMyClans(userid: String(82))
-		getMyDirects(userid: String(82))
-		getMyNudgeList(userid: String(82))
-<<<<<<< HEAD
-//		getDefaultRecos(userid: String(82))
-=======
->>>>>>> parent of 40861b6 (textinput and def recos setup + ui + apis- recos live data loading issue left)
+
+		getUserDetails(phone: UserDefaults.standard.string(forKey: "MyPhone") ?? "")
+		getMyClans(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getMyDirects(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getMyNudgeList(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+//		getDefaultRecos(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 	}
 	
 	func addSpaceCraft(deets: UserDetailsDataClass) {
@@ -60,11 +59,10 @@ class LandingScreenViewModel: ObservableObject {
 	
 	public func refreshLandingViewModel () {
 		
-		getUserDetails(phone: "+919849167641")
-		print("debugcoredata normal init working")
-		getMyClans(userid: String(82))
-		getMyDirects(userid: String(82))
-		getMyNudgeList(userid: String(82))
+		getMyClans(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getMyDirects(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getMyNudgeList(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
+		getDefaultRecos(userid: String(UserDefaults.standard.integer(forKey: "MyId")))
 		
 	}
 	
@@ -82,21 +80,12 @@ class LandingScreenViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode(UserDetailsDataClass.self, from: data) {
 					
 					DispatchQueue.main.async {
-						//						print("debugcoredata response before \(decodedResponse)")
 						self.userDeetsHere = decodedResponse
-						self.addSpaceCraft(deets: decodedResponse)
-<<<<<<< HEAD
-						//						print("debugcoredata response \(decodedResponse)")
-						print("debugtextinput \(String(describing: self.userDeetsDB))")
-=======
-//						print("debugcoredata response \(decodedResponse)")
-						print("debugcoredata \(String(describing: self.userDeetsDB))")
->>>>>>> parent of 40861b6 (textinput and def recos setup + ui + apis- recos live data loading issue left)
 					}
 					return
 				}
 				
-				print("debuglogs Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+				print("debuguserdefs Fetch failed user deets: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()
@@ -121,17 +110,17 @@ class LandingScreenViewModel: ObservableObject {
 						self.clanHere = []
 						
 						for item in decodedResponse {
-							
+
 							if (item.ongoing_frame) {
-								
+
 								self.liveClansHere.append(item)
 							} else {
-								
+
 								self.clanHere.append(item)
 							}
 						}
-						//						self.clanHere = decodedResponse
-						print(decodedResponse)
+//						self.clanHere = decodedResponse
+//						print(decodedResponse)
 					}
 					return
 				}
@@ -189,6 +178,36 @@ class LandingScreenViewModel: ObservableObject {
 				print("debuglogs Fetch failed nudge list: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
+		}.resume()
+	}
+	
+	public func getDefaultRecos (userid: String) {
+
+		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+			return
+		}
+
+		let request = URLRequest(url: url)
+
+		print("debugtextinput get def recos func is called")
+
+		URLSession.shared.dataTask(with: request) { data, response, error in
+
+			if let data = data {
+				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+
+					DispatchQueue.main.async {
+
+						self.defaultRecos = decodedResponse
+
+//						print("debugtextinput \(String(describing: self.defaultRecos))")
+					}
+					return
+				}
+
+				print("debugtextinput Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+			}
+
 		}.resume()
 	}
 }

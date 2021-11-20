@@ -7,12 +7,31 @@
 
 import SwiftUI
 import SwiftUIFontIcon
+import SwiftUIX
+import AudioToolbox
+import Kingfisher
+import PubNub
+import ImageViewerRemote
+import HighlightedTextEditor
+
+let betweenUnderscores = try! NSRegularExpression(pattern: "_[^_]+_", options: [])
+
+extension UIScreen{
+	static let screenWidth = UIScreen.main.bounds.size.width
+	static let screenHeight = UIScreen.main.bounds.size.height
+	static let screenSize = UIScreen.main.bounds.size
+}
 
 struct TalkScreen: View {
 	
 	@StateObject private var viewModel = TalkViewModel()
+	@StateObject private var pubnubSetUp = PubnubSetup()
+	
+	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
 	@State var showButtons: Bool = false
+	
+	@State private var keyboardIsFocused: Bool = false
 	
 	var clubName: String     // in directs, its the other user's name
 	var clubId: Int 			// in directs, its the other user's id
@@ -26,6 +45,26 @@ struct TalkScreen: View {
 	
 	var my_id: Int
 	var my_name: String
+	
+	@State var showTextInput: Bool = false
+	
+	@State var selectedReco: String = ""
+	
+	@State private var typedText: String = ""
+	
+	@State private var selectedText = ""
+	
+	private let rules: [HighlightRule] = [
+		HighlightRule(pattern: betweenUnderscores, formattingRules: [
+			TextFormattingRule(fontTraits: [.traitItalic, .traitBold]),
+			TextFormattingRule(key: .foregroundColor, value: UIColor.red),
+			TextFormattingRule(key: .underlineStyle) { content, range in
+				if content.count > 10 { return NSUnderlineStyle.double.rawValue }
+				else { return NSUnderlineStyle.single.rawValue }
+			}
+		])
+	]
+	
 	
 	var body: some View {
 		
@@ -33,87 +72,328 @@ struct TalkScreen: View {
 			
 			VStack {
 				
-				if (self.showButtons) {
+				if (viewModel.oldMessagesReceived.count > 0) {
 					
-					BottomButtons(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+					ScrollView {
+						
+						LazyVStack {
+							
+							Spacer().frame(height: 200)
+							
+							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
+								
+								OldMessageComponent(anOldMessage: item, channelId: channelId)
+								
+							}
+							
+							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
+								
+								NewMessageComponent(aNewMessage: item)
+							}
+							
+							Spacer().frame(height: 150)
+							
+						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+						
+					}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+				}
+				
+			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onAppear {
+				
+				self.showButtons = ongoingFrame
+				
+			}.onTapGesture {
+				
+				self.closeKeyBoard()
+			}
+			
+			HeaderHere.onAppear() {
+				
+				if (self.ongoingFrame) {
 					
-				} else {
-					
-					StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
+					viewModel.getOldMessagesFromPn(channelId: channelId, start: Int(NSDate().timeIntervalSince1970) * 10000000, end: (Int(startTime) ?? 0) * 10000000, pubnubConfig: pubnubSetUp)
 					
 				}
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).onAppear { self.showButtons = ongoingFrame }
+				viewModel.subscribeToPnChannel(channelId: channelId, pubnubConfig: pubnubSetUp)
+			}
 			
-			HeaderHere(titleText: clubName)
+			if (self.showButtons) {
+				
+				BottomButtons
+				
+			} else {
+				
+				StartFramePart(clubName: clubName, clubId: clubId, channelId: channelId, showButton: {self.showButtons = true}, directornot: directornot, my_id: my_id)
+				
+			}
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 	}
 	
-}
-
-private struct BottomButtons: View {
-	
-	var clubName: String     // in directs, its the other user's name
-	var clubId: Int 			// in directs, its the other user's id
-	var channelId: String
-	var ongoingFrame: Bool
-	var startTime: String
-	var endTime: String
-	var ongoingStream: Bool
-	var ongoingStreamUser: String
-	var directornot: Bool
-	
-	var my_id: Int
-	var my_name: String
-	
-	var body: some View {
+	var HeaderHere: some View {
 		
-		HStack {
+		ZStack {
 			
-			NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+			if (self.ongoingStream) {
 				
-				ZStack {
+				Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 200, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
+				
+				VStack (alignment: .center) {
 					
-					Circle().frame(width: 20, height: 20)
-						.padding()
-						.foregroundColor(LightTheme.Colors.textSecondary)
-						.background(LightTheme.Colors.textSecondary)
-						.cornerRadius(70)
+					Spacer(minLength: statusBarHeight)
 					
-					FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+					HStack () {
+						
+						HStack {
+							
+							CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+							
+						}.onPress {
+							
+							self.mode.wrappedValue.dismiss()
+						}
+						
+						Spacer()
+						
+						Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+							
+							HStack {
+								
+								CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+								
+							}
+							
+						}
+						
+					}.padding(.bottom, 5)
 					
-				}.padding(.horizontal, 20)
+					HStack () {
+						
+						Text("\( ongoingStreamUser ) is streaming now").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: ViewLiveStreamScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, agora_token: viewModel.agoraToken)) {
+							
+							ZStack {
+								
+								RoundedRectangle(cornerRadius: 15, style: .continuous).frame(width: 75, height: 30)
+									.padding()
+									.foregroundColor(LightTheme.Colors.sucesss.opacity(0.25))
+								
+								Text("join").foregroundColor(LightTheme.Colors.sucesss).font(LightTheme.Typography.subtitle2)
+								
+							}.onAppear() {
+								
+								viewModel.getOtherUserDetails(otheruserid: self.ongoingStreamUser)
+								viewModel.getAgoraToken(channelId: self.channelId)
+							}
+						}
+						
+					}.padding(.bottom, 5)
+					
+				}.frame(maxWidth: .infinity, maxHeight: 200, alignment: .top)
+				
+			} else {
+				
+				Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
+				
+				VStack (alignment: .center) {
+					
+					Spacer(minLength: statusBarHeight)
+					
+					HStack () {
+						
+						HStack {
+							
+							CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+							
+						}.onPress {
+							
+							self.mode.wrappedValue.dismiss()
+						}
+						
+						Spacer()
+						
+						Text(clubName).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+						
+						Spacer()
+						
+						NavigationLink(destination: FramesListScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+							
+							HStack {
+								
+								CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
+								
+							}
+							
+						}
+						
+					}.padding(.bottom, 5)
+					
+				}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			}
+		}
+		
+	}
+	
+	var BottomButtons: some View {
+		
+		VStack {
+			
+			if (!self.showTextInput) {
+				
+				HStack {
+					
+					NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						
+						ZStack {
+							
+							Circle().frame(width: 20, height: 20)
+								.padding()
+								.foregroundColor(LightTheme.Colors.textSecondary)
+								.background(LightTheme.Colors.textSecondary)
+								.cornerRadius(70)
+							
+							FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+							
+						}.padding(.horizontal, 20)
+						
+					}
+					
+					NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+						
+						ZStack {
+							
+							Circle().frame(width: 35, height: 35)
+								.padding()
+								.foregroundColor(LightTheme.Colors.sucesss)
+								.background(LightTheme.Colors.sucesss)
+								.cornerRadius(70)
+							
+							FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
+							
+						}.padding(.horizontal, 20)
+						
+					}
+					
+					ZStack {
+						
+						Circle().frame(width: 20, height: 20)
+							.padding()
+							.foregroundColor(LightTheme.Colors.appLead)
+							.background(LightTheme.Colors.appLead)
+							.cornerRadius(70)
+						
+						FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+						
+					}.padding(.horizontal, 20).onPress {
+						
+						self.showTextInput = true
+					}
+					
+				}.padding(.vertical, 30).frame(maxHeight: .infinity, alignment: .bottom)
+				
+			} else {
+				
+				VStack {
+					
+					HStack {
+						
+						if (self.selectedReco.count > 2) {
+							
+							KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+						}
+						
+						ScrollView(.horizontal) {
+							
+							LazyHStack(alignment: .center) {
+								
+								if (viewModel.customRecos.count > 1 && self.selectedText.count > 2) {
+									
+									ForEach(viewModel.customRecos , id: \.id) { set in
+										
+										ForEach(set.links, id: \.self) { link in
+											
+											KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+												self.selectedReco = link
+											}
+										}
+									}
+									
+								} else {
+									
+									ForEach(viewModel.defaultRecos , id: \.id) { set in
+										
+										ForEach(set.links, id: \.self) { link in
+											
+											KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+												self.selectedReco = link
+											}
+										}
+									}
+								}
+								
+							}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+							
+						}
+						
+					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+					
+					HStack(alignment: .center) {
+						
+						HighlightedTextEditor(text: $typedText, highlightRules: rules)
+							// optional modifiers
+							.onCommit { print("commited") }
+							.onEditingChanged { print("editing changed") }
+							// .onTextChange { print("latest text value", $0) }
+							.onSelectionChange { (range: NSRange) in
+								
+								self.selectedText = String(self.typedText.dropFirst(range.lowerBound).prefix(range.upperBound - range.lowerBound) as Substring)
+								
+								print(self.selectedText)
+								
+								viewModel.getCustomRecosTalkVM(userid: String(my_id), word: self.selectedText)
+								
+							}
+							.introspect { editor in
+								// access underlying UITextView or NSTextView
+								editor.textView.backgroundColor = UIColor(LightTheme.Colors.uiSurface)
+								editor.textView.font = UIFont(name: "GothamRounded-Book", size: 15)
+								editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
+								
+								
+							}.frame(width: UIScreen.screenWidth * 0.85, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+						
+						if (self.selectedReco.count > 2) {
+							
+							FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.sucesss).onPress {
+								
+								viewModel.sendPubnubHMessage(message: self.typedText, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
+								
+							}
+						}
+						
+					}
+					
+				}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 				
 			}
 			
-			ZStack {
-				
-				Circle().frame(width: 35, height: 35)
-					.padding()
-					.foregroundColor(LightTheme.Colors.sucesss)
-					.background(LightTheme.Colors.sucesss)
-					.cornerRadius(70)
-				
-				FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
-				
-			}.padding(.horizontal, 20)
-			
-			ZStack {
-				
-				Circle().frame(width: 20, height: 20)
-					.padding()
-					.foregroundColor(LightTheme.Colors.appLead)
-					.background(LightTheme.Colors.appLead)
-					.cornerRadius(70)
-				
-				FontIcon.text(.materialIcon(code: .keyboard), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
-				
-			}.padding(.horizontal, 20)
-			
-		}.padding(.vertical, 30)
-		
+		}
 	}
+	
+	func closeKeyBoard () {
+		
+		self.showTextInput = false
+		self.selectedText = ""
+	}
+	
 }
 
 private struct StartFramePart: View {
@@ -159,61 +439,21 @@ private struct StartFramePart: View {
 					.cornerRadius(28)
 			}
 			
-		}.frame(alignment: .center)
+		}.frame( maxHeight: .infinity, alignment: .bottom)
 	}
 }
 
-private struct HeaderHere: View {
+class TextFieldManagerTalkScreen: ObservableObject {
 	
-	var titleText: String
+	let characterLimit = 140
 	
-	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
-	
-	var body: some View {
-		
-		ZStack {
-			
-			Rectangle().fill(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: 100, alignment: .top).background(LightTheme.Colors.uiBackground).shadow(color: LightTheme.Colors.textSecondary.opacity(0.05), radius: 40, x: 0, y: 10)
-			
-			VStack (alignment: .center) {
-				
-				Spacer(minLength: statusBarHeight)
-				
-				HStack () {
-					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
-					
-					Spacer()
-					
-					Text(titleText).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
-					
-					Spacer()
-					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_apps).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						// add nav to frames view
-					}
-					
-				}.padding(.bottom, 5)
-				
-			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+	@Published var userInput = "" {
+		didSet {
+			if userInput.count > characterLimit {
+				userInput = String(userInput.prefix(characterLimit))
+				AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { return }
+			}
 		}
 	}
-}
-
-struct TalkScreen_Previews: PreviewProvider {
-	static var previews: some View {
-		TalkScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false, my_id: 82, my_name: "San")
-	}
+	
 }

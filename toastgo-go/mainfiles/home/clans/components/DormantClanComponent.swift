@@ -10,10 +10,14 @@ import Kingfisher
 
 struct DormantClanComponent: View {
 	
+	@StateObject private var viewModel = LandingScreenViewModel()
+	
 	var clanHere: MyClansDataClass
 	
 	var my_id: Int
 	var my_name: String
+	
+//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	var body: some View {
 		
@@ -23,8 +27,7 @@ struct DormantClanComponent: View {
 				
 				HStack (alignment: .center) {
 					
-					KFImage.url(URL(string: clanHere.club_profile_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
-						.cornerRadius(50.0)
+					KFImage.url(URL(string: clanHere.club_profile_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
 					
 					VStack(alignment: .leading) {
 						

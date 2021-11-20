@@ -17,6 +17,8 @@ struct MyDirectsScreen: View {
 	
 	var refreshFunction: () -> Bool
 	
+//	var defaultRecosPassing: [DefaultRecosDataClass]
+	
 	@State private var now = Date()
 	
 	var body: some View {

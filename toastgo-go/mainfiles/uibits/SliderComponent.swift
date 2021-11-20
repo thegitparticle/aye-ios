@@ -16,7 +16,7 @@ struct SliderComponent: View {
 	var thumbnailTopBottomPadding: CGFloat = 0
 	var thumbnailLeadingTrailingPadding: CGFloat = 0
 	var textLabelLeadingPadding: CGFloat = 0
-	var text: String = "MTSlideToOpen"
+	var text: String = "slide to start"
 	var textFont: Font = .system(size: 15)
 	var textColor = Color(.sRGB, red: 25.0/255, green: 155.0/255, blue: 215.0/255, opacity: 0.7)
 	var thumbnailColor = Color(.sRGB, red: 25.0/255, green: 155.0/255, blue: 215.0/255, opacity: 1)
