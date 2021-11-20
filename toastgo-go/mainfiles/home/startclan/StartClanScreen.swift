@@ -263,7 +263,7 @@ struct StartClanScreen: View {
 					
 					self.currentShowingView = "CREATINGCLAN"
 					
-					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput)
+					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput, friendsList: friendsAddedList, contactsList: contactsInvitedList)
 				}
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
@@ -331,6 +331,9 @@ struct StartClanScreen: View {
 			
 			VStack(alignment: .center) {
 				
+				if (!viewModel.clanSetUpStatus)
+				{
+					
 				HStack(alignment: .center) {
 					
 						LottieView(filename: "loading_ping_pong_cup")
@@ -338,6 +341,14 @@ struct StartClanScreen: View {
 				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
 				
 				Text("building your clan").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.h4).padding(20)
+					
+				} else {
+					
+					Text("clan created!").foregroundColor(LightTheme.Colors.sucesss).font(LightTheme.Typography.h4).padding(20).onAppear() {
+						
+						self.mode.wrappedValue.dismiss()
+					}
+				}
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
 			

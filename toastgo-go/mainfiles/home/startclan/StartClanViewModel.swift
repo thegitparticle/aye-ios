@@ -14,6 +14,8 @@ class StartClanViewModel: ObservableObject {
 	
 	@Published var newClanDetailsFromServer = StartClanResponseDataClass(id: 0, name: "", members: "", admin_leader: 0, pn_channel_id: "")
 	
+	@Published var clanSetUpStatus = false
+	
 	init () {
 		
 		getFriendsListHere()
@@ -120,6 +122,8 @@ class StartClanViewModel: ObservableObject {
 							
 							self.getInviteContactsToClan(invited_phone: item2, clan_id: club_id_gotten)
 						}
+						
+						self.clanSetUpStatus = true
 					}
 				}
 			}
