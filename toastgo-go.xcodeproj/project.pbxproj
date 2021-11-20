@@ -45,6 +45,8 @@
 		264AB2F62705A67000E394E6 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */; };
 		265EC9362747F0A900948E90 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265EC9352747F0A900948E90 /* Accelerate.framework */; };
 		265EC9382748408300948E90 /* sup_in_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 265EC9372748408300948E90 /* sup_in_red.png */; };
+		265EC93C2748E5D700948E90 /* StartClanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC93B2748E5D700948E90 /* StartClanScreen.swift */; };
+		265EC93E2748E61000948E90 /* StartClanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC93D2748E61000948E90 /* StartClanViewModel.swift */; };
 		266019AA272C77CC00AD9919 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 266019A9272C77CC00AD9919 /* Kingfisher */; };
 		266019AD272C79F200AD9919 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AC272C79F200AD9919 /* SwiftUIFontIcon */; };
 		266019B0272C7ABF00AD9919 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AF272C7ABF00AD9919 /* SwiftUIKitView */; };
@@ -234,6 +236,8 @@
 		264AB2E62705A67000E394E6 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Book.otf"; sourceTree = "<group>"; };
 		265EC9352747F0A900948E90 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		265EC9372748408300948E90 /* sup_in_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sup_in_red.png; path = ../../Downloads/sup_in_red.png; sourceTree = "<group>"; };
+		265EC93B2748E5D700948E90 /* StartClanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartClanScreen.swift; sourceTree = "<group>"; };
+		265EC93D2748E61000948E90 /* StartClanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartClanViewModel.swift; sourceTree = "<group>"; };
 		26601A1F27303BD800AD9919 /* ScreenShare100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShare100.swift; sourceTree = "<group>"; };
 		26601A2127303DBF00AD9919 /* ScreenShare100.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenShare100.storyboard; sourceTree = "<group>"; };
 		26601A2327303E7700AD9919 /* ScreenShare100UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShare100UI.swift; sourceTree = "<group>"; };
@@ -533,6 +537,7 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				265EC93A2748E5B800948E90 /* startclan */,
 				26C4D2D227253C2A0055DF63 /* aye */,
 				26C4D2D127253C1F0055DF63 /* invitecontacts */,
 				26C4D2D027253C1A0055DF63 /* myprofile */,
@@ -599,6 +604,15 @@
 				264AB280270593CB00E394E6 /* LightTheme.swift */,
 			);
 			path = theme;
+			sourceTree = "<group>";
+		};
+		265EC93A2748E5B800948E90 /* startclan */ = {
+			isa = PBXGroup;
+			children = (
+				265EC93B2748E5D700948E90 /* StartClanScreen.swift */,
+				265EC93D2748E61000948E90 /* StartClanViewModel.swift */,
+			);
+			path = startclan;
 			sourceTree = "<group>";
 		};
 		26601A1E27303BB700AD9919 /* screenstream100 */ = {
@@ -1314,6 +1328,7 @@
 				26C4D2DF2725759B0055DF63 /* EditProfileScreen.swift in Sources */,
 				26C4D32A2726FC400055DF63 /* ViewLiveStreamViewModel.swift in Sources */,
 				26C4D3232726F6130055DF63 /* ScreenStreamViewModel.swift in Sources */,
+				265EC93C2748E5D700948E90 /* StartClanScreen.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
 				26D119C72718F606000044A3 /* NudgeItemComponent.swift in Sources */,
 				26D119C52718F5FA000044A3 /* DirectComponent.swift in Sources */,
@@ -1344,6 +1359,7 @@
 				260D719F27178E4100DD9F80 /* LottieView.swift in Sources */,
 				264AB270270507B700E394E6 /* WelcomeScreen.swift in Sources */,
 				26C4D337272700020055DF63 /* ContactsList.swift in Sources */,
+				265EC93E2748E61000948E90 /* StartClanViewModel.swift in Sources */,
 				26C2A2722721478F001B5D76 /* FramesListScreen.swift in Sources */,
 				26601A3027306F0900AD9919 /* GlobalSettings.swift in Sources */,
 				26C2A2672720877A001B5D76 /* AgoraViewController.swift in Sources */,

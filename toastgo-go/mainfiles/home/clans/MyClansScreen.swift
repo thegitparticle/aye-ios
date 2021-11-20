@@ -66,7 +66,7 @@ struct MyClansScreen: View {
 			}.padding(.top, 75).padding(.horizontal, 20)
 			
 		}.sheet(isPresented: $showStartClanModal) {
-			MyProfileScreen()
+			StartClanScreen()
 		}
 		
 	}
