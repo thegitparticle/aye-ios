@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIFontIcon
+import Kingfisher
 
 struct StartClanScreen: View {
 	
@@ -50,11 +51,13 @@ struct StartClanScreen: View {
 					
 					LazyVStack(alignment: .leading) {
 						
-						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
+						ForEach(Array(Set(viewModel.friendsList)), id: \.self) {item in
 							
-							ContactItemComponentHere(name: item.name, phone: item.phone).id(UUID())
+							FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic)
 							
 						}
+						
+						Spacer().frame(height: 250)
 						
 					}
 					
@@ -116,14 +119,15 @@ struct StartClanScreen: View {
 					
 					Spacer()
 					
-					HStack {
-						
-						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
-						
-					}.onPress {
-						
-						self.mode.wrappedValue.dismiss()
-					}
+						ZStack() {
+							
+							Circle().frame(width: CGFloat(13), height: CGFloat(13))
+								.padding()
+								.foregroundColor(LightTheme.Colors.uiBackground)
+								.background(LightTheme.Colors.uiBackground)
+								.cornerRadius(70)
+							
+						}.padding(.horizontal, 20)
 					
 				}.padding(.bottom, 5)
 				
@@ -413,6 +417,44 @@ struct StartClanScreen: View {
 	
 }
 
+private struct FriendItemComponentHere: View {
+	
+	var name: String
+	var id: Int
+	var dp: String
+	
+	@State private var checkedThisItem = false
+	
+	var body: some View {
+		
+		HStack() {
+			
+			Spacer().frame(width: 25)
+			
+			Toggle("", isOn: self.$checkedThisItem)
+				.toggleStyle(CheckboxToggleStyle(style: .square))
+				.foregroundColor(.blue)
+			
+			Spacer().frame(width: 10)
+			
+			KFImage.url(URL(string: dp)!).resizable().cornerRadius(20).frame(width: 40, height: 40)
+				.cornerRadius(50.0)
+			
+			Spacer().frame(width: 10)
+			
+			Text(self.name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 3)
+			
+			Spacer()
+			
+			
+		}.frame(width: UIScreen.screenWidth).padding(.vertical, 5).onPress {
+			
+			self.checkedThisItem = true
+		}
+		
+	}
+}
+
 private struct ContactItemComponentHere: View {
 	
 	var name: String
@@ -437,7 +479,10 @@ private struct ContactItemComponentHere: View {
 			Spacer()
 			
 			
-		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10)
+		}.frame(width: UIScreen.screenWidth).padding(.vertical, 10).onPress {
+			
+			self.checkedThisItem = true
+		}
 		
 	}
 }
