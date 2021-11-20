@@ -78,7 +78,7 @@ class StartClanViewModel: ObservableObject {
 		}.resume()
 	}
 	
-	public func postStartNewClan(clan_name: String) {
+	public func postStartNewClan(clan_name: String, friendsList: [Int], contactsList: [String]) {
 		
 		var payload = ["name": clan_name , "members": String(UserDefaults.standard.integer(forKey: "MyId")), "admin_leader": UserDefaults.standard.integer(forKey: "MyId")] as [AnyHashable : Any]
 		
@@ -108,6 +108,18 @@ class StartClanViewModel: ObservableObject {
 					DispatchQueue.main.async {
 						
 						self.newClanDetailsFromServer = decodedResponse
+						
+						let club_id_gotten = decodedResponse.id
+						
+						for item in friendsList {
+							
+							self.getAddFriendsToClan(added_user: item, clan_id: club_id_gotten)
+						}
+						
+						for item2 in contactsList {
+							
+							self.getInviteContactsToClan(invited_phone: item2, clan_id: club_id_gotten)
+						}
 					}
 				}
 			}
@@ -115,8 +127,6 @@ class StartClanViewModel: ObservableObject {
 	}
 	
 	public func getAddFriendsToClan(added_user: Int, clan_id: Int) {
-		
-		let userid = UserDefaults.standard.integer(forKey: "MyId")
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/users/add_users_to_club/\(String(added_user))/\(String(clan_id))/") else {
 			return
