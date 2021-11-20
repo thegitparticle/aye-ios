@@ -20,7 +20,7 @@ struct MyClansScreen: View {
 	
 	var refreshFunction: () -> Bool
 	
-//	var defaultRecosPassing: [DefaultRecosDataClass]
+	@State private var showStartClanModal = false
 	
 	@State private var now = Date()
 	
@@ -46,9 +46,27 @@ struct MyClansScreen: View {
 					DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name)
 				}
 				
+				Spacer().frame(height: 50)
+				
+				ZStack {
+					
+					RoundedRectangle(cornerRadius: 30, style: .continuous)
+						.fill(LightTheme.Colors.sucesss)
+						.frame(width: 180, height: 60)
+					
+					Text("start clan").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+					
+				}.onPress {
+					
+					self.showStartClanModal = true
+				}
+				
 				Spacer().frame(height: 200)
 				
 			}.padding(.top, 75).padding(.horizontal, 20)
+			
+		}.sheet(isPresented: $showStartClanModal) {
+			MyProfileScreen()
 		}
 		
 	}
