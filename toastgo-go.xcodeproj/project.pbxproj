@@ -77,13 +77,13 @@
 		26601A32273072B300AD9919 /* ScreenShare100Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26601A31273072B300AD9919 /* ScreenShare100Canvas.swift */; };
 		26601A342730782000AD9919 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26601A332730782000AD9919 /* VideoView.xib */; };
 		26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D81271C207F0043C750 /* TalkCameraScreen.swift */; };
-		26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */; };
 		26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */; };
 		2677FF54271B1A4D0035EABC /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */; };
 		2677FF59271B25210035EABC /* TalkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF58271B25210035EABC /* TalkScreen.swift */; };
 		2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5A271B25510035EABC /* TalkViewModel.swift */; };
 		2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5C271B6B020035EABC /* SliderComponent.swift */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
+		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769327162AE600FFE414 /* CountryPickerCustom.swift */; };
 		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
 		26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */; };
@@ -254,7 +254,6 @@
 		26601A31273072B300AD9919 /* ScreenShare100Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShare100Canvas.swift; sourceTree = "<group>"; };
 		26601A332730782000AD9919 /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
 		26613D81271C207F0043C750 /* TalkCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraScreen.swift; sourceTree = "<group>"; };
-		26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26613D89271C6FD10043C750 /* DefaultRecosDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRecosDataClass.swift; sourceTree = "<group>"; };
 		2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		2677FF58271B25210035EABC /* TalkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkScreen.swift; sourceTree = "<group>"; };
@@ -263,6 +262,7 @@
 		268422A52715F9F1006686F8 /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
 		268C6AC327307B8A00707BD9 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		268C6ACF27307B8A00707BD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
 		26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
@@ -699,8 +699,8 @@
 				260D719E27178E4100DD9F80 /* LottieView.swift */,
 				2677FF53271B1A4D0035EABC /* RefreshableScrollView.swift */,
 				2677FF5C271B6B020035EABC /* SliderComponent.swift */,
-				26613D86271C673F0043C750 /* KeyboardAwareModifier.swift */,
 				26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */,
+				269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -1372,10 +1372,10 @@
 				26C4D3212726F60B0055DF63 /* ScreenStreamVideoCanvas.swift in Sources */,
 				26C4D31F2726F6010055DF63 /* ScreenStreamSessionView.swift in Sources */,
 				26C4D3282726FC2B0055DF63 /* ViewLiveStreamScreen.swift in Sources */,
-				26613D87271C673F0043C750 /* KeyboardAwareModifier.swift in Sources */,
 				26601A2E27306D5D00AD9919 /* AgoraMetalRender.swift in Sources */,
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
+				269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */,
 				26C2A28027217E1A001B5D76 /* AMonthComponent.swift in Sources */,
 				26C4D2D627253F000055DF63 /* MyProfileViewModel.swift in Sources */,
 				26C4D32E2726FC540055DF63 /* ViewLiveStreamVideoCanvas.swift in Sources */,
