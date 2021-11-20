@@ -12,7 +12,7 @@ class StartClanViewModel: ObservableObject {
 	@Published var friendsList = [FriendsListItemDataClass]()
 	@Published var contactsList = [ContactsListItemDataClass]()
 	
-	@Published var newClanDetailsFromServer = StartClanResponseDataClass(id: 0, name: "", members: "", admin_leader: 0, pn_channel_id: "")
+	@Published var newClanDetailsFromServer = StartClanResponseDataClass(id: 0, name: "", members: "", admin_leader: "", pn_channel_id: "")
 	
 	@Published var clanSetUpStatus = false
 	
@@ -111,21 +111,26 @@ class StartClanViewModel: ObservableObject {
 						
 						self.newClanDetailsFromServer = decodedResponse
 						
-						let club_id_gotten = decodedResponse.id
-						
 						for item in friendsList {
 							
-							self.getAddFriendsToClan(added_user: item, clan_id: club_id_gotten)
+							self.getAddFriendsToClan(added_user: item, clan_id: decodedResponse.id)
 						}
 						
 						for item2 in contactsList {
 							
-							self.getInviteContactsToClan(invited_phone: item2, clan_id: club_id_gotten)
+							self.getInviteContactsToClan(invited_phone: item2, clan_id: decodedResponse.id)
 						}
 						
 						self.clanSetUpStatus = true
+						
+						self.newClanDetailsFromServer = decodedResponse
+						
 					}
+					
+					return
 				}
+				
+				print("debuglogs Fetch failed create clan: \(error?.localizedDescription ?? "Unknown error")")
 			}
 		}.resume()
 	}

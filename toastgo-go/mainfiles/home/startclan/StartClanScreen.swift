@@ -60,7 +60,7 @@ struct StartClanScreen: View {
 						ForEach(Array(Set(viewModel.friendsList)), id: \.self) {item in
 							
 							FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
-														
+							
 						}
 						
 						Spacer().frame(height: 250)
@@ -263,7 +263,7 @@ struct StartClanScreen: View {
 					
 					self.currentShowingView = "CREATINGCLAN"
 					
-					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput, friendsList: friendsAddedList, contactsList: contactsInvitedList)
+					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput, friendsList: self.friendsAddedList, contactsList: self.contactsInvitedList)
 				}
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
@@ -334,13 +334,13 @@ struct StartClanScreen: View {
 				if (!viewModel.clanSetUpStatus)
 				{
 					
-				HStack(alignment: .center) {
-					
+					HStack(alignment: .center) {
+						
 						LottieView(filename: "loading_ping_pong_cup")
+						
+					}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
 					
-				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
-				
-				Text("building your clan").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.h4).padding(20)
+					Text("building your clan").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.h4).padding(20)
 					
 				} else {
 					
@@ -404,7 +404,7 @@ struct StartClanScreen: View {
 	}
 	
 	func addFriendToList(friendId: Int) {
-	
+		
 		self.friendsAddedList.append(friendId)
 	}
 	
