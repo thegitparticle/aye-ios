@@ -48,6 +48,7 @@
 		265EC93C2748E5D700948E90 /* StartClanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC93B2748E5D700948E90 /* StartClanScreen.swift */; };
 		265EC93E2748E61000948E90 /* StartClanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC93D2748E61000948E90 /* StartClanViewModel.swift */; };
 		265EC9412748F6EA00948E90 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC9402748F6EA00948E90 /* FriendsList.swift */; };
+		265EC944274917FA00948E90 /* StartClanDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EC943274917FA00948E90 /* StartClanDataClasses.swift */; };
 		266019AA272C77CC00AD9919 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 266019A9272C77CC00AD9919 /* Kingfisher */; };
 		266019AD272C79F200AD9919 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AC272C79F200AD9919 /* SwiftUIFontIcon */; };
 		266019B0272C7ABF00AD9919 /* SwiftUIKitView in Frameworks */ = {isa = PBXBuildFile; productRef = 266019AF272C7ABF00AD9919 /* SwiftUIKitView */; };
@@ -240,6 +241,7 @@
 		265EC93B2748E5D700948E90 /* StartClanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartClanScreen.swift; sourceTree = "<group>"; };
 		265EC93D2748E61000948E90 /* StartClanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartClanViewModel.swift; sourceTree = "<group>"; };
 		265EC9402748F6EA00948E90 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		265EC943274917FA00948E90 /* StartClanDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartClanDataClasses.swift; sourceTree = "<group>"; };
 		26601A1F27303BD800AD9919 /* ScreenShare100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShare100.swift; sourceTree = "<group>"; };
 		26601A2127303DBF00AD9919 /* ScreenShare100.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenShare100.storyboard; sourceTree = "<group>"; };
 		26601A2327303E7700AD9919 /* ScreenShare100UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShare100UI.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 		260D71A627185FFF00DD9F80 /* dataclasses */ = {
 			isa = PBXGroup;
 			children = (
+				265EC942274917E800948E90 /* startclan */,
 				265EC93F2748F6D800948E90 /* friends */,
 				26C4D3352726FFF50055DF63 /* contacts */,
 				26C2A27C27217CC9001B5D76 /* frames */,
@@ -624,6 +627,14 @@
 				265EC9402748F6EA00948E90 /* FriendsList.swift */,
 			);
 			path = friends;
+			sourceTree = "<group>";
+		};
+		265EC942274917E800948E90 /* startclan */ = {
+			isa = PBXGroup;
+			children = (
+				265EC943274917FA00948E90 /* StartClanDataClasses.swift */,
+			);
+			path = startclan;
 			sourceTree = "<group>";
 		};
 		26601A1E27303BB700AD9919 /* screenstream100 */ = {
@@ -1330,6 +1341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C4D2C42723E5860055DF63 /* ADayComponent.swift in Sources */,
+				265EC944274917FA00948E90 /* StartClanDataClasses.swift in Sources */,
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
 				26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */,
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
