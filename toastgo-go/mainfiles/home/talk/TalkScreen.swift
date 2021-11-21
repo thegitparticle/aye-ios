@@ -93,7 +93,10 @@ struct TalkScreen: View {
 							
 							Spacer().frame(height: 150)
 							
-						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onTapGesture {
+							
+							self.showTextInput = false
+						}
 						
 					}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
 				}
