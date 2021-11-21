@@ -92,7 +92,7 @@ struct TalkScreen: View {
 							
 							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
 								
-								NewMessageComponent(aNewMessage: item)
+								NewMessageComponent(aNewMessage: item, imageViewTriggerFunction: setupImageViewer)
 							}
 							
 							Spacer().frame(height: 150)
@@ -102,10 +102,10 @@ struct TalkScreen: View {
 							self.closeKeyBoard()
 						}
 						
-					}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+					}.frame(width: UIScreen.screenWidth, height: .infinity, alignment: .bottom)
 				}
 				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onAppear {
+			}.frame(width: UIScreen.screenWidth, height: .infinity, alignment: .bottom).onAppear {
 				
 				self.showButtons = ongoingFrame
 				
@@ -414,7 +414,7 @@ struct TalkScreen: View {
 							}
 						}
 						
-					}.frame(width: UIScreen.screenWidth)
+					}.frame(width: .infinity)
 					
 				}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 				
