@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUIFontIcon
 import Kingfisher
 import SwiftUIX
+import AudioToolbox
 
 struct StartClanScreen: View {
 	
@@ -17,7 +18,7 @@ struct StartClanScreen: View {
 	
 	@State var currentShowingView = "FRIENDSLIST" // can be FRIENDSLIST, CONTACTSLIST, NAMECLAN or CREATINGCLAN
 	
-	@ObservedObject var textFieldManager = TextFieldManager()
+	@ObservedObject var textFieldManagerHere = TextFieldManagerStartClan()
 	
 	@State var friendsAddedList: [Int] = []
 	@State var contactsInvitedList: [String] = []
@@ -245,7 +246,7 @@ struct StartClanScreen: View {
 				
 				HStack(alignment: .center) {
 					
-					CocoaTextField("", text: $textFieldManager.userInput).isFirstResponder(true).keyboardType(.default).frame(width: 200, height: 40).padding().foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+					CocoaTextField("", text: $textFieldManagerHere.userInput).isFirstResponder(true).keyboardType(.default).frame(width: 200, height: 40).padding().foregroundColor(LightTheme.Colors.textSecondary).font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
 					
 				}.padding(20).frame(maxWidth: .infinity)
 				
@@ -263,7 +264,7 @@ struct StartClanScreen: View {
 					
 					self.currentShowingView = "CREATINGCLAN"
 					
-					viewModel.postStartNewClan(clan_name: self.textFieldManager.userInput, friendsList: self.friendsAddedList, contactsList: self.contactsInvitedList)
+					viewModel.postStartNewClan(clan_name: self.textFieldManagerHere.userInput, friendsList: self.friendsAddedList, contactsList: self.contactsInvitedList)
 				}
 				
 			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .top).padding(.top, 200)
@@ -521,6 +522,21 @@ private struct ContactItemComponentHere: View {
 		}
 		
 	}
+}
+
+class TextFieldManagerStartClan: ObservableObject {
+	
+	let characterLimit = 16
+	
+	@Published var userInput = "" {
+		didSet {
+			if userInput.count > characterLimit {
+				userInput = String(userInput.prefix(characterLimit))
+				AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { return }
+			}
+		}
+	}
+	
 }
 
 struct StartClanScreen_Previews: PreviewProvider {
