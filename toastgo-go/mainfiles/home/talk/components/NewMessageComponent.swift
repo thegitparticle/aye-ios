@@ -17,6 +17,8 @@ struct NewMessageComponent: View {
 	
 	var aNewMessage: PubNubMessage
 	
+	var imageViewTriggerFunction: (String) -> ()
+	
 	var body: some View {
 		
 		
@@ -67,7 +69,10 @@ struct NewMessageComponent: View {
 		
 		ZStack () {
 			
-			KFAnimatedImage.url(URL(string: (self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200)
+			KFAnimatedImage.url(URL(string: (self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+				
+				imageViewTriggerFunction((self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+			}
 			
 			ZStack {
 				
