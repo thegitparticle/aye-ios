@@ -307,7 +307,7 @@ struct TalkScreen: View {
 						
 						if (self.selectedReco.count > 2) {
 							
-							KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0)
+							KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).padding(.leading, 10)
 						}
 						
 						ScrollView(.horizontal) {
@@ -384,7 +384,7 @@ struct TalkScreen: View {
 								editor.textView.textColor = UIColor(LightTheme.Colors.textPrimary)
 								
 								
-							}.frame(width: UIScreen.screenWidth * 0.85, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
+							}.frame(width: UIScreen.screenWidth * 0.75, height: 30).padding().font(LightTheme.Typography.body2).background(LightTheme.Colors.uiSurface).cornerRadius(10)
 						
 						if (self.selectedReco.count > 2) {
 							
@@ -393,9 +393,15 @@ struct TalkScreen: View {
 								viewModel.sendPubnubHMessage(message: self.typedText, selectedReco: self.selectedReco, channelId: channelId, pubnubConfig: pubnubSetUp)
 								
 							}
+							
+						} else {
+							
+							FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.textPrimary.opacity(0.25)).onPress {
+																
+							}
 						}
 						
-					}
+					}.frame(width: UIScreen.screenWidth)
 					
 				}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
 				
