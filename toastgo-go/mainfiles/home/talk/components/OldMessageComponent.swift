@@ -17,10 +17,11 @@ struct OldMessageComponent: View {
 	
 	var anOldMessage: PubNubMessage
 	var channelId: String
+	var imageViewTriggerFunction: (String) -> ()
 	
 	@State private var playVideo: Bool = true
 	
-//	@StateObject var imageViewer = ImageViewDataClass()
+	@State private var imageViewerLink = ""
 	
 	var body: some View {
 		
@@ -54,6 +55,7 @@ struct OldMessageComponent: View {
 			
 			KFImage.url(grabURLFromPubNub(name: "galgalga", Id: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String)).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
 //				imageViewer.showImageOverlayViewer = true
+				imageViewTriggerFunction(self.imageViewerLink)
 			}
 			
 			ZStack {
@@ -73,7 +75,8 @@ struct OldMessageComponent: View {
 		do {
 			downloadURL = try pubnubSetUp.pubnub.generateFileDownloadURL(channel: channelId, fileId: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String, filename: "galgalgal")
 			print("got pic from pn")
-//			imageViewer.overlayImageURL = downloadURL.absoluteString
+			
+			self.imageViewerLink = downloadURL.absoluteString
 		} catch {
 			downloadURL = URL(fileURLWithPath: "")
 		}
@@ -109,6 +112,9 @@ struct OldMessageComponent: View {
 		ZStack () {
 			
 			KFAnimatedImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+				
+				imageViewTriggerFunction((self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+				
 //				self.imageViewer.overlayImageURL = (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String
 //				self.imageViewer.showImageOverlayViewer = true
 				

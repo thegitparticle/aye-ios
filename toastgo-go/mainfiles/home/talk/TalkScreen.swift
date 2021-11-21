@@ -65,6 +65,10 @@ struct TalkScreen: View {
 		])
 	]
 	
+	@State var showImageViewer: Bool = false
+	
+	@State var showImageViewerLink: String = "https://..."
+	
 	
 	var body: some View {
 		
@@ -82,7 +86,7 @@ struct TalkScreen: View {
 							
 							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
 								
-								OldMessageComponent(anOldMessage: item, channelId: channelId)
+								OldMessageComponent(anOldMessage: item, channelId: channelId, imageViewTriggerFunction: setupImageViewer)
 								
 							}
 							
@@ -95,7 +99,7 @@ struct TalkScreen: View {
 							
 						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onTapGesture {
 							
-							self.showTextInput = false
+							self.closeKeyBoard()
 						}
 						
 					}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
@@ -131,7 +135,13 @@ struct TalkScreen: View {
 				
 			}
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer))
+	}
+	
+	func setupImageViewer (link: String) {
+		
+		self.showImageViewerLink = link
+		self.showImageViewer = true
 	}
 	
 	var HeaderHere: some View {

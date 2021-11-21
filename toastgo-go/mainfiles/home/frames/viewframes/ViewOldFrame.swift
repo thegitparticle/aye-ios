@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ImageViewerRemote
 
 struct ViewOldFrame: View {
 	
@@ -25,6 +26,10 @@ struct ViewOldFrame: View {
 	var my_id: Int
 	var my_name: String
 	
+	@State var showImageViewer: Bool = false
+	
+	@State var showImageViewerLink: String = "https://..."
+	
     var body: some View {
 		
 		ZStack(alignment: .top) {
@@ -41,7 +46,7 @@ struct ViewOldFrame: View {
 							
 							ForEach(viewModel.messagesOfThisFrame, id: \.published) {item in
 								
-								OldMessageComponent(anOldMessage: item, channelId: channelId)
+								OldMessageComponent(anOldMessage: item, channelId: channelId, imageViewTriggerFunction: setupImageViewer)
 								
 							}
 							
@@ -54,9 +59,15 @@ struct ViewOldFrame: View {
 			
 			HeaderHere
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer))
 		
     }
+	
+	func setupImageViewer (link: String) {
+		
+		self.showImageViewerLink = link
+		self.showImageViewer = true
+	}
 	
 	var HeaderHere: some View {
 		
