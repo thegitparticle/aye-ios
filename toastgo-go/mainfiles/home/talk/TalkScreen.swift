@@ -427,7 +427,7 @@ private struct StartFramePart: View {
 		
 		ZStack {
 			
-			Rectangle().fill(LightTheme.Colors.appLeadVariant).frame(maxWidth: .infinity, maxHeight: 300, alignment: .top).background(LightTheme.Colors.appLeadVariant).cornerRadius(30)
+			Rectangle().fill(LightTheme.Colors.appLead).frame(maxWidth: .infinity, maxHeight: 300, alignment: .top).background(LightTheme.Colors.appLead).cornerRadius(30)
 			
 			VStack {
 				
@@ -447,8 +447,10 @@ private struct StartFramePart: View {
 											
 											viewModel.postStartClanFrame(club_name: clubId, channel_id: channelId)
 										}
-										showButton()
+										
 									}
+									
+									showButton()
 								})
 					.frame(width: 320, height: 56)
 					.background(Color.yellow)
