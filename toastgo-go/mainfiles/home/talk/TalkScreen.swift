@@ -69,6 +69,8 @@ struct TalkScreen: View {
 	
 	@State var showImageViewerLink: String = "https://..."
 	
+	@State private var showTalkCameraModal = false
+	
 	
 	var body: some View {
 		
@@ -135,7 +137,11 @@ struct TalkScreen: View {
 				
 			}
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer))
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer)).sheet(isPresented: $showTalkCameraModal) {
+			
+			TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+		}
+		
 	}
 	
 	func setupImageViewer (link: String) {
@@ -262,8 +268,6 @@ struct TalkScreen: View {
 			if (!self.showTextInput) {
 				
 				HStack {
-					
-					NavigationLink(destination: TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
 						
 						ZStack {
 							
@@ -275,9 +279,11 @@ struct TalkScreen: View {
 							
 							FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
 							
-						}.padding(.horizontal, 20)
+						}.padding(.horizontal, 20).onPress {
+							
+							self.showTalkCameraModal = true
+						}
 						
-					}
 					
 					NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
 						
