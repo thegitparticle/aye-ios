@@ -12,3 +12,9 @@ struct DefaultRecosDataClass: Codable, Equatable {
 	var id: Int
 	var links: [String]
 }
+
+struct AyeMojiDefaultRecos: Codable, Equatable {
+	
+	var emoji: String
+	var ayemoji: String
+}

@@ -328,14 +328,30 @@ struct TalkScreen: View {
 									
 								} else {
 									
-									ForEach(viewModel.defaultRecos , id: \.id) { set in
+									ForEach(viewModel.defaultRecos , id: \.emoji) { set in
 										
-										ForEach(set.links, id: \.self) { link in
+										ZStack {
 											
-											KFAnimatedImage.url(URL(string: link)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
-												self.selectedReco = link
+											KFAnimatedImage.url(URL(string: set.ayemoji)!).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).onPress {
+												self.selectedReco = set.ayemoji
 											}
+											
+											VStack {
+
+												Spacer()
+
+												HStack {
+
+													Text(set.emoji)
+
+													Spacer()
+
+												}.frame(width: 100)
+
+											}.frame(width: 100, height: 60)
+											
 										}
+										
 									}
 								}
 								

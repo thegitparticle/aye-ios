@@ -10,7 +10,7 @@ import PubNub
 
 class TalkViewModel: ObservableObject {
 	
-	@Published var defaultRecos = [DefaultRecosDataClass]()
+	@Published var defaultRecos = [AyeMojiDefaultRecos]()
 	
 	@Published var customRecos = [DefaultRecosDataClass]()
 	
@@ -101,7 +101,11 @@ class TalkViewModel: ObservableObject {
 	
 	public func getDefaultRecosTalkVM (userid: String) {
 		
-		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+//		guard let url = URL(string: "https://apisayepirates.life/api/users/recommend_images/82/fun/False/") else {
+//			return
+//		}
+		
+		guard let url = URL(string: "https://run.mocky.io/v3/c263ddc7-3c9a-4686-93cc-dccd545bdcda") else {
 			return
 		}
 		
@@ -111,7 +115,7 @@ class TalkViewModel: ObservableObject {
 		URLSession.shared.dataTask(with: request) { data, response, error in
 			
 			if let data = data {
-				if let decodedResponse = try? JSONDecoder().decode([DefaultRecosDataClass].self, from: data) {
+				if let decodedResponse = try? JSONDecoder().decode([AyeMojiDefaultRecos].self, from: data) {
 					
 					DispatchQueue.main.async {
 						
