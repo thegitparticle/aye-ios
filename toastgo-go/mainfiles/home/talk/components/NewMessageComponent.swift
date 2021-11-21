@@ -67,7 +67,7 @@ struct NewMessageComponent: View {
 		
 		ZStack () {
 			
-			KFImage.url(URL(string: (self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200)
+			KFAnimatedImage.url(URL(string: (self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200)
 			
 			ZStack {
 				

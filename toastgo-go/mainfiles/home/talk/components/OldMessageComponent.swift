@@ -108,7 +108,7 @@ struct OldMessageComponent: View {
 		
 		ZStack () {
 			
-			KFImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+			KFAnimatedImage.url(URL(string: (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200).onPress {
 //				self.imageViewer.overlayImageURL = (self.anOldMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String
 //				self.imageViewer.showImageOverlayViewer = true
 				
