@@ -64,6 +64,24 @@ struct NewMessageComponent: View {
 		
 	}
 	
+	var CMessageComponent: some View {
+		
+		ZStack () {
+			
+			KFAnimatedImage.url(URL(string: (self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)!).cornerRadius(10).frame(width: .infinity, height: 200).onPress {
+				
+				imageViewTriggerFunction((self.aNewMessage.metadata?.rawValue as! [String: Any])["image_url"] as! String)
+			}
+			
+			ZStack {
+				
+				Text("\(self.aNewMessage.payload.rawValue)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 10).background(LightTheme.Colors.uiSurface)
+				
+			}.cornerRadius(5).padding(.top, 180)
+			
+		}.padding(.horizontal, 20).padding(.vertical, 20)
+		
+	}
 	
 	var HMessageComponent: some View {
 		

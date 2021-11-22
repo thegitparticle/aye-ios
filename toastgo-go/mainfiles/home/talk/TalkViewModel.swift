@@ -197,6 +197,7 @@ class TalkViewModel: ObservableObject {
 				self.newMessagesReceived.append(message)
 				
 				print("\(message)")
+				print(self.newMessagesReceived)
 			case let .connectionStatusChanged(status):
 				print("Status Received: \(status)")
 			case let .presenceChanged(presence):

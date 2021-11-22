@@ -139,7 +139,7 @@ struct TalkScreen: View {
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer)).sheet(isPresented: $showTalkCameraModal) {
 			
-			TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
+			TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, closeTalkCameraModalFunction: closeTalkCameraModal)
 		}
 		
 	}
@@ -148,6 +148,11 @@ struct TalkScreen: View {
 		
 		self.showImageViewerLink = link
 		self.showImageViewer = true
+	}
+	
+	func closeTalkCameraModal () {
+		
+		self.showTalkCameraModal = false
 	}
 	
 	var HeaderHere: some View {

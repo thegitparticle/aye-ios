@@ -33,6 +33,8 @@ struct TalkCameraScreen: View {
 	var my_id: Int
 	var my_name: String
 	
+	var closeTalkCameraModalFunction: () -> ()
+	
 	@StateObject var model = TalkCameraViewModel()
 	
 	@State var currentZoomFactor: CGFloat = 1.0
@@ -117,6 +119,8 @@ struct TalkCameraScreen: View {
 		let dataOfImage = imageFileHere.pngData()!
 		
 		let customData = PubNub.PublishFileRequest(additionalMessage: "", store: true, meta: metaHere)
+		
+		closeTalkCameraModalFunction()
 		
 		pubnubSetUpHere.pubnub.send(
 
@@ -349,8 +353,8 @@ struct TalkCameraScreen: View {
 	
 }
 
-struct TalkCameraScreen_Previews: PreviewProvider {
-	static var previews: some View {
-		TalkCameraScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false, my_id: 82, my_name: "San")
-	}
-}
+//struct TalkCameraScreen_Previews: PreviewProvider {
+//	static var previews: some View {
+//		TalkCameraScreen(clubName: "", clubId: 0, channelId: "", ongoingFrame: false, startTime: "", endTime: "", ongoingStream: false, ongoingStreamUser: "", directornot: false, my_id: 82, my_name: "San")
+//	}
+//}
