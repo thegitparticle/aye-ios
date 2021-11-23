@@ -63,7 +63,11 @@ struct EditProfileScreen: View {
 						
 					}.onPress {
 						
-						viewModel.editProfileDp2(imageToUpload: self.imageSelectedFromDeviceUrl!)
+//						viewModel.editProfileDp2(imageToUpload: self.imageSelectedFromDeviceUrl!, imageToUploadPngData: self.imageSelectedFromDevice ?? UIImage(imageLiteralResourceName: ""))
+						
+						viewModel.editProfileDp3(imageToUploadPngData: self.imageSelectedFromDevice ?? UIImage(imageLiteralResourceName: ""))
+						
+//						viewModel.editProfileDp(imageToUpload: self.imageSelectedFromDevice ?? UIImage(imageLiteralResourceName: ""))
 					}
 					
 				}.frame(width: UIScreen.screenWidth)
@@ -82,8 +86,8 @@ struct EditProfileScreen: View {
 				self.showCraftView = true
 				self.imageSelectedFromDevice = image
 				
-				let filename = getDocumentsDirectory().appendingPathComponent("uploadimage.png")
-				try? image.pngData()?.write(to: filename)
+				let filename = getDocumentsDirectory().appendingPathComponent("uploadimage.jpeg")
+				try? image.jpegData(compressionQuality: CGFloat(0.5))?.write(to: filename)
 				
 				self.imageSelectedFromDeviceUrl = filename
 				
