@@ -210,7 +210,7 @@ class MyProfileViewModel: ObservableObject {
 		// the image in UIImage type
 		let image = imageToUploadPngData
 		
-		let filename = "uploadimage.png"
+		let filename = "uploadimage.jpeg"
 		
 		// generate boundary string using a unique per-app string
 		let boundary = UUID().uuidString
@@ -239,8 +239,8 @@ class MyProfileViewModel: ObservableObject {
 		// Add the image data to the raw http request data
 		data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
 		data.append("Content-Disposition: form-data; name=\"image\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
-		data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-		data.append(image.pngData()!)
+		data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+		data.append(image.jpegData(compressionQuality: CGFloat(0.5))!)
 		
 		// End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
 		// According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230
