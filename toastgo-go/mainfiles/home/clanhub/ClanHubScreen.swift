@@ -163,11 +163,11 @@ struct ClanHubScreen: View {
 			
 		}.sheet(isPresented: $showAddFriendsModal) {
 			
-			MyProfileScreen()
+			AddFriendsToClanScreen()
 			
 		}.sheet(isPresented: $showInviteFriendsModal) {
 			
-			MyProfileScreen()
+			InviteContactsToClanScreen()
 		}
 	}
 	
