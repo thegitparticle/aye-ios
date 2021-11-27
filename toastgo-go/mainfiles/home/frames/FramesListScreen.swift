@@ -36,6 +36,8 @@ struct FramesListScreen: View {
 	@State var renderMonth = 0
 	@State var renderMonthString = ""
 	
+	@State private var showClanHubModal = false
+	
     var body: some View {
 		
 		ZStack(alignment: .top) {
@@ -177,17 +179,19 @@ struct FramesListScreen: View {
 					
 					HStack {
 						
-						Circle().frame(width: 20, height: 20)
-							.padding()
-							.foregroundColor(LightTheme.Colors.uiBackground)
-							.background(LightTheme.Colors.uiBackground)
-							.cornerRadius(70)
+						CircleIcon(size: 13, iconName: .ios_people).padding(.horizontal, 20)
 						
+					}.onPress {
+						
+						self.showClanHubModal = true
 					}
 					
 				}.padding(.bottom, 5)
 				
 			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
+			
+		}.sheet(isPresented: $showClanHubModal) {
+			ClanHubScreen()
 		}
 	}
 	
