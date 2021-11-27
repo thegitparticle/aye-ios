@@ -27,11 +27,15 @@ struct ClanHubScreen: View {
 	
 	@StateObject private var viewModel = ClanHubViewModel()
 	
+	@State private var showAddFriendsModal = false
+	@State private var showInviteFriendsModal = false
+	@State private var showingQuitClanPopup = false
+	
     var body: some View {
 		
 		ZStack(alignment: .top) {
 			
-			VStack(alignment: .leading) {
+			VStack(alignment: .center) {
 				
 				ScrollView {
 					
@@ -43,18 +47,21 @@ struct ClanHubScreen: View {
 					
 					ListOfMembers
 					
-				}
+					Spacer().frame(height: 30)
+					
+					AddPeopleToClanButtons
+					
+					Spacer().frame(height: 30)
+					
+					QuitButton
+					
+				}.frame(width: UIScreen.screenWidth)
 				
-			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground)
-			
-//			.popup(isPresented: $showingClansOverlayPopup) {
-//
-//				ClansOverlay
-//
-//			}.popup(isPresented: $showingFramesOverlayPopup) {
-//
-//				FramesOverlay
-//			}
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(LightTheme.Colors.uiBackground).popup(isPresented: $showingQuitClanPopup) {
+
+				QuitClanOverlay
+
+			}
 			
 			
 			HeaderHere
@@ -66,9 +73,24 @@ struct ClanHubScreen: View {
 		
     }
 	
+	var QuitClanOverlay: some View {
+		
+		Text("you really wanna quit this clan?")
+			.frame(width: 300, height: 100)
+			.background(LightTheme.Colors.uiSurface.opacity(0.75))
+			.foregroundColor(LightTheme.Colors.error)
+			.font(LightTheme.Typography.body1)
+			.cornerRadius(30.0)
+		
+	}
+	
 	var FramesCount: some View {
 		
 		ZStack {
+			
+			RoundedRectangle(cornerRadius: 10, style: .continuous)
+				.fill(LightTheme.Colors.uiSurface)
+				.frame(width: UIScreen.screenWidth * 0.3, height: 70)
 			
 			Text(String(viewModel.clanDetails.frames_total)).foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 			
@@ -81,6 +103,8 @@ struct ClanHubScreen: View {
 		ZStack {
 			
 			VStack {
+				
+				Spacer().frame(height: 20)
 				
 				ForEach(viewModel.clanDetails.users, id: \.user_id) { item in
 					
@@ -100,9 +124,67 @@ struct ClanHubScreen: View {
 					
 				}
 				
+				Spacer().frame(height: 20)
+				
 			}
 			
 		}.background(LightTheme.Colors.uiSurface).frame(width: UIScreen.screenWidth * 0.9).cornerRadius(10)
+	}
+	
+	var AddPeopleToClanButtons: some View {
+		
+		HStack {
+			
+			ZStack {
+				
+				RoundedRectangle(cornerRadius: 20, style: .continuous)
+					.fill(LightTheme.Colors.appLead)
+					.frame(width: 150, height: 50)
+				
+				Text("add friends").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+				
+			}.onPress {
+				
+				self.showAddFriendsModal = true
+			}
+			
+			ZStack {
+				
+				RoundedRectangle(cornerRadius: 20, style: .continuous)
+					.fill(LightTheme.Colors.appLead.opacity(0.25))
+					.frame(width: 150, height: 50)
+				
+				Text("invite friends").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+				
+			}.onPress {
+				
+				self.showInviteFriendsModal = true
+			}
+			
+		}.sheet(isPresented: $showAddFriendsModal) {
+			
+			MyProfileScreen()
+			
+		}.sheet(isPresented: $showInviteFriendsModal) {
+			
+			MyProfileScreen()
+		}
+	}
+	
+	var QuitButton: some View {
+		
+		ZStack {
+			
+			RoundedRectangle(cornerRadius: 20, style: .continuous)
+				.fill(LightTheme.Colors.error.opacity(0.25))
+				.frame(width: 150, height: 50)
+			
+			Text("quit clan").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+			
+		}.onPress {
+			
+			self.showingQuitClanPopup = true
+		}
 	}
 	
 	var HeaderHere: some View {
