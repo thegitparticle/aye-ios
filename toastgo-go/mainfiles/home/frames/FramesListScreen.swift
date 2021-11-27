@@ -191,7 +191,7 @@ struct FramesListScreen: View {
 			}.frame(maxWidth: .infinity, maxHeight: 100, alignment: .top)
 			
 		}.sheet(isPresented: $showClanHubModal) {
-			ClanHubScreen()
+			ClanHubScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
 		}
 	}
 	

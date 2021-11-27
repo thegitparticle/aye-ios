@@ -10,6 +10,19 @@ import Kingfisher
 
 struct ClanHubScreen: View {
 	
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
+	var channelId: String
+	var ongoingFrame: Bool
+	var startTime: String
+	var endTime: String
+	var ongoingStream: Bool
+	var ongoingStreamUser: String
+	var directornot: Bool
+	
+	var my_id: Int
+	var my_name: String
+	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
 	@StateObject private var viewModel = ClanHubViewModel()
@@ -46,7 +59,10 @@ struct ClanHubScreen: View {
 			
 			HeaderHere
 			
-		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onAppear() {
+			
+			viewModel.getClanDetails(clubId: String(clubId))
+		}
 		
     }
 	
@@ -54,7 +70,7 @@ struct ClanHubScreen: View {
 		
 		ZStack {
 			
-			Text("77").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+			Text(String(viewModel.clanDetails.frames_total)).foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 			
 		}.background(LightTheme.Colors.uiSurface).frame(width: UIScreen.screenWidth * 0.5, height: 50).cornerRadius(10)
 		
@@ -120,8 +136,8 @@ struct ClanHubScreen: View {
 	}
 }
 
-struct ClanHubScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ClanHubScreen()
-    }
-}
+//struct ClanHubScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ClanHubScreen()
+//    }
+//}
