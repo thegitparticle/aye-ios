@@ -88,6 +88,9 @@
 		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
 		26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */; };
 		26B876A22716B6C900FFE414 /* Pods_toastgo_go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6A514723F81B279EA3D93 /* Pods_toastgo_go.framework */; };
+		26B9C43827529313000987C3 /* ClanHubScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C43727529313000987C3 /* ClanHubScreen.swift */; };
+		26B9C43B275296D0000987C3 /* ClanHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C43A275296D0000987C3 /* ClanHubViewModel.swift */; };
+		26B9C43D27529933000987C3 /* ClanDetailsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C43C27529933000987C3 /* ClanDetailsDataClass.swift */; };
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
 		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
@@ -266,6 +269,9 @@
 		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
 		26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
+		26B9C43727529313000987C3 /* ClanHubScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanHubScreen.swift; sourceTree = "<group>"; };
+		26B9C43A275296D0000987C3 /* ClanHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanHubViewModel.swift; sourceTree = "<group>"; };
+		26B9C43C27529933000987C3 /* ClanDetailsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanDetailsDataClass.swift; sourceTree = "<group>"; };
 		26C2A237271D6013001B5D76 /* ic_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arrow.png; sourceTree = "<group>"; };
 		26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraViewModel.swift; sourceTree = "<group>"; };
 		26C2A245271EAD18001B5D76 /* PubNubTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubTalk.swift; sourceTree = "<group>"; };
@@ -543,6 +549,7 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				26B9C43627529193000987C3 /* clanhub */,
 				265EC93A2748E5B800948E90 /* startclan */,
 				26C4D2D227253C2A0055DF63 /* aye */,
 				26C4D2D127253C1F0055DF63 /* invitecontacts */,
@@ -712,6 +719,23 @@
 				26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */,
 			);
 			path = countrypicker;
+			sourceTree = "<group>";
+		};
+		26B9C43627529193000987C3 /* clanhub */ = {
+			isa = PBXGroup;
+			children = (
+				26B9C43927529320000987C3 /* components */,
+				26B9C43727529313000987C3 /* ClanHubScreen.swift */,
+				26B9C43A275296D0000987C3 /* ClanHubViewModel.swift */,
+			);
+			path = clanhub;
+			sourceTree = "<group>";
+		};
+		26B9C43927529320000987C3 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		26C2A244271EAD08001B5D76 /* talk */ = {
@@ -974,6 +998,7 @@
 			isa = PBXGroup;
 			children = (
 				26D119B82718DD24000044A3 /* ClansDirectsDataClasses.swift */,
+				26B9C43C27529933000987C3 /* ClanDetailsDataClass.swift */,
 			);
 			path = clansdeets;
 			sourceTree = "<group>";
@@ -1343,6 +1368,7 @@
 				26C4D2C42723E5860055DF63 /* ADayComponent.swift in Sources */,
 				265EC944274917FA00948E90 /* StartClanDataClasses.swift in Sources */,
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
+				26B9C43827529313000987C3 /* ClanHubScreen.swift in Sources */,
 				26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */,
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
@@ -1368,6 +1394,7 @@
 				26C2A24B271ED979001B5D76 /* OldMessageComponent.swift in Sources */,
 				264AB277270516E400E394E6 /* LoginOtpScreen.swift in Sources */,
 				26C2A262272066C5001B5D76 /* CamStreamViewModel.swift in Sources */,
+				26B9C43D27529933000987C3 /* ClanDetailsDataClass.swift in Sources */,
 				26C2A26B2720AFDC001B5D76 /* CamStreamVideoEngine.swift in Sources */,
 				26C4D3212726F60B0055DF63 /* ScreenStreamVideoCanvas.swift in Sources */,
 				26C4D31F2726F6010055DF63 /* ScreenStreamSessionView.swift in Sources */,
@@ -1390,6 +1417,7 @@
 				26C2A24D271F0602001B5D76 /* PubnubSetup.swift in Sources */,
 				26601A32273072B300AD9919 /* ScreenShare100Canvas.swift in Sources */,
 				26C2A2822722AA37001B5D76 /* AStripComponent.swift in Sources */,
+				26B9C43B275296D0000987C3 /* ClanHubViewModel.swift in Sources */,
 				26601A2A2730655700AD9919 /* VideoView.swift in Sources */,
 				26C2A25A2720419A001B5D76 /* StreamLandingScreen.swift in Sources */,
 				26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */,
