@@ -76,11 +76,11 @@ struct FramesListScreen: View {
 		self.renderMonth = self.thisMonth
 		self.renderMonthString = self.thisMonthString
 		
-		if (!directornot) {
-			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-		}
+//		if (!directornot) {
+//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+//		} else {
+//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+//		}
 	}
 	
 	func monthChangeControllerIncrease () {
@@ -88,11 +88,11 @@ struct FramesListScreen: View {
 		self.renderMonth = self.renderMonth + 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth )
 		
-		if (!directornot) {
-			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-		}
+//		if (!directornot) {
+//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+//		} else {
+//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+//		}
 	}
 	
 	func monthChangeControllerDecrease () {
@@ -100,11 +100,11 @@ struct FramesListScreen: View {
 		self.renderMonth = self.renderMonth - 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth)
 		
-		if (!directornot) {
-			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-		}
+//		if (!directornot) {
+//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+//		} else {
+//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+//		}
 	}
 	
 	var MonthChanger: some View {
@@ -128,7 +128,14 @@ struct FramesListScreen: View {
 			
 			Spacer()
 			
-			Text(self.renderMonthString).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20)
+			Text(self.renderMonthString).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20).onPress {
+				
+				if (!directornot) {
+								viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
+							} else {
+								viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+							}
+			}
 			
 			Spacer()
 			

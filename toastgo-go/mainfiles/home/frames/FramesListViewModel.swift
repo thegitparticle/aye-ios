@@ -28,11 +28,12 @@ class FramesListViewModel: ObservableObject {
 					
 					DispatchQueue.main.async {
 						self.framesList = decodedResponse
+						print("framepicdebug - frames grabbing worked")
 					}
 					return
 				}
 				
-				print("debuglogs Fetch failed frames clans: \(error?.localizedDescription ?? "Unknown error")")
+				print("framepicdebug debuglogs Fetch failed frames clans: \(error?.localizedDescription ?? "Unknown error")")
 			}
 			
 		}.resume()

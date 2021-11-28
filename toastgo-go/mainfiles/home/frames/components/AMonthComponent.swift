@@ -56,6 +56,7 @@ struct AMonthComponent: View {
 						} else if (self.twoStripRange.contains(self.todayDate)) {
 							
 							AStripComponent(startDate: 1, endDate: 10, framesListHere: self.framesListHere, clubName: clubName, clubId: clubId, channelId: channelId)
+							
 							AStripComponent(startDate: 11, endDate: self.todayDate, framesListHere: self.framesListHere, clubName: clubName, clubId: clubId, channelId: channelId)
 							
 						} else if (self.todayDate > 20) {
