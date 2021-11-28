@@ -10,6 +10,16 @@ import Kingfisher
 
 struct AddFriendsToClanScreen: View {
 	
+	var clubName: String     // in directs, its the other user's name
+	var clubId: Int 			// in directs, its the other user's id
+	var channelId: String
+	var ongoingFrame: Bool
+	var startTime: String
+	var endTime: String
+	var ongoingStream: Bool
+	var ongoingStreamUser: String
+	var directornot: Bool
+	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	
 	@StateObject private var viewModel = ClanHubViewModel()
@@ -57,14 +67,37 @@ struct AddFriendsToClanScreen: View {
 					
 				}.padding(.vertical, 30).onPress {
 					
+					self.showingAddingOrDonePopup = true
+					
+					for item in friendsAddedList {
+						
+						viewModel.addFriendToClanApiCall(adduserid: String(item), clubid: String(clubId))
+					}
+					
 					self.mode.wrappedValue.dismiss()
 				}
 				
-			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom)
+			}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).popup(isPresented: $showingAddingOrDonePopup) {
+				
+				AddingOrDoneOverlay
+				
+			}
+			
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
     }
+	
+	var AddingOrDoneOverlay: some View {
+		
+		Text("adding friends ...")
+			.frame(width: 300, height: 100)
+			.background(LightTheme.Colors.uiSurface.opacity(1))
+			.foregroundColor(LightTheme.Colors.sucesss)
+			.font(LightTheme.Typography.body1)
+			.cornerRadius(30.0)
+		
+	}
 	
 	func addFriendToList(friendId: Int) {
 		
@@ -160,8 +193,8 @@ struct FriendItemComponent: View {
 	}
 }
 
-struct AddFriendsToClanScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFriendsToClanScreen()
-    }
-}
+//struct AddFriendsToClanScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddFriendsToClanScreen()
+//    }
+//}

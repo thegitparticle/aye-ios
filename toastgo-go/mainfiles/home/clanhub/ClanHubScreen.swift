@@ -163,11 +163,11 @@ struct ClanHubScreen: View {
 			
 		}.sheet(isPresented: $showAddFriendsModal) {
 			
-			AddFriendsToClanScreen()
+			AddFriendsToClanScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot)
 			
 		}.sheet(isPresented: $showInviteFriendsModal) {
 			
-			InviteContactsToClanScreen()
+			InviteContactsToClanScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot)
 		}
 	}
 	

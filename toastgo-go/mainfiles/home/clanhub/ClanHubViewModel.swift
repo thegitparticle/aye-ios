@@ -104,4 +104,84 @@ class ClanHubViewModel: ObservableObject {
 		}.resume()
 	}
 	
+	public func addFriendToClanApiCall(adduserid: String, clubid: String) {
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/add_users_to_club/\(adduserid)/\(clubid)") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+//				if let decodedResponse = try? JSONDecoder().decode([FriendsListItemDataClass].self, from: data) {
+//
+//					DispatchQueue.main.async {
+//
+//					self.friendsList = decodedResponse
+//					}
+//
+//					return
+//				}
+				
+				print("debuglogs Fetch failed contacts list: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
+	public func inviteFriendToClanApiCall(phonenumber: String, clubid: String) {
+		
+		let userid = UserDefaults.standard.integer(forKey: "MyId")
+		
+		guard let url = URL(string: "https://apisayepirates.life/api/users/send_invite/\(phonenumber)/\(userid)") else {
+			return
+		}
+		
+		let request = URLRequest(url: url)
+		
+		guard let url2 = URL(string: "https://apisayepirates.life/api/users/add_invited_user/\(phonenumber)/\(userid)/\(clubid)") else {
+			return
+		}
+		
+		let request2 = URLRequest(url: url2)
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			
+			if let data = data {
+				//				if let decodedResponse = try? JSONDecoder().decode([FriendsListItemDataClass].self, from: data) {
+				//
+				//					DispatchQueue.main.async {
+				//
+				//					self.friendsList = decodedResponse
+				//					}
+				//
+				//					return
+				//				}
+				
+				print("debuglogs Fetch failed contacts list: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+		
+		URLSession.shared.dataTask(with: request2) { data, response, error in
+			
+			if let data = data {
+				//				if let decodedResponse = try? JSONDecoder().decode([FriendsListItemDataClass].self, from: data) {
+				//
+				//					DispatchQueue.main.async {
+				//
+				//					self.friendsList = decodedResponse
+				//					}
+				//
+				//					return
+				//				}
+				
+				print("debuglogs Fetch failed contacts list: \(error?.localizedDescription ?? "Unknown error")")
+			}
+			
+		}.resume()
+	}
+	
 }
