@@ -83,7 +83,7 @@ struct InviteContactsScreen: View {
 	
 }
 
-struct ContactItemComponent: View {
+private struct ContactItemComponent: View {
 	
 	var name: String
 	var phone: String
