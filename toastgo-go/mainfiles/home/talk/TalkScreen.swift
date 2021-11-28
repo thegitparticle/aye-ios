@@ -71,6 +71,8 @@ struct TalkScreen: View {
 	
 	@State private var showTalkCameraModal = false
 	
+	@State private var showStreamLandingModal = false
+	
 	
 	var body: some View {
 		
@@ -140,6 +142,9 @@ struct TalkScreen: View {
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).overlay(ImageViewerRemote(imageURL: self.$showImageViewerLink, viewerShown: self.$showImageViewer)).sheet(isPresented: $showTalkCameraModal) {
 			
 			TalkCameraScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, closeTalkCameraModalFunction: closeTalkCameraModal)
+		}.sheet(isPresented: $showStreamLandingModal) {
+			
+			StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)
 		}
 		
 	}
@@ -273,38 +278,38 @@ struct TalkScreen: View {
 			if (!self.showTextInput) {
 				
 				HStack {
-						
-						ZStack {
-							
-							Circle().frame(width: 20, height: 20)
-								.padding()
-								.foregroundColor(LightTheme.Colors.textSecondary)
-								.background(LightTheme.Colors.textSecondary)
-								.cornerRadius(70)
-							
-							FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
-							
-						}.padding(.horizontal, 20).onPress {
-							
-							self.showTalkCameraModal = true
-						}
-						
 					
-					NavigationLink(destination: StreamLandingScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name)) {
+					ZStack {
 						
-						ZStack {
-							
-							Circle().frame(width: 35, height: 35)
-								.padding()
-								.foregroundColor(LightTheme.Colors.sucesss)
-								.background(LightTheme.Colors.sucesss)
-								.cornerRadius(70)
-							
-							FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
-							
-						}.padding(.horizontal, 20)
+						Circle().frame(width: 20, height: 20)
+							.padding()
+							.foregroundColor(LightTheme.Colors.textSecondary)
+							.background(LightTheme.Colors.textSecondary)
+							.cornerRadius(70)
 						
+						FontIcon.text(.ionicon(code: .ios_camera), fontsize: 25).foregroundColor(LightTheme.Colors.uiSurface)
+						
+					}.padding(.horizontal, 20).onPress {
+						
+						self.showTalkCameraModal = true
 					}
+					
+					
+					ZStack {
+						
+						Circle().frame(width: 35, height: 35)
+							.padding()
+							.foregroundColor(LightTheme.Colors.sucesss)
+							.background(LightTheme.Colors.sucesss)
+							.cornerRadius(70)
+						
+						FontIcon.text(.ionicon(code: .ios_add), fontsize: 70).foregroundColor(LightTheme.Colors.uiSurface)
+						
+					}.padding(.horizontal, 20).onPress {
+						
+						self.showStreamLandingModal = true
+					}
+					
 					
 					ZStack {
 						
@@ -361,17 +366,17 @@ struct TalkScreen: View {
 											}
 											
 											VStack {
-
+												
 												Spacer()
-
+												
 												HStack {
-
+													
 													Text(set.emoji)
-
+													
 													Spacer()
-
+													
 												}.frame(width: 100)
-
+												
 											}.frame(width: 100, height: 60)
 											
 										}
@@ -421,7 +426,7 @@ struct TalkScreen: View {
 						} else {
 							
 							FontIcon.text(.ionicon(code: .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.textPrimary.opacity(0.25)).onPress {
-																
+								
 							}
 						}
 						
