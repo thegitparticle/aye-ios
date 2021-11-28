@@ -95,6 +95,7 @@
 		26B9C4412752E12A000987C3 /* InviteContactsToClanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C4402752E12A000987C3 /* InviteContactsToClanScreen.swift */; };
 		26B9C44427538565000987C3 /* OtherProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C44327538565000987C3 /* OtherProfileScreen.swift */; };
 		26B9C44627538571000987C3 /* OtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C44527538571000987C3 /* OtherProfileViewModel.swift */; };
+		26B9C44C2753D9B6000987C3 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26B9C44B2753D9B6000987C3 /* SkeletonUI */; };
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
 		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
@@ -370,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				266019B6272C7B1B00AD9919 /* PopupView in Frameworks */,
+				26B9C44C2753D9B6000987C3 /* SkeletonUI in Frameworks */,
 				266019B9272C7B8A00AD9919 /* Lottie in Frameworks */,
 				266019C8272C7C3700AD9919 /* ImageViewerRemote in Frameworks */,
 				266019CD272C7C5200AD9919 /* Time in Frameworks */,
@@ -1075,6 +1077,7 @@
 				266019CF272C7C9F00AD9919 /* BottomSheet */,
 				266019D5272C8B5700AD9919 /* VideoPlayer */,
 				26601A1C272D75D000AD9919 /* HighlightedTextEditor */,
+				26B9C44B2753D9B6000987C3 /* SkeletonUI */,
 			);
 			productName = "toastgo-go";
 			productReference = 264AB2282704CB5F00E394E6 /* toastgo-go.app */;
@@ -1188,6 +1191,7 @@
 				266019CE272C7C9F00AD9919 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 				266019D4272C8B5700AD9919 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
 				26601A1B272D75D000AD9919 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
+				26B9C44A2753D9B6000987C3 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 264AB2292704CB5F00E394E6 /* Products */;
 			projectDirPath = "";
@@ -2024,6 +2028,14 @@
 				kind = branch;
 			};
 		};
+		26B9C44A2753D9B6000987C3 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2106,6 +2118,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26601A1B272D75D000AD9919 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
 			productName = HighlightedTextEditor;
+		};
+		26B9C44B2753D9B6000987C3 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B9C44A2753D9B6000987C3 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

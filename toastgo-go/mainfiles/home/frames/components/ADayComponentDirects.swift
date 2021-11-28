@@ -31,10 +31,20 @@ struct ADayComponentDirects: View {
 				
 						
 						VStack {
+							
+							ZStack {
+							
+							RoundedRectangle(cornerRadius: 10, style: .continuous)
+								.fill(Color.gray.opacity(0.5))
+								.frame(width: 55, height: 55)
+							
 							KFImage.url(URL(string: item.frame_picture_link)).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 								.cornerRadius(50.0)
 							
-							Text("\(item.published_date)").foregroundColor(Color.white.opacity(0.75)).font(LightTheme.Typography.subtitle2)
+							}.onAppear() {
+								
+								print(item.frame_picture_link)
+							}
 							
 						}.sheet(isPresented: $showOldFrameModal) {
 							
