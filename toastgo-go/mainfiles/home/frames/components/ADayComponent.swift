@@ -20,6 +20,8 @@ struct ADayComponent: View {
 	
 	@State var daysFramesList = [ClanFramesListItem]()
 	
+	@State private var showOldFrameModal = false
+	
 	var body: some View {
 		
 		VStack {
@@ -27,18 +29,21 @@ struct ADayComponent: View {
 			if (daysFramesList.count > 0) {
 				
 				ForEach(self.daysFramesList, id: \.id) {item in
-					
-					NavigationLink(destination: ViewOldFrame(clubName: clubName, clubId: clubId, channelId: channelId, oldFrameStartTime: item.start_time, oldFrameEndTime: item.end_time, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.string(forKey: "MyName") ?? "")) {
-					
-					VStack {
 						
-						KFImage.url(URL(string: item.frame_picture_link)).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
-							.cornerRadius(50.0)
-						
-						Text("\(item.published_date)").foregroundColor(Color.white.opacity(0.75)).font(LightTheme.Typography.subtitle2)
-					}
-						
-					}
+						VStack {
+							
+							KFImage.url(URL(string: item.frame_picture_link)).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
+								.cornerRadius(50.0)
+							
+							Text("\(item.published_date)").foregroundColor(Color.white.opacity(0.75)).font(LightTheme.Typography.subtitle2)
+							
+						}.sheet(isPresented: $showOldFrameModal) {
+							
+							ViewOldFrame(clubName: clubName, clubId: clubId, channelId: channelId, oldFrameStartTime: item.start_time, oldFrameEndTime: item.end_time, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.string(forKey: "MyName") ?? "")
+						}.onPress {
+							
+							self.showOldFrameModal = true
+						}
 					
 				}
 			} else {

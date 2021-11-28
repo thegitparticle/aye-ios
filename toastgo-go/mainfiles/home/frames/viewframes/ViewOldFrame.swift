@@ -83,7 +83,7 @@ struct ViewOldFrame: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_arrow_back).padding(.horizontal, 20)
+						CircleIcon(size: 13, iconName: .ios_close).padding(.horizontal, 20)
 						
 					}.onPress {
 						
