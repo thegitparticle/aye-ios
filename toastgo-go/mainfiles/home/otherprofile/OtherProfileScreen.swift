@@ -10,10 +10,11 @@ import Kingfisher
 
 struct OtherProfileScreen: View {
 	
+	var otherUserId: Int
+	
 	@Environment(\.presentationMode) var mode: Binding<PresentationMode>
 	@StateObject private var viewModel = OtherProfileViewModel()
 	
-	var otherUserId: Int = 0
 	
     var body: some View {
 		
@@ -100,8 +101,8 @@ struct OtherProfileScreen: View {
 	}
 }
 
-struct OtherProfileScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        OtherProfileScreen()
-    }
-}
+//struct OtherProfileScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OtherProfileScreen()
+//    }
+//}

@@ -29,7 +29,11 @@ struct ClanHubScreen: View {
 	
 	@State private var showAddFriendsModal = false
 	@State private var showInviteFriendsModal = false
+	
 	@State private var showingQuitClanPopup = false
+	
+	@State private var showOtherProfileModal = false
+	@State private var otherProfileID = 0
 	
     var body: some View {
 		
@@ -120,12 +124,23 @@ struct ClanHubScreen: View {
 						
 						Spacer()
 						
+					}.onPress {
+						
+						self.otherProfileID = item.user_id
+						self.showOtherProfileModal = true
 					}
 					
 				}
 				
 				Spacer().frame(height: 20)
 				
+			}.sheet(isPresented: $showAddFriendsModal) {
+				
+				AddFriendsToClanScreen(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot)
+				
+			}.sheet(isPresented: $showOtherProfileModal) {
+				
+				OtherProfileScreen(otherUserId: otherProfileID)
 			}
 			
 		}.background(LightTheme.Colors.uiSurface).frame(width: UIScreen.screenWidth * 0.9).cornerRadius(10)

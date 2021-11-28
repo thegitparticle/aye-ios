@@ -17,14 +17,15 @@ struct OtherUserDetailsDataClass: Codable, Equatable {
 
 struct OtherUserHere: Codable, Equatable {
 	
-	var username: String
 	var phone: String
-	var full_name: String
-	var id: Int
-	var clubs_joined_by_user: String
 	var number_of_clubs_joined: Int
-	var contact_list: String
-	var total_frames_participation: Int
-	var country_code_of_user: String
 	var contact_list_sync_status: Bool
+	var id: Int
+	var country_code_of_user: String
+	var username: String
+	var clubs_joined_by_user: String
+	var full_name: String
+	var total_frames_participation: Int
+	var contact_list: String
 }
+
