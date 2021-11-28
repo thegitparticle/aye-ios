@@ -93,6 +93,8 @@
 		26B9C43D27529933000987C3 /* ClanDetailsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C43C27529933000987C3 /* ClanDetailsDataClass.swift */; };
 		26B9C43F2752E11C000987C3 /* AddFriendsToClanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C43E2752E11C000987C3 /* AddFriendsToClanScreen.swift */; };
 		26B9C4412752E12A000987C3 /* InviteContactsToClanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C4402752E12A000987C3 /* InviteContactsToClanScreen.swift */; };
+		26B9C44427538565000987C3 /* OtherProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C44327538565000987C3 /* OtherProfileScreen.swift */; };
+		26B9C44627538571000987C3 /* OtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9C44527538571000987C3 /* OtherProfileViewModel.swift */; };
 		26C2A238271D6013001B5D76 /* ic_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A237271D6013001B5D76 /* ic_arrow.png */; };
 		26C2A23D271DD8D5001B5D76 /* TalkCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */; };
 		26C2A246271EAD18001B5D76 /* PubNubTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A245271EAD18001B5D76 /* PubNubTalk.swift */; };
@@ -276,6 +278,8 @@
 		26B9C43C27529933000987C3 /* ClanDetailsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanDetailsDataClass.swift; sourceTree = "<group>"; };
 		26B9C43E2752E11C000987C3 /* AddFriendsToClanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsToClanScreen.swift; sourceTree = "<group>"; };
 		26B9C4402752E12A000987C3 /* InviteContactsToClanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContactsToClanScreen.swift; sourceTree = "<group>"; };
+		26B9C44327538565000987C3 /* OtherProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileScreen.swift; sourceTree = "<group>"; };
+		26B9C44527538571000987C3 /* OtherProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewModel.swift; sourceTree = "<group>"; };
 		26C2A237271D6013001B5D76 /* ic_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arrow.png; sourceTree = "<group>"; };
 		26C2A23C271DD8D5001B5D76 /* TalkCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCameraViewModel.swift; sourceTree = "<group>"; };
 		26C2A245271EAD18001B5D76 /* PubNubTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubTalk.swift; sourceTree = "<group>"; };
@@ -553,6 +557,7 @@
 		264AB2632704FA6900E394E6 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				26B9C44227538552000987C3 /* otherprofile */,
 				26B9C43627529193000987C3 /* clanhub */,
 				265EC93A2748E5B800948E90 /* startclan */,
 				26C4D2D227253C2A0055DF63 /* aye */,
@@ -742,6 +747,15 @@
 				26B9C4402752E12A000987C3 /* InviteContactsToClanScreen.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		26B9C44227538552000987C3 /* otherprofile */ = {
+			isa = PBXGroup;
+			children = (
+				26B9C44327538565000987C3 /* OtherProfileScreen.swift */,
+				26B9C44527538571000987C3 /* OtherProfileViewModel.swift */,
+			);
+			path = otherprofile;
 			sourceTree = "<group>";
 		};
 		26C2A244271EAD08001B5D76 /* talk */ = {
@@ -1376,6 +1390,7 @@
 				26613D82271C207F0043C750 /* TalkCameraScreen.swift in Sources */,
 				26B9C43827529313000987C3 /* ClanHubScreen.swift in Sources */,
 				26C4D3322726FE3B0055DF63 /* InviteContactsScreen.swift in Sources */,
+				26B9C44627538571000987C3 /* OtherProfileViewModel.swift in Sources */,
 				26C4D2CF2723F4DC0055DF63 /* ViewOldFrameViewModel.swift in Sources */,
 				268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */,
 				26C4D33B272711E00055DF63 /* TheAyeViewModel.swift in Sources */,
@@ -1425,6 +1440,7 @@
 				26601A32273072B300AD9919 /* ScreenShare100Canvas.swift in Sources */,
 				26C2A2822722AA37001B5D76 /* AStripComponent.swift in Sources */,
 				26B9C43B275296D0000987C3 /* ClanHubViewModel.swift in Sources */,
+				26B9C44427538565000987C3 /* OtherProfileScreen.swift in Sources */,
 				26601A2A2730655700AD9919 /* VideoView.swift in Sources */,
 				26C2A25A2720419A001B5D76 /* StreamLandingScreen.swift in Sources */,
 				26C2A249271EB779001B5D76 /* TypeInputComponent.swift in Sources */,
