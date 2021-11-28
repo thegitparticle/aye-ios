@@ -27,7 +27,7 @@ struct AStripComponentDirects: View {
 			
 			Rectangle()
 				.fill(LightTheme.Colors.special1)
-				.frame(width: 75, height: UIScreen.screenHeight * 0.7)
+				.frame(width: 30, height: UIScreen.screenHeight * 0.7)
 			
 			
 			VStack {
@@ -39,7 +39,7 @@ struct AStripComponentDirects: View {
 				
 			}
 			
-		}
+		}.padding(.horizontal, 30)
 		
 	}
 }
