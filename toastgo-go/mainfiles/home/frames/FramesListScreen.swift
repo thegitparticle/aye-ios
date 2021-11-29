@@ -38,7 +38,9 @@ struct FramesListScreen: View {
 	
 	@State private var showClanHubModal = false
 	
-    var body: some View {
+	@State var showMonthLoadingSpinner: Bool = true
+	
+	var body: some View {
 		
 		ZStack(alignment: .top) {
 			
@@ -48,13 +50,46 @@ struct FramesListScreen: View {
 				
 				MonthChanger
 				
-				if (!directornot) {
-				
-				AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesList, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+				ZStack {
 					
-				} else {
+					if (self.showMonthLoadingSpinner) {
+						
+						ZStack {
+							
+							if (!directornot) {
+								
+								AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: 0, renderMonthString: "0", thisMonth: 0, thisMonthString: "0", framesListHere: [], daysInThisMonth: 30)
+								
+							} else {
+								
+								AMonthComponentDirects(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: 0, renderMonthString: "0", thisMonth: 0, thisMonthString: "0", framesListHere: [], daysInThisMonth: 30)
+							}
+							
+							HStack(alignment: .center) {
+								
+								ProgressView().visible(self.showMonthLoadingSpinner)
+								
+							}.frame(maxWidth: .infinity, maxHeight: .infinity).background(LightTheme.Colors.uiSurface.opacity(0.2))
+							
+							
+						}
+					}
 					
-					AMonthComponentDirects(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesListDirects, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+					else {
+						
+						if (!directornot) {
+							
+							AMonthComponent(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesList, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+							
+						} else {
+							
+							AMonthComponentDirects(clubName: clubName, clubId: clubId, channelId: channelId, ongoingFrame: ongoingFrame, startTime: startTime, endTime: endTime, ongoingStream: ongoingStream, ongoingStreamUser: ongoingStreamUser, directornot: directornot, my_id: my_id, my_name: my_name, renderMonth: self.renderMonth, renderMonthString: self.renderMonthString, thisMonth: self.thisMonth, thisMonthString: self.thisMonthString, framesListHere: viewModel.framesListDirects, daysInThisMonth: self.getMonthEnd(month: renderMonth))
+						}
+						
+					}
+					
+					
+					
 				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).onAppear() {
@@ -66,9 +101,16 @@ struct FramesListScreen: View {
 			
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
-    }
+	}
+	
+	func toggleMonthLoadingSpinner () {
+		
+		self.showMonthLoadingSpinner = (!self.showMonthLoadingSpinner)
+	}
 	
 	func monthChangeControllerNow () {
+		
+		self.showMonthLoadingSpinner = true
 		
 		self.thisMonth = Date().month
 		self.thisMonthString = giveMonthName(month: self.thisMonth)
@@ -76,35 +118,45 @@ struct FramesListScreen: View {
 		self.renderMonth = self.thisMonth
 		self.renderMonthString = self.thisMonthString
 		
-//		if (!directornot) {
-//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-//		} else {
-//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-//		}
+		print("framepicdebug - log of onApiCall \(renderMonth)")
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	func monthChangeControllerIncrease () {
 		
+		self.showMonthLoadingSpinner = true
+		
 		self.renderMonth = self.renderMonth + 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth )
 		
-//		if (!directornot) {
-//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-//		} else {
-//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-//		}
+		print("framepicdebug - log of onApiCall \(renderMonth)")
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	func monthChangeControllerDecrease () {
 		
+		self.showMonthLoadingSpinner = true
+		
 		self.renderMonth = self.renderMonth - 1
 		self.renderMonthString = giveMonthName(month: self.renderMonth)
 		
-//		if (!directornot) {
-//			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-//		} else {
-//			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-//		}
+		print("framepicdebug - log of onApiCall \(renderMonth)")
+		
+		if (!directornot) {
+			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
+		} else {
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+		}
 	}
 	
 	var MonthChanger: some View {
@@ -118,7 +170,7 @@ struct FramesListScreen: View {
 					.foregroundColor(LightTheme.Colors.uiBackground)
 					.background(LightTheme.Colors.uiBackground)
 					.cornerRadius(70)
-			
+				
 				FontIcon.text(.ionicon(code: .ios_arrow_back), fontsize: 25).foregroundColor(LightTheme.Colors.textPrimary).onPress {
 					
 					monthChangeControllerDecrease()
@@ -131,10 +183,10 @@ struct FramesListScreen: View {
 			Text(self.renderMonthString).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(20).onPress {
 				
 				if (!directornot) {
-								viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId))
-							} else {
-								viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
-							}
+					viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
+				} else {
+					viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+				}
 			}
 			
 			Spacer()
@@ -146,8 +198,8 @@ struct FramesListScreen: View {
 					.foregroundColor(LightTheme.Colors.uiBackground)
 					.background(LightTheme.Colors.uiBackground)
 					.cornerRadius(70)
-			
-			FontIcon.text(.ionicon(code: .ios_arrow_forward), fontsize: 25).foregroundColor(LightTheme.Colors.textPrimary)
+				
+				FontIcon.text(.ionicon(code: .ios_arrow_forward), fontsize: 25).foregroundColor(LightTheme.Colors.textPrimary)
 				
 			}.onPress {
 				monthChangeControllerIncrease()

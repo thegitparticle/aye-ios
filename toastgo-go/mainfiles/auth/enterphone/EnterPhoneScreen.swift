@@ -60,6 +60,7 @@ struct EnterPhoneScreen: View {
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 			CountryCodePickerUI(countryCode: $countryCode, countryFlag: $countryFlag, y: $y)
 				.offset(y: y)
+			
 			HStack(alignment: .center) {
 				ProgressView().visible(showSpinner)
 			}.frame(maxWidth: .infinity)

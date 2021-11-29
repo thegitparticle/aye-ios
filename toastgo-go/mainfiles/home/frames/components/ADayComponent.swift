@@ -11,6 +11,8 @@ import SkeletonUI
 
 struct ADayComponent: View {
 	
+	@StateObject private var viewModel = FramesListViewModel()
+	
 	var whichDay: Int
 	
 	var framesListHere: [ClanFramesListItem]
@@ -73,6 +75,8 @@ struct ADayComponent: View {
 	func checkForFrames() {
 		
 		for item in framesListHere {
+			
+			print("framepicdebug \(item.published_date)")
 			
 			if ((item.published_date).suffix(2) == String(self.whichDay) || (item.published_date).suffix(2) == "0" + String(self.whichDay)) {
 				

@@ -13,7 +13,7 @@ class FramesListViewModel: ObservableObject {
 	
 	@Published var framesListDirects = [DirectFramesListItem]()
 	
-	public func getClubFramesPerMonth(month: String, clubId: String) {
+	public func getClubFramesPerMonth(month: String, clubId: String, shutSpinnerFunction: @escaping () -> ()) {
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/clubs/frames_clubs_filter/2021/\(month)/\(clubId)/") else {
 			return
@@ -27,9 +27,14 @@ class FramesListViewModel: ObservableObject {
 				if let decodedResponse = try? JSONDecoder().decode([ClanFramesListItem].self, from: data) {
 					
 					DispatchQueue.main.async {
+						
 						self.framesList = decodedResponse
+						
 						print("framepicdebug - frames grabbing worked")
 					}
+					
+					shutSpinnerFunction()
+					
 					return
 				}
 				

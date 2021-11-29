@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AStripComponent: View {
 	
+	@StateObject private var viewModel = FramesListViewModel()
+	
 	var startDate: Int
 	var endDate: Int
 	
@@ -34,7 +36,7 @@ struct AStripComponent: View {
 					
 				ForEach (self.startDate ... self.endDate, id: \.self) { item in
 					
-					ADayComponent(whichDay: item, framesListHere: self.framesListHere, clubName: clubName, clubId: clubId, channelId: channelId)
+					ADayComponent(whichDay: item, framesListHere: framesListHere, clubName: clubName, clubId: clubId, channelId: channelId)
 				}
 				
 			}
