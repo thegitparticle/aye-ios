@@ -26,6 +26,7 @@ struct NudgeItemComponent: View {
 			Spacer()
 			
 			StartButtonHere()
+				
 			}
 			
 		}.frame(maxWidth: .infinity).padding(.vertical, 10)

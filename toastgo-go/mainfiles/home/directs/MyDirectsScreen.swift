@@ -17,7 +17,9 @@ struct MyDirectsScreen: View {
 	
 	var refreshFunction: () -> Bool
 	
-//	var defaultRecosPassing: [DefaultRecosDataClass]
+	@State private var showInvitePeopleModal = false
+	
+	//	var defaultRecosPassing: [DefaultRecosDataClass]
 	
 	@State private var now = Date()
 	
@@ -44,14 +46,36 @@ struct MyDirectsScreen: View {
 				
 				Spacer().frame(height: 50)
 				
-				ForEach(nudgeListHere, id: \.id) {item in
+				if (nudgeListHere.count > 0) {
 					
-					NudgeItemComponent(nudgeItemHere: item)
+					ForEach(nudgeListHere, id: \.id) {item in
+						
+						NudgeItemComponent(nudgeItemHere: item)
+					}
+					
+				} else {
+					
+					ZStack {
+						
+						RoundedRectangle(cornerRadius: 30, style: .continuous)
+							.fill(LightTheme.Colors.appLead)
+							.frame(width: 180, height: 60)
+						
+						Text("invite friends").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+						
+					}.onPress {
+						
+						self.showInvitePeopleModal = true
+					}
+					
 				}
 				
 				Spacer().frame(height: 200)
 				
-			}.padding(.top, 75).padding(.horizontal, 20)
+			}.padding(.top, 75).padding(.horizontal, 20).sheet(isPresented: $showInvitePeopleModal) {
+				
+				InviteContactsScreen()
+			}
 			
 		}
 		
