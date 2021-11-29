@@ -33,6 +33,27 @@ struct CircleIcon: View {
     }
 }
 
+struct CircleIconSFSymbols: View {
+	
+	var size: Int
+	var iconName: String
+	
+	var body: some View {
+		
+		ZStack() {
+			
+			Circle().frame(width: CGFloat(self.size), height: CGFloat(self.size))
+				.padding()
+				.foregroundColor(LightTheme.Colors.iconBackground)
+				.background(LightTheme.Colors.iconBackground)
+				.cornerRadius(70)
+			
+			Image(systemName: self.iconName).font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.iconVector)
+		}
+	}
+}
+
+
 struct CircleIconAuthFlow: View {
 
 	var size: Int

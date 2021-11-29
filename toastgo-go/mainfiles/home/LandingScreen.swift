@@ -78,7 +78,7 @@ private struct HeaderHere: View {
 				
 				HStack () {
 					
-					CircleIcon(size: 11, iconName: .ios_person_add).padding(.horizontal, 20).onPress {
+					CircleIconSFSymbols(size: 11, iconName: "person.badge.plus").padding(.horizontal, 20).onPress {
 						self.showInvitePeopleModal = true
 					}
 					
@@ -92,7 +92,7 @@ private struct HeaderHere: View {
 						}
 					
 					Spacer()
-
+					
 					DPShow.onPress {
 						self.showMyProfileModal = true
 					}
@@ -130,32 +130,25 @@ private struct StreamSheetContent: View {
 					
 					ForEach(viewModel.liveClansHere , id: \.club_id) {item in
 						
-//						NavigationLink(destination: StreamLandingScreen(clubName: item.club_name, clubId: item.club_id, channelId: item.pn_channel_id, ongoingFrame: item.ongoing_frame, startTime: item.start_time, endTime: item.end_time, ongoingStream: item.on_going_stream_status, ongoingStreamUser: item.stream_started_by, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.integer(forKey: "MyName")) ) {
-						
+						HStack {
 							
-							HStack {
-								
-								Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-								
-								Spacer()
-								
-								Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-								
-								
-								
-							}.frame(width: .infinity)
+							Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
 							
-//						}
+							Spacer()
+							
+							Text("frame ongoing").foregroundColor(LightTheme.Colors.appLead).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+							
+							
+							
+						}.frame(width: .infinity)
 						
 					}
 					
 					ForEach(viewModel.clanHere, id: \.club_id) {item in
 						
-//						NavigationLink(destination: StreamLandingScreen(clubName: item.club_name, clubId: item.club_id, channelId: item.pn_channel_id, ongoingFrame: item.ongoing_frame, startTime: item.start_time, endTime: item.end_time, ongoingStream: item.on_going_stream_status, ongoingStreamUser: item.stream_started_by, directornot: false, my_id: UserDefaults.standard.integer(forKey: "MyId"), my_name: UserDefaults.standard.integer(forKey: "MyName")) ) {
-							
-							Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
-							
-//						}
+						
+						Text(item.club_name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 10)
+						
 						
 					}
 					
