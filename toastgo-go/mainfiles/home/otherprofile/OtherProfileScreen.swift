@@ -62,9 +62,9 @@ struct OtherProfileScreen: View {
 		
 		VStack(alignment: .center) {
 			
-			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.otherProfileDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 20, color: LightTheme.Colors.special1)
+			IconButtonForOptionsWithInfo(title: "clans", info: String(viewModel.otherProfileDeetsHere.user.number_of_clubs_joined), iconName: .ios_home, size: 20, color: LightTheme.Colors.special1, sfsymboliconcheck: true, sfsymbolicon: "house.fill")
 			
-			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.otherProfileDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 20, color: LightTheme.Colors.special3)
+			IconButtonForOptionsWithInfo(title: "frames", info: String(viewModel.otherProfileDeetsHere.user.total_frames_participation), iconName: .ios_apps, size: 20, color: LightTheme.Colors.special3, sfsymboliconcheck: false, sfsymbolicon: "")
 			
 		}.padding(.vertical, 30).frame(width: UIScreen.screenWidth)
 		

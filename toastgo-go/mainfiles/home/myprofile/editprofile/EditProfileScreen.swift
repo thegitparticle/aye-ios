@@ -31,7 +31,7 @@ struct EditProfileScreen: View {
 				
 				VStack (alignment: .center) {
 					
-					IconButtonForOptions(title: "Edit Profile", iconName: .ios_brush, size: 20, color: LightTheme.Colors.sucesss)
+					IconButtonForOptions(title: "Edit Profile", iconName: .ios_brush, size: 20, color: LightTheme.Colors.sucesss, sfsymboliconcheck: false, sfsymbolicon: "")
 					
 					Spacer().frame(height: 50)
 					

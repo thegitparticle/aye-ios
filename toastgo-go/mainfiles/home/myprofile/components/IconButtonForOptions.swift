@@ -71,7 +71,7 @@ struct IconButtonForOptions: View {
 				.foregroundColor(color.opacity(0.15))
 				.cornerRadius(CGFloat(self.size))
 			
-			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.iconVector)
+			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(color)
 			
 		}
 	}
@@ -143,7 +143,7 @@ struct IconButtonForOptionsWithInfo: View {
 				.foregroundColor(color.opacity(0.15))
 				.cornerRadius(CGFloat(self.size))
 			
-			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.iconVector)
+			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(color)
 			
 		}
 	}

@@ -19,11 +19,11 @@ struct SettingsScreen: View {
 				
 				VStack (alignment: .center) {
 				
-				IconButtonForOptions(title: "Privacy Policy", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary)
+				IconButtonForOptions(title: "Privacy Policy", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary, sfsymboliconcheck: true, sfsymbolicon: "lock.fill")
 				
-				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary)
+				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary, sfsymboliconcheck: true, sfsymbolicon: "book.fill")
 				
-				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error).onPress {
+				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error, sfsymboliconcheck: true, sfsymbolicon: "clear.fill").onPress {
 					
 					UserDefaults.standard.set(false, forKey: "LoginState");
 					
