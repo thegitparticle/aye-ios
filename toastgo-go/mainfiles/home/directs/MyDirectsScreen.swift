@@ -40,6 +40,10 @@ struct MyDirectsScreen: View {
 				
 				Spacer().frame(height: 50)
 				
+				Text("MORE FRIENDS").foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.h5).padding(.horizontal, 10).padding(.vertical, 1)
+				
+				Spacer().frame(height: 50)
+				
 				ForEach(nudgeListHere, id: \.id) {item in
 					
 					NudgeItemComponent(nudgeItemHere: item)

@@ -21,7 +21,7 @@ struct NudgeItemComponent: View {
 			KFImage.url(URL(string: nudgeItemHere.profile_pic)!).resizable().cornerRadius(22.5).frame(width: 55, height: 55)
 				.cornerRadius(50.0)
 			
-			Text(nudgeItemHere.name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 3)
+			Text(nudgeItemHere.name).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 			
 			Spacer()
 			
