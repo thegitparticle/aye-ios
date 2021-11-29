@@ -36,32 +36,60 @@ struct MyClansScreen: View {
 			
 			LazyVStack {
 				
-				ForEach(liveClansHere, id: \.club_id) {item in
+				if (liveClansHere.count == 0 && clansListHere.count == 0) {
 					
-					LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+					VStack {
+						
+						Spacer().frame(height: UIScreen.screenHeight * 0.3)
+						
+						ZStack {
+							
+							RoundedRectangle(cornerRadius: 30, style: .continuous)
+								.fill(LightTheme.Colors.sucesss)
+								.frame(width: 180, height: 60)
+							
+							Text("start clan").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+							
+						}.onPress {
+							
+							self.showStartClanModal = true
+						}
+						
+						Spacer()
+						
+					}
+					
+				} else {
+					
+					ForEach(liveClansHere, id: \.club_id) {item in
+						
+						LiveClanComponent(clanHere: item, my_id: my_id,  my_name: my_name, indexInList: liveClansHere.firstIndex(of: item) ?? 0)
+					}
+					
+					ForEach(clansListHere, id: \.club_id) {item in
+						
+						DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name)
+					}
+					
+					Spacer().frame(height: 50)
+					
+					ZStack {
+						
+						RoundedRectangle(cornerRadius: 30, style: .continuous)
+							.fill(LightTheme.Colors.sucesss)
+							.frame(width: 180, height: 60)
+						
+						Text("start clan").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
+						
+					}.onPress {
+						
+						self.showStartClanModal = true
+					}
+					
+					Spacer().frame(height: 200)
 				}
 				
-				ForEach(clansListHere, id: \.club_id) {item in
-					
-					DormantClanComponent(clanHere: item, my_id: my_id, my_name: my_name)
-				}
 				
-				Spacer().frame(height: 50)
-				
-				ZStack {
-					
-					RoundedRectangle(cornerRadius: 30, style: .continuous)
-						.fill(LightTheme.Colors.sucesss)
-						.frame(width: 180, height: 60)
-					
-					Text("start clan").foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
-					
-				}.onPress {
-					
-					self.showStartClanModal = true
-				}
-				
-				Spacer().frame(height: 200)
 				
 			}.padding(.top, 75).padding(.horizontal, 20)
 			
