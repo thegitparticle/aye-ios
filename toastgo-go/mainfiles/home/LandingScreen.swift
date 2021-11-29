@@ -215,7 +215,7 @@ struct TabBarView: View {
 					
 					ForEach(titles.indices) { id in
 						
-						let title = FontIcon.text(.ionicon(code: (titles[id] == "Home") ? .ios_home : .ios_send), fontsize: 35).foregroundColor(LightTheme.Colors.iconVector).onTapGesture {
+						let title = Image(systemName: (titles[id] == "Home") ? "house.fill" : "paperplane.fill").onTapGesture {
 							withAnimation() {
 								index = id
 							}
@@ -223,11 +223,11 @@ struct TabBarView: View {
 						
 						if self.index == id {
 							
-							title.foregroundColor(.black)
+							title.foregroundColor(LightTheme.Colors.textPrimary)
 							
 						} else {
 							
-							title.foregroundColor(.gray)
+							title.foregroundColor(LightTheme.Colors.textPrimary.opacity(0.5))
 							
 						}
 						
