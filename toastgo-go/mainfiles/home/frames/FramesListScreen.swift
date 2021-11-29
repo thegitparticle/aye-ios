@@ -123,7 +123,7 @@ struct FramesListScreen: View {
 		if (!directornot) {
 			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
 		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId, shutSpinnerFunction: toggleMonthLoadingSpinner)
 		}
 	}
 	
@@ -139,7 +139,7 @@ struct FramesListScreen: View {
 		if (!directornot) {
 			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
 		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId, shutSpinnerFunction: toggleMonthLoadingSpinner)
 		}
 	}
 	
@@ -155,7 +155,7 @@ struct FramesListScreen: View {
 		if (!directornot) {
 			viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
 		} else {
-			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+			viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId, shutSpinnerFunction: toggleMonthLoadingSpinner)
 		}
 	}
 	
@@ -185,7 +185,7 @@ struct FramesListScreen: View {
 				if (!directornot) {
 					viewModel.getClubFramesPerMonth(month: String(self.renderMonth), clubId: String(clubId), shutSpinnerFunction: toggleMonthLoadingSpinner)
 				} else {
-					viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId)
+					viewModel.getDirectFramesPerMonth(month: String(self.renderMonth), channelId: channelId, shutSpinnerFunction: toggleMonthLoadingSpinner)
 				}
 			}
 			

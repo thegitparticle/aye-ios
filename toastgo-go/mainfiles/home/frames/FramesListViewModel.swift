@@ -44,7 +44,7 @@ class FramesListViewModel: ObservableObject {
 		}.resume()
 	}
 	
-	public func getDirectFramesPerMonth(month: String, channelId: String) {
+	public func getDirectFramesPerMonth(month: String, channelId: String, shutSpinnerFunction: @escaping () -> ()) {
 		
 		guard let url = URL(string: "https://apisayepirates.life/api/clubs/frames_one_on_one_filtered/2021/\(month)/\(channelId)/") else {
 			return
@@ -60,6 +60,9 @@ class FramesListViewModel: ObservableObject {
 					DispatchQueue.main.async {
 						self.framesListDirects = decodedResponse
 					}
+					
+					shutSpinnerFunction()
+					
 					return
 				}
 				
