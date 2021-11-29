@@ -238,7 +238,7 @@ struct FramesListScreen: View {
 					
 					HStack {
 						
-						CircleIcon(size: 13, iconName: .ios_people).padding(.horizontal, 20)
+						CircleIconSFSymbols(size: 11, iconName: "person.3.fill").padding(.horizontal, 20)
 						
 					}.onPress {
 						

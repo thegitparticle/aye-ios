@@ -14,6 +14,8 @@ struct IconButtonForOptions: View {
 	var iconName: IonIconsCode
 	var size: Int
 	var color: Color
+	var sfsymboliconcheck: Bool
+	var sfsymbolicon: String
 	
 	var body: some View {
 		
@@ -23,7 +25,15 @@ struct IconButtonForOptions: View {
 				
 				HStack {
 					
-					SquareIcon
+					if (sfsymboliconcheck) {
+						
+						SquareIconSFSymbol
+						
+					} else {
+						
+						SquareIcon
+						
+					}
 					
 					Text(self.title).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 					
@@ -52,6 +62,20 @@ struct IconButtonForOptions: View {
 		}
 	}
 	
+	var SquareIconSFSymbol: some View {
+		
+		ZStack {
+			
+			Circle().frame(width: CGFloat(self.size * 2), height: CGFloat(self.size * 2))
+				.padding()
+				.foregroundColor(color.opacity(0.15))
+				.cornerRadius(CGFloat(self.size))
+			
+			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.iconVector)
+			
+		}
+	}
+	
 }
 
 struct IconButtonForOptionsWithInfo: View {
@@ -61,6 +85,8 @@ struct IconButtonForOptionsWithInfo: View {
 	var iconName: IonIconsCode
 	var size: Int
 	var color: Color
+	var sfsymboliconcheck: Bool
+	var sfsymbolicon: String
 	
 	var body: some View {
 		
@@ -70,7 +96,15 @@ struct IconButtonForOptionsWithInfo: View {
 				
 				HStack {
 					
-					SquareIcon
+					if (sfsymboliconcheck) {
+						
+						SquareIconSFSymbol
+						
+					} else {
+					
+						SquareIcon
+						
+					}
 					
 					Text(self.title).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.subtitle1).padding(.horizontal, 10).padding(.vertical, 1)
 					
@@ -96,6 +130,20 @@ struct IconButtonForOptionsWithInfo: View {
 				.cornerRadius(CGFloat(self.size))
 			
 			FontIcon.text(.ionicon(code: self.iconName), fontsize: CGFloat(self.size)).foregroundColor(color)
+			
+		}
+	}
+	
+	var SquareIconSFSymbol: some View {
+		
+		ZStack {
+			
+			Circle().frame(width: CGFloat(self.size * 2), height: CGFloat(self.size * 2))
+				.padding()
+				.foregroundColor(color.opacity(0.15))
+				.cornerRadius(CGFloat(self.size))
+			
+			Image(systemName: self.sfsymbolicon).font(LightTheme.Typography.body2).foregroundColor(LightTheme.Colors.iconVector)
 			
 		}
 	}
