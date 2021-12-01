@@ -388,7 +388,10 @@ struct TalkScreen: View {
 							
 						}
 						
-					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
+					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60).onSwipe(down:  {
+						
+						closeKeyBoard()
+					})
 					
 					HStack(alignment: .center) {
 						
