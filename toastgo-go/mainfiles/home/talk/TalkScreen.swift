@@ -334,6 +334,15 @@ struct TalkScreen: View {
 					
 					HStack {
 						
+						Text("Slide to close key  Slide to close key Slide to close key").foregroundColor(LightTheme.Colors.uiBackground.opacity(0)).font(LightTheme.Typography.h3).padding(20)
+						
+					}.background(LightTheme.Colors.uiSurface.opacity(0)).frame(width: .infinity, height: 30).onSwipe(down:  {
+						
+						closeKeyBoard()
+					})
+					
+					HStack {
+						
 						if (self.selectedReco.count > 2) {
 							
 							KFAnimatedImage.url(URL(string: selectedReco)).cornerRadius(10).frame(width: 100, height: 60).cornerRadius(10.0).padding(.leading, 10)
@@ -388,10 +397,7 @@ struct TalkScreen: View {
 							
 						}
 						
-					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60).onSwipe(down:  {
-						
-						closeKeyBoard()
-					})
+					}.background(LightTheme.Colors.uiSurface).frame(width: .infinity, height: 60)
 					
 					HStack(alignment: .center) {
 						
@@ -435,7 +441,7 @@ struct TalkScreen: View {
 						
 					}.frame(width: .infinity)
 					
-				}.padding(.horizontal, 20).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 30)
+				}.padding(.horizontal, 10).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).KeyboardAwarePadding().padding(.bottom, 10)
 				
 			}
 			
