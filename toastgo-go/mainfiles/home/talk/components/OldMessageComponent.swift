@@ -28,21 +28,30 @@ struct OldMessageComponent: View {
 		
 		if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "c") {
 			
-			CMessageComponent
+			CMessageComponent.onAppear() {
+				
+				print("cmessage - one c message")
+			}
 			
 		} else if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "h") {
 			
-			HMessageComponent
+			HMessageComponent.onAppear() {
+				
+				print("cmessage - one h message")
+			}
 			
 		} else if ((self.anOldMessage.metadata?.rawValue as! [String: Any])["type"] as! String == "s") {
 			
-			SMessageComponent
+			SMessageComponent.onAppear() {
+				
+				print("cmessage - one s message")
+			}
 			
 		} else {
 			
 			VStack {
 				
-				Text("unable message type" as String).foregroundColor(Color.blue)
+				Text("cmessage unable message type" as String).foregroundColor(Color.blue)
 				
 			}
 		}
@@ -55,6 +64,7 @@ struct OldMessageComponent: View {
 			
 			KFImage.url(grabURLFromPubNub(name: "galgalga", Id: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String)).resizable().cornerRadius(10).frame(width: .infinity, height: 200).onPress {
 //				imageViewer.showImageOverlayViewer = true
+				
 				imageViewTriggerFunction(self.imageViewerLink)
 			}
 			
@@ -74,7 +84,9 @@ struct OldMessageComponent: View {
 		
 		do {
 			downloadURL = try pubnubSetUp.pubnub.generateFileDownloadURL(channel: channelId, fileId: ((self.anOldMessage.payload.rawValue as! [String: Any])["file"] as! [String: Any])["id"] as! String, filename: "galgalgal")
-			print("got pic from pn")
+			
+			print("cmessage debug got pic from pn")
+			print("cmessage \(downloadURL)")
 			
 			self.imageViewerLink = downloadURL.absoluteString
 		} catch {

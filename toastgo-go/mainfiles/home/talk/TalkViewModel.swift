@@ -191,22 +191,36 @@ class TalkViewModel: ObservableObject {
 		let listener = SubscriptionListener()
 		
 		listener.didReceiveSubscription = { event in
+			
 			switch event {
-			case let .messageReceived(message):
-				
-				self.newMessagesReceived.append(message)
-				
-				print("\(message)")
-				print(self.newMessagesReceived)
-			case let .connectionStatusChanged(status):
-				print("Status Received: \(status)")
-			case let .presenceChanged(presence):
-				print("Presence Received: \(presence)")
-			case let .subscribeError(error):
-				print("Subscription Error \(error)")
-			default:
-				break
-			}
+				case let .messageReceived(message):
+					
+					self.newMessagesReceived.append(message)
+					
+					print("cmessagelive\(message)")
+					print(self.newMessagesReceived)
+					
+				case let .connectionStatusChanged(status):
+					
+					print("Status Received: \(status)")
+					
+				case let .presenceChanged(presence):
+					
+					print("Presence Received: \(presence)")
+					
+				case let .subscribeError(error):
+					
+					print("Subscription Error \(error)")
+					
+				case let .fileUploaded(fileevent):
+					
+					print("cmessagelive file uploaded")
+					
+					print("cmessagelive \(fileevent)")
+					
+				default:
+					break
+				}
 		}
 		
 		// Start receiving subscription events
