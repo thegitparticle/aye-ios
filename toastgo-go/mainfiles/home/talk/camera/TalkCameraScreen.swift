@@ -106,7 +106,10 @@ struct TalkCameraScreen: View {
 				}
 				
 				
-			}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+			}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onDisappear() {
+				
+				model.destroyCamera()
+			}
 			
 		}
 		
