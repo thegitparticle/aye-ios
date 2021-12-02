@@ -79,7 +79,10 @@ struct StreamLandingScreen: View {
 				topButtons
 			}
 			
-		}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+		}.navigationBarHidden(true).background(Color.black).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all).onDisappear() {
+			
+			viewModel.destroyCamera()
+		}
 		
 	}
 	
