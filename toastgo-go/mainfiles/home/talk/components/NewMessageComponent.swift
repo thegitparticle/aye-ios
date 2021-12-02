@@ -15,29 +15,44 @@ struct NewMessageComponent: View {
 	
 	@State private var playVideo: Bool = true
 	
-	var aNewMessage: PubNubMessage
+	var aNewMessage: AnyNewMessage
 	
 	var imageViewTriggerFunction: (String) -> ()
 	
 	var body: some View {
 		
-		if (aNewMessage is PubNubMessage) {
+		ZStack () {
 			
-			NormalMessage(aNewMessage: aNewMessage as! PubNubMessage, imageViewTriggerFunction: imageViewTriggerFunction)
-			
-		}  else if (aNewMessage as? PubNubFileEvent != nil) {
-			
-			
-			FileMessage(aNewMessage: aNewMessage as! PubNubFileEvent, imageViewTriggerFunction: imageViewTriggerFunction)
-			
-		} else {
-			
-			VStack {
+			KFAnimatedImage.url(URL(string: self.aNewMessage.base_image)).cornerRadius(10).frame(width: .infinity, height: 200).onPress {
 				
-				Text("unable message type" as String).foregroundColor(Color.blue)
-				
+				imageViewTriggerFunction(self.aNewMessage.base_image)
 			}
-		}
+			
+			ZStack {
+				
+				Text("\(self.aNewMessage.message)" as String).foregroundColor(LightTheme.Colors.textPrimary).font(LightTheme.Typography.body2).padding(.horizontal, 10).padding(.vertical, 10).background(LightTheme.Colors.uiSurface)
+				
+			}.cornerRadius(5).padding(.top, 180)
+			
+		}.padding(.horizontal, 20).padding(.vertical, 20)
+		
+//		if (aNewMessage is PubNubMessage) {
+//
+//			NormalMessage(aNewMessage: aNewMessage as! PubNubMessage, imageViewTriggerFunction: imageViewTriggerFunction)
+//
+//		}  else if (aNewMessage as? PubNubFileEvent != nil) {
+//
+//
+//			FileMessage(aNewMessage: aNewMessage as! PubNubFileEvent, imageViewTriggerFunction: imageViewTriggerFunction)
+//
+//		} else {
+//
+//			VStack {
+//
+//				Text("unable message type" as String).foregroundColor(Color.blue)
+//
+//			}
+//		}
 		
 	}
 	

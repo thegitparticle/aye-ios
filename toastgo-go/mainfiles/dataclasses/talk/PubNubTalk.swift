@@ -8,6 +8,16 @@
 import Foundation
 import PubNub
 
+struct AnyNewMessage: Codable, Hashable, Equatable {
+	
+	var base_image: String
+	var dp_image: String
+	var message: String
+	var type: String
+	var channel_id: String
+	var timetoken: String
+}
+
 struct MetaDataCMessage: Codable, JSONCodable, Equatable {
 	
 	var type: String

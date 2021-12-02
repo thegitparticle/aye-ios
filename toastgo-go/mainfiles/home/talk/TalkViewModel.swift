@@ -16,7 +16,9 @@ class TalkViewModel: ObservableObject {
 	
 	@Published var oldMessagesReceived = [PubNubMessage]()
 	
-	@Published var newMessagesReceived = [PubNubMessage]()
+	@Published var newMessagesReceived1 = [PubNubMessage]()
+	
+	@Published var newMessagesReceived = [AnyNewMessage]()
 	
 	@Published var otherUserDetailsHere = [OtherUserDetailsDataClass]()
 	
@@ -141,7 +143,7 @@ class TalkViewModel: ObservableObject {
 //
 //		let pubnub = PubNub(configuration: config)
 		
-		let metaHere = MetaDataHMessage(type: "h", image_url: selectedReco ,user_dp: UserDefaults.standard.string(forKey: "MyDp") ?? "")
+		let metaHere = MetaDataHMessage(type: "h", image_url: selectedReco, user_dp: UserDefaults.standard.string(forKey: "MyDp") ?? "")
 		
 		pubnubConfig.pubnub.publish(channel: channelId, message: message, shouldStore: true, meta: metaHere) { result in
 			
@@ -195,9 +197,11 @@ class TalkViewModel: ObservableObject {
 			switch event {
 				case let .messageReceived(message):
 					
-					self.newMessagesReceived.append(message)
+					let x_here = AnyNewMessage(base_image: (message.metadata?.rawValue as! [String: Any])["image_url"] as! String, dp_image: (message.metadata?.rawValue as! [String: Any])["user_dp"] as! String, message: message.payload.rawValue as! String, type: (message.metadata?.rawValue as! [String: Any])["type"] as! String, channel_id: String(message.channel), timetoken: String(message.published))
 					
-					print("cmessagelive\(message)")
+					self.newMessagesReceived.append(x_here)
+					
+					print("cmessagelive\(x_here)")
 					print(self.newMessagesReceived)
 					
 				case let .connectionStatusChanged(status):
@@ -214,6 +218,17 @@ class TalkViewModel: ObservableObject {
 					
 				case let .fileUploaded(fileevent):
 					
+					let y_here = AnyNewMessage(base_image: self.grabURLFromPubNub(
+														name: "galgalga",
+												Id: fileevent.file.fileId,
+																channelId: channelId, pubnubConfig: pubnubConfig),
+											   dp_image: (fileevent.metadata?.rawValue as! [String: Any])["user_dp"] as! String, message: "",
+											   type: "c",
+											   channel_id: "",
+											   timetoken: String(fileevent.timetoken))
+					
+					self.newMessagesReceived.append(y_here)
+					
 					print("cmessagelive file uploaded")
 					
 					print("cmessagelive \(fileevent)")
@@ -226,6 +241,23 @@ class TalkViewModel: ObservableObject {
 		// Start receiving subscription events
 		pubnubConfig.pubnub.add(listener)
 
+	}
+	
+	private func grabURLFromPubNub (name: String, Id: String, channelId: String, pubnubConfig: PubnubSetup) -> String {
+		
+		var downloadURL: URL = URL(fileURLWithPath: "")
+		
+		do {
+			downloadURL = try pubnubConfig.pubnub.generateFileDownloadURL(channel: channelId, fileId: Id, filename: "galgalgal")
+			
+			print("cmessage debug got pic from pn")
+			print("cmessage \(downloadURL)")
+			
+		} catch {
+			downloadURL = URL(fileURLWithPath: "")
+		}
+		
+		return downloadURL.absoluteString
 	}
 	
 	public func getOtherUserDetails (otheruserid: String) {

@@ -94,7 +94,7 @@ struct TalkScreen: View {
 								
 							}
 							
-							ForEach(viewModel.newMessagesReceived, id: \.published) { item in
+							ForEach(viewModel.newMessagesReceived, id: \.timetoken) { item in
 								
 								NewMessageComponent(aNewMessage: item, imageViewTriggerFunction: setupImageViewer)
 							}
