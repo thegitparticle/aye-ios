@@ -82,11 +82,11 @@ struct TalkScreen: View {
 				
 				if (viewModel.oldMessagesReceived.count > 0) {
 					
-					ScrollView {
+					ScrollView(showsIndicators: false) {
 						
 						LazyVStack {
 							
-							Spacer().frame(height: 200)
+							Spacer().frame(height: 150)
 							
 							ForEach(viewModel.oldMessagesReceived, id: \.published) {item in
 								
@@ -101,15 +101,17 @@ struct TalkScreen: View {
 							
 							Spacer().frame(height: 150)
 							
-						}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .bottom).onTapGesture {
-							
+						}.frame(minWidth: UIScreen.screenWidth, minHeight: UIScreen.screenHeight, alignment: .bottom).onTapGesture {
+
 							self.closeKeyBoard()
-						}
+							
+						}.rotationEffect(Angle(degrees: 180))
 						
-					}.frame(width: UIScreen.screenWidth, height: .infinity, alignment: .bottom)
+					}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .bottom).rotationEffect(Angle(degrees: 180))
+					
 				}
 				
-			}.frame(width: UIScreen.screenWidth, height: .infinity, alignment: .bottom).onAppear {
+			}.frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight, alignment: .bottom).onAppear {
 				
 				self.showButtons = ongoingFrame
 				
@@ -519,3 +521,4 @@ class TextFieldManagerTalkScreen: ObservableObject {
 	}
 	
 }
+
