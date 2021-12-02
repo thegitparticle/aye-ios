@@ -76,7 +76,16 @@ struct MyProfileScreen: View {
 		
 		VStack(alignment: .center) {
 			
-			KFImage.url(URL(string: viewModel.userDeetsHere.image)).resizable().cornerRadius(22.5).frame(width: 55, height: 55).cornerRadius(50.0)
+			ZStack {
+				
+				Circle()
+					.fill(LightTheme.Colors.brand.opacity(0.25))
+					.frame(width: 100, height: 100)
+			
+				KFImage.url(URL(string: viewModel.userDeetsHere.image)).resizable().cornerRadius(50).frame(width: 100, height: 100).cornerRadius(50.0)
+			
+				
+			}
 			
 			Spacer().frame(height: 20)
 			
