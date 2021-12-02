@@ -83,6 +83,8 @@
 		2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5A271B25510035EABC /* TalkViewModel.swift */; };
 		2677FF5D271B6B020035EABC /* SliderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677FF5C271B6B020035EABC /* SliderComponent.swift */; };
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
+		268E501527592E9500291EDB /* EnterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501427592E9500291EDB /* EnterDetailsViewModel.swift */; };
+		268E501827592FBF00291EDB /* SignupOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501727592FBF00291EDB /* SignupOtpScreen.swift */; };
 		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26A8D33E2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */; };
 		26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */; };
@@ -272,6 +274,8 @@
 		268422A52715F9F1006686F8 /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
 		268C6AC327307B8A00707BD9 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		268C6ACF27307B8A00707BD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		268E501427592E9500291EDB /* EnterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewModel.swift; sourceTree = "<group>"; };
+		268E501727592FBF00291EDB /* SignupOtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpScreen.swift; sourceTree = "<group>"; };
 		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeOffsetLoaderAnimation.swift; sourceTree = "<group>"; };
 		26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleSpacingWorkingOnItAnimation.swift; sourceTree = "<group>"; };
@@ -551,6 +555,7 @@
 		264AB2622704FA6400E394E6 /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				268E501627592FA800291EDB /* signupotp */,
 				264AB27A2705185E00E394E6 /* enterdetails */,
 				264AB275270516D000E394E6 /* loginsettingup */,
 				264AB274270516C700E394E6 /* loginotp */,
@@ -621,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				264AB27B2705186900E394E6 /* EnterDetailsScreen.swift */,
+				268E501427592E9500291EDB /* EnterDetailsViewModel.swift */,
 			);
 			path = enterdetails;
 			sourceTree = "<group>";
@@ -727,6 +733,14 @@
 				26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */,
 			);
 			path = uibits;
+			sourceTree = "<group>";
+		};
+		268E501627592FA800291EDB /* signupotp */ = {
+			isa = PBXGroup;
+			children = (
+				268E501727592FBF00291EDB /* SignupOtpScreen.swift */,
+			);
+			path = signupotp;
 			sourceTree = "<group>";
 		};
 		26B87695271633F400FFE414 /* countrypicker */ = {
@@ -1434,6 +1448,7 @@
 				26601A2E27306D5D00AD9919 /* AgoraMetalRender.swift in Sources */,
 				26D119B92718DD24000044A3 /* ClansDirectsDataClasses.swift in Sources */,
 				264AB26C270501BF00E394E6 /* SplashScreen.swift in Sources */,
+				268E501527592E9500291EDB /* EnterDetailsViewModel.swift in Sources */,
 				269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */,
 				26C2A28027217E1A001B5D76 /* AMonthComponent.swift in Sources */,
 				26C4D2D627253F000055DF63 /* MyProfileViewModel.swift in Sources */,
@@ -1467,6 +1482,7 @@
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
+				268E501827592FBF00291EDB /* SignupOtpScreen.swift in Sources */,
 				26C2A25C272041EC001B5D76 /* StreamLandingViewModel.swift in Sources */,
 				26B9C43F2752E11C000987C3 /* AddFriendsToClanScreen.swift in Sources */,
 				26C4D2DD27256CF40055DF63 /* SettingsScreen.swift in Sources */,

@@ -36,12 +36,7 @@ class LoginOtpViewModel: ObservableObject {
 		
 		var request = URLRequest(url: url)
 		
-		//		var urlComponents = URLComponents(string: "")
-		//		urlComponents?.queryItems = payload
-		//		let request_body = urlComponents!.query!
-		
 		request.httpMethod = "POST"
-		//		request.httpBody = Data(request_body.utf8)
 		
 		do {
 			request.httpBody = try JSONSerialization.data(withJSONObject: payload, options: [])
