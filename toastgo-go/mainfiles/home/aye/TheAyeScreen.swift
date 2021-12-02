@@ -15,6 +15,8 @@ struct TheAyeScreen: View {
 	
 	@State private var selectedText = ""
 	
+	@StateObject private var viewModel = TheAyeViewModel()
+	
     var body: some View {
 		
 		ZStack(alignment: .top) {
@@ -45,7 +47,14 @@ struct TheAyeScreen: View {
 						
 					}
 					
-				}.frame(width: UIScreen.screenWidth, height: 100).padding(.bottom, 30)
+				}.frame(width: UIScreen.screenWidth, height: 100).padding(.bottom, 30).onPress {
+					
+					let fraction = Float.random(in: 0..<1)
+					
+					print(fraction)
+					
+					viewModel.getStartDirectChannel(otheruserid: String(fraction > 0.5 ? 81 : 82))
+				}
 				
 			}.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading).padding(.top, 100).background(Color.black)
 			
