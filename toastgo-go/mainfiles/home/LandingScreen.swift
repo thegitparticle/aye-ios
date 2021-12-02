@@ -29,11 +29,29 @@ struct LandingScreen: View {
 						
 						if (pageId == 0) {
 							
-							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere)
+							MyClansScreen(clansListHere: viewModel.clanHere, liveClansHere: viewModel.liveClansHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere).onReceive(NotificationCenter.default.publisher(
+								for: UIApplication.willEnterForegroundNotification
+							)) { _ in
+								viewModel.refreshLandingViewModel()
+								print("onresumecheck on resume refreshing apis - clans side")
+							}.onAppear() {
+								
+								viewModel.refreshLandingViewModel()
+								print("onresumecheck on resume refreshing apis - clans side appear")
+							}
 							
 						} else {
 							
-							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere)
+							MyDirectsScreen(directsListHere: viewModel.directsHere, nudgeListHere: viewModel.nudgeListHere, my_id: viewModel.userDeetsHere.user.id, my_name: viewModel.userDeetsHere.user.full_name, refreshFunction: self.refreshLandingViewModelHere).onReceive(NotificationCenter.default.publisher(
+								for: UIApplication.willEnterForegroundNotification
+							)) { _ in
+								viewModel.refreshLandingViewModel()
+								print("onresumecheck on resume refreshing apis - directs side")
+							}.onAppear() {
+								
+								viewModel.refreshLandingViewModel()
+								print("onresumecheck on resume refreshing apis - directs side appear")
+							}
 						}
 					}
 					
