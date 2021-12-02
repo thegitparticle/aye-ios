@@ -37,13 +37,26 @@ struct InviteContactsToClanScreen: View {
 					
 					LazyVStack(alignment: .leading) {
 						
-						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
-							
-							ContactItemComponent(name: item.name, phone: item.phone, addFunction: addContactToList, removeFunction: removeContactFromList).id(UUID())
-							
-						}
 						
-						Spacer().frame(height: 250)
+						if (viewModel.contactsList.count == 0) {
+							
+							VStack(alignment: .center) {
+								
+								CubeOffset()
+								
+							}.frame(width: UIScreen.screenWidth).padding(.top, (UIScreen.screenHeight * 0.5) - 150)
+							
+						} else {
+							
+							
+							ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
+								
+								ContactItemComponent(name: item.name, phone: item.phone, addFunction: addContactToList, removeFunction: removeContactFromList).id(UUID())
+								
+							}
+							
+							Spacer().frame(height: 250)
+						}
 					}
 					
 				}.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight, alignment: .top).padding(.top, 150)

@@ -38,13 +38,26 @@ struct AddFriendsToClanScreen: View {
 					
 					LazyVStack(alignment: .leading) {
 						
-						ForEach(Array(Set(viewModel.friendsList)), id: \.friend_user_id) {item in
-							
-							FriendItemComponent(name: item.name, userid: item.friend_user_id, profilepic: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
-							
-						}
 						
-						Spacer().frame(height: 250)
+						if (viewModel.friendsList.count == 0) {
+							
+							VStack(alignment: .center) {
+								
+								CubeOffset()
+								
+							}.frame(width: UIScreen.screenWidth).padding(.top, (UIScreen.screenHeight * 0.5) - 150)
+							
+						} else {
+							
+							
+							ForEach(Array(Set(viewModel.friendsList)), id: \.friend_user_id) {item in
+								
+								FriendItemComponent(name: item.name, userid: item.friend_user_id, profilepic: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
+								
+							}
+							
+							Spacer().frame(height: 250)
+						}
 						
 					}
 					

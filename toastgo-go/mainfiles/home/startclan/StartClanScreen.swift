@@ -58,13 +58,24 @@ struct StartClanScreen: View {
 					
 					LazyVStack(alignment: .leading) {
 						
-						ForEach(Array(Set(viewModel.friendsList)), id: \.self) {item in
+						if (viewModel.friendsList.count == 0) {
 							
-							FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
+							VStack(alignment: .center) {
+								
+								CubeOffset()
+								
+							}.frame(width: UIScreen.screenWidth).padding(.top, (UIScreen.screenHeight * 0.5) - 150)
 							
+						} else {
+							
+							ForEach(Array(Set(viewModel.friendsList)), id: \.self) {item in
+								
+								FriendItemComponentHere(name: item.name, id: item.friend_user_id, dp: item.profile_pic, addFunction: addFriendToList, removeFunction: removeFriendFromList)
+								
+							}
+							
+							Spacer().frame(height: 250)
 						}
-						
-						Spacer().frame(height: 250)
 						
 					}
 					
@@ -153,13 +164,24 @@ struct StartClanScreen: View {
 					
 					LazyVStack(alignment: .leading) {
 						
-						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
+						if (viewModel.contactsList.count == 0) {
 							
-							ContactItemComponentHere(name: item.name, phone: item.phone, addFunction: addContactToList, removeFunction: removeContactFromList)
+							VStack(alignment: .center) {
+								
+								CubeOffset()
+								
+							}.frame(width: UIScreen.screenWidth).padding(.top, (UIScreen.screenHeight * 0.5) - 150)
 							
+						} else {
+							
+							ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
+								
+								ContactItemComponentHere(name: item.name, phone: item.phone, addFunction: addContactToList, removeFunction: removeContactFromList)
+								
+							}
+							
+							Spacer().frame(height: 250)
 						}
-						
-						Spacer().frame(height: 250)
 						
 					}
 					
