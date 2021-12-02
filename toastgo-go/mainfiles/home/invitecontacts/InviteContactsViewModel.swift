@@ -13,7 +13,7 @@ class InviteContactsViewModel: ObservableObject {
 	
 	init () {
 		
-		getContactsListHere()
+//		getContactsListHere()
 	}
 	
 	public func getContactsListHere() {

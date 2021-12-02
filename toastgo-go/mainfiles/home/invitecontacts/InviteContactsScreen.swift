@@ -24,11 +24,22 @@ struct InviteContactsScreen: View {
 				ScrollView {
 				
 				LazyVStack(alignment: .leading) {
-
-					ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
 					
-						ContactItemComponent(name: item.name, phone: item.phone).id(UUID())
-					
+					if (viewModel.contactsList.count == 0) {
+						
+						VStack(alignment: .center) {
+						
+							CubeOffset()
+							
+						}.frame(width: UIScreen.screenWidth).padding(.top, (UIScreen.screenHeight * 0.5) - 150)
+						
+					} else {
+						
+						ForEach(Array(Set(viewModel.contactsList)), id: \.self) {item in
+							
+							ContactItemComponent(name: item.name, phone: item.phone).id(UUID())
+							
+						}
 					}
 				
 
