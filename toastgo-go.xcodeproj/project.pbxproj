@@ -85,6 +85,7 @@
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
 		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26A8D33E2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */; };
+		26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */; };
 		26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769327162AE600FFE414 /* CountryPickerCustom.swift */; };
 		26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */; };
 		26B876A12716A8AA00FFE414 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */; };
@@ -273,6 +274,7 @@
 		268C6ACF27307B8A00707BD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeOffsetLoaderAnimation.swift; sourceTree = "<group>"; };
+		26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleSpacingWorkingOnItAnimation.swift; sourceTree = "<group>"; };
 		26B8769327162AE600FFE414 /* CountryPickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		26B8769A271635E300FFE414 /* CountryCodePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUI.swift; sourceTree = "<group>"; };
 		26B876A02716A8AA00FFE414 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 				26C4D3382727078E0055DF63 /* CheckBoxStyle.swift */,
 				269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */,
 				26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */,
+				26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */,
 			);
 			path = uibits;
 			sourceTree = "<group>";
@@ -1454,6 +1457,7 @@
 				2677FF5B271B25510035EABC /* TalkViewModel.swift in Sources */,
 				264AB27F270592AD00E394E6 /* Test.swift in Sources */,
 				26C2A27B2721797F001B5D76 /* FramesListViewModel.swift in Sources */,
+				26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */,
 				26613D8A271C6FD10043C750 /* DefaultRecosDataClass.swift in Sources */,
 				26C4D2CA2723EF2D0055DF63 /* AMonthComponentDirects.swift in Sources */,
 				26C4D33D272711E90055DF63 /* TheAyeScreen.swift in Sources */,
