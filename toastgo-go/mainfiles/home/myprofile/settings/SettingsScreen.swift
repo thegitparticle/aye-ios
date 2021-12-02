@@ -11,6 +11,8 @@ struct SettingsScreen: View {
 	
 	var changeCurrentShowingView: () -> ()
 	
+	@State private var buttonActive: Bool = true
+	
     var body: some View {
 		
 		ZStack(alignment: .top) {
@@ -23,9 +25,16 @@ struct SettingsScreen: View {
 				
 				IconButtonForOptions(title: "T & C", iconName: .ios_brush, size: 20, color: LightTheme.Colors.textSecondary, sfsymboliconcheck: true, sfsymbolicon: "book.fill")
 				
-				IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error, sfsymboliconcheck: true, sfsymbolicon: "clear.fill").onPress {
-					
-					UserDefaults.standard.set(false, forKey: "LoginState");
+				NavigationLink(destination: OpenerScreen()) {
+						
+					IconButtonForOptions(title: "Log Out", iconName: .ios_settings, size: 20, color: LightTheme.Colors.error, sfsymboliconcheck: true, sfsymbolicon: "clear.fill").onPress {
+						
+						UserDefaults.standard.set(false, forKey: "LoginState");
+						resetDefaults()
+						
+						print("pressed on button - resetdefaults triggered")
+						
+					}
 					
 				}
 					
@@ -40,6 +49,14 @@ struct SettingsScreen: View {
 		}.navigationBarHidden(true).background(LightTheme.Colors.uiBackground).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
 		
     }
+	
+	func resetDefaults() {
+		let defaults = UserDefaults.standard
+		let dictionary = defaults.dictionaryRepresentation()
+		dictionary.keys.forEach { key in
+			defaults.removeObject(forKey: key)
+		}
+	}
 	
 	var HeaderHere: some View {
 		
