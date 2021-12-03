@@ -86,6 +86,8 @@
 		268E501527592E9500291EDB /* EnterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501427592E9500291EDB /* EnterDetailsViewModel.swift */; };
 		268E501827592FBF00291EDB /* SignupOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501727592FBF00291EDB /* SignupOtpScreen.swift */; };
 		268E501A2759D1E600291EDB /* SignupOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E50192759D1E600291EDB /* SignupOtpViewModel.swift */; };
+		268E501D2759F09A00291EDB /* SignupSettingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501C2759F09A00291EDB /* SignupSettingUpViewModel.swift */; };
+		268E501F2759F0A700291EDB /* SignupSettingUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */; };
 		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26A8D33E2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */; };
 		26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */; };
@@ -278,6 +280,8 @@
 		268E501427592E9500291EDB /* EnterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewModel.swift; sourceTree = "<group>"; };
 		268E501727592FBF00291EDB /* SignupOtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpScreen.swift; sourceTree = "<group>"; };
 		268E50192759D1E600291EDB /* SignupOtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpViewModel.swift; sourceTree = "<group>"; };
+		268E501C2759F09A00291EDB /* SignupSettingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSettingUpViewModel.swift; sourceTree = "<group>"; };
+		268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSettingUpScreen.swift; sourceTree = "<group>"; };
 		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeOffsetLoaderAnimation.swift; sourceTree = "<group>"; };
 		26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleSpacingWorkingOnItAnimation.swift; sourceTree = "<group>"; };
@@ -557,6 +561,7 @@
 		264AB2622704FA6400E394E6 /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				268E501B2759F08700291EDB /* signupsettingup */,
 				268E501627592FA800291EDB /* signupotp */,
 				264AB27A2705185E00E394E6 /* enterdetails */,
 				264AB275270516D000E394E6 /* loginsettingup */,
@@ -744,6 +749,15 @@
 				268E50192759D1E600291EDB /* SignupOtpViewModel.swift */,
 			);
 			path = signupotp;
+			sourceTree = "<group>";
+		};
+		268E501B2759F08700291EDB /* signupsettingup */ = {
+			isa = PBXGroup;
+			children = (
+				268E501C2759F09A00291EDB /* SignupSettingUpViewModel.swift */,
+				268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */,
+			);
+			path = signupsettingup;
 			sourceTree = "<group>";
 		};
 		26B87695271633F400FFE414 /* countrypicker */ = {
@@ -1428,6 +1442,7 @@
 				26C4D3232726F6130055DF63 /* ScreenStreamViewModel.swift in Sources */,
 				265EC93C2748E5D700948E90 /* StartClanScreen.swift in Sources */,
 				26B8769427162AE600FFE414 /* CountryPickerCustom.swift in Sources */,
+				268E501D2759F09A00291EDB /* SignupSettingUpViewModel.swift in Sources */,
 				26D119C72718F606000044A3 /* NudgeItemComponent.swift in Sources */,
 				26D119C52718F5FA000044A3 /* DirectComponent.swift in Sources */,
 				26601A262730533000AD9919 /* BaseViewController.swift in Sources */,
@@ -1482,6 +1497,7 @@
 				26601A2427303E7700AD9919 /* ScreenShare100UI.swift in Sources */,
 				26B8769B271635E300FFE414 /* CountryCodePickerUI.swift in Sources */,
 				26D119BF2718ED87000044A3 /* LiveClanComponent.swift in Sources */,
+				268E501F2759F0A700291EDB /* SignupSettingUpScreen.swift in Sources */,
 				264AB25E2704F54500E394E6 /* MainDB.xcdatamodeld in Sources */,
 				26C4D2D427253EF30055DF63 /* MyProfileScreen.swift in Sources */,
 				26D119CB271995C6000044A3 /* UserDeetsStore.swift in Sources */,
