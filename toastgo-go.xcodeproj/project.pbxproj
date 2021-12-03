@@ -88,6 +88,8 @@
 		268E501A2759D1E600291EDB /* SignupOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E50192759D1E600291EDB /* SignupOtpViewModel.swift */; };
 		268E501D2759F09A00291EDB /* SignupSettingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501C2759F09A00291EDB /* SignupSettingUpViewModel.swift */; };
 		268E501F2759F0A700291EDB /* SignupSettingUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */; };
+		268E5022275A070300291EDB /* CheckInvitedOrNotScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E5021275A070300291EDB /* CheckInvitedOrNotScreen.swift */; };
+		268E5024275A071300291EDB /* CheckInvitedOrNotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E5023275A071300291EDB /* CheckInvitedOrNotViewModel.swift */; };
 		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26A8D33E2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */; };
 		26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */; };
@@ -282,6 +284,8 @@
 		268E50192759D1E600291EDB /* SignupOtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpViewModel.swift; sourceTree = "<group>"; };
 		268E501C2759F09A00291EDB /* SignupSettingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSettingUpViewModel.swift; sourceTree = "<group>"; };
 		268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSettingUpScreen.swift; sourceTree = "<group>"; };
+		268E5021275A070300291EDB /* CheckInvitedOrNotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInvitedOrNotScreen.swift; sourceTree = "<group>"; };
+		268E5023275A071300291EDB /* CheckInvitedOrNotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInvitedOrNotViewModel.swift; sourceTree = "<group>"; };
 		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeOffsetLoaderAnimation.swift; sourceTree = "<group>"; };
 		26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleSpacingWorkingOnItAnimation.swift; sourceTree = "<group>"; };
@@ -561,6 +565,7 @@
 		264AB2622704FA6400E394E6 /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				268E5020275A061400291EDB /* checkinginvite */,
 				268E501B2759F08700291EDB /* signupsettingup */,
 				268E501627592FA800291EDB /* signupotp */,
 				264AB27A2705185E00E394E6 /* enterdetails */,
@@ -758,6 +763,15 @@
 				268E501E2759F0A700291EDB /* SignupSettingUpScreen.swift */,
 			);
 			path = signupsettingup;
+			sourceTree = "<group>";
+		};
+		268E5020275A061400291EDB /* checkinginvite */ = {
+			isa = PBXGroup;
+			children = (
+				268E5021275A070300291EDB /* CheckInvitedOrNotScreen.swift */,
+				268E5023275A071300291EDB /* CheckInvitedOrNotViewModel.swift */,
+			);
+			path = checkinginvite;
 			sourceTree = "<group>";
 		};
 		26B87695271633F400FFE414 /* countrypicker */ = {
@@ -1533,7 +1547,9 @@
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
 				26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
+				268E5022275A070300291EDB /* CheckInvitedOrNotScreen.swift in Sources */,
 				26D119BB2718E33F000044A3 /* MyClansScreen.swift in Sources */,
+				268E5024275A071300291EDB /* CheckInvitedOrNotViewModel.swift in Sources */,
 				26C2A257272025A9001B5D76 /* ImageViewerDataClass.swift in Sources */,
 				264AB27C2705186900E394E6 /* EnterDetailsScreen.swift in Sources */,
 				26C4D31D2726F5F80055DF63 /* ScreenStreamVideoEngine.swift in Sources */,
