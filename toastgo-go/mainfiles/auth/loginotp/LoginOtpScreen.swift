@@ -38,7 +38,18 @@ struct LoginOtpScreen: View {
 				
 				HStack(alignment: .center) {
 					
-					CocoaTextField("", text: $textFieldManager.userInput).isFirstResponder(true).keyboardType(.decimalPad).frame(width: 100, height: 40).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2).background(LightTheme.Colors.textSecondary.opacity(0.75)).cornerRadius(10)
+					ZStack {
+						
+						CocoaTextField("", text: $textFieldManager.userInput).isFirstResponder(true).keyboardType(.decimalPad).frame(width: 100, height: 40).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2).background(LightTheme.Colors.textSecondary.opacity(0.75)).cornerRadius(10)
+						
+						VStack(alignment: .leading) {
+							
+							Text(self.textFieldManager.userInput).foregroundColor(Color.white).font(LightTheme.Typography.body1)
+								.cornerRadius(10)
+							
+						}.frame(width: 100, height: 40, alignment: .leading)
+						
+					}.frame(width: 100, height: 40)
 					
 				}.padding(20).frame(maxWidth: .infinity)
 				
