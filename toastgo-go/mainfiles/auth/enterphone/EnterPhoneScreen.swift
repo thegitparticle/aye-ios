@@ -34,6 +34,7 @@ struct EnterPhoneScreen: View {
 				ScreenHeader()
 				
 				HStack(spacing: 0) {
+					
 					Text(countryCode.isEmpty ? "🇮🇳 +91" : "\(countryFlag) +\(countryCode)").frame(width: 80, height: 50)
 						.background(Color.secondary.opacity(0.2))
 						.cornerRadius(10)
@@ -45,7 +46,22 @@ struct EnterPhoneScreen: View {
 								self.y = 0
 							}
 						}
-					CocoaTextField("phone number", text: $phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(LightTheme.Colors.uiBackground).font(LightTheme.Typography.body2)
+					
+					ZStack {
+						
+						CocoaTextField("phone number", text: $phoneNumber).isFirstResponder(true).keyboardType(.phonePad).frame(width: 250, height: 50).padding().foregroundColor(Color.red).font(LightTheme.Typography.body2)
+							.cornerRadius(10)
+						
+						VStack(alignment: .leading) {
+						
+							Text(self.phoneNumber).foregroundColor(Color.white).font(LightTheme.Typography.body1)
+								.cornerRadius(10)
+							
+						}.frame(width: 250, height: 50, alignment: .leading)
+						
+					}.frame(width: 250, height: 50).padding(.horizontal, 20)
+					
+					
 				}.padding(20).onChange(of: viewModel.phoneCheck, perform: {phoneStatus in onClickNextButton(status: phoneStatus)})
 				
 				HStack(alignment: .center) {
