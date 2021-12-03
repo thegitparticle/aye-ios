@@ -1,24 +1,18 @@
 //
-//  LoginOtpViewModel.swift
+//  SignupOtpViewModel.swift
 //  toastgo-go
 //
-//  Created by SAN on 10/14/21.
+//  Created by SAN on 12/3/21.
 //
 
 import Foundation
 
-struct LoginOtpPostApiRequest: Codable {
-	var phone: String
-	var password: String
-}
-
-struct LoginOtpApiResponse: Codable {
+struct SignupOtpApiResponse: Codable {
 	var refresh: String
 	var access: String
 }
 
-
-class LoginOtpViewModel: ObservableObject {
+class SignupOtpViewModel: ObservableObject {
 	
 	@Published var otpWorked: String = ""
 	
@@ -86,7 +80,6 @@ class LoginOtpViewModel: ObservableObject {
 						
 						self.userDeetsHere = decodedResponse
 						
-//						print("debuglogs Fetch worked: \(decodedResponse)")
 					}
 					return
 				}
@@ -97,3 +90,4 @@ class LoginOtpViewModel: ObservableObject {
 		}.resume()
 	}
 }
+

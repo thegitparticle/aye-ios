@@ -25,7 +25,9 @@ struct LoginOtpScreen: View {
 	@State private var activateLoginSettingUpNav = false
 	
 	var body: some View {
+		
 		ZStack(alignment: .leading) {
+			
 			VStack(alignment: HorizontalAlignment.leading) {
 				
 				NavigationLink(destination: LoginSettingUpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode, userDeets: viewModel.userDeetsHere), isActive: self.$activateLoginSettingUpNav) {EmptyView()}

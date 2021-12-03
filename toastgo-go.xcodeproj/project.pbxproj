@@ -85,6 +85,7 @@
 		268422A62715F9F1006686F8 /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268422A52715F9F1006686F8 /* CircleIcon.swift */; };
 		268E501527592E9500291EDB /* EnterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501427592E9500291EDB /* EnterDetailsViewModel.swift */; };
 		268E501827592FBF00291EDB /* SignupOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E501727592FBF00291EDB /* SignupOtpScreen.swift */; };
+		268E501A2759D1E600291EDB /* SignupOtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E50192759D1E600291EDB /* SignupOtpViewModel.swift */; };
 		269FDDA82749694D000378B3 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */; };
 		26A8D33E2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */; };
 		26A8D3402758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */; };
@@ -276,6 +277,7 @@
 		268C6ACF27307B8A00707BD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		268E501427592E9500291EDB /* EnterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewModel.swift; sourceTree = "<group>"; };
 		268E501727592FBF00291EDB /* SignupOtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpScreen.swift; sourceTree = "<group>"; };
+		268E50192759D1E600291EDB /* SignupOtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOtpViewModel.swift; sourceTree = "<group>"; };
 		269FDDA72749694D000378B3 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		26A8D33D2758A2A20084EB39 /* CubeOffsetLoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeOffsetLoaderAnimation.swift; sourceTree = "<group>"; };
 		26A8D33F2758B1110084EB39 /* CapsuleSpacingWorkingOnItAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleSpacingWorkingOnItAnimation.swift; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 			isa = PBXGroup;
 			children = (
 				268E501727592FBF00291EDB /* SignupOtpScreen.swift */,
+				268E50192759D1E600291EDB /* SignupOtpViewModel.swift */,
 			);
 			path = signupotp;
 			sourceTree = "<group>";
@@ -1510,6 +1513,7 @@
 				26C4D2C62723EF170055DF63 /* ADayComponentDirects.swift in Sources */,
 				26C2A260272066B2001B5D76 /* CamStreamScreen.swift in Sources */,
 				26C4D2D9272540D60055DF63 /* IconButtonForOptions.swift in Sources */,
+				268E501A2759D1E600291EDB /* SignupOtpViewModel.swift in Sources */,
 				260D71A52718547A00DD9F80 /* LoginSettingUpViewModel.swift in Sources */,
 				26C4D2C82723EF210055DF63 /* AStripComponentDirects.swift in Sources */,
 				260D71A82718601000DD9F80 /* UserDetailsDataClass.swift in Sources */,
