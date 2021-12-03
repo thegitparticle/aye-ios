@@ -31,10 +31,12 @@ struct EnterDetailsScreen: View {
 	@State private var textUserName = ""
 	
 	var body: some View {
+		
 		ZStack(alignment: .leading) {
+			
 			VStack(alignment: HorizontalAlignment.leading) {
 				
-				NavigationLink(destination: SignupOtpScreen(), isActive: self.$activateSignUpOtpNav) {EmptyView()}
+				NavigationLink(destination: SignupOtpScreen(phoneNumber: phoneNumber, countryCode: countryCode), isActive: self.$activateSignUpOtpNav) {EmptyView()}
 				
 				ScreenHeader
 				

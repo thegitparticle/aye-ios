@@ -28,7 +28,7 @@ struct SignupSettingUpScreen: View {
 	var body: some View {
 		ZStack(alignment: .leading) {
 			
-			NavigationLink(destination: LandingScreen(), isActive: self.$activateLandingScreenNav) {EmptyView()}
+			NavigationLink(destination: CheckInvitedOrNotScreen(phoneNumber: phoneNumber, countryCode: countryCode, userDeets: userDeets), isActive: self.$activateLandingScreenNav) {EmptyView()}
 			
 			VStack() {
 				

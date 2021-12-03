@@ -30,7 +30,7 @@ struct SignupOtpScreen: View {
 			
 			VStack(alignment: HorizontalAlignment.leading) {
 				
-				NavigationLink(destination: LoginSettingUpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode, userDeets: viewModel.userDeetsHere), isActive: self.$activateLoginSettingUpNav) {EmptyView()}
+				NavigationLink(destination: SignupSettingUpScreen(phoneNumber: self.phoneNumber, countryCode: self.countryCode, userDeets: viewModel.userDeetsHere), isActive: self.$activateLoginSettingUpNav) {EmptyView()}
 				
 				ScreenHeader().onAppear() {
 					viewModel.getUserDetails(phone: self.countryCode + self.phoneNumber)

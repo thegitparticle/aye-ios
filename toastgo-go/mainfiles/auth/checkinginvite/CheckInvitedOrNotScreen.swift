@@ -11,6 +11,10 @@ struct CheckInvitedOrNotScreen: View {
 	
 	@StateObject private var viewModel = CheckInvitedOrNotViewModel()
 	
+	var phoneNumber: String
+	var countryCode: String
+	var userDeets: UserDetailsDataClass
+	
 	@State private var activateLandingScreenNav = false
 	
 	@State private var landingNavButtonActive: Bool = false
@@ -49,7 +53,10 @@ struct CheckInvitedOrNotScreen: View {
 						}
 					}
 					
-				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200)
+				}.padding(20).frame(maxWidth: .infinity, maxHeight: 200).onAppear() {
+					
+					viewModel.getCheckInvitedOrNotApi(phone: countryCode + phoneNumber)
+				}
 							
 				Spacer()
 				
@@ -82,8 +89,8 @@ struct CheckInvitedOrNotScreen: View {
 	
 }
 
-struct CheckInvitedOrNotScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckInvitedOrNotScreen()
-    }
-}
+//struct CheckInvitedOrNotScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CheckInvitedOrNotScreen()
+//    }
+//}
